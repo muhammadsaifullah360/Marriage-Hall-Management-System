@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DebuggerManager">
+    <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true" converted="true">
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <ui_properties converted="true" />
+    <breakpoint_rules converted="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="module-info" />
+        <option value="CSS File" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectId" id="1iuj69m05GP54mCw158YQAy0jmv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql&#10;oracle" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="OverrideImplement.combined" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="last_opened_file_path" value="D:/IdeaProjects/test1" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="recentsLimit" value="5" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Muhammad Saif Ullah\IdeaProjects\test1\src\Dashboard\Screens" />
+      <recent name="C:\Users\Muhammad Saif Ullah\IdeaProjects\test1\src\ForgetPassword" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="Dashboard.Screens" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+      <option name="VMOptions" />
+      <option name="arguments" />
+      <option name="filePath" />
+      <option name="scope" value="ALL" />
+      <option name="testName" />
+      <method />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="LoginActivities.Main" />
+      <module name="test1" />
+      <option name="VM_PARAMETERS" value="--add-exports javafx.base/com.sun.javafx.event=com.jfoenix --add-exports javafx.base/com.sun.javafx.binding=com.jfoenix --add-exports javafx.graphics/com.sun.javafx.stage=com.jfoenix --add-exports javafx.controls/com.sun.javafx.scene.control.behavior=com.jfoenix" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Database.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+      <created>1359379246138</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1359379246138</updated>
+      <workItem from="1359379250712" duration="1302000" />
+      <workItem from="1602764199370" duration="315000" />
+      <workItem from="1602764833623" duration="3601000" />
+      <workItem from="1602926607600" duration="5537000" />
+      <workItem from="1603530909253" duration="16445000" />
+      <workItem from="1603738403889" duration="18284000" />
+      <workItem from="1603901766041" duration="24854000" />
+      <workItem from="1604167948180" duration="14486000" />
+      <workItem from="1604217404709" duration="24770000" />
+      <workItem from="1604300019948" duration="28304000" />
+      <workItem from="1604396246072" duration="1417000" />
+      <workItem from="1604405922808" duration="23419000" />
+      <workItem from="1604508688942" duration="7227000" />
+      <workItem from="1604526755764" duration="1619000" />
+      <workItem from="1604568709178" duration="3963000" />
+      <workItem from="1604584451769" duration="3699000" />
+      <workItem from="1604655755362" duration="22943000" />
+      <workItem from="1604755199560" duration="2865000" />
+      <workItem from="1604759228557" duration="33225000" />
+      <workItem from="1604911899538" duration="22332000" />
+      <workItem from="1604951350725" duration="364000" />
+      <workItem from="1604951857406" duration="2288000" />
+      <workItem from="1605024648163" duration="16322000" />
+      <workItem from="1605187681136" duration="9129000" />
+      <workItem from="1605267149463" duration="6260000" />
+      <workItem from="1605441225205" duration="4843000" />
+      <workItem from="1605513258480" duration="24206000" />
+      <workItem from="1605602678061" duration="19148000" />
+      <workItem from="1605690839474" duration="20798000" />
+      <workItem from="1606059553275" duration="2669000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="568" y="232" key="#Notifications" timestamp="1604758846220">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="568" y="232" key="#Notifications/0.0.1366.738@0.0.1366.738" timestamp="1604758846220" />
+    <state x="72" y="210" key="#SQL_Dialects" timestamp="1604656384589">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="72" y="210" key="#SQL_Dialects/0.0.1366.738@0.0.1366.738" timestamp="1604656384589" />
+    <state x="274" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604527707151">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="274" y="27" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1604527707151" />
+    <state x="437" y="238" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1604951164805">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="437" y="238" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1366.738@0.0.1366.738" timestamp="1604951164805" />
+    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser" timestamp="1605625881531">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="488" y="75" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1605625881531" />
+    <state x="389" y="144" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1604127854583">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="389" y="144" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.738@0.0.1366.738" timestamp="1604127854583" />
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603830637904">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1603830637904" />
+    <state x="389" y="110" key="FileChooserDialogImpl" timestamp="1606061545791">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="389" y="110" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1606061545791" />
+    <state x="561" y="267" key="Github.ShareDialog" timestamp="1606062153616">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="561" y="267" key="Github.ShareDialog/0.0.1366.738@0.0.1366.738" timestamp="1606062153616" />
+    <state x="456" y="67" key="Github.UntrackedFilesDialog" timestamp="1606062306927">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="456" y="67" key="Github.UntrackedFilesDialog/0.0.1366.738@0.0.1366.738" timestamp="1606062306927" />
+    <state width="1323" height="46" key="GridCell.Tab.0.bottom" timestamp="1605729643832">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="46" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1605729643832" />
+    <state width="1323" height="276" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1605025852600" />
+    <state width="1323" height="46" key="GridCell.Tab.0.center" timestamp="1605729643832">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="46" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1605729643832" />
+    <state width="1323" height="276" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1605025852600" />
+    <state width="1323" height="46" key="GridCell.Tab.0.left" timestamp="1605729643831">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="46" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1605729643831" />
+    <state width="1323" height="276" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1605025852600" />
+    <state width="1323" height="46" key="GridCell.Tab.0.right" timestamp="1605729643832">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="46" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1605729643832" />
+    <state width="1323" height="276" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1605025852600" />
+    <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1602928315479">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1366.738@0.0.1366.738" timestamp="1602928315479" />
+    <state x="100" y="0" key="SettingsEditor" timestamp="1606062077788">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="100" y="0" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1606062077788" />
+    <state x="287" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1604406670839">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="287" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1366.738@0.0.1366.738" timestamp="1604406670839" />
+    <state x="65" y="0" key="new project wizard" timestamp="1605692066907">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="65" y="0" key="new project wizard/0.0.1366.738@0.0.1366.738" timestamp="1605692066907" />
+    <state x="324" y="95" width="700" height="530" key="recent.locations.popup" timestamp="1603648388567">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="324" y="95" width="700" height="530" key="recent.locations.popup/0.0.1366.738@0.0.1366.738" timestamp="1603648388567" />
+    <state x="339" y="165" width="672" height="677" key="run.anything.popup" timestamp="1605697149434">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="165" width="672" height="677" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1605697149434" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1605278439263">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1605278439263" />
+  </component>
+</project>

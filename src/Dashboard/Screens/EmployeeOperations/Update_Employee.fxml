@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="514.0" prefWidth="710.0" style="-fx-background-color: #666666;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Dashboard.Screens.EmployeeOperations.OperationsController">
+   <children>
+      <JFXTextField fx:id="cnic_t" focusColor="GOLD" layoutX="473.0" layoutY="67.0" prefHeight="25.0" prefWidth="186.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+      <Label layoutX="275.0" layoutY="10.0" prefHeight="30.0" prefWidth="194.0" text="UPDATE EMPLOYEE" textFill="GOLD" underline="true">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="290.0" layoutY="388.0" onAction="#onClickSave" prefHeight="43.0" prefWidth="123.0" style="-fx-background-radius: 15px; -fx-background-color: gold;" text="Save" textFill="#3c3a3a">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField fx:id="name_t" focusColor="GOLD" layoutX="129.0" layoutY="67.0" prefHeight="25.0" prefWidth="186.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+      <Label layoutX="46.0" layoutY="70.0" prefHeight="21.0" prefWidth="68.0" text=" Name" textFill="GOLD">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="398.0" layoutY="77.0" prefHeight="21.0" prefWidth="57.0" text="CNIC" textFill="GOLD">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="id_t" focusColor="GOLD" layoutX="129.0" layoutY="130.0" prefHeight="25.0" prefWidth="186.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+      <JFXTextField fx:id="phone_t" focusColor="GOLD" layoutX="482.0" layoutY="132.0" prefHeight="25.0" prefWidth="186.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+      <Label layoutX="50.0" layoutY="136.0" prefHeight="21.0" prefWidth="68.0" text="ID" textFill="GOLD">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="401.0" layoutY="141.0" prefHeight="21.0" prefWidth="82.0" text="Phone No" textFill="GOLD">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="submit_l" layoutX="252.0" layoutY="337.0" prefHeight="30.0" prefWidth="218.0" textFill="GOLD">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="type_t" focusColor="GOLD" layoutX="129.0" layoutY="191.0" prefHeight="25.0" prefWidth="186.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+      <Label layoutX="49.0" layoutY="200.0" prefHeight="21.0" prefWidth="57.0" text="Type" textFill="GOLD">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="salary_t" focusColor="GOLD" layoutX="487.0" layoutY="193.0" prefHeight="25.0" prefWidth="186.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+      <Label layoutX="405.0" layoutY="199.0" prefHeight="21.0" prefWidth="57.0" text="Salary" textFill="GOLD">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="address_t" focusColor="GOLD" layoutX="132.0" layoutY="263.0" prefHeight="25.0" prefWidth="408.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+      <Label layoutX="44.0" layoutY="265.0" prefHeight="21.0" prefWidth="68.0" text="Address" textFill="GOLD">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
