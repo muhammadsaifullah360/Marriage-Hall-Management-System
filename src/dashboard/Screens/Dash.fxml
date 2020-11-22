@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="602.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.DashboardController">
+   <children>
+      <AnchorPane layoutX="82.0" layoutY="191.0" prefHeight="122.0" prefWidth="278.0" style="-fx-background-color: orange;">
+         <children>
+            <Label layoutX="84.0" layoutY="39.0" text="Number of Bookings" />
+         </children></AnchorPane>
+      <AnchorPane layoutX="460.0" layoutY="191.0" prefHeight="122.0" prefWidth="259.0" style="-fx-background-color: orange;" />
+      <AnchorPane layoutX="25.0" layoutY="507.0" prefHeight="80.0" prefWidth="844.0" style="-fx-background-color: gold; -fx-background-radius: 15px;">
+         <children>
+            <JFXButton buttonType="RAISED" layoutX="715.0" layoutY="20.0" onAction="#onClickSetting" prefHeight="39.0" prefWidth="87.0" style="-fx-background-color: #666666; -fx-background-radius: 8px;" text="Tools" textFill="WHITE">
+               <font>
+                  <Font name="OCR A Extended" size="14.0" />
+               </font>
+            </JFXButton>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>
