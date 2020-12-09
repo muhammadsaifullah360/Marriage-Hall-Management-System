@@ -1,9 +1,6 @@
 package database;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class DBService {
     public static Statement statement;
@@ -16,8 +13,18 @@ public class DBService {
             String password = "hr";
             Connection connection = DriverManager.getConnection(url, username, password);
             statement = connection.createStatement();
-        } catch (SQLException | ClassNotFoundException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException | ClassNotFoundException exception) {
+            exception.printStackTrace();
         }
+    }
+    
+    public static ResultSet executeQuery(String query) {
+        ResultSet resultSet = null;
+        try {
+            resultSet = statement.executeQuery(query);
+        } catch (SQLException sqlException) {
+            System.out.println(sqlException.getMessage());
+        }
+        return resultSet;
     }
 }
