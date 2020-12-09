@@ -1,8 +1,8 @@
 package dashboard.screens;
 
-import database.DBService;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextArea;
+import database.DBService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -18,7 +18,6 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class MenuController implements Initializable {
-    
     ObservableList<String> MenuList = FXCollections.observableArrayList();
     ObservableList<String> MenuSelection = FXCollections.observableArrayList();
     ObservableList<String> facility = FXCollections.observableArrayList();
