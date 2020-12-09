@@ -1,4 +1,4 @@
-package dashboard.Screens;
+package dashboard.screens;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;

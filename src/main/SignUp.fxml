@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #666666;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.Screens.settingController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #666666;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.screens.settingController">
    <children>
       <JFXTextField fx:id="lastname_txt" focusColor="GOLD" layoutX="227.0" layoutY="87.0" prefHeight="25.0" prefWidth="186.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
       <Label layoutX="232.0" layoutY="10.0" prefHeight="17.0" prefWidth="126.0" text="SignUp Here" textFill="GOLD" underline="true">

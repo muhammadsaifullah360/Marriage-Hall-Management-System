@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="514.0" prefWidth="710.0" style="-fx-background-color: #666666;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.Screens.EmployeeOperations.OperationsController">
+<AnchorPane prefHeight="514.0" prefWidth="710.0" style="-fx-background-color: #666666;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.screens.employeeOperations.OperationsController">
    <children>
       <JFXTextField fx:id="cnic_t" focusColor="GOLD" layoutX="473.0" layoutY="67.0" prefHeight="25.0" prefWidth="186.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
       <Label layoutX="275.0" layoutY="10.0" prefHeight="30.0" prefWidth="194.0" text="UPDATE EMPLOYEE" textFill="GOLD" underline="true">

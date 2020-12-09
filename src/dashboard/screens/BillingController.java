@@ -1,4 +1,4 @@
-package dashboard.Screens;
+package dashboard.screens;
 
 public class BillingController {
 }

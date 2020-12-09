@@ -1,4 +1,4 @@
-package dashboard.Screens;
+package dashboard.screens;
 
 import database.DBService;
 import com.jfoenix.controls.*;

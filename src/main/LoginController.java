@@ -1,4 +1,4 @@
-package login.activities;
+package main;
 
 import database.DBService;
 import com.jfoenix.controls.JFXButton;

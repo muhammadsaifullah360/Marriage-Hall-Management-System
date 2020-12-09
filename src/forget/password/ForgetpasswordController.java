@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class ForgetpasswordController {
     public void BackToLoginpage(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/login/activities/LoginPage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/main/LoginPage.fxml"));
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

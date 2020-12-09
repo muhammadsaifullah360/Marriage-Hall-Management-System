@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="648.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.Screens.MenuController">
+<AnchorPane prefHeight="648.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.screens.MenuController">
    <children>
       <Label layoutX="48.0" layoutY="80.0" prefHeight="30.0" prefWidth="204.0" text="Menu Service Option:" underline="true">
          <font>

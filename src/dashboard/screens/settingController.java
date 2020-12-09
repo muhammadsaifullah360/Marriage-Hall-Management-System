@@ -1,4 +1,4 @@
-package dashboard.Screens;
+package dashboard.screens;
 
 import database.DBService;
 import com.jfoenix.controls.JFXPasswordField;
@@ -64,7 +64,7 @@ public class settingController {
     
     public void onclickSignup(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/login/activities/SignUp.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/main/SignUp.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setTitle("Create New Account");
@@ -116,7 +116,7 @@ public class settingController {
     }
     
     public void closeSignup(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/dashboard/Screens/setting.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/dashboard/screens/setting.fxml"));
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -124,7 +124,7 @@ public class settingController {
     }
     
     public void ChangePasswordBtn(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/login/activities/changePassword.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/main/ChangePassword.fxml"));
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Create New Account");
@@ -160,7 +160,7 @@ public class settingController {
     }
     
     public void BackToTools(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/dashboard/Screens/setting.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/dashboard/screens/setting.fxml"));
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

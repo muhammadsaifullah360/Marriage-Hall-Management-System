@@ -1,6 +1,6 @@
-package dashboard.Screens.EmployeeOperations;
+package dashboard.screens.employeeOperations;
 
-import dashboard.Screens.Employee;
+import dashboard.screens.Employee;
 import database.DBService;
 import com.jfoenix.controls.*;
 import javafx.event.ActionEvent;

@@ -1,6 +1,6 @@
-package dashboard.Screens;
+package dashboard.screens;
 
-import dashboard.Screens.EmployeeOperations.OperationsController;
+import dashboard.screens.employeeOperations.OperationsController;
 import database.DBService;
 import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
@@ -81,7 +81,7 @@ public class EmployeeController {
     }
     
     public void onClickAdd(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/dashboard/Screens/EmployeeOperations/EmpOperations.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/dashboard/screens/employeeOperations/EmpOperations.fxml"));
         Parent root1 = (Parent) fxmlLoader.load();
         Stage stage = new Stage();
         stage.setTitle("Add Employee");
@@ -90,7 +90,7 @@ public class EmployeeController {
     }
     
     public void onClickUpdate(ActionEvent event) throws IOException, SQLException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/dashboard/Screens/EmployeeOperations/EmpOperations.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/dashboard/screens/employeeOperations/EmpOperations.fxml"));
         Parent root1 = fxmlLoader.load();
         OperationsController controller = fxmlLoader.getController();
         controller.initData(E_Table.getSelectionModel().getSelectedItem());
