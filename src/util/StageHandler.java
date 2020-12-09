@@ -13,7 +13,7 @@ public class StageHandler {
     static public Stage createStage(String fxmlPath, String title) {
         Parent root = null;
         try {
-            root = FXMLLoader.load(StageHandler.class.getResource("/forget/password/ForgetPassword.fxml"));
+            root = FXMLLoader.load(StageHandler.class.getResource("/login/ForgetPassword.fxml"));
         } catch (IOException e) {
             System.out.println(e.getMessage());
             System.out.println("FXML Loading Error!!!");

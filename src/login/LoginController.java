@@ -1,4 +1,4 @@
-package main;
+package login;
 
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -44,7 +44,7 @@ public class LoginController {
     
     @FXML
     private void forgetPassword() {
-        String fxmlPath = "/forget/password/ForgetPassword.fxml";
+        String fxmlPath = "/login/ForgetPassword.fxml";
         String title = "Forget Password";
         StageHandler.createStage(fxmlPath, title).show();
     }

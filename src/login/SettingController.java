@@ -1,8 +1,8 @@
-package dashboard.screens;
+package login;
 
-import database.DBService;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import database.DBService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.SQLException;
 
-public class settingController {
+public class SettingController {
     
     @FXML
     private JFXTextField c_username_txt;
@@ -64,7 +64,7 @@ public class settingController {
     
     public void onclickSignup(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/main/SignUp.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/login/SignUp.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setTitle("Create New Account");
@@ -116,7 +116,7 @@ public class settingController {
     }
     
     public void closeSignup(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/dashboard/screens/setting.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/login/Setting.fxml"));
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -124,7 +124,7 @@ public class settingController {
     }
     
     public void ChangePasswordBtn(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/main/ChangePassword.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/login/ChangePassword.fxml"));
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setTitle("Create New Account");
@@ -160,7 +160,7 @@ public class settingController {
     }
     
     public void BackToTools(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/dashboard/screens/setting.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/login/Setting.fxml"));
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);

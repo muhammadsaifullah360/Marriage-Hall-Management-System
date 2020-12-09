@@ -15,7 +15,7 @@ public class Main extends Application {
     
     @Override
     public void start(Stage primaryStage) throws Exception {
-        new DBService();
+        DBService.createConnection();
         Parent root = FXMLLoader.load(getClass().getResource("/dashboard/Dashboard.fxml"));
         primaryStage.setTitle("Hall Management System.");
         primaryStage.setScene(new Scene(root));

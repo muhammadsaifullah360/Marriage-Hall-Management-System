@@ -8,4 +8,5 @@ module MHM {
     opens dashboard.screens;
     opens dashboard.screens.employeeOperations;
     opens main;
+    opens login;
 }

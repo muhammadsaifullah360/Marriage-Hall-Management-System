@@ -45,7 +45,7 @@ public class DashboardController {
     }
     
     public void onclickLogout(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/main/LoginPage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/login/LoginPage.fxml"));
         Scene scene = new Scene(root);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
@@ -53,8 +53,8 @@ public class DashboardController {
     }
     
     public void onClickSetting(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/dashboard/screens/setting.fxml"));
-        Parent root1 = (Parent) fxmlLoader.load();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/login/Setting.fxml"));
+        Parent root1 = fxmlLoader.load();
         Stage stage = new Stage();
         stage.setTitle("Settings");
         stage.setScene(new Scene(root1));
