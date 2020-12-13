@@ -13,7 +13,7 @@ public class DBService {
         if (connection == null) {
             try {
                 Class.forName("oracle.jdbc.driver.OracleDriver");
-                String username = "Saifullah";
+                String username = "hr";
                 String url = "jdbc:oracle:thin:@localhost:1521:xe";
                 String password = "hr";
                 Connection connection = DriverManager.getConnection(url, username, password);

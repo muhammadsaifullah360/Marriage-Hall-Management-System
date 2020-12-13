@@ -1,10 +1,12 @@
 package dashboard.screens;
 
+import com.jfoenix.controls.JFXButton;
 import dashboard.screens.employeeOperations.OperationsController;
 import database.DBService;
-import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -45,6 +47,7 @@ public class EmployeeController {
     @FXML
     private TableColumn<Employee, String> cnic_col;
     
+    
     public void initialize() {
         
         id_col.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -53,7 +56,37 @@ public class EmployeeController {
         cnic_col.setCellValueFactory(new PropertyValueFactory<>("cnic"));
         list_final = getData();
         E_Table.setItems(list_final);
+        
+        FilteredList<Employee> filteredData = new FilteredList<>(list_final, b -> true);
+        searchField_btn.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(Employee -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                
+                if (Employee.getId() != -1) {
+                    return true;
+
+                } else if (Employee.getFirstName().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;
+                    
+                } else if (Employee.getCnic().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+                    return true;
+                    
+                } else if (String.valueOf(Employee.getLastName()).indexOf(lowerCaseFilter) != -1)
+                    return true;
+                
+                else
+                    return false;
+            });
+        });
+        
+        SortedList<Employee> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(E_Table.comparatorProperty());
+        E_Table.setItems(sortedData);
     }
+    
     
     public static ObservableList<Employee> getData() {
         ObservableList<Employee> list = FXCollections.observableArrayList();

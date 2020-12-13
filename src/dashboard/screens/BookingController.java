@@ -55,6 +55,9 @@ public class BookingController implements Initializable {
     @FXML
     private JFXTextField email_of_customer;
     
+    @FXML
+    private JFXTextField invoiceNoTxT;
+    
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList<String> list = FXCollections.observableArrayList("Wedding", "Seminar", "Party", "Mehfill");
@@ -68,7 +71,7 @@ public class BookingController implements Initializable {
         /// todo  implementtation if empty query not run
         try {
             
-            String query = String.format("Insert Into Event(EventType, EventStartTime,EventDate ,NoOfPerson, NameOfCustomer, PhoneNoOfCustomer, EmailOfCustomer,EventEndingTime, HallNo) Values('%s', to_date('2020-12-12 %s',  'yyyy-mm-dd hh24:mi:ss'), to_date('%s','yyyy-mm-dd'), '%s', '%s', '%s', '%s',to_date('2020-12-12 %s',  'yyyy-mm-dd hh24:mi:ss'), '%s')",
+            String query = String.format("Insert Into Event_Booking( EventType, EventStartTime,EventDate ,NoOfPerson, NameOfCustomer, PhoneNoOfCustomer, EmailOfCustomer,EventEndingTime, HallNo, INVOICENO) Values ('%s', to_date('2020-12-12 %s',  'yyyy-mm-dd hh24:mi:ss'), to_date('%s','yyyy-mm-dd'), '%s', '%s', '%s', '%s',to_date('2020-12-12 %s',  'yyyy-mm-dd hh24:mi:ss'), '%s', %d )",
                     event_type_box.getValue(),
                     event_time.getValue(),
                     event_date.getValue(),
@@ -77,8 +80,8 @@ public class BookingController implements Initializable {
                     phone_no_of_customer.getText(),
                     email_of_customer.getText(),
                     event_ending_time.getValue(),
-                    hall_no.getValue());
-            
+                    hall_no.getValue(),
+                    Integer.parseInt(invoiceNoTxT.getText()));
             
             DBService.statement.executeUpdate(query);
             MessageLabelOfEventSaved.setText("Saved!");
@@ -99,6 +102,7 @@ public class BookingController implements Initializable {
         name_of_customer.clear();
         phone_no_of_customer.clear();
         email_of_customer.clear();
+        invoiceNoTxT.setText(null);
     }
     
     public void EventSearchBtn(ActionEvent event) {
@@ -106,14 +110,14 @@ public class BookingController implements Initializable {
         
         try {
             
-            String query = String.format("select * from event where EVENTDATE = to_date('%s','yyyy-mm-dd ') AND EVENTSTARTTIME = to_date('2020-12-12 %s','yyyy-mm-dd hh24-mi-ss')", SearchDate.getValue(), SearchTime.getValue());
+            String query = String.format("select * from Event_Booking where EVENTDATE = to_date('%s','yyyy-mm-dd ') AND EVENTSTARTTIME = to_date('2020-12-12 %s','yyyy-mm-dd hh24-mi-ss')", SearchDate.getValue(), SearchTime.getValue());
             
             ResultSet rs = DBService.statement.executeQuery(query);
             while (rs.next()) {
 //                StringBuilder result = new StringBuilder();
 //                result.append("Event Type =   "+rs.getString(1));
 //                result.append("\n");
-                ShowSearchResult.setText("Event Type =   " + rs.getString(1) + "\nNo Of Persons =  " + rs.getString(4) + "\nName Of Customer = " + rs.getString(5) + "\nPhone.No Of Customer =  " + rs.getString(7) + "\nEvent Ending Time =  " + rs.getString(8) + "\nHall No  =  " + rs.getString(9));
+                ShowSearchResult.setText("Event Type =   " + rs.getString(1) + "\nNo Of Persons =  " + rs.getString(4) + "\nName Of Customer = " + rs.getString(5) + "\nPhone.No Of Customer =  " + rs.getString(7) + "\n  Event Ending Time =  " + rs.getString(8) + "\nHall No  =  " + rs.getString(9));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
