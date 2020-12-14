@@ -14,6 +14,11 @@ public class Employee {
     SimpleStringProperty age;
     SimpleStringProperty DOB;
     SimpleStringProperty nationality;
+    SimpleStringProperty type;
+    SimpleStringProperty address;
+    SimpleIntegerProperty salary;
+    
+    
     
     
     public Employee(int id, String firstName, String lastName, String fatherName, String emrName, String cnic,String age ,String DOB,  String nationality) {
@@ -28,6 +33,12 @@ public class Employee {
         this.nationality = new SimpleStringProperty(nationality);
     }
     
+//    public Employee(String type, String cur_addres, int salary) {
+//        this.type = new SimpleStringProperty(type);
+//        this.address = new SimpleStringProperty(cur_addres);
+//        this.salary =new SimpleIntegerProperty(salary);
+//    }
+    
     public String getDOB() {
         return DOB.get();
     }
@@ -39,7 +50,6 @@ public class Employee {
     public SimpleStringProperty DOBProperty() {
         return DOB;
     }
- 
     
     public String getAge() {
         return age.get();
@@ -136,4 +146,41 @@ public class Employee {
     public SimpleStringProperty cnicProperty() {
         return cnic;
     }
+    
+    public int getSalary() {
+        return salary.get();
+    }
+    
+    public SimpleIntegerProperty salaryProperty() {
+        return salary;
+    }
+    
+    public void setSalary(int salary) {
+        this.salary.set(salary);
+    }
+    
+    public String getAddress() {
+        return address.get();
+    }
+    
+    public SimpleStringProperty addressProperty() {
+        return address;
+    }
+    
+    public void setAddress(String address) {
+        this.address.set(address);
+    }
+    
+    public String getType() {
+        return type.get();
+    }
+    
+    public SimpleStringProperty typeProperty() {
+        return type;
+    }
+    
+    public void setType(String type) {
+        this.type.set(type);
+    }
+    
 }

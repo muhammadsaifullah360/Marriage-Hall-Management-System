@@ -24,7 +24,6 @@ import java.sql.SQLException;
 
 public class EmployeeController {
     
-    
     ObservableList<Employee> list_final;
     @FXML
     private JFXButton add_btn;
@@ -46,7 +45,12 @@ public class EmployeeController {
     private TableColumn<Employee, String> Lname_col;
     @FXML
     private TableColumn<Employee, String> cnic_col;
-    
+    @FXML
+    private TableColumn<Employee, String> type_col;
+    @FXML
+    private TableColumn<Employee, Integer> salary_col;
+    @FXML
+    private TableColumn<Employee, String> address_col;
     
     public void initialize() {
         
@@ -54,6 +58,9 @@ public class EmployeeController {
         Fname_col.setCellValueFactory(new PropertyValueFactory<>("firstName"));
         Lname_col.setCellValueFactory(new PropertyValueFactory<>("lastName"));
         cnic_col.setCellValueFactory(new PropertyValueFactory<>("cnic"));
+//        type_col.setCellValueFactory(new PropertyValueFactory<>("type"));
+//        salary_col.setCellValueFactory(new PropertyValueFactory<>("salary"));
+//        address_col.setCellValueFactory(new PropertyValueFactory<>("address"));
         list_final = getData();
         E_Table.setItems(list_final);
         
@@ -64,16 +71,15 @@ public class EmployeeController {
                     return true;
                 }
                 String lowerCaseFilter = newValue.toLowerCase();
-                
-                if (Employee.getId() != -1) {
-                    return true;
 
-                } else if (Employee.getFirstName().toLowerCase().indexOf(lowerCaseFilter) != -1) {
+//                if (Employee.getId() != -1) {
+//                    return true;
+//
+//                } else
+                if (Employee.getFirstName().toLowerCase().indexOf(lowerCaseFilter) != -1) {
                     return true;
-                    
                 } else if (Employee.getCnic().toLowerCase().indexOf(lowerCaseFilter) != -1) {
                     return true;
-                    
                 } else if (String.valueOf(Employee.getLastName()).indexOf(lowerCaseFilter) != -1)
                     return true;
                 
@@ -87,13 +93,14 @@ public class EmployeeController {
         E_Table.setItems(sortedData);
     }
     
-    
     public static ObservableList<Employee> getData() {
         ObservableList<Employee> list = FXCollections.observableArrayList();
         try {
             
             String query = "Select ID, First_Name ,Last_Name,Father_Name, Emr_Name, Cnic, Age, to_char( DOB,'yyyy-mm-dd') as dob , Nationality from EMP_BASIC_DETAIL";
+            
             ResultSet rs = DBService.statement.executeQuery(query);
+            
             while (rs.next()) {
                 
                 list.add(new Employee(Integer.parseInt(String.valueOf(rs.getInt("ID"))),
@@ -107,8 +114,8 @@ public class EmployeeController {
                         rs.getString("Nationality")
                 ));
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
         return list;
     }
@@ -133,7 +140,25 @@ public class EmployeeController {
         stage.show();
     }
     
-    public void onClickDelete(ActionEvent event) throws SQLException {
+    public void onClickDelete(ActionEvent event) throws SQLException, IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/dashboard/screens/employeeOperations/View_Employee.fxml"));
+        Parent root1 = fxmlLoader.load();
+        OperationsController controller = fxmlLoader.getController();
+        controller.initData(E_Table.getSelectionModel().getSelectedItem());
+        Stage stage = new Stage();
+        stage.setTitle("Delete Employee Details");
+        stage.setScene(new Scene(root1));
+        stage.show();
+    }
     
+    public void onClickView(ActionEvent actionEvent) throws IOException, SQLException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/dashboard/screens/employeeOperations/View_Employee.fxml"));
+        Parent root1 = fxmlLoader.load();
+        OperationsController controller = fxmlLoader.getController();
+        controller.initData(E_Table.getSelectionModel().getSelectedItem());
+        Stage stage = new Stage();
+        stage.setTitle("View Employee Details");
+        stage.setScene(new Scene(root1));
+        stage.show();
     }
 }
