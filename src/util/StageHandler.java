@@ -10,14 +10,18 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class StageHandler {
+    public static FXMLLoader loader;
+    
     static public Stage createStage(String fxmlPath, String title) {
         Parent root = null;
         try {
-            root = FXMLLoader.load(StageHandler.class.getResource(fxmlPath));
+            loader = new FXMLLoader(StageHandler.class.getResource(fxmlPath));
+            root = loader.load();
         } catch (IOException e) {
             System.out.println(e.getMessage());
             System.out.println("FXML Loading Error!!!");
         }
+        assert root != null;
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setTitle(title);
