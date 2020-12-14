@@ -24,7 +24,7 @@
                   </ImageView>
                </children>
             </Pane>
-            <JFXButton fx:id="dashboardButton" onAction="#onclickDashboard" prefHeight="40.0" prefWidth="180.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="dashboard" textFill="WHITE">
+            <JFXButton fx:id="dashboardButton" onAction="#onclickDashboard" prefHeight="40.0" prefWidth="180.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Dashboard" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
