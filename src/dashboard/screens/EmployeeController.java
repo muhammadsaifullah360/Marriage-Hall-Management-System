@@ -66,31 +66,10 @@ public class EmployeeController {
         employee_table.setItems(employee_list);
     }
     
-    private void createSearchFilter() {
-        FilteredList<Employee> filteredData = new FilteredList<>(employee_list, b -> true);
-        searchField_btn.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredData.setPredicate(Employee -> {
-                if (newValue == null || newValue.isEmpty()) {
-                    return true;
-                }
-                String lowerCaseFilter = newValue.toLowerCase();
-                if (Employee.getFirstName().toLowerCase().contains(lowerCaseFilter)) {
-                    return true;
-                } else if (Employee.getCnic().toLowerCase().contains(lowerCaseFilter)) {
-                    return true;
-                } else return String.valueOf(Employee.getLastName()).contains(lowerCaseFilter);
-            });
-        });
-        
-        SortedList<Employee> sortedData = new SortedList<>(filteredData);
-        sortedData.comparatorProperty().bind(employee_table.comparatorProperty());
-        employee_table.setItems(sortedData);
-    }
-    
     public static void getData() {
         String query = "Select ID, First_Name ,Last_Name,Father_Name, Emr_Name, Cnic, Age, to_char( DOB,'yyyy-mm-dd') as dob , Nationality from EMP_BASIC_DETAIL";
+        ResultSet rs = DBService.executeQuery(query);
         try {
-            ResultSet rs = DBService.statement.executeQuery(query);
             while (rs.next()) {
                 employee_list.add(new Employee(Integer.parseInt(String.valueOf(rs.getInt("ID"))),
                         rs.getString("First_Name"),
@@ -106,6 +85,29 @@ public class EmployeeController {
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
+    }
+    
+    private void createSearchFilter() {
+        FilteredList<Employee> filteredData = new FilteredList<>(employee_list, b -> true);
+        searchField_btn.textProperty().addListener((observable, oldValue, newValue) -> {
+            filteredData.setPredicate(Employee -> {
+                if (newValue == null || newValue.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newValue.toLowerCase();
+                boolean matchFirstName = Employee.getFirstName().toLowerCase().contains(lowerCaseFilter);
+                boolean matchCNIC = Employee.getCnic().toLowerCase().contains(lowerCaseFilter);
+                boolean matchLastName = Employee.getLastName().toLowerCase().contains(lowerCaseFilter);
+                boolean matchID = false;
+                if (newValue.matches("\\d*"))
+                    matchID = Employee.getId() == Integer.parseInt(newValue.toLowerCase());
+                return matchFirstName || matchLastName || matchCNIC || matchID;
+            });
+        });
+        
+        SortedList<Employee> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(employee_table.comparatorProperty());
+        employee_table.setItems(sortedData);
     }
     
     public void add(ActionEvent event) throws IOException {
