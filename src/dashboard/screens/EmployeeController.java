@@ -66,6 +66,7 @@ public class EmployeeController {
     }
     
     public static void getData() {
+        employee_list.clear();
         String query = "Select ID, First_Name ,Last_Name,Father_Name, Emr_Name, Cnic, Age, to_char( DOB,'yyyy-mm-dd') as dob , Nationality from EMP_BASIC_DETAIL";
         ResultSet rs = DBService.executeQuery(query);
         try {
