@@ -9,37 +9,37 @@
    <content>
       <AnchorPane prefHeight="1900.0" prefWidth="785.0" style="-fx-background-color: #666666;">
          <children>
-            <JFXTextField fx:id="Father_name" editable="false" focusColor="GOLD" layoutX="558.0" layoutY="130.0" prefHeight="25.0" prefWidth="170.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="fatherName" editable="false" focusColor="GOLD" layoutX="558.0" layoutY="130.0" prefHeight="25.0" prefWidth="170.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="439.0" layoutY="135.0" prefHeight="21.0" prefWidth="103.0" text="Father Name" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="F_name_txt" editable="false" focusColor="GOLD" layoutX="554.0" layoutY="75.0" prefHeight="25.0" prefWidth="170.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="firstName" editable="false" focusColor="GOLD" layoutX="554.0" layoutY="75.0" prefHeight="25.0" prefWidth="170.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="439.0" layoutY="80.0" prefHeight="21.0" prefWidth="89.0" text="First Name" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="L_name_txt" editable="false" focusColor="GOLD" layoutX="195.0" layoutY="130.0" prefHeight="25.0" prefWidth="170.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="lastName" editable="false" focusColor="GOLD" layoutX="195.0" layoutY="130.0" prefHeight="25.0" prefWidth="170.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="59.0" layoutY="135.0" prefHeight="21.0" prefWidth="94.0" text="Last  Name" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="Emr_name" editable="false" focusColor="GOLD" layoutX="206.0" layoutY="187.0" prefHeight="25.0" prefWidth="178.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="emergContactName" editable="false" focusColor="GOLD" layoutX="206.0" layoutY="187.0" prefHeight="25.0" prefWidth="178.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="62.0" layoutY="192.0" prefHeight="21.0" prefWidth="139.0" text="Emr.Contact Name" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="id_txt" editable="false" focusColor="GOLD" layoutX="192.0" layoutY="70.0" prefHeight="25.0" prefWidth="181.0" style="-fx-text-inner-color: black; -fx-background-color: white; -fx-border-color: gold; -fx-border-radius: 5px; -fx-background-radius: 5px; -jfx-unfocus-color: transparent;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="id" editable="false" focusColor="GOLD" layoutX="192.0" layoutY="70.0" prefHeight="25.0" prefWidth="181.0" style="-fx-text-inner-color: black; -fx-background-color: white; -fx-border-color: gold; -fx-border-radius: 5px; -fx-background-radius: 5px; -jfx-unfocus-color: transparent;" unFocusColor="WHITE" />
             <Label layoutX="60.0" layoutY="75.0" prefHeight="21.0" prefWidth="101.0" text="#ID" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="cnic_txt" editable="false" focusColor="GOLD" layoutX="558.0" layoutY="186.0" prefHeight="25.0" prefWidth="170.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="cnicNo" editable="false" focusColor="GOLD" layoutX="558.0" layoutY="186.0" prefHeight="25.0" prefWidth="170.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="441.0" layoutY="192.0" prefHeight="21.0" prefWidth="89.0" text="CNIC. No" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -55,43 +55,43 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="p_address" editable="false" focusColor="GOLD" layoutX="201.0" layoutY="557.0" prefHeight="25.0" prefWidth="513.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="perAddress" editable="false" focusColor="GOLD" layoutX="201.0" layoutY="557.0" prefHeight="25.0" prefWidth="513.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="41.0" layoutY="562.0" prefHeight="21.0" prefWidth="147.0" text="Permanent Address" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="c_address" editable="false" focusColor="GOLD" layoutX="202.0" layoutY="614.0" prefHeight="25.0" prefWidth="512.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="currAddress" editable="false" focusColor="GOLD" layoutX="202.0" layoutY="614.0" prefHeight="25.0" prefWidth="512.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="44.0" layoutY="619.0" prefHeight="21.0" prefWidth="140.0" text="Current Address" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="age_txt" editable="false" focusColor="GOLD" layoutX="195.0" layoutY="237.0" prefHeight="25.0" prefWidth="181.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="age" editable="false" focusColor="GOLD" layoutX="195.0" layoutY="237.0" prefHeight="25.0" prefWidth="181.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="63.0" layoutY="242.0" prefHeight="21.0" prefWidth="101.0" text="Age" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="fax_txt" editable="false" focusColor="GOLD" layoutX="537.0" layoutY="505.0" prefHeight="25.0" prefWidth="176.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="faxNo" editable="false" focusColor="GOLD" layoutX="537.0" layoutY="505.0" prefHeight="25.0" prefWidth="176.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="418.0" layoutY="515.0" prefHeight="21.0" prefWidth="103.0" text="Fax No." textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="phone_txt" editable="false" focusColor="GOLD" layoutX="533.0" layoutY="452.0" prefHeight="25.0" prefWidth="177.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="PhoneNo" editable="false" focusColor="GOLD" layoutX="533.0" layoutY="452.0" prefHeight="25.0" prefWidth="177.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="418.0" layoutY="457.0" prefHeight="21.0" prefWidth="89.0" text="Phone No." textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="o_phone_txt" editable="false" focusColor="GOLD" layoutX="174.0" layoutY="500.0" prefHeight="25.0" prefWidth="179.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="otherPhoneNo" editable="false" focusColor="GOLD" layoutX="174.0" layoutY="500.0" prefHeight="25.0" prefWidth="179.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="38.0" layoutY="506.0" prefHeight="21.0" prefWidth="123.0" text="Other Phone No." textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="email_txt" editable="false" focusColor="GOLD" layoutX="171.0" layoutY="447.0" prefHeight="25.0" prefWidth="181.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="email" editable="false" focusColor="GOLD" layoutX="171.0" layoutY="447.0" prefHeight="25.0" prefWidth="181.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="39.0" layoutY="452.0" prefHeight="21.0" prefWidth="101.0" text="Email" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -103,7 +103,7 @@
                </font>
             </Label>
             <Separator layoutY="375.0" prefHeight="9.0" prefWidth="784.0" style="-fx-background-color: gold;" />
-            <JFXTextField fx:id="inst_txt" editable="false" focusColor="GOLD" layoutX="539.0" layoutY="744.0" prefHeight="25.0" prefWidth="176.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="Institute" editable="false" focusColor="GOLD" layoutX="539.0" layoutY="744.0" prefHeight="25.0" prefWidth="176.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="420.0" layoutY="754.0" prefHeight="21.0" prefWidth="103.0" text="Institute" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -115,20 +115,20 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="E_board" editable="false" focusColor="GOLD" layoutX="178.0" layoutY="797.0" prefHeight="25.0" prefWidth="178.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="examBoard" editable="false" focusColor="GOLD" layoutX="178.0" layoutY="797.0" prefHeight="25.0" prefWidth="178.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="43.0" layoutY="802.0" prefHeight="21.0" prefWidth="119.0" text="Exam Board" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="t_marks" editable="false" focusColor="GOLD" layoutX="539.0" layoutY="799.0" prefHeight="25.0" prefWidth="176.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="totalMarks" editable="false" focusColor="GOLD" layoutX="539.0" layoutY="799.0" prefHeight="25.0" prefWidth="176.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="426.0" layoutY="808.0" prefHeight="21.0" prefWidth="89.0" text="Total Marks" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
             <JFXDatePicker fx:id="dob" defaultColor="GOLD" editable="false" layoutX="558.0" layoutY="244.0" prefHeight="28.0" prefWidth="200.0" style="-fx-text-inner-color: white;" />
-            <JFXTextField fx:id="N_txt" editable="false" focusColor="GOLD" layoutX="168.0" layoutY="308.0" prefHeight="25.0" prefWidth="181.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="nationality" editable="false" focusColor="GOLD" layoutX="168.0" layoutY="308.0" prefHeight="25.0" prefWidth="181.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="63.0" layoutY="313.0" prefHeight="21.0" prefWidth="101.0" text="Nationality" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -146,7 +146,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="o_marks" editable="false" focusColor="GOLD" layoutX="176.0" layoutY="849.0" prefHeight="25.0" prefWidth="179.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="obtainMarks" editable="false" focusColor="GOLD" layoutX="176.0" layoutY="849.0" prefHeight="25.0" prefWidth="179.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="40.0" layoutY="855.0" prefHeight="21.0" prefWidth="123.0" text="Obtained Marks" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -169,26 +169,26 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXDatePicker fx:id="d_o_S" defaultColor="GOLD" editable="false" layoutX="180.0" layoutY="962.0" prefHeight="28.0" prefWidth="181.0" style="-fx-text-inner-color: white; -jfx-unfocus-color: white;" />
+            <JFXDatePicker fx:id="dateOfStarting" defaultColor="GOLD" editable="false" layoutX="180.0" layoutY="962.0" prefHeight="28.0" prefWidth="181.0" style="-fx-text-inner-color: white; -jfx-unfocus-color: white;" />
             <Label layoutX="412.0" layoutY="972.0" prefHeight="21.0" prefWidth="144.0" text="Date Of Complition" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXDatePicker fx:id="d_o_comp" defaultColor="GOLD" editable="false" layoutX="561.0" layoutY="962.0" prefHeight="28.0" prefWidth="181.0" style="-fx-text-inner-color: white; -jfx-unfocus-color: white;" />
+            <JFXDatePicker fx:id="dateOfCompletion" defaultColor="GOLD" editable="false" layoutX="561.0" layoutY="962.0" prefHeight="28.0" prefWidth="181.0" style="-fx-text-inner-color: white; -jfx-unfocus-color: white;" />
             <Separator layoutX="-1.0" layoutY="1012.0" prefHeight="8.0" prefWidth="784.0" style="-fx-background-color: gold;" />
             <Label layoutX="350.0" layoutY="1042.0" prefHeight="34.0" prefWidth="231.0" text="Skills Details" textFill="GOLD" underline="true">
                <font>
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="s_org" editable="false" focusColor="GOLD" layoutX="540.0" layoutY="1099.0" prefHeight="25.0" prefWidth="176.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="skillOrg" editable="false" focusColor="GOLD" layoutX="540.0" layoutY="1099.0" prefHeight="25.0" prefWidth="176.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="421.0" layoutY="1109.0" prefHeight="21.0" prefWidth="103.0" text="Organization" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="s_cer_name" editable="false" focusColor="GOLD" layoutX="177.0" layoutY="1094.0" prefHeight="25.0" prefWidth="179.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="skillCertificateName" editable="false" focusColor="GOLD" layoutX="177.0" layoutY="1094.0" prefHeight="25.0" prefWidth="179.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="41.0" layoutY="1100.0" prefHeight="21.0" prefWidth="123.0" text="Certifcate Name" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -199,13 +199,13 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXDatePicker fx:id="s_start_date" defaultColor="GOLD" editable="false" layoutX="179.0" layoutY="1150.0" prefHeight="28.0" prefWidth="181.0" style="-fx-text-inner-color: white; -jfx-unfocus-color: white;" />
+            <JFXDatePicker fx:id="skillDateOfStarting" defaultColor="GOLD" editable="false" layoutX="179.0" layoutY="1150.0" prefHeight="28.0" prefWidth="181.0" style="-fx-text-inner-color: white; -jfx-unfocus-color: white;" />
             <Label layoutX="423.0" layoutY="1160.0" prefHeight="21.0" prefWidth="125.0" text="Date Of Ending" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXDatePicker fx:id="s_end_date" defaultColor="GOLD" editable="false" layoutX="561.0" layoutY="1150.0" prefHeight="28.0" prefWidth="181.0" style="-fx-text-inner-color: white; -jfx-unfocus-color: white;" />
+            <JFXDatePicker fx:id="skillDateOfEnding" defaultColor="GOLD" editable="false" layoutX="561.0" layoutY="1150.0" prefHeight="28.0" prefWidth="181.0" style="-fx-text-inner-color: white; -jfx-unfocus-color: white;" />
             <JFXTextField fx:id="name_txt221121" editable="false" focusColor="GOLD" layoutX="220.0" layoutY="1211.0" prefHeight="25.0" prefWidth="179.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="41.0" layoutY="1217.0" prefHeight="21.0" prefWidth="174.0" text="Scan Copy Of Certifcate" textFill="GOLD">
                <font>
@@ -217,7 +217,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextArea fx:id="s_remarks" editable="false" layoutX="179.0" layoutY="1276.0" prefHeight="64.0" prefWidth="452.0" promptText="Enter Remarks Here!" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-background-radius: 10px; -jfx-unfocus-color: transparent; -jfx-focus-color: transparent;">
+            <JFXTextArea fx:id="skillRemarks" editable="false" layoutX="179.0" layoutY="1276.0" prefHeight="64.0" prefWidth="452.0" promptText="Enter Remarks Here!" style="-fx-background-color: white; -fx-background-radius: 10px; -fx-background-radius: 10px; -jfx-unfocus-color: transparent; -jfx-focus-color: transparent;">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -231,13 +231,13 @@
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="e_org" editable="false" focusColor="GOLD" layoutX="540.0" layoutY="1442.0" prefHeight="25.0" prefWidth="176.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="experienceOrg" editable="false" focusColor="GOLD" layoutX="540.0" layoutY="1442.0" prefHeight="25.0" prefWidth="176.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="421.0" layoutY="1452.0" prefHeight="21.0" prefWidth="103.0" text="Organization" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="e_cer_name" editable="false" focusColor="GOLD" layoutX="177.0" layoutY="1437.0" prefHeight="25.0" prefWidth="179.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="exprCertificateName" editable="false" focusColor="GOLD" layoutX="177.0" layoutY="1437.0" prefHeight="25.0" prefWidth="179.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="41.0" layoutY="1443.0" prefHeight="21.0" prefWidth="123.0" text="Certifcate Name" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -248,14 +248,14 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXDatePicker fx:id="e_start_date" defaultColor="GOLD" editable="false" layoutX="179.0" layoutY="1493.0" prefHeight="28.0" prefWidth="181.0" style="-fx-text-inner-color: white; -jfx-unfocus-color: white;" />
+            <JFXDatePicker fx:id="experienceStartDate" defaultColor="GOLD" editable="false" layoutX="179.0" layoutY="1493.0" prefHeight="28.0" prefWidth="181.0" style="-fx-text-inner-color: white; -jfx-unfocus-color: white;" />
             <Label layoutX="423.0" layoutY="1503.0" prefHeight="21.0" prefWidth="125.0" text="Date Of Ending" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXDatePicker fx:id="e_end_date" defaultColor="GOLD" editable="false" layoutX="561.0" layoutY="1493.0" prefHeight="28.0" prefWidth="181.0" style="-fx-text-inner-color: white; -jfx-unfocus-color: white;" />
-            <JFXTextField fx:id="e_design" editable="false" focusColor="GOLD" layoutX="162.0" layoutY="1546.0" prefHeight="25.0" prefWidth="193.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXDatePicker fx:id="experienceEndDate" defaultColor="GOLD" editable="false" layoutX="561.0" layoutY="1493.0" prefHeight="28.0" prefWidth="181.0" style="-fx-text-inner-color: white; -jfx-unfocus-color: white;" />
+            <JFXTextField fx:id="experienceDesignation" editable="false" focusColor="GOLD" layoutX="162.0" layoutY="1546.0" prefHeight="25.0" prefWidth="193.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="40.0" layoutY="1552.0" prefHeight="21.0" prefWidth="123.0" text="Designation" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -291,25 +291,25 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="duty_design" editable="false" focusColor="GOLD" layoutX="545.0" layoutY="1763.0" prefHeight="25.0" prefWidth="193.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="dutyDesign" editable="false" focusColor="GOLD" layoutX="545.0" layoutY="1763.0" prefHeight="25.0" prefWidth="193.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="423.0" layoutY="1769.0" prefHeight="21.0" prefWidth="110.0" text="Designation" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="duty_type" editable="false" focusColor="GOLD" layoutX="162.0" layoutY="1818.0" prefHeight="25.0" prefWidth="193.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="dutyType" editable="false" focusColor="GOLD" layoutX="162.0" layoutY="1818.0" prefHeight="25.0" prefWidth="193.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
             <Label layoutX="40.0" layoutY="1824.0" prefHeight="21.0" prefWidth="110.0" text="Type" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXButton buttonType="RAISED" layoutX="472.0" layoutY="1831.0" onAction="#delete" prefHeight="34.0"
+            <JFXButton buttonType="RAISED" layoutX="472.0" layoutY="1831.0" onAction="#deleteEmpDetail" prefHeight="34.0"
                        prefWidth="115.0" style="-fx-background-color: gold;" text="Delete Employee">
                <font>
                   <Font name="System Bold" size="12.0"/>
                </font>
             </JFXButton>
-            <Label fx:id="delLabel" layoutX="605.0" layoutY="1839.0" prefHeight="21.0" prefWidth="110.0" textFill="GOLD">
+            <Label fx:id="deleteLabel" layoutX="605.0" layoutY="1839.0" prefHeight="21.0" prefWidth="110.0" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
