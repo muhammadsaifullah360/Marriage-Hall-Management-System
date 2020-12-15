@@ -325,16 +325,7 @@ public class OperationsController {
         duty_type.setText(null);
     }
     
-    public void onUpdate(ActionEvent event) {
-        Employee_Basic_Detail();
-        Employee_Contact_Detail();
-        Employee_Qualification_detail();
-        Employee_Experience_detail();
-        Employee_Skills_Detail();
-        Employee_Duty_Detail();
-    }
-    
-    private void Employee_Basic_Detail() {
+    public void update(ActionEvent event) {
         try {
             String query = String.format("Update  EMP_BASIC_DETAIL set First_NAME = '%s', Last_Name= '%s' ,Father_Name = '%s',Emr_Name ='%s',CNIC = '%s',Age = '%s',Dob = to_date('%s','yyyy-mm-dd'),Nationality = '%s' Where  id= %d ",
                     F_name_txt.getText(),
@@ -345,35 +336,22 @@ public class OperationsController {
                     age_txt.getText(),
                     dob.getValue(),
                     N_txt.getText(),
-                    Integer.parseInt(id_txt.getText())
-            );
+                    Integer.parseInt(id_txt.getText()));
             DBService.statement.executeUpdate(query);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-    }
-    
-    private void Employee_Contact_Detail() {
-        try {
-            String query = String.format("Update  EMP_CONTACT_DETAIL set Email = '%s', Phone_No= '%s' ,O_Phone_No = '%s',Fax_No ='%s',Per_Addres = '%s',Cur_Addres = '%s' Where  Emp_id= %d ",
+        
+            // Employee Contact Details
+            query = String.format("Update  EMP_CONTACT_DETAIL set Email = '%s', Phone_No= '%s' ,O_Phone_No = '%s',Fax_No ='%s',Per_Addres = '%s',Cur_Addres = '%s' Where  Emp_id= %d ",
                     email_txt.getText(),
                     phone_txt.getText(),
                     o_phone_txt.getText(),
                     fax_txt.getText(),
                     p_address.getText(),
                     c_address.getText(),
-                    Integer.parseInt(id_txt.getText())
-            );
-            
+                    Integer.parseInt(id_txt.getText()));
             DBService.statement.executeUpdate(query);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
-    }
-    
-    private void Employee_Qualification_detail() {
-        try {
-            String query = String.format("Update  EMP_Qualification_DETAIL set Degree_Title = '%s', Institute= '%s' ,Exam_Board = '%s',Total_Marks ='%s',Obtain_Marks = '%s',Grade = '%s',Country = '%s', Do_Starting = to_date('%s','yyyy-mm-dd'),Do_Comp = to_date('%s','yyyy-mm-dd') Where  Emp_id= %d ",
+        
+            // Employee Qualification Details
+            query = String.format("Update  EMP_Qualification_DETAIL set Degree_Title = '%s', Institute= '%s' ,Exam_Board = '%s',Total_Marks ='%s',Obtain_Marks = '%s',Grade = '%s',Country = '%s', Do_Starting = to_date('%s','yyyy-mm-dd'),Do_Comp = to_date('%s','yyyy-mm-dd') Where  Emp_id= %d ",
                     degTitle.getText(),
                     inst_txt.getText(),
                     E_board.getText(),
@@ -385,16 +363,9 @@ public class OperationsController {
                     d_o_comp.getValue(),
                     Integer.parseInt(id_txt.getText())
             );
-            
-            DBService.statement.executeUpdate(query);
-        } catch (SQLException throwable) {
-            throwable.printStackTrace();
-        }
-    }
-    
-    private void Employee_Experience_detail() {
-        try {
-            String query = String.format("Update  EMP_Experience_DETAIL set Certifcate = '%s', Starting_Date = to_date('%s','yyyy-mm-dd') ,Ending_Date =  to_date('%s','yyyy-mm-dd'),Designation = '%s',Organization ='%s'  Where  Emp_id= %d ",
+        
+            // Employee Education Details
+            query = String.format("Update  EMP_Experience_DETAIL set Certifcate = '%s', Starting_Date = to_date('%s','yyyy-mm-dd') ,Ending_Date =  to_date('%s','yyyy-mm-dd'),Designation = '%s',Organization ='%s'  Where  Emp_id= %d ",
                     e_cer_name.getText(),
                     e_start_date.getValue(),
                     e_end_date.getValue(),
@@ -402,17 +373,10 @@ public class OperationsController {
                     e_org.getText(),
                     Integer.parseInt(id_txt.getText())
             );
-            
             DBService.statement.executeUpdate(query);
-            
-        } catch (SQLException throwable) {
-            throwable.printStackTrace();
-        }
-    }
-    
-    private void Employee_Skills_Detail() {
-        try {
-            String query = String.format("Update  Emp_Skills_DETAIL set Organization ='%s', Certifcate = '%s', Starting_Date = to_date('%s','yyyy-mm-dd') ,Ending_Date =  to_date('%s','yyyy-mm-dd'),Remarks = '%s' Where  Emp_id= %d ",
+        
+            // Employee Skill Details
+            query = String.format("Update  Emp_Skills_DETAIL set Organization ='%s', Certifcate = '%s', Starting_Date = to_date('%s','yyyy-mm-dd') ,Ending_Date =  to_date('%s','yyyy-mm-dd'),Remarks = '%s' Where  Emp_id= %d ",
                     s_org.getText(),
                     s_cer_name.getText(),
                     s_start_date.getValue(),
@@ -420,16 +384,10 @@ public class OperationsController {
                     s_remarks.getText(),
                     Integer.parseInt(id_txt.getText())
             );
-            
             DBService.statement.executeUpdate(query);
-        } catch (SQLException throwable) {
-            throwable.printStackTrace();
-        }
-    }
-    
-    private void Employee_Duty_Detail() {
-        try {
-            String query = String.format("UPDATE  Emp_Duty_Details SET  Duty_Time= to_date('2020-12-12 %s',  'yyyy-mm-dd hh24:mi:ss'),Shifts = '%s', Salary = %d ,Designation = '%s', type = '%s' Where  Emp_id= %d ",
+        
+            // Employee Duty Details
+            query = String.format("UPDATE  Emp_Duty_Details SET  Duty_Time= to_date('2020-12-12 %s',  'yyyy-mm-dd hh24:mi:ss'),Shifts = '%s', Salary = %d ,Designation = '%s', type = '%s' Where  Emp_id= %d ",
                     dutyTime.getValue(),
                     dutyShifts.getText(),
                     Integer.parseInt(salary.getText()),
@@ -437,19 +395,16 @@ public class OperationsController {
                     duty_type.getText(),
                     Integer.parseInt(id_txt.getText())
             );
-        
             DBService.statement.executeUpdate(query);
-            save_label.setText("Information Updated!");
-            clearFields();
-        } catch (SQLException throwable) {
-            throwable.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+        save_label.setText("Information Updated!");
+        clearFields();
     }
     
-    public void onClickDelete(ActionEvent actionEvent) throws SQLException {
-        
+    public void delete(ActionEvent event) throws SQLException {
         String query = String.format("Delete from Emp_basic_detail Where id = %d ", Integer.parseInt(id_txt.getText()));
-        
         DBService.statement.executeUpdate(query);
         delLabel.setText("Successfully");
     }
