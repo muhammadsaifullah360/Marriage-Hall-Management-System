@@ -9,19 +9,22 @@
    <content>
       <AnchorPane prefHeight="1900.0" prefWidth="785.0" style="-fx-background-color: #666666;">
          <children>
-            <JFXTextField fx:id="Father_name" focusColor="GOLD" layoutX="558.0" layoutY="130.0" prefHeight="25.0" prefWidth="170.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="fatherName_txt" focusColor="GOLD" layoutX="558.0" layoutY="130.0" prefHeight="25.0"
+                          prefWidth="170.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE"/>
             <Label layoutX="439.0" layoutY="135.0" prefHeight="21.0" prefWidth="103.0" text="Father Name" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="F_name_txt" focusColor="GOLD" layoutX="554.0" layoutY="75.0" prefHeight="25.0" prefWidth="170.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="firstName_txt" focusColor="GOLD" layoutX="554.0" layoutY="75.0" prefHeight="25.0"
+                          prefWidth="170.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE"/>
             <Label layoutX="439.0" layoutY="80.0" prefHeight="21.0" prefWidth="89.0" text="First Name" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="L_name_txt" focusColor="GOLD" layoutX="195.0" layoutY="130.0" prefHeight="25.0" prefWidth="170.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="lastName_txt" focusColor="GOLD" layoutX="195.0" layoutY="130.0" prefHeight="25.0"
+                          prefWidth="170.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE"/>
             <Label layoutX="59.0" layoutY="135.0" prefHeight="21.0" prefWidth="94.0" text="Last  Name" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -296,10 +299,13 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXButton fx:id="AddBtn" buttonType="RAISED" layoutX="425.0" layoutY="1845.0" onAction="#OnClickSubmitEmp_Detail" prefHeight="34.0" prefWidth="119.0" style="-fx-background-color: gold; -fx-background-radius: 10px;" text="Submit Details">
+            <JFXButton fx:id="AddBtn" buttonType="RAISED" layoutX="425.0" layoutY="1845.0" onAction="#submit"
+                       prefHeight="34.0" prefWidth="119.0"
+                       style="-fx-background-color: gold; -fx-background-radius: 10px;" text="Submit Details">
                <font>
-                  <Font name="System Bold" size="13.0" />
-               </font></JFXButton>
+                  <Font name="System Bold" size="13.0"/>
+               </font>
+            </JFXButton>
             <Label fx:id="save_label" layoutX="555.0" layoutY="1850.0" prefHeight="25.0" prefWidth="205.0" textFill="WHITE">
                <font>
                   <Font size="16.0" />

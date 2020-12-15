@@ -20,11 +20,11 @@ public class OperationsController {
     
     ////////////Basic Details///////////
     @FXML
-    private JFXTextField Father_name;
+    private JFXTextField firstName_txt;
     @FXML
-    private JFXTextField F_name_txt;
+    private JFXTextField lastName_txt;
     @FXML
-    private JFXTextField L_name_txt;
+    private JFXTextField fatherName_txt;
     @FXML
     private JFXTextField Emr_name;
     @FXML
@@ -110,20 +110,20 @@ public class OperationsController {
     
     
     @FXML
-    private Label delLabel;
+    private Label delete_label;
     
     public void initData(Employee employee) throws SQLException {
         id_txt.setText(String.valueOf(employee.getId()));
-        F_name_txt.setText(employee.getFirstName());
-        L_name_txt.setText(employee.getLastName());
-        Father_name.setText(employee.getFatherName());
+        firstName_txt.setText(employee.getFirstName());
+        lastName_txt.setText(employee.getLastName());
+        fatherName_txt.setText(employee.getFatherName());
         Emr_name.setText(employee.getEmrName());
         cnic_txt.setText(employee.getCnic());
         age_txt.setText(employee.getAge());
         dob.setValue(LocalDate.parse(employee.getDOB()));
         N_txt.setText(employee.getNationality());
         loadContactDetails(employee.getId());
-        loadQualDetails(employee.getId());
+        loadQualificationDetails(employee.getId());
         loadSkillsDetails(employee.getId());
         loadExperienceDetails(employee.getId());
         loadDutyDetails(employee.getId());
@@ -131,8 +131,7 @@ public class OperationsController {
     
     private void loadContactDetails(int id) throws SQLException {
         String query = String.format("select * from EMP_CONTACT_DETAIL where emp_id = %d", id);
-        ResultSet rs = DBService.statement.executeQuery(query);
-        
+        ResultSet rs = DBService.executeQuery(query);
         if (rs.next()) {
             email_txt.setText(rs.getString("Email"));
             phone_txt.setText(rs.getString("Phone_NO"));
@@ -143,9 +142,9 @@ public class OperationsController {
         }
     }
     
-    private void loadQualDetails(int id) throws SQLException {
+    private void loadQualificationDetails(int id) throws SQLException {
         String query = String.format("select  DEGREE_TITLE,Institute,Exam_Board,Total_Marks,Obtain_Marks,Grade,Country,to_char( Do_Starting ,'yyyy-mm-dd') as Do_Starting,to_char( Do_Comp ,'yyyy-mm-dd') as Do_Comp  from EMP_Qualification_DETAIL where emp_id = %d", id);
-        ResultSet rs = DBService.statement.executeQuery(query);
+        ResultSet rs = DBService.executeQuery(query);
         
         if (rs.next()) {
             degTitle.setText(rs.getString("DEGREE_TITLE"));
@@ -162,7 +161,7 @@ public class OperationsController {
     
     private void loadSkillsDetails(int id) throws SQLException {
         String query = String.format("Select Organization, Certifcate,to_char(Starting_Date,'yyyy-mm-dd') as Starting_Date,to_char(Ending_Date,'yyyy-mm-dd') as Ending_Date,Remarks from Emp_Skills_Detail Where Emp_id = %d", id);
-        ResultSet rs = DBService.statement.executeQuery(query);
+        ResultSet rs = DBService.executeQuery(query);
         if (rs.next()) {
             s_org.setText(rs.getString("Organization"));
             s_cer_name.setText(rs.getString("Certifcate"));
@@ -174,7 +173,7 @@ public class OperationsController {
     
     private void loadExperienceDetails(int id) throws SQLException {
         String query = String.format("Select  Certifcate,to_char(Starting_Date,'yyyy-mm-dd') as Starting_Date,to_char(Ending_Date,'yyyy-mm-dd') as Ending_Date,Designation,Organization from Emp_Experience_Detail Where Emp_id = %d", id);
-        ResultSet rs = DBService.statement.executeQuery(query);
+        ResultSet rs = DBService.executeQuery(query);
         if (rs.next()) {
             e_cer_name.setText(rs.getString("Certifcate"));
             e_org.setText(rs.getString("Organization"));
@@ -187,7 +186,7 @@ public class OperationsController {
     private void loadDutyDetails(int id) throws SQLException {
 //        String query = String.format("Select to_char( Duty_Time,'hh24-mi-ss') as Duty_Time,Shifts,Salary,Designation,Type from Emp_Duty_Details Where EMp_Id = %d",id);
         String query = String.format("Select Shifts,Salary,Designation,Type from Emp_Duty_Details Where EMp_Id = %d", id);
-        ResultSet rs = DBService.statement.executeQuery(query);
+        ResultSet rs = DBService.executeQuery(query);
         if (rs.next()) {
 //            dutyTime.setValue(LocalTime.parse(rs.getString("Duty_Time")));
             dutyShifts.setText(rs.getString("Shifts"));
@@ -197,96 +196,89 @@ public class OperationsController {
         }
     }
     
-    public void OnClickSubmitEmp_Detail(ActionEvent event) {
-        try {
-            
-            String Basic_detail = String.format("Insert Into EMP_BASIC_DETAIL(ID, FIRST_NAME, LAST_NAME, FATHER_NAME, EMR_NAME, CNIC, AGE, DOB, NATIONALITY) Values( %d,'%s','%s','%s','%s','%s','%s',to_date('%s','yyyy-mm-dd'),'%s')",
-                    Integer.parseInt(id_txt.getText()),
-                    F_name_txt.getText(),
-                    L_name_txt.getText(),
-                    Father_name.getText(),
-                    Emr_name.getText(),
-                    cnic_txt.getText(),
-                    age_txt.getText(),
-                    dob.getValue(),
-                    N_txt.getText()
-            );
-            
-            String Contact_detail = String.format("Insert Into EMP_CONTACT_DETAIL( EMP_ID, EMAIL, PHONE_NO , O_PHONE_NO, FAX_NO, PER_ADDRES, CUR_ADDRES) Values( %d,'%s','%s','%s','%s','%s','%s')",
-                    
-                    Integer.parseInt(id_txt.getText()),
-                    email_txt.getText(),
-                    phone_txt.getText(),
-                    o_phone_txt.getText(),
-                    fax_txt.getText(),
-                    p_address.getText(),
-                    c_address.getText()
-            );
-            
-            String Qualification_detail = String.format("Insert Into EMP_QUALIFICATION_DETAIL( EMP_ID, DEGREE_TITLE, INSTITUTE , EXAM_BOARD, TOTAL_MARKS, OBTAIN_MARKS, GRADE, COUNTRY , DO_STARTING , DO_COMP) Values( %d,'%s','%s','%s','%s','%s','%s','%s',to_date('%s','yyyy-mm-dd'),to_date('%s','yyyy-mm-dd'))",
-                    
-                    Integer.parseInt(id_txt.getText()),
-                    degTitle.getText(),
-                    inst_txt.getText(),
-                    E_board.getText(),
-                    t_marks.getText(),
-                    o_marks.getText(),
-                    grade.getText(),
-                    country.getText(),
-                    d_o_S.getValue(),
-                    d_o_comp.getValue()
-            );
-            
-            String Skills_detail = String.format("Insert Into EMP_SKILLS_DETAIL( EMP_ID, ORGANIZATION, CERTIFCATE , STARTING_DATE,  ENDING_DATE , REMARKS ) Values( %d,'%s','%s',to_date('%s','yyyy-mm-dd'),to_date('%s','yyyy-mm-dd'),'%s')",
-                    
-                    Integer.parseInt(id_txt.getText()),
-                    s_org.getText(),
-                    s_cer_name.getText(),
-                    s_start_date.getValue(),
-                    s_end_date.getValue(),
-                    s_remarks.getText()
-            );
-            
-            String Experience_detail = String.format("Insert Into EMP_EXPERIENCE_DETAIL( EMP_ID, CERTIFCATE , STARTING_DATE,  ENDING_DATE , DESIGNATION ,ORGANIZATION) Values( %d,'%s',to_date('%s','yyyy-mm-dd'),to_date('%s','yyyy-mm-dd'),'%s','%s')",
-                    
-                    Integer.parseInt(id_txt.getText()),
-                    e_cer_name.getText(),
-                    e_start_date.getValue(),
-                    e_end_date.getValue(),
-                    e_design.getText(),
-                    e_org.getText()
-            );
-            
-            String Duty_detail = String.format("Insert Into EMP_DUTY_DETAILS( EMP_ID, DUTY_TIME , SHIFTS,  SALARY , DESIGNATION ,TYPE) Values( %d,to_date('2020-12-12 %s',  'yyyy-mm-dd hh24:mi:ss'),'%s', %d,'%s','%s')",
-                    
-                    Integer.parseInt(id_txt.getText()),
-                    dutyTime.getValue(),
-                    dutyShifts.getText(),
-                    Integer.parseInt(salary.getText()),
-                    duty_design.getText(),
-                    duty_type.getText()
-            );
-            
-            DBService.statement.executeUpdate(Basic_detail);
-            DBService.statement.executeUpdate(Contact_detail);
-            DBService.statement.executeUpdate(Qualification_detail);
-            DBService.statement.executeUpdate(Skills_detail);
-            DBService.statement.executeUpdate(Experience_detail);
-            DBService.statement.executeUpdate(Duty_detail);
-            
-            
-            save_label.setText("Saved!");
-            clearFields();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+    public void submit(ActionEvent event) {
+        String Basic_detail = String.format("Insert Into EMP_BASIC_DETAIL(ID, FIRST_NAME, LAST_NAME, FATHER_NAME, EMR_NAME, CNIC, AGE, DOB, NATIONALITY) Values( %d,'%s','%s','%s','%s','%s','%s',to_date('%s','yyyy-mm-dd'),'%s')",
+                Integer.parseInt(id_txt.getText()),
+                firstName_txt.getText(),
+                lastName_txt.getText(),
+                fatherName_txt.getText(),
+                Emr_name.getText(),
+                cnic_txt.getText(),
+                age_txt.getText(),
+                dob.getValue(),
+                N_txt.getText()
+        );
+        
+        String Contact_detail = String.format("Insert Into EMP_CONTACT_DETAIL( EMP_ID, EMAIL, PHONE_NO , O_PHONE_NO, FAX_NO, PER_ADDRES, CUR_ADDRES) Values( %d,'%s','%s','%s','%s','%s','%s')",
+                
+                Integer.parseInt(id_txt.getText()),
+                email_txt.getText(),
+                phone_txt.getText(),
+                o_phone_txt.getText(),
+                fax_txt.getText(),
+                p_address.getText(),
+                c_address.getText()
+        );
+        
+        String Qualification_detail = String.format("Insert Into EMP_QUALIFICATION_DETAIL( EMP_ID, DEGREE_TITLE, INSTITUTE , EXAM_BOARD, TOTAL_MARKS, OBTAIN_MARKS, GRADE, COUNTRY , DO_STARTING , DO_COMP) Values( %d,'%s','%s','%s','%s','%s','%s','%s',to_date('%s','yyyy-mm-dd'),to_date('%s','yyyy-mm-dd'))",
+                
+                Integer.parseInt(id_txt.getText()),
+                degTitle.getText(),
+                inst_txt.getText(),
+                E_board.getText(),
+                t_marks.getText(),
+                o_marks.getText(),
+                grade.getText(),
+                country.getText(),
+                d_o_S.getValue(),
+                d_o_comp.getValue()
+        );
+        
+        String Skills_detail = String.format("Insert Into EMP_SKILLS_DETAIL( EMP_ID, ORGANIZATION, CERTIFCATE , STARTING_DATE,  ENDING_DATE , REMARKS ) Values( %d,'%s','%s',to_date('%s','yyyy-mm-dd'),to_date('%s','yyyy-mm-dd'),'%s')",
+                
+                Integer.parseInt(id_txt.getText()),
+                s_org.getText(),
+                s_cer_name.getText(),
+                s_start_date.getValue(),
+                s_end_date.getValue(),
+                s_remarks.getText()
+        );
+        
+        String Experience_detail = String.format("Insert Into EMP_EXPERIENCE_DETAIL( EMP_ID, CERTIFCATE , STARTING_DATE,  ENDING_DATE , DESIGNATION ,ORGANIZATION) Values( %d,'%s',to_date('%s','yyyy-mm-dd'),to_date('%s','yyyy-mm-dd'),'%s','%s')",
+                
+                Integer.parseInt(id_txt.getText()),
+                e_cer_name.getText(),
+                e_start_date.getValue(),
+                e_end_date.getValue(),
+                e_design.getText(),
+                e_org.getText()
+        );
+        
+        String Duty_detail = String.format("Insert Into EMP_DUTY_DETAILS( EMP_ID, DUTY_TIME , SHIFTS,  SALARY , DESIGNATION ,TYPE) Values( %d,to_date('2020-12-12 %s',  'yyyy-mm-dd hh24:mi:ss'),'%s', %d,'%s','%s')",
+                
+                Integer.parseInt(id_txt.getText()),
+                dutyTime.getValue(),
+                dutyShifts.getText(),
+                Integer.parseInt(salary.getText()),
+                duty_design.getText(),
+                duty_type.getText()
+        );
+        
+        DBService.executeUpdate(Basic_detail);
+        DBService.executeUpdate(Contact_detail);
+        DBService.executeUpdate(Qualification_detail);
+        DBService.executeUpdate(Skills_detail);
+        DBService.executeUpdate(Experience_detail);
+        DBService.executeUpdate(Duty_detail);
+        save_label.setText("Saved!");
+        clearFields();
     }
     
     public void clearFields() {
         
-        F_name_txt.setText(null);
-        L_name_txt.setText(null);
-        Father_name.setText(null);
+        firstName_txt.setText(null);
+        lastName_txt.setText(null);
+        fatherName_txt.setText(null);
         Emr_name.setText(null);
         cnic_txt.setText(null);
         age_txt.setText(null);
@@ -326,86 +318,86 @@ public class OperationsController {
     }
     
     public void update(ActionEvent event) {
-        try {
-            String query = String.format("Update  EMP_BASIC_DETAIL set First_NAME = '%s', Last_Name= '%s' ,Father_Name = '%s',Emr_Name ='%s',CNIC = '%s',Age = '%s',Dob = to_date('%s','yyyy-mm-dd'),Nationality = '%s' Where  id= %d ",
-                    F_name_txt.getText(),
-                    L_name_txt.getText(),
-                    Father_name.getText(),
-                    Emr_name.getText(),
-                    cnic_txt.getText(),
-                    age_txt.getText(),
-                    dob.getValue(),
-                    N_txt.getText(),
-                    Integer.parseInt(id_txt.getText()));
-            DBService.statement.executeUpdate(query);
-        
-            // Employee Contact Details
-            query = String.format("Update  EMP_CONTACT_DETAIL set Email = '%s', Phone_No= '%s' ,O_Phone_No = '%s',Fax_No ='%s',Per_Addres = '%s',Cur_Addres = '%s' Where  Emp_id= %d ",
-                    email_txt.getText(),
-                    phone_txt.getText(),
-                    o_phone_txt.getText(),
-                    fax_txt.getText(),
-                    p_address.getText(),
-                    c_address.getText(),
-                    Integer.parseInt(id_txt.getText()));
-            DBService.statement.executeUpdate(query);
-        
-            // Employee Qualification Details
-            query = String.format("Update  EMP_Qualification_DETAIL set Degree_Title = '%s', Institute= '%s' ,Exam_Board = '%s',Total_Marks ='%s',Obtain_Marks = '%s',Grade = '%s',Country = '%s', Do_Starting = to_date('%s','yyyy-mm-dd'),Do_Comp = to_date('%s','yyyy-mm-dd') Where  Emp_id= %d ",
-                    degTitle.getText(),
-                    inst_txt.getText(),
-                    E_board.getText(),
-                    t_marks.getText(),
-                    o_marks.getText(),
-                    grade.getText(),
-                    country.getText(),
-                    d_o_S.getValue(),
-                    d_o_comp.getValue(),
-                    Integer.parseInt(id_txt.getText())
-            );
-        
-            // Employee Education Details
-            query = String.format("Update  EMP_Experience_DETAIL set Certifcate = '%s', Starting_Date = to_date('%s','yyyy-mm-dd') ,Ending_Date =  to_date('%s','yyyy-mm-dd'),Designation = '%s',Organization ='%s'  Where  Emp_id= %d ",
-                    e_cer_name.getText(),
-                    e_start_date.getValue(),
-                    e_end_date.getValue(),
-                    e_design.getText(),
-                    e_org.getText(),
-                    Integer.parseInt(id_txt.getText())
-            );
-            DBService.statement.executeUpdate(query);
-        
-            // Employee Skill Details
-            query = String.format("Update  Emp_Skills_DETAIL set Organization ='%s', Certifcate = '%s', Starting_Date = to_date('%s','yyyy-mm-dd') ,Ending_Date =  to_date('%s','yyyy-mm-dd'),Remarks = '%s' Where  Emp_id= %d ",
-                    s_org.getText(),
-                    s_cer_name.getText(),
-                    s_start_date.getValue(),
-                    s_end_date.getValue(),
-                    s_remarks.getText(),
-                    Integer.parseInt(id_txt.getText())
-            );
-            DBService.statement.executeUpdate(query);
-        
-            // Employee Duty Details
-            query = String.format("UPDATE  Emp_Duty_Details SET  Duty_Time= to_date('2020-12-12 %s',  'yyyy-mm-dd hh24:mi:ss'),Shifts = '%s', Salary = %d ,Designation = '%s', type = '%s' Where  Emp_id= %d ",
-                    dutyTime.getValue(),
-                    dutyShifts.getText(),
-                    Integer.parseInt(salary.getText()),
-                    duty_design.getText(),
-                    duty_type.getText(),
-                    Integer.parseInt(id_txt.getText())
-            );
-            DBService.statement.executeUpdate(query);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        String basicDetails_query = String.format("Update EMP_BASIC_DETAIL set First_NAME='%s', Last_Name='%s', Father_Name='%s',Emr_Name='%s',CNIC='%s', Age='%s', Dob=to_date('%s','yyyy-mm-dd'), Nationality='%s' Where id=%d",
+                firstName_txt.getText(),
+                lastName_txt.getText(),
+                fatherName_txt.getText(),
+                Emr_name.getText(),
+                cnic_txt.getText(),
+                age_txt.getText(),
+                dob.getValue(),
+                N_txt.getText(),
+                Integer.parseInt(id_txt.getText()));
+    
+        // Employee Contact Details
+        String contactDetails_query = String.format("Update EMP_CONTACT_DETAIL set Email='%s', Phone_No='%s', O_Phone_No='%s', Fax_No='%s', Per_Addres='%s', Cur_Addres='%s' Where Emp_id=%d",
+                email_txt.getText(),
+                phone_txt.getText(),
+                o_phone_txt.getText(),
+                fax_txt.getText(),
+                p_address.getText(),
+                c_address.getText(),
+                Integer.parseInt(id_txt.getText()));
+    
+        // Employee Qualification Details
+        String qualificationDetails_query = String.format("Update  EMP_Qualification_DETAIL set Degree_Title = '%s', Institute= '%s' ,Exam_Board = '%s',Total_Marks ='%s',Obtain_Marks = '%s',Grade = '%s',Country = '%s', Do_Starting = to_date('%s','yyyy-mm-dd'),Do_Comp = to_date('%s','yyyy-mm-dd') Where  Emp_id= %d ",
+                degTitle.getText(),
+                inst_txt.getText(),
+                E_board.getText(),
+                t_marks.getText(),
+                o_marks.getText(),
+                grade.getText(),
+                country.getText(),
+                d_o_S.getValue(),
+                d_o_comp.getValue(),
+                Integer.parseInt(id_txt.getText())
+        );
+    
+        // Employee Education Details
+        String experienceDetails_query = String.format("Update  EMP_Experience_DETAIL set Certifcate = '%s', Starting_Date = to_date('%s','yyyy-mm-dd') ,Ending_Date =  to_date('%s','yyyy-mm-dd'),Designation = '%s',Organization ='%s'  Where  Emp_id= %d ",
+                e_cer_name.getText(),
+                e_start_date.getValue(),
+                e_end_date.getValue(),
+                e_design.getText(),
+                e_org.getText(),
+                Integer.parseInt(id_txt.getText())
+        );
+    
+        // Employee Skill Details
+        String skillDetails_query = String.format("Update Emp_Skills_DETAIL set Organization='%s', Certifcate='%s', Starting_Date=to_date('%s','yyyy-mm-dd'), Ending_Date=to_date('%s','yyyy-mm-dd'),Remarks = '%s' Where  Emp_id= %d ",
+                s_org.getText(),
+                s_cer_name.getText(),
+                s_start_date.getValue(),
+                s_end_date.getValue(),
+                s_remarks.getText(),
+                Integer.parseInt(id_txt.getText())
+        );
+    
+        // Employee Duty Details
+        String dutyDetails_query = String.format("UPDATE Emp_Duty_Details SET Duty_Time=to_date('%s',  'yyyy-mm-dd hh24:mi:ss'), Shifts='%s', Salary=%d ,Designation='%s', type='%s' Where Emp_id=%d",
+                dutyTime.getValue(),
+                dutyShifts.getText(),
+                Integer.parseInt(salary.getText()),
+                duty_design.getText(),
+                duty_type.getText(),
+                Integer.parseInt(id_txt.getText())
+        );
+    
+        // Performing Database Update Operations
+        DBService.executeUpdate(basicDetails_query);
+        DBService.executeUpdate(contactDetails_query);
+        DBService.executeUpdate(qualificationDetails_query);
+        DBService.executeUpdate(experienceDetails_query);
+        DBService.executeUpdate(skillDetails_query);
+        DBService.executeUpdate(dutyDetails_query);
         save_label.setText("Information Updated!");
         clearFields();
     }
     
-    public void delete(ActionEvent event) throws SQLException {
-        String query = String.format("Delete from Emp_basic_detail Where id = %d ", Integer.parseInt(id_txt.getText()));
-        DBService.statement.executeUpdate(query);
-        delLabel.setText("Successfully");
+    public void delete(ActionEvent event) {
+        int id = Integer.parseInt(id_txt.getText());
+        String query = String.format("Delete from Emp_basic_detail Where id=%d ", id);
+        DBService.executeUpdate(query);
+        delete_label.setText("Deleted Successfully");
     }
 }

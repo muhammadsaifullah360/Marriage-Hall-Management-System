@@ -9,19 +9,25 @@
    <content>
       <AnchorPane prefHeight="1900.0" prefWidth="785.0" style="-fx-background-color: #666666;">
          <children>
-            <JFXTextField fx:id="Father_name" editable="false" focusColor="GOLD" layoutX="558.0" layoutY="130.0" prefHeight="25.0" prefWidth="170.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="fatherName_txt" editable="false" focusColor="GOLD" layoutX="558.0" layoutY="130.0"
+                          prefHeight="25.0" prefWidth="170.0" style="-fx-text-inner-color: white;"
+                          unFocusColor="WHITE"/>
             <Label layoutX="439.0" layoutY="135.0" prefHeight="21.0" prefWidth="103.0" text="Father Name" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="F_name_txt" editable="false" focusColor="GOLD" layoutX="554.0" layoutY="75.0" prefHeight="25.0" prefWidth="170.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="firstName_txt" editable="false" focusColor="GOLD" layoutX="554.0" layoutY="75.0"
+                          prefHeight="25.0" prefWidth="170.0" style="-fx-text-inner-color: white;"
+                          unFocusColor="WHITE"/>
             <Label layoutX="439.0" layoutY="80.0" prefHeight="21.0" prefWidth="89.0" text="First Name" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="L_name_txt" editable="false" focusColor="GOLD" layoutX="195.0" layoutY="130.0" prefHeight="25.0" prefWidth="170.0" style="-fx-text-inner-color: white;" unFocusColor="WHITE" />
+            <JFXTextField fx:id="lastName_txt" editable="false" focusColor="GOLD" layoutX="195.0" layoutY="130.0"
+                          prefHeight="25.0" prefWidth="170.0" style="-fx-text-inner-color: white;"
+                          unFocusColor="WHITE"/>
             <Label layoutX="59.0" layoutY="135.0" prefHeight="21.0" prefWidth="94.0" text="Last  Name" textFill="GOLD">
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -309,9 +315,10 @@
                   <Font name="System Bold" size="12.0"/>
                </font>
             </JFXButton>
-            <Label fx:id="delLabel" layoutX="605.0" layoutY="1839.0" prefHeight="21.0" prefWidth="110.0" textFill="GOLD">
+            <Label fx:id="delete_label" layoutX="605.0" layoutY="1839.0" prefHeight="21.0" prefWidth="110.0"
+                   textFill="GOLD">
                <font>
-                  <Font name="System Bold" size="15.0" />
+                  <Font name="System Bold" size="15.0"/>
                </font>
             </Label>
          </children>
