@@ -48,7 +48,7 @@
       </AnchorPane>
       <AnchorPane layoutX="47.0" layoutY="22.0" prefHeight="68.0" prefWidth="840.0" style="-fx-background-color: #666666; -fx-background-radius: 17px;">
          <children>
-            <JFXButton fx:id="SearchClearBtn" buttonType="RAISED" layoutX="394.0" layoutY="21.0" onAction="#SearchClearBtn" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: gold; -fx-background-radius: 15px;" text="Clear">
+            <JFXButton fx:id="SearchClearBtn" buttonType="RAISED" layoutX="394.0" layoutY="21.0" onAction="#searchClearBtn" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: gold; -fx-background-radius: 15px;" text="Clear">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -62,15 +62,15 @@
                </cursor></TextField>
          </children>
       </AnchorPane>
-      <TableView fx:id="employee_table" layoutX="28.0" layoutY="106.0" prefHeight="435.0" prefWidth="866.0">
+      <TableView fx:id="employeeTable" layoutX="28.0" layoutY="106.0" prefHeight="435.0" prefWidth="866.0">
          <columns>
-            <TableColumn fx:id="id_col" prefWidth="62.0" text="ID" />
-            <TableColumn fx:id="Fname_col" prefWidth="106.0" text=" First_Name" />
-            <TableColumn fx:id="Lname_col" prefWidth="103.0" text="Last_Name" />
-            <TableColumn fx:id="cnic_col" prefWidth="137.0" text="CNIC_No" />
-            <TableColumn fx:id="type_col" prefWidth="91.0" text="Type" />
-            <TableColumn fx:id="salary_col" text="Salary" />
-            <TableColumn fx:id="address_col" prefWidth="286.0" text="Address" />
+            <TableColumn fx:id="idCol" prefWidth="62.0" text="ID" />
+            <TableColumn fx:id="firstNameCol" prefWidth="106.0" text=" First_Name" />
+            <TableColumn fx:id="lastNameCol" prefWidth="103.0" text="Last_Name" />
+            <TableColumn fx:id="cnicCol" prefWidth="137.0" text="CNIC_No" />
+            <TableColumn fx:id="typeCol" prefWidth="91.0" text="Type" />
+            <TableColumn fx:id="salaryCol" text="Salary" />
+            <TableColumn fx:id="addressCol" prefWidth="286.0" text="Address" />
          </columns>
       </TableView>
    </children>

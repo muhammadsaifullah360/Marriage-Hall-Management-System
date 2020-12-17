@@ -195,7 +195,7 @@ public class OperationsController {
         }
     }
     
-    public void add(ActionEvent event) {
+    public void add(ActionEvent event) throws SQLException {
         String Basic_detail = String.format("Insert Into EMP_BASIC_DETAIL(ID, FIRST_NAME, LAST_NAME, FATHER_NAME, EMR_NAME, CNIC, AGE, DOB, NATIONALITY) Values( %d,'%s','%s','%s','%s','%s','%s',to_date('%s','yyyy-mm-dd'),'%s')",
                 Integer.parseInt(id.getText()),
                 firstName.getText(),
@@ -263,12 +263,13 @@ public class OperationsController {
                 dutyType.getText()
         );
         
-        DBService.executeUpdate(Basic_detail);
-        DBService.executeUpdate(Contact_detail);
-        DBService.executeUpdate(Qualification_detail);
-        DBService.executeUpdate(Skills_detail);
-        DBService.executeUpdate(Experience_detail);
-        DBService.executeUpdate(Duty_detail);
+        
+        DBService.statement.executeUpdate(Basic_detail);
+        DBService.statement.executeUpdate(Contact_detail);
+        DBService.statement.executeUpdate(Qualification_detail);
+        DBService.statement.executeUpdate(Skills_detail);
+        DBService.statement.executeUpdate(Experience_detail);
+        DBService.statement.executeUpdate(Duty_detail);
         save_label.setText("Saved!");
         clearFields();
     }
@@ -316,7 +317,7 @@ public class OperationsController {
         dutyType.setText(null);
     }
     
-    public void update(ActionEvent event) {
+    public void update(ActionEvent event) throws SQLException {
         String basicDetails_query = String.format("Update EMP_BASIC_DETAIL set First_NAME='%s', Last_Name='%s', Father_Name='%s',Emr_Name='%s',CNIC='%s', Age='%s', Dob=to_date('%s','yyyy-mm-dd'), Nationality='%s' Where id=%d",
                 firstName.getText(),
                 lastName.getText(),
@@ -383,20 +384,20 @@ public class OperationsController {
         );
     
         // Performing Database Update Operations
-        DBService.executeUpdate(basicDetails_query);
-        DBService.executeUpdate(contactDetails_query);
-        DBService.executeUpdate(qualificationDetails_query);
-        DBService.executeUpdate(experienceDetails_query);
-        DBService.executeUpdate(skillDetails_query);
-        DBService.executeUpdate(dutyDetails_query);
+        DBService.statement.executeUpdate(basicDetails_query);
+        DBService.statement.executeUpdate(contactDetails_query);
+        DBService.statement.executeUpdate(qualificationDetails_query);
+        DBService.statement.executeUpdate(experienceDetails_query);
+        DBService.statement.executeUpdate(skillDetails_query);
+        DBService.statement.executeUpdate(dutyDetails_query);
         save_label.setText("Information Updated!");
         clearFields();
     }
     
-    public void delete(ActionEvent event) {
+    public void delete(ActionEvent event) throws SQLException {
         int id = Integer.parseInt(this.id.getText());
         String query = String.format("Delete from Emp_basic_detail Where id=%d ", id);
-        DBService.executeUpdate(query);
+        DBService.statement.executeUpdate(query);
         delete_label.setText("Deleted Successfully");
     }
 }

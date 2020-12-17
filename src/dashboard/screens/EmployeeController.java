@@ -13,7 +13,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import util.StageHandler;
-
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,21 +24,21 @@ public class EmployeeController {
     @FXML
     private TextField searchField;
     @FXML
-    private TableView<Employee> employee_table;
+    private TableView<Employee> employeeTable;
     @FXML
-    private TableColumn<Employee, Integer> id_col;
+    private TableColumn<Employee, Integer> idCol;
     @FXML
-    private TableColumn<Employee, String> Fname_col;
+    private TableColumn<Employee, String> firstNameCol;
     @FXML
-    private TableColumn<Employee, String> Lname_col;
+    private TableColumn<Employee, String> lastNameCol;
     @FXML
-    private TableColumn<Employee, String> cnic_col;
+    private TableColumn<Employee, String> cnicCol;
     @FXML
-    private TableColumn<Employee, String> type_col;
+    private TableColumn<Employee, String> typeCol;
     @FXML
-    private TableColumn<Employee, Integer> salary_col;
+    private TableColumn<Employee, Integer> salaryCol;
     @FXML
-    private TableColumn<Employee, String> address_col;
+    private TableColumn<Employee, String> addressCol;
     
     public void initialize() {
         createTable();
@@ -48,14 +47,14 @@ public class EmployeeController {
     }
     
     private void createTable() {
-        id_col.setCellValueFactory(new PropertyValueFactory<>("id"));
-        Fname_col.setCellValueFactory(new PropertyValueFactory<>("firstName"));
-        Lname_col.setCellValueFactory(new PropertyValueFactory<>("lastName"));
-        cnic_col.setCellValueFactory(new PropertyValueFactory<>("cnic"));
+        idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+        firstNameCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));
+        lastNameCol.setCellValueFactory(new PropertyValueFactory<>("lastName"));
+        cnicCol.setCellValueFactory(new PropertyValueFactory<>("cnic"));
 //        type_col.setCellValueFactory(new PropertyValueFactory<>("type"));
 //        salary_col.setCellValueFactory(new PropertyValueFactory<>("salary"));
 //        address_col.setCellValueFactory(new PropertyValueFactory<>("address"));
-        employee_table.setItems(employee_list);
+        employeeTable.setItems(employee_list);
     }
     
     private void createSearchFilter() {
@@ -77,8 +76,8 @@ public class EmployeeController {
         });
         
         SortedList<Employee> sortedData = new SortedList<>(filteredData);
-        sortedData.comparatorProperty().bind(employee_table.comparatorProperty());
-        employee_table.setItems(sortedData);
+        sortedData.comparatorProperty().bind(employeeTable.comparatorProperty());
+        employeeTable.setItems(sortedData);
     }
     
     public static void getData() {
@@ -116,7 +115,7 @@ public class EmployeeController {
         String title = "Update Employee";
         StageHandler.createStage(fxmlPath, title);
         OperationsController controller = StageHandler.loader.getController();
-        controller.initData(employee_table.getSelectionModel().getSelectedItem());
+        controller.initData(employeeTable.getSelectionModel().getSelectedItem());
     }
     
     public void delete(ActionEvent event) throws SQLException, IOException {
@@ -132,7 +131,7 @@ public class EmployeeController {
         String title = "Delete Employee Details";
         StageHandler.createStage(fxmlPath, title);
         OperationsController controller = StageHandler.loader.getController();
-        controller.initData(employee_table.getSelectionModel().getSelectedItem());
+        controller.initData(employeeTable.getSelectionModel().getSelectedItem());
     }
     
     public void view(ActionEvent actionEvent) throws IOException, SQLException {
@@ -140,10 +139,10 @@ public class EmployeeController {
         String title = "View Employee Details";
         StageHandler.createStage(fxmlPath, title);
         OperationsController controller = StageHandler.loader.getController();
-        controller.initData(employee_table.getSelectionModel().getSelectedItem());
+        controller.initData(employeeTable.getSelectionModel().getSelectedItem());
     }
     
-    public void SearchClearBtn(ActionEvent actionEvent) {
+    public void searchClearBtn(ActionEvent actionEvent) {
         searchField.clear();
     }
 }
