@@ -1,5 +1,7 @@
 package database;
 
+import org.h2.tools.Server;
+
 import java.sql.*;
 
 public class DBService {
@@ -10,19 +12,28 @@ public class DBService {
     }
     
     public static void createConnection() {
-        if (connection == null) {
-            try {
-                Class.forName("oracle.jdbc.driver.OracleDriver");
-                String username = "hr";
-                String url = "jdbc:oracle:thin:@localhost:1521:xe";
-                String password = "hr";
-                Connection connection = DriverManager.getConnection(url, username, password);
-                statement = connection.createStatement();
-            } catch (SQLException | ClassNotFoundException exception) {
-                System.out.println(exception.getMessage());
-            }
+        String port = "9092";
+        startTCPServer(port);
+        try {
+            Class.forName("org.h2.Driver");
+            String url = String.format("jdbc:h2:tcp://localhost:%s/./HMS", port);
+            connection = DriverManager.getConnection(url);
+            statement = connection.createStatement();
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println(e.getMessage());
         }
     }
+    
+    private static void startTCPServer(String port) {
+        try {
+            String[] params = {"-tcpPort", port, "-ifExists", "-baseDir", "./src/database/h2/"};
+            Server server = Server.createTcpServer(params).start();
+            System.out.println(server.getStatus());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
     
     public static ResultSet executeQuery(String query) {
         ResultSet resultSet = null;
@@ -32,5 +43,20 @@ public class DBService {
             System.out.println(sqlException.getMessage());
         }
         return resultSet;
+    }
+    
+    public static int executeUpdate(String query) {
+        int rowsUpdated = 0;
+        try {
+            rowsUpdated = statement.executeUpdate(query);
+        } catch (SQLException sqlException) {
+            System.out.println(sqlException.getMessage());
+        }
+        return rowsUpdated;
+    }
+    
+    public static void close() throws SQLException {
+        if (!connection.isClosed())
+            connection.close();
     }
 }

@@ -14,7 +14,6 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class MenuController implements Initializable {
@@ -101,16 +100,12 @@ public class MenuController implements Initializable {
     public void MenuDetailSave(ActionEvent event) {
         String commntArea = CommentArea.getText();
         String Decoration = decorationBox.getValue();
-        try {
-            
-            String query = "INSERT  INTO Menu (Dishes,MenuService,Decoration,comments,facility)VALUES('" + MenuList + "','" + MenuSelection + "','" + Decoration + "','" + commntArea + "','" + facility + "')";
-            
-            DBService.statement.executeUpdate(query);
-            MenuSaveLabel.setText("Saved");
-            clearFields();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+    
+        String query = "INSERT  INTO Menu (Dishes,MenuService,Decoration,comments,facility)VALUES('" + MenuList + "','" + MenuSelection + "','" + Decoration + "','" + commntArea + "','" + facility + "')";
+    
+        DBService.executeUpdate(query);
+        MenuSaveLabel.setText("Saved");
+        clearFields();
     }
     
     public void clearFields() {

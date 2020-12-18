@@ -1,7 +1,7 @@
 package dashboard.screens;
 
-import database.DBService;
 import com.jfoenix.controls.*;
+import database.DBService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -69,26 +69,22 @@ public class BookingController implements Initializable {
     
     public void SaveEventBtn(ActionEvent event) {
         /// todo  implementtation if empty query not run
-        try {
-            
-            String query = String.format("Insert Into Event_Booking( EventType, EventStartTime,EventDate ,NoOfPerson, NameOfCustomer, PhoneNoOfCustomer, EmailOfCustomer,EventEndingTime, HallNo, INVOICENO) Values ('%s', to_date('2020-12-12 %s',  'yyyy-mm-dd hh24:mi:ss'), to_date('%s','yyyy-mm-dd'), '%s', '%s', '%s', '%s',to_date('2020-12-12 %s',  'yyyy-mm-dd hh24:mi:ss'), '%s', %d )",
-                    event_type_box.getValue(),
-                    event_time.getValue(),
-                    event_date.getValue(),
-                    no_of_persons.getText(),
-                    name_of_customer.getText(),
-                    phone_no_of_customer.getText(),
-                    email_of_customer.getText(),
-                    event_ending_time.getValue(),
-                    hall_no.getValue(),
-                    Integer.parseInt(invoiceNoTxT.getText()));
-            
-            DBService.statement.executeUpdate(query);
-            MessageLabelOfEventSaved.setText("Saved!");
-            clearFields();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+    
+        String query = String.format("Insert Into Event_Booking( EventType, EventStartTime,EventDate ,NoOfPerson, NameOfCustomer, PhoneNoOfCustomer, EmailOfCustomer,EventEndingTime, HallNo, INVOICENO) Values ('%s', to_date('2020-12-12 %s',  'yyyy-mm-dd hh24:mi:ss'), to_date('%s','yyyy-mm-dd'), '%s', '%s', '%s', '%s',to_date('2020-12-12 %s',  'yyyy-mm-dd hh24:mi:ss'), '%s', %d )",
+                event_type_box.getValue(),
+                event_time.getValue(),
+                event_date.getValue(),
+                no_of_persons.getText(),
+                name_of_customer.getText(),
+                phone_no_of_customer.getText(),
+                email_of_customer.getText(),
+                event_ending_time.getValue(),
+                hall_no.getValue(),
+                Integer.parseInt(invoiceNoTxT.getText()));
+    
+        DBService.executeUpdate(query);
+        MessageLabelOfEventSaved.setText("Saved!");
+        clearFields();
     }
     
     public void clearFields() {
@@ -111,8 +107,8 @@ public class BookingController implements Initializable {
         try {
             
             String query = String.format("select * from Event_Booking where EVENTDATE = to_date('%s','yyyy-mm-dd ') AND EVENTSTARTTIME = to_date('2020-12-12 %s','yyyy-mm-dd hh24-mi-ss')", SearchDate.getValue(), SearchTime.getValue());
-            
-            ResultSet rs = DBService.statement.executeQuery(query);
+    
+            ResultSet rs = DBService.executeQuery(query);
             while (rs.next()) {
 //                StringBuilder result = new StringBuilder();
 //                result.append("Event Type =   "+rs.getString(1));

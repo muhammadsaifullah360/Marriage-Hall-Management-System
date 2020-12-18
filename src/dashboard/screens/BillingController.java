@@ -1,6 +1,5 @@
 package dashboard.screens;
 
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import database.DBService;
 import javafx.event.ActionEvent;
@@ -22,8 +21,8 @@ public class BillingController {
     private Text load;
     
     public void LoadData(ActionEvent actionEvent) throws SQLException {
-        String query = String.format("select * from Event_Booking where invoiceNo = %d",Integer.parseInt(DataLoadField.getText()));
-        ResultSet rs = DBService.statement.executeQuery(query);
+        String query = String.format("select * from Event_Booking where invoiceNo = %d", Integer.parseInt(DataLoadField.getText()));
+        ResultSet rs = DBService.executeQuery(query);
     
         if (rs.next()) {
             load.setText(rs.getString(4));

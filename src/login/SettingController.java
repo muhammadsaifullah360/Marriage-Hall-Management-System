@@ -13,7 +13,6 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 public class SettingController {
     
@@ -84,23 +83,19 @@ public class SettingController {
     }
     
     public void registerUser() {
-        
-        try {
-            String firstName = firstname_txt.getText();
-            String lastName = lastname_txt.getText();
-            String username = username_txt.getText();
-            String password = password_txt.getText();
-            String email = email_txt.getText();
-            String phoneNo = phone_txt.getText();
-            
-            String query = "INSERT  INTO signup (firstName,lastName,username,password,email,phoneNo)VALUES('" + firstName + "','" + lastName + "','" + username + "','" + password + "','" + email + "','" + phoneNo + "')";
-            
-            DBService.statement.executeUpdate(query);
-            MessageLabelOfSignup.setText("You have been registered!");
-            clearFields();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+    
+        String firstName = firstname_txt.getText();
+        String lastName = lastname_txt.getText();
+        String username = username_txt.getText();
+        String password = password_txt.getText();
+        String email = email_txt.getText();
+        String phoneNo = phone_txt.getText();
+    
+        String query = "INSERT  INTO signup (firstName,lastName,username,password,email,phoneNo)VALUES('" + firstName + "','" + lastName + "','" + username + "','" + password + "','" + email + "','" + phoneNo + "')";
+    
+        DBService.executeUpdate(query);
+        MessageLabelOfSignup.setText("You have been registered!");
+        clearFields();
     }
     
     public void clearFields() {
@@ -141,19 +136,15 @@ public class SettingController {
     }
     
     public void changePass() {
-        try {
-            String query = String.format("update  signup set password = '%s' where username ='%s'And password = '%s' ",
-                    c_cnfrm_password_t.getText(), c_username_txt.getText(), c_old_pas.getText());
-            
-            DBService.statement.executeUpdate(query);
-            MessageLabelOfChangePassword.setText("Password Changed!");
-            clearChangepassFields();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
+        String query = String.format("update  signup set password = '%s' where username ='%s'And password = '%s' ",
+                c_cnfrm_password_t.getText(), c_username_txt.getText(), c_old_pas.getText());
+    
+        DBService.executeUpdate(query);
+        MessageLabelOfChangePassword.setText("Password Changed!");
+        clearChangepassFields();
     }
     
-    public void clearChangepassFields(){
+    public void clearChangepassFields() {
         c_cnfrm_password_t.setText(null);
         c_username_txt.setText(null);
         c_old_pas.setText(null);
