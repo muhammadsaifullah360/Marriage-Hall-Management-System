@@ -1,59 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
+
 <AnchorPane prefHeight="684.0" prefWidth="923.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.screens.EmployeeController">
    <children>
       <AnchorPane layoutX="153.0" layoutY="553.0" prefHeight="68.0" prefWidth="658.0" style="-fx-background-color: #666666; -fx-background-radius: 17px;">
          <children>
-            <JFXButton fx:id="delete_btn" buttonType="RAISED" layoutX="497.0" layoutY="19.0" onAction="#delete"
-                       prefHeight="33.0" prefWidth="100.0"
-                       style="-fx-background-color: gold; -fx-background-radius: 15px;" text="DELETE">
-               <cursor>
-                  <Cursor fx:constant="HAND"/>
-               </cursor>
-               <font>
-                  <Font name="System Bold" size="12.0"/>
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="update_btn" buttonType="RAISED" layoutX="209.0" layoutY="19.0" onAction="#update"
-                       prefHeight="33.0" prefWidth="100.0"
-                       style="-fx-background-color: gold; -fx-background-radius: 15px;" text="UPDATE">
-               <cursor>
-                  <Cursor fx:constant="HAND"/>
-               </cursor>
-               <font>
-                  <Font name="System Bold" size="12.0"/>
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="add_btn" buttonType="RAISED" layoutX="61.0" layoutY="18.0" onAction="#add"
-                       prefHeight="33.0" prefWidth="100.0"
-                       style="-fx-background-color: gold; -fx-background-radius: 15px;" text="ADD">
-               <cursor>
-                  <Cursor fx:constant="HAND"/>
-               </cursor>
-               <font>
-                  <Font name="System Bold" size="12.0"/>
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="viewBtn" buttonType="RAISED" layoutX="353.0" layoutY="19.0" onAction="#view"
-                       prefHeight="33.0" prefWidth="100.0"
-                       style="-fx-background-color: gold; -fx-background-radius: 15px;" text="VIEW">
-               <cursor>
-                  <Cursor fx:constant="HAND"/>
-               </cursor>
-               <font>
-                  <Font name="System Bold" size="12.0"/>
-               </font>
-            </JFXButton>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="47.0" layoutY="22.0" prefHeight="68.0" prefWidth="840.0" style="-fx-background-color: #666666; -fx-background-radius: 17px;">
-         <children>
-            <JFXButton fx:id="search_btn" buttonType="RAISED" layoutX="394.0" layoutY="21.0" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: gold; -fx-background-radius: 15px;" text="SEARCH">
+            <JFXButton fx:id="delete_btn" buttonType="RAISED" layoutX="497.0" layoutY="19.0" onAction="#delete" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: gold; -fx-background-radius: 15px;" text="DELETE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -61,21 +20,57 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <TextField fx:id="searchField_btn" layoutX="76.0" layoutY="21.0" prefHeight="26.0" prefWidth="295.0" promptText="Search Here!" style="-fx-background-radius: 10px;">
+            <JFXButton fx:id="update_btn" buttonType="RAISED" layoutX="209.0" layoutY="19.0" onAction="#update" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: gold; -fx-background-radius: 15px;" text="UPDATE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="add_btn" buttonType="RAISED" layoutX="61.0" layoutY="18.0" onAction="#add" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: gold; -fx-background-radius: 15px;" text="ADD">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="viewBtn" buttonType="RAISED" layoutX="353.0" layoutY="19.0" onAction="#view" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: gold; -fx-background-radius: 15px;" text="VIEW">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="47.0" layoutY="22.0" prefHeight="68.0" prefWidth="840.0" style="-fx-background-color: #666666; -fx-background-radius: 17px;">
+         <children>
+            <JFXButton fx:id="SearchClearBtn" buttonType="RAISED" layoutX="394.0" layoutY="21.0" onAction="#searchClearBtn" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: gold; -fx-background-radius: 15px;" text="Clear">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <TextField fx:id="searchField" layoutX="76.0" layoutY="21.0" prefHeight="26.0" prefWidth="295.0" promptText="Search Here!" style="-fx-background-radius: 10px;">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor></TextField>
          </children>
       </AnchorPane>
-      <TableView fx:id="employee_table" layoutX="28.0" layoutY="106.0" prefHeight="435.0" prefWidth="866.0">
+      <TableView fx:id="employeeTable" layoutX="28.0" layoutY="106.0" prefHeight="435.0" prefWidth="866.0">
          <columns>
-            <TableColumn fx:id="id_col" prefWidth="62.0" text="ID"/>
-            <TableColumn fx:id="Fname_col" prefWidth="106.0" text=" First_Name"/>
-            <TableColumn fx:id="Lname_col" prefWidth="103.0" text="Last_Name"/>
-            <TableColumn fx:id="cnic_col" prefWidth="137.0" text="CNIC_No"/>
-            <TableColumn fx:id="type_col" prefWidth="91.0" text="Type"/>
-            <TableColumn fx:id="salary_col" text="Salary"/>
-            <TableColumn fx:id="address_col" prefWidth="286.0" text="Address"/>
+            <TableColumn fx:id="idCol" prefWidth="62.0" text="ID" />
+            <TableColumn fx:id="firstNameCol" prefWidth="106.0" text=" First_Name" />
+            <TableColumn fx:id="lastNameCol" prefWidth="103.0" text="Last_Name" />
+            <TableColumn fx:id="cnicCol" prefWidth="137.0" text="CNIC_No" />
+            <TableColumn fx:id="typeCol" prefWidth="91.0" text="Type" />
+            <TableColumn fx:id="salaryCol" text="Salary" />
+            <TableColumn fx:id="addressCol" prefWidth="286.0" text="Address" />
          </columns>
       </TableView>
    </children>

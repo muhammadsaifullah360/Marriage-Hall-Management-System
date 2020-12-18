@@ -3,123 +3,85 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
-<?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import com.jfoenix.controls.JFXTimePicker?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="649.0" prefWidth="853.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.screens.BookingController">
    <children>
-      <Label layoutX="43.0" layoutY="281.0" prefHeight="25.0" prefWidth="79.0" text="Event Type">
+      <Label layoutX="67.0" layoutY="165.0" prefHeight="25.0" prefWidth="79.0" text="Event Type">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="58.0" layoutY="114.0" prefHeight="25.0" prefWidth="79.0" text="Enter Time">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="58.0" layoutY="50.0" prefHeight="25.0" prefWidth="79.0" text="Enter Date">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <JFXButton fx:id="EventSearchBtn" buttonType="RAISED" layoutX="82.0" layoutY="172.0" onAction="#EventSearchBtn" prefHeight="36.0" prefWidth="79.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 12px;" text="Search" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
-      <JFXTextArea fx:id="ShowSearchResult" focusColor="#d3d5da" layoutX="405.0" layoutY="69.0" prefHeight="121.0" prefWidth="371.0" promptText="Show search result." style="-fx-background-color: #9a9995; -fx-background-radius: 15px; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent; -fx-text-inner-color: white;" unFocusColor="#979797">
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-         <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </padding></JFXTextArea>
-      <Separator layoutX="1.0" layoutY="219.0" prefHeight="3.0" prefWidth="922.0" style="-fx-background-color: black;" />
-      <JFXComboBox fx:id="event_type_box" layoutX="127.0" layoutY="282.0" prefHeight="25.0" prefWidth="171.0" promptText="Select Event Type">
+      <JFXComboBox fx:id="eventType" layoutX="151.0" layoutY="166.0" prefHeight="25.0" prefWidth="171.0" promptText="Select Event Type" style="-fx-background-color: white;">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></JFXComboBox>
-      <JFXTimePicker fx:id="SearchTime" layoutX="136.0" layoutY="108.0">
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor></JFXTimePicker>
-      <JFXDatePicker fx:id="SearchDate" defaultColor="#1658dd" layoutX="136.0" layoutY="45.0">
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor></JFXDatePicker>
-      <Label layoutX="484.0" layoutY="282.0" prefHeight="25.0" prefWidth="135.0" text="Event  Starting Time">
+      <Label layoutX="433.0" layoutY="166.0" prefHeight="25.0" prefWidth="135.0" text="Event  Starting Time">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <JFXTimePicker fx:id="event_time" layoutX="627.0" layoutY="281.0" prefHeight="28.0" prefWidth="164.0">
+      <JFXTimePicker fx:id="eventStartTime" layoutX="576.0" layoutY="165.0" prefHeight="28.0" prefWidth="164.0" style="-fx-background-color: white;">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
       </JFXTimePicker>
-      <Label layoutX="486.0" layoutY="355.0" prefHeight="25.0" prefWidth="79.0" text="Event Date">
+      <Label layoutX="435.0" layoutY="239.0" prefHeight="25.0" prefWidth="79.0" text="Event Date">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <JFXDatePicker fx:id="event_date" defaultColor="#da0a0a" layoutX="618.0" layoutY="346.0">
+      <JFXDatePicker fx:id="eventDate" defaultColor="#da0a0a" layoutX="567.0" layoutY="230.0" style="-fx-background-color: white;">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
       </JFXDatePicker>
-      <Label layoutX="43.0" layoutY="414.0" prefHeight="25.0" prefWidth="106.0" text="No Of Persons">
+      <Label layoutX="67.0" layoutY="298.0" prefHeight="25.0" prefWidth="106.0" text="No Of Persons">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="no_of_persons" layoutX="158.0" layoutY="414.0" prefHeight="25.0" prefWidth="155.0" />
-      <Separator layoutX="1.0" layoutY="445.0" prefHeight="16.0" prefWidth="910.0" />
-      <JFXButton fx:id="saveEventBtn" buttonType="RAISED" layoutX="791.0" layoutY="599.0" onAction="#SaveEventBtn" prefHeight="36.0" prefWidth="93.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 12px;" text="Save" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </JFXButton>
+      <JFXTextField fx:id="noOfPersons" layoutX="182.0" layoutY="298.0" prefHeight="25.0" prefWidth="155.0" style="-fx-background-color: white;" />
       <Label fx:id="MessageLabelOfEventSaved" layoutX="791.0" layoutY="560.0" prefHeight="26.0" prefWidth="79.0" textFill="#c90808">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="43.0" layoutY="515.0" prefHeight="25.0" prefWidth="135.0" text="Name Of Customer">
+      <Label layoutX="67.0" layoutY="234.0" prefHeight="25.0" prefWidth="135.0" text="Event Ending Time">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="name_of_customer" layoutX="182.0" layoutY="517.0" prefHeight="25.0" prefWidth="186.0" />
-      <Label layoutX="493.0" layoutY="515.0" prefHeight="25.0" prefWidth="93.0" text="Phone.No">
+      <JFXTimePicker fx:id="eventEndTime" layoutX="206.0" layoutY="230.0" prefHeight="28.0" prefWidth="164.0" style="-fx-background-color: white;">
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+      </JFXTimePicker>
+      <Label layoutX="440.0" layoutY="298.0" prefHeight="25.0" prefWidth="79.0" text="Hall No.">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="phone_no_of_customer" layoutX="590.0" layoutY="517.0" prefHeight="25.0" prefWidth="164.0" />
-      <Label layoutX="43.0" layoutY="584.0" prefHeight="25.0" prefWidth="135.0" text="Customer Email">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <JFXTextField fx:id="email_of_customer" layoutX="182.0" layoutY="586.0" prefHeight="25.0" prefWidth="186.0" />
-      <JFXButton fx:id="ClearSearch" buttonType="RAISED" layoutX="229.0" layoutY="172.0" onAction="#ClearSearch" prefHeight="36.0" prefWidth="79.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 12px;" text="Clear" textFill="WHITE">
+      <JFXComboBox fx:id="hallNo" layoutX="524.0" layoutY="299.0" prefHeight="25.0" prefWidth="171.0" promptText="Select Hall" style="-fx-background-color: white;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXComboBox>
+      <AnchorPane layoutX="291.0" layoutY="8.0" prefHeight="28.0" prefWidth="278.0" style="-fx-background-color: gold; -fx-background-radius: 10px;">
+         <children>
+            <Label layoutX="48.0" prefHeight="27.0" prefWidth="186.0" text="Event Booking Details">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <JFXButton buttonType="RAISED" layoutX="760.0" layoutY="394.0" onAction="#onCheck" prefHeight="36.0" prefWidth="93.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 12px;" text="Check" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
@@ -127,58 +89,25 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <Label layoutX="43.0" layoutY="350.0" prefHeight="25.0" prefWidth="135.0" text="Event Ending Time">
+      <JFXButton buttonType="RAISED" layoutX="220.0" layoutY="599.0" onAction="#onNext" prefHeight="36.0" prefWidth="93.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 12px;" text="Next" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
-      </Label>
-      <JFXTimePicker fx:id="event_ending_time" layoutX="182.0" layoutY="346.0" prefHeight="28.0" prefWidth="164.0">
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-      </JFXTimePicker>
-      <Label layoutX="491.0" layoutY="414.0" prefHeight="25.0" prefWidth="79.0" text="Hall No.">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <JFXComboBox fx:id="hall_no" layoutX="575.0" layoutY="415.0" prefHeight="25.0" prefWidth="171.0" promptText="Select Hall">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
-      </JFXComboBox>
-      <AnchorPane layoutX="255.0" layoutY="11.0" prefHeight="28.0" prefWidth="332.0" style="-fx-background-color: gold; -fx-background-radius: 10px;">
-         <children>
-            <Label layoutX="55.0" prefHeight="26.0" prefWidth="230.0" text="Check Booking Availability">
-               <font>
-                  <Font name="System Bold" size="17.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="313.0" layoutY="233.0" prefHeight="28.0" prefWidth="230.0" style="-fx-background-color: gold; -fx-background-radius: 10px;">
-         <children>
-            <Label layoutX="67.0" prefHeight="27.0" prefWidth="116.0" text="Event Details">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="294.0" layoutY="457.0" prefHeight="29.0" prefWidth="252.0" style="-fx-background-color: gold; -fx-background-radius: 10px;">
-         <children>
-            <Label layoutX="57.0" layoutY="2.0" prefHeight="27.0" prefWidth="164.0" text="Customer Details">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <Label layoutX="493.0" layoutY="596.0" prefHeight="25.0" prefWidth="93.0" text="Invoice No">
+      </JFXButton>
+      <Label layoutX="66.0" layoutY="102.0" prefHeight="25.0" prefWidth="106.0" text="ID">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="invoiceNoTxT" layoutX="590.0" layoutY="598.0" prefHeight="25.0" prefWidth="164.0" />
+      <JFXTextField fx:id="Id" layoutX="181.0" layoutY="102.0" prefHeight="25.0" prefWidth="155.0" style="-fx-background-color: white;" />
+      <Label layoutX="67.0" layoutY="354.0" prefHeight="25.0" prefWidth="87.0" text="Duration">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="durationField" layoutX="182.0" layoutY="354.0" prefHeight="25.0" prefWidth="155.0" promptText="hrs." style="-fx-background-color: white;" />
    </children>
 </AnchorPane>
