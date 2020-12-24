@@ -6,14 +6,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import util.StageHandler;
-import java.io.IOException;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -102,14 +101,14 @@ public class EmployeeController {
         }
     }
     
-    public void add(ActionEvent event) throws IOException {
-        
+    public void add() {
+    
         String fxmlPath = "/dashboard/screens/employeeOperations/EmpOperations.fxml";
         String title = "Add Employee";
         StageHandler.createStage(fxmlPath, title);
     }
     
-    public void update(ActionEvent event) throws IOException, SQLException {
+    public void update() throws SQLException {
         
         String fxmlPath = "/dashboard/screens/employeeOperations/EmpOperations.fxml";
         String title = "Update Employee";
@@ -118,15 +117,7 @@ public class EmployeeController {
         controller.initData(employeeTable.getSelectionModel().getSelectedItem());
     }
     
-    public void delete(ActionEvent event) throws SQLException, IOException {
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/dashboard/screens/employeeOperations/View_Employee.fxml"));
-//        Parent root1 = fxmlLoader.load();
-//        OperationsController controller = fxmlLoader.getController();
-//        controller.initData(employee_table.getSelectionModel().getSelectedItem());
-//        Stage stage = new Stage();
-//        stage.setTitle("Delete Employee Details");
-//        stage.setScene(new Scene(root1));
-//        stage.show();
+    public void delete() throws SQLException {
         String fxmlPath = "/dashboard/screens/employeeOperations/View_Employee.fxml";
         String title = "Delete Employee Details";
         StageHandler.createStage(fxmlPath, title);
@@ -134,7 +125,7 @@ public class EmployeeController {
         controller.initData(employeeTable.getSelectionModel().getSelectedItem());
     }
     
-    public void view(ActionEvent actionEvent) throws IOException, SQLException {
+    public void view() throws SQLException {
         String fxmlPath = "/dashboard/screens/employeeOperations/View_Employee.fxml";
         String title = "View Employee Details";
         StageHandler.createStage(fxmlPath, title);
@@ -142,7 +133,7 @@ public class EmployeeController {
         controller.initData(employeeTable.getSelectionModel().getSelectedItem());
     }
     
-    public void searchClearBtn(ActionEvent actionEvent) {
+    public void searchClearBtn() {
         searchField.clear();
     }
 }

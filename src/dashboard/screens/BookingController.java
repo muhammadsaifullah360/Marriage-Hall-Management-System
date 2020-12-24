@@ -117,4 +117,11 @@ public class BookingController implements Initializable {
         emailOfCustomer.clear();
         customerAddress.setText(null);
     }
+    
+    public void onCheck(ActionEvent event) {
+    }
+    
+    public void onNext(ActionEvent event) {
+    
+    }
 }
