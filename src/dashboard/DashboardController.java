@@ -16,32 +16,34 @@ public class DashboardController {
     
     
     @FXML
-    private BorderPane MainBorderPane;
+    private BorderPane mainBorderPane;
+    
+    
     
     public void onclickDashboard(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/dashboard/screens/Dash.fxml"));
-        MainBorderPane.setCenter(root);
+        mainBorderPane.setCenter(root);
     }
     
     public void onclickBooking(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/dashboard/screens/Booking.fxml"));
-        MainBorderPane.setCenter(root);
+        mainBorderPane.setCenter(root);
     }
     
     public void onclickMenu(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/dashboard/screens/Menu.fxml"));
-        MainBorderPane.setCenter(root);
+        mainBorderPane.setCenter(root);
     }
     
     public void onclickEmployee(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/dashboard/screens/Employee.fxml"));
 //        scrolpanemain.setContent(root);
-        MainBorderPane.setCenter(root);
+        mainBorderPane.setCenter(root);
     }
     
     public void onclickBilling(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/dashboard/screens/Billing.fxml"));
-        MainBorderPane.setCenter(root);
+        mainBorderPane.setCenter(root);
     }
     
     public void onclickLogout(ActionEvent event) throws IOException {
@@ -59,6 +61,12 @@ public class DashboardController {
         stage.setTitle("Settings");
         stage.setScene(new Scene(root1));
         stage.show();
+    }
+    
+    public void loadCustomerPane() throws IOException {
+        Parent root = FXMLLoader.load(DashboardController.class.getResource("/dashboard/screens/Customer.fxml"));
+        mainBorderPane.setCenter(root);
+
     }
     
 }

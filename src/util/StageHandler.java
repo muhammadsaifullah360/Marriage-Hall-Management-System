@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class StageHandler {
+    
     public static FXMLLoader loader;
     
     static public Stage createStage(String fxmlPath, String title) {
