@@ -125,4 +125,11 @@ public class BookingController implements Initializable {
         SearchTime.setValue(null);
         ShowSearchResult.clear();
     }
+    
+    public void onCheck(ActionEvent event) {
+    }
+    
+    public void onNext(ActionEvent event) {
+    
+    }
 }
