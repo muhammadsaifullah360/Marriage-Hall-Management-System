@@ -169,7 +169,7 @@
                   <Font name="System Bold" size="15.0" />
                </font>
             </Label>
-            <JFXButton fx:id="AddBtn" buttonType="RAISED" layoutX="400.0" layoutY="1593.0" onAction="#add" prefHeight="34.0" prefWidth="119.0" style="-fx-background-color: gold; -fx-background-radius: 10px;" text="Submit Details">
+            <JFXButton fx:id="AddBtn" buttonType="RAISED" layoutX="400.0" layoutY="1593.0" onAction="#addEmployee" prefHeight="34.0" prefWidth="119.0" style="-fx-background-color: gold; -fx-background-radius: 10px;" text="Submit Details">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>

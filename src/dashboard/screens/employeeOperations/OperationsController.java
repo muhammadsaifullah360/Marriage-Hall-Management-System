@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import dashboard.screens.Employee;
+import dashboard.screens.EmployeeController;
 import database.DBService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -109,7 +110,6 @@ public class OperationsController {
             verificationCode.setText(rs.getString("Verification_No"));
             issueDate.setValue(LocalDate.parse(rs.getString("Date_Issued_On")));
             eduDescription.setText(rs.getString("Description"));
-    
         }
     }
     
@@ -133,7 +133,6 @@ public class OperationsController {
             experienceDate.setValue(LocalDate.parse(rs.getString("Date_Time")));
             expFieldName.setText(rs.getString("Field_Name"));
             experienceOrganizationName.setText(rs.getString("Organization_Name"));
-    
         }
     }
     
@@ -151,7 +150,7 @@ public class OperationsController {
         }
     }
     
-    public void add(ActionEvent event) throws SQLException {
+    public void addEmployee(ActionEvent event) throws SQLException {
         String basicDetail = String.format("Insert Into Employee (ID, Name,Phone_Number,Email,Address,Date_Time) Values( %d,'%s','%s','%s','%s',to_date('%s','yyyy-mm-dd'))",
                 Integer.parseInt(id.getText()),
                 Name.getText(),
@@ -189,27 +188,29 @@ public class OperationsController {
                 expFieldName.getText(),
                 experienceOrganizationName.getText()
         );
-
+        
         String Duty_detail = String.format("Insert Into Employee_Duty_Detail( Employee_ID , Job_Title, SHIFT,Working_Hours,  SALARY , Joining_Date ) Values( %d,'%s','%s',%d,%d,to_date('%s','yyyy-mm-dd'))",
-
+                
                 Integer.parseInt(id.getText()),
                 jobTitle.getText(),
                 dutyShift.getText(),
-               Integer.parseInt(workHours.getText()) ,
-               Integer.parseInt(salary.getText()) ,
+                Integer.parseInt(workHours.getText()),
+                Integer.parseInt(salary.getText()),
                 dateOfJoin.getValue()
         );
         
         DBService.statement.executeUpdate(basicDetail);
-//        DBService.statement.executeUpdate(educationalDetail);
-//        DBService.statement.executeUpdate(Skills_detail);
-//        DBService.statement.executeUpdate(Experience_detail);
+        DBService.statement.executeUpdate(educationalDetail);
+        DBService.statement.executeUpdate(Skills_detail);
+        DBService.statement.executeUpdate(Experience_detail);
         DBService.statement.executeUpdate(Duty_detail);
         save_label.setText("Saved!");
+        Refresh();
         clearFields();
     }
-    public void fresh(){
     
+    public void Refresh() {
+        EmployeeController.getData();
     }
     
     public void clearFields() {
@@ -253,7 +254,7 @@ public class OperationsController {
                 Integer.parseInt(id.getText())
         );
         // Employee Qualification Details
-        String qualificationDetailsQuery = String.format("Update  Employee_Education_Detail set Certificate_Title = '%s', Organization_Name= '%s' ,Verification_No = '%s', Date_Issued_On = to_date('%s','yyyy-mm-dd'),Date_time = to_date('%s','yyyy-mm-dd') Where  Employee_id= %d ",
+        String qualificationDetailsQuery = String.format("Update  Employee_Education_Detail set Certificate_Title = '%s', Organization_Name= '%s' ,Verification_No = '%s', Date_Issued_On = to_char('%s','yyyy-mm-dd'),Date_time = to_char(sysdate,'yyyy-mm-dd') Where  Employee_id= %d ",
                 
                 
                 certificateTitle.getText(),
@@ -263,7 +264,7 @@ public class OperationsController {
                 Integer.parseInt(id.getText())
         );
         // Employee Experience Details
-        String experienceDetails_query = String.format("Update  Employee_Experience_Detail set Job_Title = '%s',Duration = '%s',Date_Time=  to_date('%s','yyyy-mm-dd'),Field_Name ='%s' , Organization_Name = '%s'  Where  Employee_id= %d ",
+        String experienceDetails_query = String.format("Update  Employee_Experience_Detail set Job_Title = '%s',Duration = '%s',Date_Time=  to_char('%s','yyyy-mm-dd'),Field_Name ='%s' , Organization_Name = '%s'  Where  Employee_id= %d ",
                 
                 
                 expJobTitle.getText(),
@@ -284,12 +285,12 @@ public class OperationsController {
         );
         
         // Employee Duty Details
-        String dutyDetails_query = String.format("UPDATE Employee_Duty_Detail SET  Team_ID = %d ,Job_Title = '%s',Working_Hours= '%s', Shifts='%s', Salary=%d ,Joining_Date =  to_date('%s','yyyy-mm-dd'), Where Emp_id=%d",
-                
-                Integer.parseInt(teamId.getText()),
+        String dutyDetails_query = String.format("UPDATE Employee_Duty_Detail SET   Job_Title = '%s',Working_Hours = %d, Shift ='%s', Salary=%d ,Joining_Date =  to_char('%s','yyyy-mm-dd') Where Employee_id=%d",
+
+//                Integer.parseInt(teamId.getText()),
                 jobTitle.getText(),
-                dutyShift.getText(),
                 Integer.parseInt(workHours.getText()),
+                dutyShift.getText(),
                 Integer.parseInt(salary.getText()),
                 dateOfJoin.getValue(),
                 Integer.parseInt(id.getText())
@@ -302,7 +303,7 @@ public class OperationsController {
         DBService.statement.executeUpdate(skillDetails_query);
         DBService.statement.executeUpdate(dutyDetails_query);
         save_label.setText("Information Updated!");
-        clearFields();
+        Refresh();
     }
     
     public void delete(ActionEvent event) throws SQLException {
@@ -310,5 +311,6 @@ public class OperationsController {
         String query = String.format("Delete from Employee Where id = %d ", id);
         DBService.statement.executeUpdate(query);
         save_label.setText("Deleted");
+        Refresh();
     }
 }

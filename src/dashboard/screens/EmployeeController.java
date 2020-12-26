@@ -13,7 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import util.StageHandler;
 
-import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -96,7 +95,7 @@ public class EmployeeController {
         }
     }
     
-    public void add(){
+    public void add() {
         
         String fxmlPath = "/dashboard/screens/employeeOperations/EmpOperations.fxml";
         String title = "Add Employee";
@@ -110,7 +109,6 @@ public class EmployeeController {
         StageHandler.createStage(fxmlPath, title);
         OperationsController controller = StageHandler.loader.getController();
         controller.initData(employeeTable.getSelectionModel().getSelectedItem());
-        
     }
     
     public void delete() throws SQLException {
