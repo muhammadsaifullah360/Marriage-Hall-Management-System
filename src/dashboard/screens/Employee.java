@@ -5,158 +5,82 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class Employee {
     
+    
     SimpleIntegerProperty id;
-    SimpleStringProperty firstName;
-    SimpleStringProperty lastName;
-    SimpleStringProperty fatherName;
-    SimpleStringProperty emrName;
-    SimpleStringProperty cnic;
-    SimpleStringProperty age;
-    SimpleStringProperty DOB;
-    SimpleStringProperty nationality;
-    SimpleStringProperty type;
+    SimpleStringProperty Name;
+    SimpleStringProperty phone;
+    SimpleStringProperty email;
     SimpleStringProperty address;
-    SimpleIntegerProperty salary;
     
+    public String getDob() {
+        return dob.get();
+    }
     
+    public SimpleStringProperty dobProperty() {
+        return dob;
+    }
     
+    public void setDob(String dob) {
+        this.dob.set(dob);
+    }
     
-    public Employee(int id, String firstName, String lastName, String fatherName, String emrName, String cnic,String age ,String DOB,  String nationality) {
+    SimpleStringProperty dob;
+    
+    public Employee(int id, String name, String phone, String email, String address,String dob) {
         this.id = new SimpleIntegerProperty(id);
-        this.firstName = new SimpleStringProperty(firstName);
-        this.lastName = new SimpleStringProperty(lastName);
-        this.fatherName = new SimpleStringProperty(fatherName);
-        this.emrName = new SimpleStringProperty(emrName);
-        this.cnic = new SimpleStringProperty(cnic);
-        this.age = new SimpleStringProperty(age);
-        this.DOB = new SimpleStringProperty(DOB);
-        this.nationality = new SimpleStringProperty(nationality);
-    }
-    
-//    public Employee(String type, String cur_addres, int salary) {
-//        this.type = new SimpleStringProperty(type);
-//        this.address = new SimpleStringProperty(cur_addres);
-//        this.salary =new SimpleIntegerProperty(salary);
-//    }
-    
-    public String getDOB() {
-        return DOB.get();
-    }
-    
-    public void setDOB(String DOB) {
-        this.DOB.set(DOB);
-    }
-    
-    public SimpleStringProperty DOBProperty() {
-        return DOB;
-    }
-    
-    public String getAge() {
-        return age.get();
-    }
-    
-    public void setAge(String age) {
-        this.age.set(age);
-    }
-    
-    public SimpleStringProperty ageProperty() {
-        return age;
+        this.Name = new SimpleStringProperty(name);
+        this.phone = new SimpleStringProperty(phone);
+        this.email = new SimpleStringProperty(email);
+        this.address =  new SimpleStringProperty(address);
+        this.dob = new SimpleStringProperty(dob);
     }
     
     public int getId() {
         return id.get();
     }
     
-    public void setId(int id) {
-        this.id.set(id);
-    }
-    
     public SimpleIntegerProperty idProperty() {
         return id;
     }
     
-    public String getFirstName() {
-        return firstName.get();
+    public void setId(int id) {
+        this.id.set(id);
     }
     
-    public void setFirstName(String firstName) {
-        this.firstName.set(firstName);
+    public String getName() {
+        return Name.get();
     }
     
-    public SimpleStringProperty firstNameProperty() {
-        return firstName;
+    public SimpleStringProperty nameProperty() {
+        return Name;
     }
     
-    public String getLastName() {
-        return lastName.get();
+    public void setName(String name) {
+        this.Name.set(name);
     }
     
-    public void setLastName(String lastName) {
-        this.lastName.set(lastName);
+    public String getPhone() {
+        return phone.get();
     }
     
-    public SimpleStringProperty lastNameProperty() {
-        return lastName;
+    public SimpleStringProperty phoneProperty() {
+        return phone;
     }
     
-    public String getFatherName() {
-        return fatherName.get();
+    public void setPhone(String phone) {
+        this.phone.set(phone);
     }
     
-    public void setFatherName(String fatherName) {
-        this.fatherName.set(fatherName);
+    public String getEmail() {
+        return email.get();
     }
     
-    public SimpleStringProperty fatherNameProperty() {
-        return fatherName;
+    public SimpleStringProperty emailProperty() {
+        return email;
     }
     
-    public String getEmrName() {
-        return emrName.get();
-    }
-    
-    public void setEmrName(String emrName) {
-        this.emrName.set(emrName);
-    }
-    
-    public SimpleStringProperty emrNameProperty() {
-        return emrName;
-    }
-    
-    public String getNationality() {
-        return nationality.get();
-    }
-    
-    public void setNationality(String nationality) {
-        this.nationality.set(nationality);
-    }
-    
-    public SimpleStringProperty nationalityProperty() {
-        return nationality;
-    }
-    
-    public String getCnic() {
-        return cnic.get();
-    }
-    
-    public void setCnic(String cnic) {
-        this.cnic.set(cnic);
-    }
-    
-    public SimpleStringProperty cnicProperty() {
-        return cnic;
-    }
-    
-    public int getSalary() {
-        return salary.get();
-    }
-    
-    public SimpleIntegerProperty salaryProperty() {
-        return salary;
-    }
-    
-    public void setSalary(int salary) {
-        this.salary.set(salary);
+    public void setEmail(String email) {
+        this.email.set(email);
     }
     
     public String getAddress() {
@@ -170,17 +94,7 @@ public class Employee {
     public void setAddress(String address) {
         this.address.set(address);
     }
-    
-    public String getType() {
-        return type.get();
-    }
-    
-    public SimpleStringProperty typeProperty() {
-        return type;
-    }
-    
-    public void setType(String type) {
-        this.type.set(type);
-    }
-    
+ 
 }
+    
+    

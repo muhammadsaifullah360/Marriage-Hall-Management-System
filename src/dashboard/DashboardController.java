@@ -14,11 +14,8 @@ import java.io.IOException;
 
 public class DashboardController {
     
-    
     @FXML
     private BorderPane mainBorderPane;
-    
-    
     
     public void onclickDashboard(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/dashboard/screens/Dash.fxml"));
@@ -37,7 +34,6 @@ public class DashboardController {
     
     public void onclickEmployee(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/dashboard/screens/Employee.fxml"));
-//        scrolpanemain.setContent(root);
         mainBorderPane.setCenter(root);
     }
     
@@ -54,7 +50,7 @@ public class DashboardController {
         stage.show();
     }
     
-    public void onClickSetting(ActionEvent event) throws IOException {
+    public void setting(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/login/Setting.fxml"));
         Parent root1 = fxmlLoader.load();
         Stage stage = new Stage();
@@ -68,5 +64,4 @@ public class DashboardController {
         mainBorderPane.setCenter(root);
 
     }
-    
 }

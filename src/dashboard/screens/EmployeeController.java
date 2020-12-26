@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import util.StageHandler;
 
+import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -27,15 +28,11 @@ public class EmployeeController {
     @FXML
     private TableColumn<Employee, Integer> idCol;
     @FXML
-    private TableColumn<Employee, String> firstNameCol;
+    private TableColumn<Employee, String> nameCol;
     @FXML
-    private TableColumn<Employee, String> lastNameCol;
+    private TableColumn<Employee, String> phoneCol;
     @FXML
-    private TableColumn<Employee, String> cnicCol;
-    @FXML
-    private TableColumn<Employee, String> typeCol;
-    @FXML
-    private TableColumn<Employee, Integer> salaryCol;
+    private TableColumn<Employee, String> emailCol;
     @FXML
     private TableColumn<Employee, String> addressCol;
     
@@ -47,12 +44,10 @@ public class EmployeeController {
     
     private void createTable() {
         idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
-        firstNameCol.setCellValueFactory(new PropertyValueFactory<>("firstName"));
-        lastNameCol.setCellValueFactory(new PropertyValueFactory<>("lastName"));
-        cnicCol.setCellValueFactory(new PropertyValueFactory<>("cnic"));
-//        type_col.setCellValueFactory(new PropertyValueFactory<>("type"));
-//        salary_col.setCellValueFactory(new PropertyValueFactory<>("salary"));
-//        address_col.setCellValueFactory(new PropertyValueFactory<>("address"));
+        nameCol.setCellValueFactory(new PropertyValueFactory<>("Name"));
+        phoneCol.setCellValueFactory(new PropertyValueFactory<>("phone"));
+        emailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
+        addressCol.setCellValueFactory(new PropertyValueFactory<>("address"));
         employeeTable.setItems(employee_list);
     }
     
@@ -64,13 +59,15 @@ public class EmployeeController {
                     return true;
                 }
                 String lowerCaseFilter = newValue.toLowerCase();
-                boolean matchFirstName = Employee.getFirstName().toLowerCase().contains(lowerCaseFilter);
-                boolean matchCNIC = Employee.getCnic().toLowerCase().contains(lowerCaseFilter);
-                boolean matchLastName = Employee.getLastName().toLowerCase().contains(lowerCaseFilter);
+                boolean matchName = Employee.getName().toLowerCase().contains(lowerCaseFilter);
+                boolean matchPhoneNo = Employee.getPhone().toLowerCase().contains(lowerCaseFilter);
+                boolean matchEmail = Employee.getEmail().toLowerCase().contains(lowerCaseFilter);
+                boolean matchAddress = Employee.getAddress().toLowerCase().contains(lowerCaseFilter);
+                
                 boolean matchID = false;
                 if (newValue.matches("\\d*"))
                     matchID = Employee.getId() == Integer.parseInt(newValue.toLowerCase());
-                return matchFirstName || matchLastName || matchCNIC || matchID;
+                return matchName || matchPhoneNo || matchEmail || matchAddress || matchID;
             });
         });
         
@@ -81,19 +78,17 @@ public class EmployeeController {
     
     public static void getData() {
         employee_list.clear();
-        String query = "Select ID, First_Name ,Last_Name,Father_Name, Emr_Name, Cnic, Age, to_char( DOB,'yyyy-mm-dd') as dob , Nationality from EMP_BASIC_DETAIL";
+        String query = "Select ID, Name ,Phone_Number, Email, Address,Date_Time from Employee";
         ResultSet rs = DBService.executeQuery(query);
         try {
             while (rs.next()) {
                 employee_list.add(new Employee(Integer.parseInt(String.valueOf(rs.getInt("ID"))),
-                        rs.getString("First_Name"),
-                        rs.getString("Last_Name"),
-                        rs.getString("Father_Name"),
-                        rs.getString("Emr_Name"),
-                        rs.getString("Cnic"),
-                        rs.getString("Age"),
-                        rs.getString("Dob"),
-                        rs.getString("Nationality")
+                        
+                        rs.getString("Name"),
+                        rs.getString("Phone_Number"),
+                        rs.getString("Email"),
+                        rs.getString("Address"),
+                        rs.getString("Date_Time")
                 ));
             }
         } catch (SQLException exception) {
@@ -101,8 +96,8 @@ public class EmployeeController {
         }
     }
     
-    public void add() {
-    
+    public void add(){
+        
         String fxmlPath = "/dashboard/screens/employeeOperations/EmpOperations.fxml";
         String title = "Add Employee";
         StageHandler.createStage(fxmlPath, title);
@@ -115,6 +110,7 @@ public class EmployeeController {
         StageHandler.createStage(fxmlPath, title);
         OperationsController controller = StageHandler.loader.getController();
         controller.initData(employeeTable.getSelectionModel().getSelectedItem());
+        
     }
     
     public void delete() throws SQLException {

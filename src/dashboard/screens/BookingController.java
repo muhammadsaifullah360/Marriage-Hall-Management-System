@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.BorderPane;
 import util.StageHandler;
 
@@ -58,6 +59,7 @@ public class BookingController implements Initializable {
         
         ObservableList<String> list1 = FXCollections.observableArrayList("Hall 1 (MaxCap 500)", "Hall 2 (MaxCap 300)", "Hall 3 (MaxCap 700)");
         hallNo.setItems(list1);
+    
     }
     
     public void onCheck(ActionEvent actionEvent) {
@@ -97,8 +99,7 @@ public class BookingController implements Initializable {
     }
     
     private void nextFxml() throws IOException {
-//        Parent root = FXMLLoader.load(getClass().getResource("/dashboard/screens/Customer.fxml"));
-//        pane.setCenter(root);
+
         String fxmlPath = "/dashboard/screens/Customer.fxml";
         String title = "Booking Availability";
         StageHandler.createStage(fxmlPath, title);

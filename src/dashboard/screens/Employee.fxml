@@ -64,13 +64,11 @@
       </AnchorPane>
       <TableView fx:id="employeeTable" layoutX="28.0" layoutY="106.0" prefHeight="435.0" prefWidth="866.0">
          <columns>
-            <TableColumn fx:id="idCol" prefWidth="62.0" text="ID" />
-            <TableColumn fx:id="firstNameCol" prefWidth="106.0" text=" First_Name" />
-            <TableColumn fx:id="lastNameCol" prefWidth="103.0" text="Last_Name" />
-            <TableColumn fx:id="cnicCol" prefWidth="137.0" text="CNIC_No" />
-            <TableColumn fx:id="typeCol" prefWidth="91.0" text="Type" />
-            <TableColumn fx:id="salaryCol" text="Salary" />
-            <TableColumn fx:id="addressCol" prefWidth="286.0" text="Address" />
+            <TableColumn fx:id="idCol" prefWidth="51.0" text="ID" />
+            <TableColumn fx:id="nameCol" prefWidth="117.0" text=" Name" />
+            <TableColumn fx:id="phoneCol" prefWidth="143.0" text="Phone No" />
+            <TableColumn fx:id="emailCol" prefWidth="170.0" text="Email" />
+            <TableColumn fx:id="addressCol" prefWidth="370.0" text="Address" />
          </columns>
       </TableView>
    </children>

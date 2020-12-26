@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -24,9 +25,9 @@
                   </ImageView>
                </children>
             </Pane>
-            <JFXButton fx:id="dashboardButton" onAction="#onclickDashboard" prefHeight="40.0" prefWidth="180.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Dashboard" textFill="WHITE">
+            <JFXButton fx:id="dashboardButton" buttonType="RAISED" onAction="#onclickDashboard" prefHeight="40.0" prefWidth="180.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Dashboard" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -35,9 +36,9 @@
                   <Insets bottom="15.0" left="12.0" right="7.0" top="40.0" />
                </VBox.margin>
             </JFXButton>
-            <JFXButton onAction="#onclickBooking" prefHeight="40.0" prefWidth="180.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Booking" textFill="WHITE">
+            <JFXButton buttonType="RAISED" onAction="#onclickBooking" prefHeight="40.0" prefWidth="180.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Booking" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -46,9 +47,9 @@
                   <Insets bottom="15.0" left="12.0" right="7.0" top="10.0" />
                </VBox.margin>
             </JFXButton>
-            <JFXButton onAction="#onclickMenu" prefHeight="40.0" prefWidth="180.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Menu" textFill="WHITE">
+            <JFXButton buttonType="RAISED" onAction="#onclickMenu" prefHeight="40.0" prefWidth="180.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Menu" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -57,9 +58,9 @@
                   <Insets bottom="15.0" left="12.0" right="7.0" top="10.0" />
                </VBox.margin>
             </JFXButton>
-            <JFXButton onAction="#onclickBilling" prefHeight="40.0" prefWidth="180.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Billing" textFill="WHITE">
+            <JFXButton buttonType="RAISED" onAction="#onclickBilling" prefHeight="40.0" prefWidth="180.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Billing" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -68,9 +69,9 @@
                   <Insets bottom="15.0" left="12.0" right="7.0" top="10.0" />
                </VBox.margin>
             </JFXButton>
-            <JFXButton onAction="#onclickEmployee" prefHeight="40.0" prefWidth="180.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Employee" textFill="WHITE">
+            <JFXButton buttonType="RAISED" onAction="#onclickEmployee" prefHeight="40.0" prefWidth="180.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Employee" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -79,9 +80,9 @@
                   <Insets bottom="15.0" left="12.0" right="7.0" top="10.0" />
                </VBox.margin>
             </JFXButton>
-            <JFXButton onAction="#onclickBilling" prefHeight="40.0" prefWidth="180.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="BackUp" textFill="WHITE">
+            <JFXButton buttonType="RAISED" onAction="#onclickBilling" prefHeight="40.0" prefWidth="180.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="BackUp" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -107,6 +108,11 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
+            <Label layoutX="463.0" layoutY="7.0" prefHeight="32.0" prefWidth="299.0" style="-fx-border-color: gold;" text="   Marriage Hall Management.  " textFill="GOLD">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
    </top>
 </BorderPane>
