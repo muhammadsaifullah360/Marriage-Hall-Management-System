@@ -1,0 +1,2109 @@
+Index: src/dashboard/employee/EmployeePanel.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import com.jfoenix.controls.JFXButton?>\r\n<?import com.jfoenix.controls.JFXDatePicker?>\r\n<?import com.jfoenix.controls.JFXTextArea?>\r\n<?import com.jfoenix.controls.JFXTextField?>\r\n<?import javafx.geometry.Insets?>\r\n<?import javafx.scene.Cursor?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.ScrollPane?>\r\n<?import javafx.scene.control.Separator?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.HBox?>\r\n<?import javafx.scene.layout.VBox?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<ScrollPane prefHeight=\"670.0\" prefWidth=\"804.0\" xmlns=\"http://javafx.com/javafx/11.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"dashboard.employee.EmployeePanelController\">\r\n   <content>\r\n      <AnchorPane prefHeight=\"765.0\" prefWidth=\"789.0\" style=\"-fx-background-color: white;\">\r\n         <children>\r\n            <Label alignment=\"CENTER\" layoutY=\"10.0\" prefHeight=\"35.0\" prefWidth=\"365.0\" text=\"Basic Datails\" textFill=\"GREY\" underline=\"true\" AnchorPane.leftAnchor=\"0.0\" AnchorPane.topAnchor=\"10.0\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"23.0\" />\r\n               </font>\r\n            </Label>\r\n            <Separator layoutX=\"366.0\" orientation=\"VERTICAL\" prefHeight=\"280.0\" prefWidth=\"5.0\" style=\"-fx-background-color: grey;\" />\r\n            <Label alignment=\"CENTER\" layoutX=\"390.0\" layoutY=\"10.0\" prefHeight=\"35.0\" prefWidth=\"385.0\" text=\"Educational  Details\" textFill=\"GREY\" underline=\"true\" AnchorPane.leftAnchor=\"400.0\" AnchorPane.topAnchor=\"10.0\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"23.0\" />\r\n               </font>\r\n            </Label>\r\n            <Separator layoutY=\"280.0\" prefHeight=\"5.0\" prefWidth=\"785.0\" style=\"-fx-background-color: grey;\" />\r\n            <Label alignment=\"CENTER\" layoutY=\"302.0\" prefHeight=\"35.0\" prefWidth=\"366.0\" text=\"Skills Details\" textFill=\"GREY\" underline=\"true\" AnchorPane.leftAnchor=\"0.0\" AnchorPane.topAnchor=\"295.0\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"23.0\" />\r\n               </font>\r\n            </Label>\r\n            <Separator layoutX=\"366.0\" layoutY=\"286.0\" orientation=\"VERTICAL\" prefHeight=\"220.0\" prefWidth=\"5.0\" style=\"-fx-background-color: grey;\" />\r\n            <Label alignment=\"CENTER\" layoutX=\"371.0\" layoutY=\"301.0\" prefHeight=\"35.0\" prefWidth=\"417.0\" text=\"Experiences Details\" textFill=\"GREY\" underline=\"true\" AnchorPane.rightAnchor=\"0.0\" AnchorPane.topAnchor=\"295.0\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"23.0\" />\r\n               </font>\r\n            </Label>\r\n            <Separator layoutX=\"3.0\" layoutY=\"503.0\" prefHeight=\"5.0\" prefWidth=\"785.0\" style=\"-fx-background-color: grey;\" />\r\n            <Label alignment=\"CENTER\" layoutX=\"134.0\" layoutY=\"521.0\" prefHeight=\"34.0\" prefWidth=\"301.6\" text=\"Duty Details\" textFill=\"GREY\" underline=\"true\" AnchorPane.leftAnchor=\"50.0\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"23.0\" />\r\n               </font>\r\n            </Label>\r\n            <Separator layoutX=\"366.0\" layoutY=\"509.0\" orientation=\"VERTICAL\" prefHeight=\"256.0\" prefWidth=\"6.0\" style=\"-fx-background-color: grey;\" />\r\n            <HBox alignment=\"CENTER\" layoutY=\"50.0\" spacing=\"10.0\" AnchorPane.leftAnchor=\"50.0\" AnchorPane.topAnchor=\"50.0\">\r\n               <children>\r\n                  <VBox alignment=\"CENTER\" spacing=\"10.0\">\r\n                     <children>\r\n                        <Label alignment=\"BOTTOM_RIGHT\" prefHeight=\"25.6\" prefWidth=\"100.0\" text=\"ID\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                        <Label alignment=\"BOTTOM_RIGHT\" prefHeight=\"25.6\" prefWidth=\"100.0\" text=\"Name\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                        <Label alignment=\"BOTTOM_RIGHT\" prefHeight=\"25.6\" prefWidth=\"100.0\" text=\"Phone No\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                        <Label alignment=\"BOTTOM_RIGHT\" prefHeight=\"25.6\" prefWidth=\"100.0\" text=\"Email\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                        <Label alignment=\"BOTTOM_RIGHT\" prefHeight=\"25.6\" prefWidth=\"100.0\" text=\"Address\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                        <Label alignment=\"BOTTOM_RIGHT\" prefHeight=\"25.6\" prefWidth=\"100.0\" text=\"Date Of Birth\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                     </children>\r\n                     <padding>\r\n                        <Insets top=\"10.0\" />\r\n                     </padding>\r\n                  </VBox>\r\n                  <VBox alignment=\"CENTER\" spacing=\"10.0\">\r\n                     <children>\r\n                        <JFXTextField fx:id=\"id\" focusColor=\"GOLD\" layoutX=\"10.0\" layoutY=\"45.0\" prefColumnCount=\"0\" style=\"-fx-text-inner-color: black;\" unFocusColor=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"12.0\" />\r\n                           </font>\r\n                        </JFXTextField>\r\n                        <JFXTextField fx:id=\"name\" focusColor=\"GOLD\" prefColumnCount=\"0\" style=\"-fx-text-inner-color: black;\" unFocusColor=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"12.0\" />\r\n                           </font>\r\n                        </JFXTextField>\r\n                        <JFXTextField fx:id=\"phoneNo\" focusColor=\"GOLD\" prefColumnCount=\"0\" style=\"-fx-text-inner-color: black;\" unFocusColor=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"12.0\" />\r\n                           </font>\r\n                        </JFXTextField>\r\n                        <JFXTextField fx:id=\"email\" focusColor=\"GOLD\" prefColumnCount=\"0\" style=\"-fx-text-inner-color: black;\" unFocusColor=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"12.0\" />\r\n                           </font>\r\n                        </JFXTextField>\r\n                        <JFXTextField fx:id=\"address\" focusColor=\"GOLD\" prefColumnCount=\"0\" style=\"-fx-text-inner-color: black;\" unFocusColor=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"12.0\" />\r\n                           </font>\r\n                        </JFXTextField>\r\n                        <JFXDatePicker fx:id=\"dob\" defaultColor=\"GREY\" style=\"-fx-text-inner-color: black;\" />\r\n                     </children>\r\n                  </VBox>\r\n               </children>\r\n            </HBox>\r\n            <HBox layoutX=\"390.0\" layoutY=\"50.0\" spacing=\"10.0\" AnchorPane.leftAnchor=\"400.0\" AnchorPane.topAnchor=\"50.0\">\r\n               <children>\r\n                  <VBox alignment=\"CENTER\" spacing=\"10.0\">\r\n                     <children>\r\n                        <Label alignment=\"TOP_RIGHT\" prefHeight=\"25.6\" prefWidth=\"140.0\" text=\"Certificate Title\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                        <Label alignment=\"TOP_RIGHT\" prefHeight=\"25.6\" prefWidth=\"140.0\" text=\"Organization Name\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                        <Label alignment=\"TOP_RIGHT\" prefHeight=\"25.6\" prefWidth=\"140.0\" text=\"Verification No\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                        <Label alignment=\"TOP_RIGHT\" prefHeight=\"25.6\" prefWidth=\"140.0\" text=\"Date Issued On\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                        <Label alignment=\"TOP_RIGHT\" prefHeight=\"25.6\" prefWidth=\"140.0\" text=\"Description\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                     </children>\r\n                     <padding>\r\n                        <Insets top=\"10.0\" />\r\n                     </padding>\r\n                  </VBox>\r\n                  <VBox alignment=\"CENTER\" spacing=\"10.0\">\r\n                     <children>\r\n                        <JFXTextField fx:id=\"certificateTitle\" focusColor=\"GOLD\" style=\"-fx-text-inner-color: black;\" unFocusColor=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"12.0\" />\r\n                           </font>\r\n                        </JFXTextField>\r\n                        <JFXTextField fx:id=\"organizationName_edu\" focusColor=\"GOLD\" style=\"-fx-text-inner-color: black;\" unFocusColor=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"12.0\" />\r\n                           </font>\r\n                        </JFXTextField>\r\n                        <JFXTextField fx:id=\"verificationNo\" focusColor=\"GOLD\" style=\"-fx-text-inner-color: black;\" unFocusColor=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"12.0\" />\r\n                           </font>\r\n                        </JFXTextField>\r\n                        <JFXDatePicker fx:id=\"issueDate\" defaultColor=\"GREY\" style=\"-fx-text-inner-color: black;\" />\r\n                        <JFXTextArea fx:id=\"description_edu\" focusColor=\"#ffd40000\" prefHeight=\"25.6\" prefWidth=\"171.0\" style=\"-fx-border-color: grey; -fx-border-radius: 10; -fx-text-inner-color: black;\" unFocusColor=\"#80808000\" />\r\n                     </children>\r\n                  </VBox>\r\n               </children>\r\n            </HBox>\r\n            <HBox layoutY=\"336.0\" spacing=\"10.0\" AnchorPane.leftAnchor=\"50.0\" AnchorPane.topAnchor=\"335.0\">\r\n               <children>\r\n                  <VBox alignment=\"CENTER\" spacing=\"10.0\">\r\n                     <children>\r\n                        <Label alignment=\"TOP_RIGHT\" prefHeight=\"25.6\" prefWidth=\"100.0\" text=\"Skill Title\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                        <Label alignment=\"TOP_RIGHT\" prefHeight=\"25.6\" prefWidth=\"100.0\" text=\"Field Title\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                        <Label alignment=\"TOP_RIGHT\" prefHeight=\"25.6\" prefWidth=\"100.0\" text=\"Date\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                        <Label alignment=\"TOP_RIGHT\" prefHeight=\"25.6\" prefWidth=\"100.0\" text=\"Description\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                     </children>\r\n                     <padding>\r\n                        <Insets top=\"10.0\" />\r\n                     </padding>\r\n                  </VBox>\r\n                  <VBox alignment=\"CENTER\" spacing=\"10.0\">\r\n                     <children>\r\n                        <JFXTextField fx:id=\"skillTitle\" focusColor=\"GOLD\" style=\"-fx-text-inner-color: black;\" unFocusColor=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"12.0\" />\r\n                           </font>\r\n                        </JFXTextField>\r\n                        <JFXTextField fx:id=\"fieldTitle_skill\" focusColor=\"GOLD\" style=\"-fx-text-inner-color: black;\" unFocusColor=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"12.0\" />\r\n                           </font>\r\n                        </JFXTextField>\r\n                        <JFXDatePicker fx:id=\"skillDate\" defaultColor=\"GREY\" style=\"-fx-text-inner-color: black;\" />\r\n                        <JFXTextArea fx:id=\"description_skill\" focusColor=\"#ffd40000\" prefHeight=\"25.6\" prefWidth=\"171.0\" style=\"-fx-border-color: grey; -fx-border-radius: 10; -fx-text-inner-color: black;\" unFocusColor=\"#80808000\" />\r\n                     </children>\r\n                  </VBox>\r\n               </children>\r\n            </HBox>\r\n            <HBox layoutX=\"396.0\" layoutY=\"343.0\" spacing=\"10.0\" AnchorPane.leftAnchor=\"400.0\" AnchorPane.topAnchor=\"335.0\">\r\n               <children>\r\n                  <VBox alignment=\"CENTER\" spacing=\"10.0\">\r\n                     <children>\r\n                        <Label alignment=\"TOP_RIGHT\" prefHeight=\"25.6\" prefWidth=\"140.0\" text=\"Job Title\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                        <Label alignment=\"TOP_RIGHT\" prefHeight=\"25.6\" prefWidth=\"140.0\" text=\"Organization Name\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                        <Label alignment=\"TOP_RIGHT\" prefHeight=\"25.6\" prefWidth=\"140.0\" text=\"Field Title\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                        <Label alignment=\"TOP_RIGHT\" prefHeight=\"25.6\" prefWidth=\"140.0\" text=\"Duration\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                     </children>\r\n                     <padding>\r\n                        <Insets top=\"10.0\" />\r\n                     </padding>\r\n                  </VBox>\r\n                  <VBox alignment=\"CENTER\" spacing=\"10.0\">\r\n                     <children>\r\n                        <JFXTextField fx:id=\"jobTitle\" focusColor=\"GOLD\" prefColumnCount=\"0\" prefWidth=\"171.2\" style=\"-fx-text-inner-color: black;\" unFocusColor=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"12.0\" />\r\n                           </font>\r\n                        </JFXTextField>\r\n                        <JFXTextField fx:id=\"organizationName_exp\" focusColor=\"GOLD\" prefColumnCount=\"0\" prefWidth=\"171.2\" style=\"-fx-text-inner-color: black;\" unFocusColor=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"12.0\" />\r\n                           </font>\r\n                        </JFXTextField>\r\n                        <JFXTextField fx:id=\"fieldTitle_exp\" focusColor=\"GOLD\" prefColumnCount=\"0\" prefWidth=\"171.2\" style=\"-fx-text-inner-color: black;\" unFocusColor=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"12.0\" />\r\n                           </font>\r\n                        </JFXTextField>\r\n                        <JFXTextField fx:id=\"duration\" focusColor=\"GOLD\" prefColumnCount=\"0\" prefWidth=\"171.2\" style=\"-fx-text-inner-color: black;\" unFocusColor=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"12.0\" />\r\n                           </font>\r\n                        </JFXTextField>\r\n                     </children>\r\n                  </VBox>\r\n               </children>\r\n            </HBox>\r\n            <HBox alignment=\"CENTER\" layoutX=\"3.0\" layoutY=\"563.0\" spacing=\"10.0\" AnchorPane.leftAnchor=\"30.0\">\r\n               <children>\r\n                  <VBox alignment=\"CENTER\" spacing=\"10.0\">\r\n                     <children>\r\n                        <Label alignment=\"BOTTOM_RIGHT\" prefHeight=\"25.6\" prefWidth=\"120.0\" text=\"Job Title\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                        <Label alignment=\"BOTTOM_RIGHT\" prefHeight=\"25.6\" prefWidth=\"120.0\" text=\"Shift\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                        <Label alignment=\"BOTTOM_RIGHT\" prefHeight=\"25.6\" prefWidth=\"120.0\" text=\"Working Hours\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                        <Label alignment=\"BOTTOM_RIGHT\" prefHeight=\"25.6\" prefWidth=\"120.0\" text=\"Salary\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                        <Label alignment=\"BOTTOM_RIGHT\" prefHeight=\"25.6\" prefWidth=\"120.0\" text=\"Joining Date\" textFill=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"15.0\" />\r\n                           </font>\r\n                        </Label>\r\n                     </children>\r\n                     <padding>\r\n                        <Insets top=\"10.0\" />\r\n                     </padding>\r\n                  </VBox>\r\n                  <VBox alignment=\"CENTER\" spacing=\"10.0\">\r\n                     <children>\r\n                        <JFXTextField fx:id=\"jobTitle_duty\" focusColor=\"GOLD\" prefColumnCount=\"0\" prefWidth=\"171.2\" style=\"-fx-text-inner-color: black;\" unFocusColor=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"12.0\" />\r\n                           </font>\r\n                        </JFXTextField>\r\n                        <JFXTextField fx:id=\"shift\" focusColor=\"GOLD\" prefColumnCount=\"0\" prefWidth=\"171.2\" style=\"-fx-text-inner-color: black;\" unFocusColor=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"12.0\" />\r\n                           </font>\r\n                        </JFXTextField>\r\n                        <JFXTextField fx:id=\"workingHours\" focusColor=\"GOLD\" prefColumnCount=\"0\" prefWidth=\"171.2\" style=\"-fx-text-inner-color: black;\" unFocusColor=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"12.0\" />\r\n                           </font>\r\n                        </JFXTextField>\r\n                        <JFXTextField fx:id=\"salary\" focusColor=\"GOLD\" prefColumnCount=\"0\" prefWidth=\"171.2\" style=\"-fx-text-inner-color: black;\" unFocusColor=\"GREY\">\r\n                           <font>\r\n                              <Font name=\"System Bold\" size=\"12.0\" />\r\n                           </font>\r\n                        </JFXTextField>\r\n                        <JFXDatePicker fx:id=\"joinDate\" defaultColor=\"GREY\" style=\"-fx-text-inner-color: black;\" />\r\n                     </children>\r\n                  </VBox>\r\n               </children>\r\n            </HBox>\r\n            <VBox layoutX=\"405.0\" layoutY=\"567.0\" spacing=\"20.0\">\r\n               <children>\r\n                  <JFXButton fx:id=\"add_btn\" buttonType=\"RAISED\" focusTraversable=\"false\" onAction=\"#add\" prefHeight=\"40.0\" prefWidth=\"350.0\" ripplerFill=\"WHITE\" style=\"-fx-background-color: #666666; -fx-background-radius: 20px;\" text=\"Add\" textFill=\"GOLD\">\r\n                     <font>\r\n                        <Font name=\"Segoe UI Bold\" size=\"20.0\" />\r\n                     </font>\r\n                     <cursor>\r\n                        <Cursor fx:constant=\"HAND\" />\r\n                     </cursor>\r\n                  </JFXButton>\r\n                  <JFXButton fx:id=\"delete_btn\" buttonType=\"RAISED\" focusTraversable=\"false\" onAction=\"#delete\" prefHeight=\"40.0\" prefWidth=\"350.0\" ripplerFill=\"WHITE\" style=\"-fx-background-color: #666666; -fx-background-radius: 20px;\" text=\"Delete\" textFill=\"GOLD\">\r\n                     <font>\r\n                        <Font name=\"Segoe UI Bold\" size=\"20.0\" />\r\n                     </font>\r\n                     <cursor>\r\n                        <Cursor fx:constant=\"HAND\" />\r\n                     </cursor>\r\n                  </JFXButton>\r\n                  <JFXButton fx:id=\"update_btn\" buttonType=\"RAISED\" focusTraversable=\"false\" onAction=\"#update\" prefHeight=\"40.0\" prefWidth=\"350.0\" ripplerFill=\"WHITE\" style=\"-fx-background-color: #666666; -fx-background-radius: 20px;\" text=\"Update\" textFill=\"GOLD\">\r\n                     <font>\r\n                        <Font name=\"Segoe UI Bold\" size=\"20.0\" />\r\n                     </font>\r\n                     <cursor>\r\n                        <Cursor fx:constant=\"HAND\" />\r\n                     </cursor>\r\n                  </JFXButton>\r\n               </children>\r\n            </VBox>\r\n            <Label alignment=\"CENTER\" layoutX=\"371.0\" layoutY=\"520.0\" prefHeight=\"35.0\" prefWidth=\"417.0\" text=\"Controls\" textFill=\"GREY\" underline=\"true\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"23.0\" />\r\n               </font>\r\n            </Label>\r\n            <Label fx:id=\"label\" layoutX=\"659.0\" layoutY=\"522.0\" prefHeight=\"32.0\" prefWidth=\"113.0\">\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"15.0\" />\r\n               </font>\r\n            </Label>\r\n         </children>\r\n      </AnchorPane>\r\n   </content>\r\n</ScrollPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/dashboard/employee/EmployeePanel.fxml b/src/dashboard/employee/EmployeePanel.fxml
+--- a/src/dashboard/employee/EmployeePanel.fxml	(revision 7348489d1f32b9a42868fb19ba0c40dc65ed342c)
++++ b/src/dashboard/employee/EmployeePanel.fxml	(date 1609095909042)
+@@ -14,370 +14,375 @@
+ <?import javafx.scene.layout.VBox?>
+ <?import javafx.scene.text.Font?>
+ 
+-<ScrollPane prefHeight="670.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.employee.EmployeePanelController">
+-   <content>
+-      <AnchorPane prefHeight="765.0" prefWidth="789.0" style="-fx-background-color: white;">
+-         <children>
+-            <Label alignment="CENTER" layoutY="10.0" prefHeight="35.0" prefWidth="365.0" text="Basic Datails" textFill="GREY" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="10.0">
+-               <font>
+-                  <Font name="System Bold" size="23.0" />
+-               </font>
+-            </Label>
+-            <Separator layoutX="366.0" orientation="VERTICAL" prefHeight="280.0" prefWidth="5.0" style="-fx-background-color: grey;" />
+-            <Label alignment="CENTER" layoutX="390.0" layoutY="10.0" prefHeight="35.0" prefWidth="385.0" text="Educational  Details" textFill="GREY" underline="true" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="10.0">
+-               <font>
+-                  <Font name="System Bold" size="23.0" />
+-               </font>
+-            </Label>
+-            <Separator layoutY="280.0" prefHeight="5.0" prefWidth="785.0" style="-fx-background-color: grey;" />
+-            <Label alignment="CENTER" layoutY="302.0" prefHeight="35.0" prefWidth="366.0" text="Skills Details" textFill="GREY" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="295.0">
+-               <font>
+-                  <Font name="System Bold" size="23.0" />
+-               </font>
+-            </Label>
+-            <Separator layoutX="366.0" layoutY="286.0" orientation="VERTICAL" prefHeight="220.0" prefWidth="5.0" style="-fx-background-color: grey;" />
+-            <Label alignment="CENTER" layoutX="371.0" layoutY="301.0" prefHeight="35.0" prefWidth="417.0" text="Experiences Details" textFill="GREY" underline="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="295.0">
+-               <font>
+-                  <Font name="System Bold" size="23.0" />
+-               </font>
+-            </Label>
+-            <Separator layoutX="3.0" layoutY="503.0" prefHeight="5.0" prefWidth="785.0" style="-fx-background-color: grey;" />
+-            <Label alignment="CENTER" layoutX="134.0" layoutY="521.0" prefHeight="34.0" prefWidth="301.6" text="Duty Details" textFill="GREY" underline="true" AnchorPane.leftAnchor="50.0">
+-               <font>
+-                  <Font name="System Bold" size="23.0" />
+-               </font>
+-            </Label>
+-            <Separator layoutX="366.0" layoutY="509.0" orientation="VERTICAL" prefHeight="256.0" prefWidth="6.0" style="-fx-background-color: grey;" />
+-            <HBox alignment="CENTER" layoutY="50.0" spacing="10.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0">
+-               <children>
+-                  <VBox alignment="CENTER" spacing="10.0">
+-                     <children>
+-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="ID" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Name" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Phone No" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Email" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Address" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Date Of Birth" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                     </children>
+-                     <padding>
+-                        <Insets top="10.0" />
+-                     </padding>
+-                  </VBox>
+-                  <VBox alignment="CENTER" spacing="10.0">
+-                     <children>
+-                        <JFXTextField fx:id="id" focusColor="GOLD" layoutX="10.0" layoutY="45.0" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="12.0" />
+-                           </font>
+-                        </JFXTextField>
+-                        <JFXTextField fx:id="name" focusColor="GOLD" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="12.0" />
+-                           </font>
+-                        </JFXTextField>
+-                        <JFXTextField fx:id="phoneNo" focusColor="GOLD" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="12.0" />
+-                           </font>
+-                        </JFXTextField>
+-                        <JFXTextField fx:id="email" focusColor="GOLD" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="12.0" />
+-                           </font>
+-                        </JFXTextField>
+-                        <JFXTextField fx:id="address" focusColor="GOLD" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="12.0" />
+-                           </font>
+-                        </JFXTextField>
+-                        <JFXDatePicker fx:id="dob" defaultColor="GREY" style="-fx-text-inner-color: black;" />
+-                     </children>
+-                  </VBox>
+-               </children>
+-            </HBox>
+-            <HBox layoutX="390.0" layoutY="50.0" spacing="10.0" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="50.0">
+-               <children>
+-                  <VBox alignment="CENTER" spacing="10.0">
+-                     <children>
+-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Certificate Title" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Organization Name" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Verification No" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Date Issued On" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Description" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                     </children>
+-                     <padding>
+-                        <Insets top="10.0" />
+-                     </padding>
+-                  </VBox>
+-                  <VBox alignment="CENTER" spacing="10.0">
+-                     <children>
+-                        <JFXTextField fx:id="certificateTitle" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="12.0" />
+-                           </font>
+-                        </JFXTextField>
+-                        <JFXTextField fx:id="organizationName_edu" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="12.0" />
+-                           </font>
+-                        </JFXTextField>
+-                        <JFXTextField fx:id="verificationNo" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="12.0" />
+-                           </font>
+-                        </JFXTextField>
+-                        <JFXDatePicker fx:id="issueDate" defaultColor="GREY" style="-fx-text-inner-color: black;" />
+-                        <JFXTextArea fx:id="description_edu" focusColor="#ffd40000" prefHeight="25.6" prefWidth="171.0" style="-fx-border-color: grey; -fx-border-radius: 10; -fx-text-inner-color: black;" unFocusColor="#80808000" />
+-                     </children>
+-                  </VBox>
+-               </children>
+-            </HBox>
+-            <HBox layoutY="336.0" spacing="10.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="335.0">
+-               <children>
+-                  <VBox alignment="CENTER" spacing="10.0">
+-                     <children>
+-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Skill Title" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Field Title" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Date" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Description" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                     </children>
+-                     <padding>
+-                        <Insets top="10.0" />
+-                     </padding>
+-                  </VBox>
+-                  <VBox alignment="CENTER" spacing="10.0">
+-                     <children>
+-                        <JFXTextField fx:id="skillTitle" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="12.0" />
+-                           </font>
+-                        </JFXTextField>
+-                        <JFXTextField fx:id="fieldTitle_skill" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="12.0" />
+-                           </font>
+-                        </JFXTextField>
+-                        <JFXDatePicker fx:id="skillDate" defaultColor="GREY" style="-fx-text-inner-color: black;" />
+-                        <JFXTextArea fx:id="description_skill" focusColor="#ffd40000" prefHeight="25.6" prefWidth="171.0" style="-fx-border-color: grey; -fx-border-radius: 10; -fx-text-inner-color: black;" unFocusColor="#80808000" />
+-                     </children>
+-                  </VBox>
+-               </children>
+-            </HBox>
+-            <HBox layoutX="396.0" layoutY="343.0" spacing="10.0" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="335.0">
+-               <children>
+-                  <VBox alignment="CENTER" spacing="10.0">
+-                     <children>
+-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Job Title" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Organization Name" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Field Title" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Duration" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                     </children>
+-                     <padding>
+-                        <Insets top="10.0" />
+-                     </padding>
+-                  </VBox>
+-                  <VBox alignment="CENTER" spacing="10.0">
+-                     <children>
+-                        <JFXTextField fx:id="jobTitle" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="12.0" />
+-                           </font>
+-                        </JFXTextField>
+-                        <JFXTextField fx:id="organizationName_exp" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="12.0" />
+-                           </font>
+-                        </JFXTextField>
+-                        <JFXTextField fx:id="fieldTitle_exp" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="12.0" />
+-                           </font>
+-                        </JFXTextField>
+-                        <JFXTextField fx:id="duration" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="12.0" />
+-                           </font>
+-                        </JFXTextField>
+-                     </children>
+-                  </VBox>
+-               </children>
+-            </HBox>
+-            <HBox alignment="CENTER" layoutX="3.0" layoutY="563.0" spacing="10.0" AnchorPane.leftAnchor="30.0">
+-               <children>
+-                  <VBox alignment="CENTER" spacing="10.0">
+-                     <children>
+-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Job Title" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Shift" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Working Hours" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Salary" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Joining Date" textFill="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="15.0" />
+-                           </font>
+-                        </Label>
+-                     </children>
+-                     <padding>
+-                        <Insets top="10.0" />
+-                     </padding>
+-                  </VBox>
+-                  <VBox alignment="CENTER" spacing="10.0">
+-                     <children>
+-                        <JFXTextField fx:id="jobTitle_duty" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="12.0" />
+-                           </font>
+-                        </JFXTextField>
+-                        <JFXTextField fx:id="shift" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="12.0" />
+-                           </font>
+-                        </JFXTextField>
+-                        <JFXTextField fx:id="workingHours" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="12.0" />
+-                           </font>
+-                        </JFXTextField>
+-                        <JFXTextField fx:id="salary" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+-                           <font>
+-                              <Font name="System Bold" size="12.0" />
+-                           </font>
+-                        </JFXTextField>
+-                        <JFXDatePicker fx:id="joinDate" defaultColor="GREY" style="-fx-text-inner-color: black;" />
+-                     </children>
+-                  </VBox>
+-               </children>
+-            </HBox>
+-            <VBox layoutX="405.0" layoutY="567.0" spacing="20.0">
+-               <children>
+-                  <JFXButton fx:id="add_btn" buttonType="RAISED" focusTraversable="false" onAction="#add" prefHeight="40.0" prefWidth="350.0" ripplerFill="WHITE" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Add" textFill="GOLD">
+-                     <font>
+-                        <Font name="Segoe UI Bold" size="20.0" />
+-                     </font>
+-                     <cursor>
+-                        <Cursor fx:constant="HAND" />
+-                     </cursor>
+-                  </JFXButton>
+-                  <JFXButton fx:id="delete_btn" buttonType="RAISED" focusTraversable="false" onAction="#delete" prefHeight="40.0" prefWidth="350.0" ripplerFill="WHITE" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Delete" textFill="GOLD">
+-                     <font>
+-                        <Font name="Segoe UI Bold" size="20.0" />
+-                     </font>
+-                     <cursor>
+-                        <Cursor fx:constant="HAND" />
+-                     </cursor>
+-                  </JFXButton>
+-                  <JFXButton fx:id="update_btn" buttonType="RAISED" focusTraversable="false" onAction="#update" prefHeight="40.0" prefWidth="350.0" ripplerFill="WHITE" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Update" textFill="GOLD">
+-                     <font>
+-                        <Font name="Segoe UI Bold" size="20.0" />
+-                     </font>
+-                     <cursor>
+-                        <Cursor fx:constant="HAND" />
+-                     </cursor>
+-                  </JFXButton>
+-               </children>
+-            </VBox>
+-            <Label alignment="CENTER" layoutX="371.0" layoutY="520.0" prefHeight="35.0" prefWidth="417.0" text="Controls" textFill="GREY" underline="true">
+-               <font>
+-                  <Font name="System Bold" size="23.0" />
+-               </font>
+-            </Label>
+-            <Label fx:id="label" layoutX="659.0" layoutY="522.0" prefHeight="32.0" prefWidth="113.0">
+-               <font>
+-                  <Font name="System Bold" size="15.0" />
+-               </font>
+-            </Label>
+-         </children>
+-      </AnchorPane>
+-   </content>
++<ScrollPane prefHeight="790.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.employee.EmployeePanelController">
++    <content>
++        <AnchorPane prefHeight="765.0" prefWidth="789.0" style="-fx-background-color: white;">
++            <children>
++                <Label alignment="CENTER" layoutY="10.0" prefHeight="35.0" prefWidth="365.0" text="Basic Datails" textFill="GREY" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="10.0">
++                    <font>
++                        <Font name="System Bold" size="23.0" />
++                    </font>
++                </Label>
++                <Separator layoutX="366.0" orientation="VERTICAL" prefHeight="280.0" prefWidth="5.0" style="-fx-background-color: grey;" />
++                <Label alignment="CENTER" layoutX="390.0" layoutY="10.0" prefHeight="35.0" prefWidth="385.0" text="Educational  Details" textFill="GREY" underline="true" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="10.0">
++                    <font>
++                        <Font name="System Bold" size="23.0" />
++                    </font>
++                </Label>
++                <Separator layoutY="280.0" prefHeight="5.0" prefWidth="785.0" style="-fx-background-color: grey;" />
++                <Label alignment="CENTER" layoutY="302.0" prefHeight="35.0" prefWidth="366.0" text="Skills Details" textFill="GREY" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="295.0">
++                    <font>
++                        <Font name="System Bold" size="23.0" />
++                    </font>
++                </Label>
++                <Separator layoutX="366.0" layoutY="286.0" orientation="VERTICAL" prefHeight="220.0" prefWidth="5.0" style="-fx-background-color: grey;" />
++                <Label alignment="CENTER" layoutX="371.0" layoutY="301.0" prefHeight="35.0" prefWidth="417.0" text="Experiences Details" textFill="GREY" underline="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="295.0">
++                    <font>
++                        <Font name="System Bold" size="23.0" />
++                    </font>
++                </Label>
++                <Separator layoutX="3.0" layoutY="503.0" prefHeight="5.0" prefWidth="785.0" style="-fx-background-color: grey;" />
++                <Label alignment="CENTER" layoutX="134.0" layoutY="521.0" prefHeight="34.0" prefWidth="301.6" text="Duty Details" textFill="GREY" underline="true" AnchorPane.leftAnchor="50.0">
++                    <font>
++                        <Font name="System Bold" size="23.0" />
++                    </font>
++                </Label>
++                <Separator layoutX="366.0" layoutY="509.0" orientation="VERTICAL" prefHeight="256.0" prefWidth="6.0" style="-fx-background-color: grey;" />
++                <HBox alignment="CENTER" layoutY="50.0" spacing="10.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0">
++                    <children>
++                        <VBox alignment="CENTER" spacing="10.0">
++                            <children>
++                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="ID" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Name" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Phone No" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Email" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Address" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Date Of Birth" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                            </children>
++                            <padding>
++                                <Insets top="10.0" />
++                            </padding>
++                        </VBox>
++                        <VBox alignment="CENTER" spacing="10.0">
++                            <children>
++                                <JFXTextField fx:id="id" focusColor="GOLD" focusTraversable="false" layoutX="10.0" layoutY="45.0" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="12.0" />
++                                    </font>
++                                </JFXTextField>
++                                <JFXTextField fx:id="name" focusColor="GOLD" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="12.0" />
++                                    </font>
++                                </JFXTextField>
++                                <JFXTextField fx:id="phoneNo" focusColor="GOLD" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="12.0" />
++                                    </font>
++                                </JFXTextField>
++                                <JFXTextField fx:id="email" focusColor="GOLD" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="12.0" />
++                                    </font>
++                                </JFXTextField>
++                                <JFXTextField fx:id="address" focusColor="GOLD" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="12.0" />
++                                    </font>
++                                </JFXTextField>
++                                <JFXDatePicker fx:id="dob" defaultColor="GREY" style="-fx-text-inner-color: black;" />
++                            </children>
++                        </VBox>
++                    </children>
++                </HBox>
++                <HBox layoutX="390.0" layoutY="50.0" spacing="10.0" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="50.0">
++                    <children>
++                        <VBox alignment="CENTER" spacing="10.0">
++                            <children>
++                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Certificate Title" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Organization Name" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Verification No" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Date Issued On" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Description" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                            </children>
++                            <padding>
++                                <Insets top="10.0" />
++                            </padding>
++                        </VBox>
++                        <VBox alignment="CENTER" spacing="10.0">
++                            <children>
++                                <JFXTextField fx:id="certificateTitle" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="12.0" />
++                                    </font>
++                                </JFXTextField>
++                                <JFXTextField fx:id="organizationName_edu" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="12.0" />
++                                    </font>
++                                </JFXTextField>
++                                <JFXTextField fx:id="verificationNo" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="12.0" />
++                                    </font>
++                                </JFXTextField>
++                                <JFXDatePicker fx:id="issueDate" defaultColor="GREY" style="-fx-text-inner-color: black;" />
++                                <JFXTextArea fx:id="description_edu" focusColor="#ffd40000" prefHeight="25.6" prefWidth="171.0" style="-fx-border-color: grey; -fx-border-radius: 10; -fx-text-inner-color: black;" unFocusColor="#80808000" />
++                            </children>
++                        </VBox>
++                    </children>
++                </HBox>
++                <HBox layoutY="336.0" spacing="10.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="335.0">
++                    <children>
++                        <VBox alignment="CENTER" spacing="10.0">
++                            <children>
++                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Skill Title" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Field Title" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Date" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Description" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                            </children>
++                            <padding>
++                                <Insets top="10.0" />
++                            </padding>
++                        </VBox>
++                        <VBox alignment="CENTER" spacing="10.0">
++                            <children>
++                                <JFXTextField fx:id="skillTitle" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="12.0" />
++                                    </font>
++                                </JFXTextField>
++                                <JFXTextField fx:id="fieldTitle_skill" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="12.0" />
++                                    </font>
++                                </JFXTextField>
++                                <JFXDatePicker fx:id="skillDate" defaultColor="GREY" style="-fx-text-inner-color: black;" />
++                                <JFXTextArea fx:id="description_skill" focusColor="#ffd40000" prefHeight="25.6" prefWidth="171.0" style="-fx-border-color: grey; -fx-border-radius: 10; -fx-text-inner-color: black;" unFocusColor="#80808000" />
++                            </children>
++                        </VBox>
++                    </children>
++                </HBox>
++                <HBox layoutX="396.0" layoutY="343.0" spacing="10.0" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="335.0">
++                    <children>
++                        <VBox alignment="CENTER" spacing="10.0">
++                            <children>
++                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Job Title" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Organization Name" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Field Title" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Duration" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                            </children>
++                            <padding>
++                                <Insets top="10.0" />
++                            </padding>
++                        </VBox>
++                        <VBox alignment="CENTER" spacing="10.0">
++                            <children>
++                                <JFXTextField fx:id="jobTitle_exp" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="12.0" />
++                                    </font>
++                                </JFXTextField>
++                                <JFXTextField fx:id="organizationName_exp" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="12.0" />
++                                    </font>
++                                </JFXTextField>
++                                <JFXTextField fx:id="fieldTitle_exp" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="12.0" />
++                                    </font>
++                                </JFXTextField>
++                                <JFXTextField fx:id="duration" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="12.0" />
++                                    </font>
++                                </JFXTextField>
++                            </children>
++                        </VBox>
++                    </children>
++                </HBox>
++                <HBox alignment="CENTER" layoutX="3.0" layoutY="563.0" spacing="10.0" AnchorPane.leftAnchor="30.0">
++                    <children>
++                        <VBox alignment="CENTER" spacing="10.0">
++                            <children>
++                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Job Title" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="BOTTOM_RIGHT" layoutX="10.0" layoutY="179.0" prefHeight="25.6" prefWidth="120.0" text="Team ID" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Shift" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Working Hours" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Salary" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Joining Date" textFill="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="15.0" />
++                                    </font>
++                                </Label>
++                            </children>
++                            <padding>
++                                <Insets top="10.0" />
++                            </padding>
++                        </VBox>
++                        <VBox alignment="CENTER" spacing="10.0">
++                            <children>
++                                <JFXTextField fx:id="jobTitle_duty" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="12.0" />
++                                    </font>
++                                </JFXTextField>
++                                <JFXTextField fx:id="teamID" focusColor="GOLD" layoutX="10.0" layoutY="14.0" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="12.0" />
++                                    </font>
++                                </JFXTextField>
++                                <JFXTextField fx:id="shift" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="12.0" />
++                                    </font>
++                                </JFXTextField>
++                                <JFXTextField fx:id="workingHours" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="12.0" />
++                                    </font>
++                                </JFXTextField>
++                                <JFXTextField fx:id="salary" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
++                                    <font>
++                                        <Font name="System Bold" size="12.0" />
++                                    </font>
++                                </JFXTextField>
++                                <JFXDatePicker fx:id="joinDate" defaultColor="GREY" style="-fx-text-inner-color: black;" />
++                            </children>
++                        </VBox>
++                    </children>
++                </HBox>
++                <VBox layoutX="405.0" layoutY="567.0" spacing="20.0">
++                    <children>
++                        <JFXButton fx:id="add_btn" buttonType="RAISED" focusTraversable="false" onAction="#add" prefHeight="40.0" prefWidth="350.0" ripplerFill="WHITE" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Add" textFill="GOLD">
++                            <font>
++                                <Font name="Segoe UI Bold" size="20.0" />
++                            </font>
++                            <cursor>
++                                <Cursor fx:constant="HAND" />
++                            </cursor>
++                        </JFXButton>
++                        <JFXButton fx:id="delete_btn" buttonType="RAISED" focusTraversable="false" onAction="#delete" prefHeight="40.0" prefWidth="350.0" ripplerFill="WHITE" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Delete" textFill="GOLD">
++                            <font>
++                                <Font name="Segoe UI Bold" size="20.0" />
++                            </font>
++                            <cursor>
++                                <Cursor fx:constant="HAND" />
++                            </cursor>
++                        </JFXButton>
++                        <JFXButton fx:id="update_btn" buttonType="RAISED" focusTraversable="false" onAction="#update" prefHeight="40.0" prefWidth="350.0" ripplerFill="WHITE" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Update" textFill="GOLD">
++                            <font>
++                                <Font name="Segoe UI Bold" size="20.0" />
++                            </font>
++                            <cursor>
++                                <Cursor fx:constant="HAND" />
++                            </cursor>
++                        </JFXButton>
++                    </children>
++                </VBox>
++                <Label alignment="CENTER" layoutX="371.0" layoutY="520.0" prefHeight="35.0" prefWidth="417.0" text="Controls" textFill="GREY" underline="true">
++                    <font>
++                        <Font name="System Bold" size="23.0" />
++                    </font>
++                </Label>
++            </children>
++        </AnchorPane>
++    </content>
+ </ScrollPane>
+Index: src/dashboard/employee/EmployeePanelController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package dashboard.employee;\r\n\r\nimport com.jfoenix.controls.JFXDatePicker;\r\nimport com.jfoenix.controls.JFXTextArea;\r\nimport com.jfoenix.controls.JFXTextField;\r\nimport database.DBService;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.scene.control.Label;\r\n\r\nimport java.sql.ResultSet;\r\nimport java.sql.SQLException;\r\nimport java.time.LocalDate;\r\n\r\npublic class EmployeePanelController {\r\n    @FXML\r\n    private Label label;\r\n    @FXML\r\n    private JFXTextField id;\r\n    @FXML\r\n    private JFXTextField name;\r\n    @FXML\r\n    private JFXTextField phoneNo;\r\n    @FXML\r\n    private JFXTextField email;\r\n    @FXML\r\n    private JFXTextField address;\r\n    @FXML\r\n    private JFXDatePicker dob;\r\n    @FXML\r\n    private JFXTextField certificateTitle;\r\n    @FXML\r\n    private JFXTextField organizationName_edu;\r\n    @FXML\r\n    private JFXTextField verificationNo;\r\n    @FXML\r\n    private JFXDatePicker issueDate;\r\n    @FXML\r\n    private JFXTextArea description_edu;\r\n    @FXML\r\n    private JFXTextField skillTitle;\r\n    @FXML\r\n    private JFXTextField fieldTitle_skill;\r\n    @FXML\r\n    private JFXDatePicker skillDate;\r\n    @FXML\r\n    private JFXTextArea description_skill;\r\n    @FXML\r\n    private JFXTextField jobTitle;\r\n    @FXML\r\n    private JFXTextField organizationName_exp;\r\n    @FXML\r\n    private JFXTextField fieldTitle_exp;\r\n    @FXML\r\n    private JFXTextField duration;\r\n    @FXML\r\n    private JFXTextField jobTitle_duty;\r\n    @FXML\r\n    private JFXTextField shift;\r\n    @FXML\r\n    private JFXTextField workingHours;\r\n    @FXML\r\n    private JFXTextField salary;\r\n    @FXML\r\n    private JFXDatePicker joinDate;\r\n    \r\n    \r\n    public void initData(Employee employee) throws SQLException {\r\n        id.setText(String.valueOf(employee.getId()));\r\n        name.setText(employee.getName());\r\n        phoneNo.setText(employee.getPhone());\r\n        email.setText(employee.getEmail());\r\n        address.setText(employee.getAddress());\r\n        dob.setValue(LocalDate.parse(employee.getDob()));\r\n        loadEducationDetails(employee.getId());\r\n        loadSkillDetails(employee.getId());\r\n        loadExperienceDetails(employee.getId());\r\n        loadDutyDetails(employee.getId());\r\n    }\r\n    \r\n    private void loadEducationDetails(int id) throws SQLException {\r\n        String query = String.format(\"select   Certificate_Title, Organization_Name , Verification_No, Date_Issued_On , Date_time,to_char( Date_Issued_On ,'yyyy-mm-dd') as Date_Issued_On,Description from Employee_Education_Detail where Employee_ID = %d\", id);\r\n        ResultSet rs = DBService.executeQuery(query);\r\n        \r\n        if (rs.next()) {\r\n            certificateTitle.setText(rs.getString(\"Certificate_Title\"));\r\n            organizationName_edu.setText(rs.getString(\"Organization_Name\"));\r\n            verificationNo.setText(rs.getString(\"Verification_No\"));\r\n            issueDate.setValue(LocalDate.parse(rs.getString(\"Date_Issued_On\")));\r\n            description_edu.setText(rs.getString(\"Description\"));\r\n        }\r\n    }\r\n    \r\n    private void loadSkillDetails(int id) throws SQLException {\r\n        String query = String.format(\"Select Skill_Title, Field_Title , Date_Time, Description from Employee_Skill_Detail Where  Employee_ID = %d\", id);\r\n        ResultSet rs = DBService.executeQuery(query);\r\n        if (rs.next()) {\r\n            skillTitle.setText(rs.getString(\"Skill_Title\"));\r\n            fieldTitle_skill.setText(rs.getString(\"Field_Title\"));\r\n            skillDate.setValue(LocalDate.parse(rs.getString(\"Date_Time\")));\r\n            description_skill.setText(rs.getString(\"Description\"));\r\n        }\r\n    }\r\n    \r\n    private void loadExperienceDetails(int id) throws SQLException {\r\n        String query = String.format(\"Select  Job_Title  , Duration , Field_Name   ,Organization_Name from Employee_Experience_Detail Where Employee_id = %d\", id);\r\n        ResultSet rs = DBService.executeQuery(query);\r\n        if (rs.next()) {\r\n            jobTitle.setText(rs.getString(\"Job_Title\"));\r\n            duration.setText(rs.getString(\"Duration\"));\r\n//            .setValue(LocalDate.parse(rs.getString(\"Date_Time\")));\r\n            organizationName_exp.setText(rs.getString(\"Organization_Name\"));\r\n        }\r\n    }\r\n    \r\n    private void loadDutyDetails(int id) throws SQLException {\r\n//        String query = String.format(\"Select to_char( Duty_Time,'hh24-mi-ss') as Duty_Time,Shifts,Salary,Designation,Type from Emp_Duty_Details Where EMp_Id = %d\",id);\r\n        String query = String.format(\"Select   Job_Title, SHIFT,Working_Hours,  SALARY , Joining_Date from Employee_Duty_Detail Where Employee_Id = %d\", id);\r\n        ResultSet rs = DBService.executeQuery(query);\r\n        if (rs.next()) {\r\n            jobTitle_duty.setText(rs.getString(\"Job_Title\"));\r\n            shift.setText(rs.getString(\"Shift\"));\r\n            workingHours.setText(rs.getString(\"Working_Hours\"));\r\n            salary.setText(rs.getString(\"SALARY\"));\r\n            joinDate.setValue(LocalDate.parse(rs.getString(\"Joining_Date\")));\r\n        }\r\n    }\r\n    \r\n    public void add(ActionEvent event) throws SQLException {\r\n        String basicDetail = String.format(\"Insert Into Employee (ID, Name,Phone_Number,Email,Address,Date_Time) Values( %d,'%s','%s','%s','%s',to_date('%s','yyyy-mm-dd'))\",\r\n                Integer.parseInt(id.getText()),\r\n                name.getText(),\r\n                phoneNo.getText(),\r\n                email.getText(),\r\n                address.getText(),\r\n                dob.getValue()\r\n        );\r\n        \r\n        String educationalDetail = String.format(\"Insert Into Employee_Education_Detail( Employee_ID  , Certificate_Title, Organization_Name , Verification_No, Date_Issued_On , Description , Date_time) Values( %d,'%s','%s','%s',to_date('%s','yyyy-mm-dd'),'%s',to_char(sysdate,'yyyy-mm-dd'))\",\r\n                \r\n                Integer.parseInt(id.getText()),\r\n                certificateTitle.getText(),\r\n                organizationName_edu.getText(),\r\n                verificationNo.getText(),\r\n                issueDate.getValue(),\r\n                description_edu.getText()\r\n        \r\n        );\r\n        \r\n        String Skills_detail = String.format(\"Insert Into Employee_Skill_Detail( Employee_ID, Skill_Title, Field_Title , Date_Time, Description ) Values( %d,'%s','%s',to_date( sysdate,'yyyy-mm-dd'),'%s')\",\r\n                \r\n                Integer.parseInt(id.getText()),\r\n                skillTitle.getText(),\r\n                fieldTitle_skill.getText(),\r\n                description_skill.getText()\r\n        );\r\n        \r\n        String Experience_detail = String.format(\"Insert Into Employee_Experience_Detail( Employee_ID, Job_Title ,Organization_Name , FIELD_NAME , Duration ,  Date_Time   ) Values( %d,'%s','%s','%s','%s',to_date(sysdate,'yyyy-mm-dd'))\",\r\n                \r\n                Integer.parseInt(id.getText()),\r\n                jobTitle.getText(),\r\n                organizationName_exp.getText(),\r\n                fieldTitle_exp.getText(),\r\n                duration.getText()\r\n        );\r\n        \r\n        String Duty_detail = String.format(\"Insert Into Employee_Duty_Detail( Employee_ID , Job_Title, SHIFT,Working_Hours,  SALARY , Joining_Date ) Values( %d,'%s','%s',%d,%d,to_date('%s','yyyy-mm-dd'))\",\r\n                \r\n                Integer.parseInt(id.getText()),\r\n                jobTitle.getText(),\r\n                shift.getText(),\r\n                Integer.parseInt(workingHours.getText()),\r\n                Integer.parseInt(salary.getText()),\r\n                joinDate.getValue()\r\n        );\r\n        \r\n        DBService.statement.executeUpdate(basicDetail);\r\n        DBService.statement.executeUpdate(educationalDetail);\r\n        DBService.statement.executeUpdate(Skills_detail);\r\n        DBService.statement.executeUpdate(Experience_detail);\r\n        DBService.statement.executeUpdate(Duty_detail);\r\n        label.setText(\"Saved!\");\r\n        Refresh();\r\n        clearFields();\r\n    }\r\n    \r\n    public void Refresh() {\r\n        EmployeeController.getData();\r\n    }\r\n    \r\n    public void clearFields() {\r\n        \r\n        name.setText(null);\r\n        dob.setValue(null);\r\n        email.setText(null);\r\n        phoneNo.setText(null);\r\n        address.setText(null);\r\n        certificateTitle.setText(null);\r\n        organizationName_edu.setText(null);\r\n        verificationNo.setText(null);\r\n        description_edu.setText(null);\r\n        issueDate.setValue(null);\r\n        skillTitle.setText(null);\r\n        description_skill.setText(null);\r\n        fieldTitle_exp.setText(null);\r\n        duration.setText(null);\r\n        organizationName_exp.setText(null);\r\n        shift.setText(null);\r\n        salary.setText(null);\r\n        jobTitle.setText(null);\r\n        jobTitle_duty.setText(null);\r\n        workingHours.setText(null);\r\n        joinDate.setValue(null);\r\n    }\r\n    \r\n    public void delete(ActionEvent event) throws SQLException {\r\n        int id = Integer.parseInt(this.id.getText());\r\n        String query = String.format(\"Delete from Employee Where id = %d \", id);\r\n        DBService.statement.executeUpdate(query);\r\n        label.setText(\"Deleted!\");\r\n        Refresh();\r\n    }\r\n    \r\n    public void update(ActionEvent event) throws SQLException {\r\n        String basicDetails_query = String.format(\"Update Employee set NAME='%s', Phone_Number='%s', Email='%s',Address ='%s',Date_Time = to_date('%s','yyyy-mm-dd') Where id=%d\",\r\n            \r\n                name.getText(),\r\n                phoneNo.getText(),\r\n                email.getText(),\r\n                address.getText(),\r\n                dob.getValue(),\r\n                Integer.parseInt(id.getText())\r\n        );\r\n        // Employee Education Details\r\n        String educationDetailsQuery = String.format(\"Update  Employee_Education_Detail set Certificate_Title = '%s', Organization_Name= '%s' ,Verification_No = '%s', Date_Issued_On = to_char('%s','yyyy-mm-dd'),Date_time = to_char(sysdate,'yyyy-mm-dd') Where  Employee_id= %d \",\r\n            \r\n            \r\n                certificateTitle.getText(),\r\n                organizationName_edu.getText(),\r\n                verificationNo.getText(),\r\n                issueDate.getValue(),\r\n                Integer.parseInt(id.getText())\r\n        );\r\n        // Employee Experience Details\r\n        String experienceDetails_query = String.format(\"Update  Employee_Experience_Detail set Job_Title = '%s',Duration = '%s',Field_Name ='%s' , Organization_Name = '%s'  Where  Employee_id= %d \",\r\n        \r\n                \r\n                jobTitle.getText(),\r\n                duration.getText(),\r\n                fieldTitle_exp.getText(),\r\n                organizationName_exp.getText(),\r\n                Integer.parseInt(id.getText())\r\n        );\r\n    \r\n        // Employee Skill Details\r\n        String skillDetails_query = String.format(\"Update Employee_Skill_Detail set Skill_Title='%s',Field_Title='%s', Description='%s' Where  Employee_id= %d \",\r\n            \r\n                skillTitle.getText(),\r\n                fieldTitle_skill.getText(),\r\n                description_skill.getText(),\r\n                Integer.parseInt(id.getText())\r\n        );\r\n    \r\n        // Employee Duty Details\r\n        String dutyDetails_query = String.format(\"UPDATE Employee_Duty_Detail SET   Job_Title = '%s',Working_Hours = %d, Shift ='%s', Salary=%d ,Joining_Date =  to_char('%s','yyyy-mm-dd') Where Employee_id=%d\",\r\n                \r\n                jobTitle.getText(),\r\n                Integer.parseInt(workingHours.getText()),\r\n                shift.getText(),\r\n                Integer.parseInt(salary.getText()),\r\n                joinDate.getValue(),\r\n                Integer.parseInt(id.getText())\r\n        );\r\n    \r\n        // Performing Database Update Operations\r\n        DBService.statement.executeUpdate(basicDetails_query);\r\n        DBService.statement.executeUpdate(educationDetailsQuery);\r\n        DBService.statement.executeUpdate(experienceDetails_query);\r\n        DBService.statement.executeUpdate(skillDetails_query);\r\n        DBService.statement.executeUpdate(dutyDetails_query);\r\n        label.setText(\"Updated!\");\r\n        Refresh();\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/dashboard/employee/EmployeePanelController.java b/src/dashboard/employee/EmployeePanelController.java
+--- a/src/dashboard/employee/EmployeePanelController.java	(revision 7348489d1f32b9a42868fb19ba0c40dc65ed342c)
++++ b/src/dashboard/employee/EmployeePanelController.java	(date 1609095909043)
+@@ -1,133 +1,107 @@
+ package dashboard.employee;
+ 
++import com.jfoenix.controls.JFXButton;
+ import com.jfoenix.controls.JFXDatePicker;
+ import com.jfoenix.controls.JFXTextArea;
+ import com.jfoenix.controls.JFXTextField;
+ import database.DBService;
+ import javafx.event.ActionEvent;
+-import javafx.fxml.FXML;
+-import javafx.scene.control.Label;
++import util.StageHandler;
+ 
+-import java.sql.ResultSet;
+ import java.sql.SQLException;
+-import java.time.LocalDate;
+ 
+ public class EmployeePanelController {
+-    @FXML
+-    private Label label;
+-    @FXML
+-    private JFXTextField id;
+-    @FXML
+-    private JFXTextField name;
+-    @FXML
+-    private JFXTextField phoneNo;
+-    @FXML
+-    private JFXTextField email;
+-    @FXML
+-    private JFXTextField address;
+-    @FXML
+-    private JFXDatePicker dob;
+-    @FXML
+-    private JFXTextField certificateTitle;
+-    @FXML
+-    private JFXTextField organizationName_edu;
+-    @FXML
+-    private JFXTextField verificationNo;
+-    @FXML
+-    private JFXDatePicker issueDate;
+-    @FXML
+-    private JFXTextArea description_edu;
+-    @FXML
+-    private JFXTextField skillTitle;
+-    @FXML
+-    private JFXTextField fieldTitle_skill;
+-    @FXML
+-    private JFXDatePicker skillDate;
+-    @FXML
+-    private JFXTextArea description_skill;
+-    @FXML
+-    private JFXTextField jobTitle;
+-    @FXML
+-    private JFXTextField organizationName_exp;
+-    @FXML
+-    private JFXTextField fieldTitle_exp;
+-    @FXML
+-    private JFXTextField duration;
+-    @FXML
+-    private JFXTextField jobTitle_duty;
+-    @FXML
+-    private JFXTextField shift;
+-    @FXML
+-    private JFXTextField workingHours;
+-    @FXML
+-    private JFXTextField salary;
+-    @FXML
+-    private JFXDatePicker joinDate;
++    public JFXTextField id;
++    public JFXTextField name;
++    public JFXTextField phoneNo;
++    public JFXTextField email;
++    public JFXTextField address;
++    public JFXDatePicker dob;
++    public JFXTextField certificateTitle;
++    public JFXTextField organizationName_edu;
++    public JFXTextField verificationNo;
++    public JFXDatePicker issueDate;
++    public JFXTextArea description_edu;
++    public JFXTextField skillTitle;
++    public JFXTextField fieldTitle_skill;
++    public JFXDatePicker skillDate;
++    public JFXTextArea description_skill;
++    public JFXTextField jobTitle_exp;
++    public JFXTextField organizationName_exp;
++    public JFXTextField fieldTitle_exp;
++    public JFXTextField duration;
++    public JFXTextField jobTitle_duty;
++    public JFXTextField teamID;
++    public JFXTextField shift;
++    public JFXTextField workingHours;
++    public JFXTextField salary;
++    public JFXDatePicker joinDate;
++    public JFXButton add_btn;
++    public JFXButton update_btn;
++    public JFXButton delete_btn;
+     
+     
+-    public void initData(Employee employee) throws SQLException {
+-        id.setText(String.valueOf(employee.getId()));
++    public void initData(Employee employee, OperationType type) {
++        switch (type) {
++            case ADD:
++                update_btn.setDisable(true);
++                delete_btn.setDisable(true);
++                int nextID = DBService.getIntResult("Select MAX(ID)+1 From Employee");
++                id.setEditable(false);
++                id.setText("" + nextID);
++                break;
++            case UPDATE:
++                add_btn.setDisable(true);
++                delete_btn.setDisable(true);
++                fillForm(employee);
++                break;
++            case DELETE:
++                add_btn.setDisable(true);
++                update_btn.setDisable(true);
++                fillForm(employee);
++                break;
++            case VIEW:
++                add_btn.setDisable(true);
++                delete_btn.setDisable(true);
++                update_btn.setDisable(true);
++                fillForm(employee);
++                break;
++            default:
++                System.out.println("Please Select Operation Type!");
++        }
++    }
++    
++    private void fillForm(Employee employee) {
++        id.setText("" + employee.getId());
+         name.setText(employee.getName());
+-        phoneNo.setText(employee.getPhone());
++        phoneNo.setText(employee.getPhoneNo());
+         email.setText(employee.getEmail());
+         address.setText(employee.getAddress());
+-        dob.setValue(LocalDate.parse(employee.getDob()));
+-        loadEducationDetails(employee.getId());
+-        loadSkillDetails(employee.getId());
+-        loadExperienceDetails(employee.getId());
+-        loadDutyDetails(employee.getId());
+-    }
+-    
+-    private void loadEducationDetails(int id) throws SQLException {
+-        String query = String.format("select   Certificate_Title, Organization_Name , Verification_No, Date_Issued_On , Date_time,to_char( Date_Issued_On ,'yyyy-mm-dd') as Date_Issued_On,Description from Employee_Education_Detail where Employee_ID = %d", id);
+-        ResultSet rs = DBService.executeQuery(query);
+-        
+-        if (rs.next()) {
+-            certificateTitle.setText(rs.getString("Certificate_Title"));
+-            organizationName_edu.setText(rs.getString("Organization_Name"));
+-            verificationNo.setText(rs.getString("Verification_No"));
+-            issueDate.setValue(LocalDate.parse(rs.getString("Date_Issued_On")));
+-            description_edu.setText(rs.getString("Description"));
+-        }
+-    }
+-    
+-    private void loadSkillDetails(int id) throws SQLException {
+-        String query = String.format("Select Skill_Title, Field_Title , Date_Time, Description from Employee_Skill_Detail Where  Employee_ID = %d", id);
+-        ResultSet rs = DBService.executeQuery(query);
+-        if (rs.next()) {
+-            skillTitle.setText(rs.getString("Skill_Title"));
+-            fieldTitle_skill.setText(rs.getString("Field_Title"));
+-            skillDate.setValue(LocalDate.parse(rs.getString("Date_Time")));
+-            description_skill.setText(rs.getString("Description"));
+-        }
+-    }
+-    
+-    private void loadExperienceDetails(int id) throws SQLException {
+-        String query = String.format("Select  Job_Title  , Duration , Field_Name   ,Organization_Name from Employee_Experience_Detail Where Employee_id = %d", id);
+-        ResultSet rs = DBService.executeQuery(query);
+-        if (rs.next()) {
+-            jobTitle.setText(rs.getString("Job_Title"));
+-            duration.setText(rs.getString("Duration"));
+-//            .setValue(LocalDate.parse(rs.getString("Date_Time")));
+-            organizationName_exp.setText(rs.getString("Organization_Name"));
+-        }
++        dob.setValue(employee.getDob());
++        certificateTitle.setText(employee.getCertificateTitle());
++        organizationName_edu.setText(employee.getOrganizationName_edu());
++        verificationNo.setText(employee.getVerificationNo());
++        issueDate.setValue(employee.getIssueDate());
++        description_edu.setText(employee.getDescription_edu());
++        skillTitle.setText(employee.getSkillTitle());
++        fieldTitle_skill.setText(employee.getFieldTitle_skill());
++        skillDate.setValue(employee.getSkillDate());
++        description_skill.setText(employee.getDescription_skill());
++        jobTitle_exp.setText(employee.getJobTitle_exp());
++        organizationName_exp.setText(employee.getOrganizationName_exp());
++        fieldTitle_exp.setText(employee.getFieldTitle_exp());
++        duration.setText("" + employee.getDuration());
++        jobTitle_duty.setText(employee.getJobTitle_duty());
++        teamID.setText("" + employee.getTeamID());
++        shift.setText(employee.getShift());
++        workingHours.setText("" + employee.getWorkingHours());
++        salary.setText("" + employee.getSalary());
++        joinDate.setValue(employee.getJoinDate());
+     }
+     
+-    private void loadDutyDetails(int id) throws SQLException {
+-//        String query = String.format("Select to_char( Duty_Time,'hh24-mi-ss') as Duty_Time,Shifts,Salary,Designation,Type from Emp_Duty_Details Where EMp_Id = %d",id);
+-        String query = String.format("Select   Job_Title, SHIFT,Working_Hours,  SALARY , Joining_Date from Employee_Duty_Detail Where Employee_Id = %d", id);
+-        ResultSet rs = DBService.executeQuery(query);
+-        if (rs.next()) {
+-            jobTitle_duty.setText(rs.getString("Job_Title"));
+-            shift.setText(rs.getString("Shift"));
+-            workingHours.setText(rs.getString("Working_Hours"));
+-            salary.setText(rs.getString("SALARY"));
+-            joinDate.setValue(LocalDate.parse(rs.getString("Joining_Date")));
+-        }
+-    }
+     
+     public void add(ActionEvent event) throws SQLException {
+-        String basicDetail = String.format("Insert Into Employee (ID, Name,Phone_Number,Email,Address,Date_Time) Values( %d,'%s','%s','%s','%s',to_date('%s','yyyy-mm-dd'))",
++        String basicDetail = String.format("Insert Into Employee (ID, Name, Phone_No, Email, Address, Dob) Values(%d, '%s', '%s', '%s', '%s', ParseDateTime('%s', 'yyyy-mm-dd'))",
+                 Integer.parseInt(id.getText()),
+                 name.getText(),
+                 phoneNo.getText(),
+@@ -135,57 +109,57 @@
+                 address.getText(),
+                 dob.getValue()
+         );
+-        
+-        String educationalDetail = String.format("Insert Into Employee_Education_Detail( Employee_ID  , Certificate_Title, Organization_Name , Verification_No, Date_Issued_On , Description , Date_time) Values( %d,'%s','%s','%s',to_date('%s','yyyy-mm-dd'),'%s',to_char(sysdate,'yyyy-mm-dd'))",
+-                
+-                Integer.parseInt(id.getText()),
+-                certificateTitle.getText(),
+-                organizationName_edu.getText(),
+-                verificationNo.getText(),
+-                issueDate.getValue(),
+-                description_edu.getText()
++
++//        String educationalDetail = String.format("Insert Into Employee_Education_Detail( Employee_ID  , Certificate_Title, Organization_Name , Verification_No, Date_Issued_On , Description , Date_time) Values( %d,'%s','%s','%s',to_date('%s','yyyy-mm-dd'),'%s',to_char(sysdate,'yyyy-mm-dd'))",
++//
++//                Integer.parseInt(id.getText()),
++//                certificateTitle.getText(),
++//                organizationName_edu.getText(),
++//                verificationNo.getText(),
++//                issueDate.getValue(),
++//                description_edu.getText()
++//
++//        );
++//
++//        String skillDetail = String.format("Insert Into Employee_Skill_Detail( Employee_ID, Skill_Title, Field_Title , Date_Time, Description ) Values( %d,'%s','%s',to_date( sysdate,'yyyy-mm-dd'),'%s')",
++//
++//                Integer.parseInt(id.getText()),
++//                skillTitle.getText(),
++//                fieldTitle_skill.getText(),
++//                description_skill.getText()
++//        );
++//
++//        String experienceDetail = String.format("Insert Into Employee_Experience_Detail( Employee_ID, Job_Title ,Organization_Name , FIELD_NAME , Duration ,  Date_Time   ) Values( %d,'%s','%s','%s','%s',to_date(sysdate,'yyyy-mm-dd'))",
++//
++//                Integer.parseInt(id.getText()),
++//                jobTitle_exp.getText(),
++//                organizationName_exp.getText(),
++//                fieldTitle_exp.getText(),
++//                duration.getText()
++//        );
++//
++//        String dutyDetail = String.format("Insert Into Employee_Duty_Detail( Employee_ID , Job_Title, SHIFT,Working_Hours,  SALARY , Joining_Date ) Values( %d,'%s','%s',%d,%d,to_date('%s','yyyy-mm-dd'))",
++//
++//                Integer.parseInt(id.getText()),
++//                jobTitle_exp.getText(),
++//                shift.getText(),
++//                Integer.parseInt(workingHours.getText()),
++//                Integer.parseInt(salary.getText()),
++//                joinDate.getValue()
++//        );
++//
+         
+-        );
+-        
+-        String Skills_detail = String.format("Insert Into Employee_Skill_Detail( Employee_ID, Skill_Title, Field_Title , Date_Time, Description ) Values( %d,'%s','%s',to_date( sysdate,'yyyy-mm-dd'),'%s')",
+-                
+-                Integer.parseInt(id.getText()),
+-                skillTitle.getText(),
+-                fieldTitle_skill.getText(),
+-                description_skill.getText()
+-        );
+-        
+-        String Experience_detail = String.format("Insert Into Employee_Experience_Detail( Employee_ID, Job_Title ,Organization_Name , FIELD_NAME , Duration ,  Date_Time   ) Values( %d,'%s','%s','%s','%s',to_date(sysdate,'yyyy-mm-dd'))",
+-                
+-                Integer.parseInt(id.getText()),
+-                jobTitle.getText(),
+-                organizationName_exp.getText(),
+-                fieldTitle_exp.getText(),
+-                duration.getText()
+-        );
+-        
+-        String Duty_detail = String.format("Insert Into Employee_Duty_Detail( Employee_ID , Job_Title, SHIFT,Working_Hours,  SALARY , Joining_Date ) Values( %d,'%s','%s',%d,%d,to_date('%s','yyyy-mm-dd'))",
+-                
+-                Integer.parseInt(id.getText()),
+-                jobTitle.getText(),
+-                shift.getText(),
+-                Integer.parseInt(workingHours.getText()),
+-                Integer.parseInt(salary.getText()),
+-                joinDate.getValue()
+-        );
+-        
+         DBService.statement.executeUpdate(basicDetail);
+-        DBService.statement.executeUpdate(educationalDetail);
+-        DBService.statement.executeUpdate(Skills_detail);
+-        DBService.statement.executeUpdate(Experience_detail);
+-        DBService.statement.executeUpdate(Duty_detail);
+-        label.setText("Saved!");
++//        DBService.statement.executeUpdate(educationalDetail);
++//        DBService.statement.executeUpdate(skillDetail);
++//        DBService.statement.executeUpdate(experienceDetail);
++//        DBService.statement.executeUpdate(dutyDetail);
+         Refresh();
+-        clearFields();
++        StageHandler.getStage(event).close();
+     }
+     
+     public void Refresh() {
+-        EmployeeController.getData();
++        EmployeeController.loadData();
+     }
+     
+     public void clearFields() {
+@@ -207,7 +181,7 @@
+         organizationName_exp.setText(null);
+         shift.setText(null);
+         salary.setText(null);
+-        jobTitle.setText(null);
++        jobTitle_exp.setText(null);
+         jobTitle_duty.setText(null);
+         workingHours.setText(null);
+         joinDate.setValue(null);
+@@ -215,15 +189,14 @@
+     
+     public void delete(ActionEvent event) throws SQLException {
+         int id = Integer.parseInt(this.id.getText());
+-        String query = String.format("Delete from Employee Where id = %d ", id);
++        String query = "Delete from Employee Where id = " + id;
+         DBService.statement.executeUpdate(query);
+-        label.setText("Deleted!");
+         Refresh();
+     }
+     
+     public void update(ActionEvent event) throws SQLException {
+         String basicDetails_query = String.format("Update Employee set NAME='%s', Phone_Number='%s', Email='%s',Address ='%s',Date_Time = to_date('%s','yyyy-mm-dd') Where id=%d",
+-            
++                
+                 name.getText(),
+                 phoneNo.getText(),
+                 email.getText(),
+@@ -233,8 +206,8 @@
+         );
+         // Employee Education Details
+         String educationDetailsQuery = String.format("Update  Employee_Education_Detail set Certificate_Title = '%s', Organization_Name= '%s' ,Verification_No = '%s', Date_Issued_On = to_char('%s','yyyy-mm-dd'),Date_time = to_char(sysdate,'yyyy-mm-dd') Where  Employee_id= %d ",
+-            
+-            
++                
++                
+                 certificateTitle.getText(),
+                 organizationName_edu.getText(),
+                 verificationNo.getText(),
+@@ -243,42 +216,41 @@
+         );
+         // Employee Experience Details
+         String experienceDetails_query = String.format("Update  Employee_Experience_Detail set Job_Title = '%s',Duration = '%s',Field_Name ='%s' , Organization_Name = '%s'  Where  Employee_id= %d ",
+-        
++                
+                 
+-                jobTitle.getText(),
++                jobTitle_exp.getText(),
+                 duration.getText(),
+                 fieldTitle_exp.getText(),
+                 organizationName_exp.getText(),
+                 Integer.parseInt(id.getText())
+         );
+-    
++        
+         // Employee Skill Details
+         String skillDetails_query = String.format("Update Employee_Skill_Detail set Skill_Title='%s',Field_Title='%s', Description='%s' Where  Employee_id= %d ",
+-            
++                
+                 skillTitle.getText(),
+                 fieldTitle_skill.getText(),
+                 description_skill.getText(),
+                 Integer.parseInt(id.getText())
+         );
+-    
++        
+         // Employee Duty Details
+         String dutyDetails_query = String.format("UPDATE Employee_Duty_Detail SET   Job_Title = '%s',Working_Hours = %d, Shift ='%s', Salary=%d ,Joining_Date =  to_char('%s','yyyy-mm-dd') Where Employee_id=%d",
+                 
+-                jobTitle.getText(),
++                jobTitle_exp.getText(),
+                 Integer.parseInt(workingHours.getText()),
+                 shift.getText(),
+                 Integer.parseInt(salary.getText()),
+                 joinDate.getValue(),
+                 Integer.parseInt(id.getText())
+         );
+-    
++        
+         // Performing Database Update Operations
+         DBService.statement.executeUpdate(basicDetails_query);
+         DBService.statement.executeUpdate(educationDetailsQuery);
+         DBService.statement.executeUpdate(experienceDetails_query);
+         DBService.statement.executeUpdate(skillDetails_query);
+         DBService.statement.executeUpdate(dutyDetails_query);
+-        label.setText("Updated!");
+         Refresh();
+     }
+ }
+\ No newline at end of file
+Index: src/dashboard/employee/Employee.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package dashboard.employee;\r\n\r\nimport javafx.beans.property.SimpleIntegerProperty;\r\nimport javafx.beans.property.SimpleStringProperty;\r\n\r\npublic class Employee {\r\n    \r\n    \r\n    SimpleIntegerProperty id;\r\n    SimpleStringProperty Name;\r\n    SimpleStringProperty phone;\r\n    SimpleStringProperty email;\r\n    SimpleStringProperty address;\r\n    \r\n    public String getDob() {\r\n        return dob.get();\r\n    }\r\n    \r\n    public SimpleStringProperty dobProperty() {\r\n        return dob;\r\n    }\r\n    \r\n    public void setDob(String dob) {\r\n        this.dob.set(dob);\r\n    }\r\n    \r\n    SimpleStringProperty dob;\r\n    \r\n    public Employee(int id, String name, String phone, String email, String address,String dob) {\r\n        this.id = new SimpleIntegerProperty(id);\r\n        this.Name = new SimpleStringProperty(name);\r\n        this.phone = new SimpleStringProperty(phone);\r\n        this.email = new SimpleStringProperty(email);\r\n        this.address =  new SimpleStringProperty(address);\r\n        this.dob = new SimpleStringProperty(dob);\r\n    }\r\n    \r\n    public int getId() {\r\n        return id.get();\r\n    }\r\n    \r\n    public SimpleIntegerProperty idProperty() {\r\n        return id;\r\n    }\r\n    \r\n    public void setId(int id) {\r\n        this.id.set(id);\r\n    }\r\n    \r\n    public String getName() {\r\n        return Name.get();\r\n    }\r\n    \r\n    public SimpleStringProperty nameProperty() {\r\n        return Name;\r\n    }\r\n    \r\n    public void setName(String name) {\r\n        this.Name.set(name);\r\n    }\r\n    \r\n    public String getPhone() {\r\n        return phone.get();\r\n    }\r\n    \r\n    public SimpleStringProperty phoneProperty() {\r\n        return phone;\r\n    }\r\n    \r\n    public void setPhone(String phone) {\r\n        this.phone.set(phone);\r\n    }\r\n    \r\n    public String getEmail() {\r\n        return email.get();\r\n    }\r\n    \r\n    public SimpleStringProperty emailProperty() {\r\n        return email;\r\n    }\r\n    \r\n    public void setEmail(String email) {\r\n        this.email.set(email);\r\n    }\r\n    \r\n    public String getAddress() {\r\n        return address.get();\r\n    }\r\n    \r\n    public SimpleStringProperty addressProperty() {\r\n        return address;\r\n    }\r\n    \r\n    public void setAddress(String address) {\r\n        this.address.set(address);\r\n    }\r\n \r\n}\r\n    \r\n    \r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/dashboard/employee/Employee.java b/src/dashboard/employee/Employee.java
+--- a/src/dashboard/employee/Employee.java	(revision 7348489d1f32b9a42868fb19ba0c40dc65ed342c)
++++ b/src/dashboard/employee/Employee.java	(date 1609095909030)
+@@ -1,100 +1,373 @@
+ package dashboard.employee;
+ 
++import javafx.beans.property.ObjectProperty;
+ import javafx.beans.property.SimpleIntegerProperty;
++import javafx.beans.property.SimpleObjectProperty;
+ import javafx.beans.property.SimpleStringProperty;
+ 
++import java.time.LocalDate;
++
+ public class Employee {
+-    
+-    
+-    SimpleIntegerProperty id;
+-    SimpleStringProperty Name;
+-    SimpleStringProperty phone;
+-    SimpleStringProperty email;
+-    SimpleStringProperty address;
+-    
+-    public String getDob() {
+-        return dob.get();
+-    }
+-    
+-    public SimpleStringProperty dobProperty() {
+-        return dob;
+-    }
++    private final SimpleIntegerProperty id;
++    private final SimpleStringProperty name;
++    private final SimpleStringProperty phoneNo;
++    private final SimpleStringProperty email;
++    private final SimpleStringProperty address;
++    private final ObjectProperty<LocalDate> dob;
++    private final SimpleStringProperty certificateTitle;
++    private final SimpleStringProperty organizationName_edu;
++    private final SimpleStringProperty verificationNo;
++    private final ObjectProperty<LocalDate> issueDate;
++    private final SimpleStringProperty description_edu;
++    private final SimpleStringProperty skillTitle;
++    private final SimpleStringProperty fieldTitle_skill;
++    private final ObjectProperty<LocalDate> skillDate;
++    private final SimpleStringProperty description_skill;
++    private final SimpleStringProperty jobTitle_exp;
++    private final SimpleStringProperty organizationName_exp;
++    private final SimpleStringProperty fieldTitle_exp;
++    private final SimpleIntegerProperty duration;
++    private final SimpleStringProperty jobTitle_duty;
++    private final SimpleIntegerProperty teamID;
++    private final SimpleStringProperty shift;
++    private final SimpleIntegerProperty workingHours;
++    private final SimpleIntegerProperty salary;
++    private final ObjectProperty<LocalDate> joinDate;
+     
+-    public void setDob(String dob) {
+-        this.dob.set(dob);
+-    }
+-    
+-    SimpleStringProperty dob;
+-    
+-    public Employee(int id, String name, String phone, String email, String address,String dob) {
++    public Employee(Integer id, String name, String phoneNo, String email,
++                    String address, LocalDate dob, String certificateTitle,
++                    String organizationName_edu, String verificationNo,
++                    LocalDate issueDate, String description_edu, String skillTitle,
++                    String fieldTitle_skill, LocalDate skillDate, String description_skill,
++                    String jobTitle_exp, String organizationName_exp, String fieldTitle_exp,
++                    Integer duration, String jobTitle_duty, Integer teamID, String shift,
++                    Integer workingHours, Integer salary, LocalDate joinDate) {
+         this.id = new SimpleIntegerProperty(id);
+-        this.Name = new SimpleStringProperty(name);
+-        this.phone = new SimpleStringProperty(phone);
++        this.name = new SimpleStringProperty(name);
++        this.phoneNo = new SimpleStringProperty(phoneNo);
+         this.email = new SimpleStringProperty(email);
+-        this.address =  new SimpleStringProperty(address);
+-        this.dob = new SimpleStringProperty(dob);
++        this.address = new SimpleStringProperty(address);
++        this.dob = new SimpleObjectProperty<>(dob);
++        this.certificateTitle = new SimpleStringProperty(certificateTitle);
++        this.organizationName_edu = new SimpleStringProperty(organizationName_edu);
++        this.verificationNo = new SimpleStringProperty(verificationNo);
++        this.issueDate = new SimpleObjectProperty<>(issueDate);
++        this.description_edu = new SimpleStringProperty(description_edu);
++        this.skillTitle = new SimpleStringProperty(skillTitle);
++        this.fieldTitle_skill = new SimpleStringProperty(fieldTitle_skill);
++        this.skillDate = new SimpleObjectProperty<>(skillDate);
++        this.description_skill = new SimpleStringProperty(description_skill);
++        this.jobTitle_exp = new SimpleStringProperty(jobTitle_exp);
++        this.organizationName_exp = new SimpleStringProperty(organizationName_exp);
++        this.fieldTitle_exp = new SimpleStringProperty(fieldTitle_exp);
++        this.duration = new SimpleIntegerProperty(duration);
++        this.jobTitle_duty = new SimpleStringProperty(jobTitle_duty);
++        this.teamID = new SimpleIntegerProperty(teamID);
++        this.shift = new SimpleStringProperty(shift);
++        this.workingHours = new SimpleIntegerProperty(workingHours);
++        this.salary = new SimpleIntegerProperty(salary);
++        this.joinDate = new SimpleObjectProperty<>(joinDate);
+     }
+     
+     public int getId() {
+         return id.get();
+     }
+     
+-    public SimpleIntegerProperty idProperty() {
+-        return id;
+-    }
+-    
+     public void setId(int id) {
+         this.id.set(id);
+     }
+     
++    public SimpleIntegerProperty idProperty() {
++        return id;
++    }
++    
+     public String getName() {
+-        return Name.get();
++        return name.get();
++    }
++    
++    public void setName(String name) {
++        this.name.set(name);
+     }
+     
+     public SimpleStringProperty nameProperty() {
+-        return Name;
+-    }
+-    
+-    public void setName(String name) {
+-        this.Name.set(name);
++        return name;
+     }
+     
+-    public String getPhone() {
+-        return phone.get();
++    public String getPhoneNo() {
++        return phoneNo.get();
+     }
+     
+-    public SimpleStringProperty phoneProperty() {
+-        return phone;
++    public void setPhoneNo(String phoneNo) {
++        this.phoneNo.set(phoneNo);
+     }
+     
+-    public void setPhone(String phone) {
+-        this.phone.set(phone);
++    public SimpleStringProperty phoneNoProperty() {
++        return phoneNo;
+     }
+     
+     public String getEmail() {
+         return email.get();
+     }
+     
+-    public SimpleStringProperty emailProperty() {
+-        return email;
+-    }
+-    
+     public void setEmail(String email) {
+         this.email.set(email);
+     }
+     
++    public SimpleStringProperty emailProperty() {
++        return email;
++    }
++    
+     public String getAddress() {
+         return address.get();
+     }
+     
+-    public SimpleStringProperty addressProperty() {
+-        return address;
+-    }
+-    
+     public void setAddress(String address) {
+         this.address.set(address);
+     }
+- 
++    
++    public SimpleStringProperty addressProperty() {
++        return address;
++    }
++    
++    public LocalDate getDob() {
++        return dob.get();
++    }
++    
++    public void setDob(LocalDate dob) {
++        this.dob.set(dob);
++    }
++    
++    public ObjectProperty<LocalDate> dobProperty() {
++        return dob;
++    }
++    
++    public String getCertificateTitle() {
++        return certificateTitle.get();
++    }
++    
++    public void setCertificateTitle(String certificateTitle) {
++        this.certificateTitle.set(certificateTitle);
++    }
++    
++    public SimpleStringProperty certificateTitleProperty() {
++        return certificateTitle;
++    }
++    
++    public String getOrganizationName_edu() {
++        return organizationName_edu.get();
++    }
++    
++    public void setOrganizationName_edu(String organizationName_edu) {
++        this.organizationName_edu.set(organizationName_edu);
++    }
++    
++    public SimpleStringProperty organizationName_eduProperty() {
++        return organizationName_edu;
++    }
++    
++    public String getVerificationNo() {
++        return verificationNo.get();
++    }
++    
++    public void setVerificationNo(String verificationNo) {
++        this.verificationNo.set(verificationNo);
++    }
++    
++    public SimpleStringProperty verificationNoProperty() {
++        return verificationNo;
++    }
++    
++    public LocalDate getIssueDate() {
++        return issueDate.get();
++    }
++    
++    public void setIssueDate(LocalDate issueDate) {
++        this.issueDate.set(issueDate);
++    }
++    
++    public ObjectProperty<LocalDate> issueDateProperty() {
++        return issueDate;
++    }
++    
++    public String getDescription_edu() {
++        return description_edu.get();
++    }
++    
++    public void setDescription_edu(String description_edu) {
++        this.description_edu.set(description_edu);
++    }
++    
++    public SimpleStringProperty description_eduProperty() {
++        return description_edu;
++    }
++    
++    public String getSkillTitle() {
++        return skillTitle.get();
++    }
++    
++    public void setSkillTitle(String skillTitle) {
++        this.skillTitle.set(skillTitle);
++    }
++    
++    public SimpleStringProperty skillTitleProperty() {
++        return skillTitle;
++    }
++    
++    public String getFieldTitle_skill() {
++        return fieldTitle_skill.get();
++    }
++    
++    public void setFieldTitle_skill(String fieldTitle_skill) {
++        this.fieldTitle_skill.set(fieldTitle_skill);
++    }
++    
++    public SimpleStringProperty fieldTitle_skillProperty() {
++        return fieldTitle_skill;
++    }
++    
++    public LocalDate getSkillDate() {
++        return skillDate.get();
++    }
++    
++    public void setSkillDate(LocalDate skillDate) {
++        this.skillDate.set(skillDate);
++    }
++    
++    public ObjectProperty<LocalDate> skillDateProperty() {
++        return skillDate;
++    }
++    
++    public String getDescription_skill() {
++        return description_skill.get();
++    }
++    
++    public void setDescription_skill(String description_skill) {
++        this.description_skill.set(description_skill);
++    }
++    
++    public SimpleStringProperty description_skillProperty() {
++        return description_skill;
++    }
++    
++    public String getJobTitle_exp() {
++        return jobTitle_exp.get();
++    }
++    
++    public void setJobTitle_exp(String jobTitle_exp) {
++        this.jobTitle_exp.set(jobTitle_exp);
++    }
++    
++    public SimpleStringProperty jobTitle_expProperty() {
++        return jobTitle_exp;
++    }
++    
++    public String getOrganizationName_exp() {
++        return organizationName_exp.get();
++    }
++    
++    public void setOrganizationName_exp(String organizationName_exp) {
++        this.organizationName_exp.set(organizationName_exp);
++    }
++    
++    public SimpleStringProperty organizationName_expProperty() {
++        return organizationName_exp;
++    }
++    
++    public String getFieldTitle_exp() {
++        return fieldTitle_exp.get();
++    }
++    
++    public void setFieldTitle_exp(String fieldTitle_exp) {
++        this.fieldTitle_exp.set(fieldTitle_exp);
++    }
++    
++    public SimpleStringProperty fieldTitle_expProperty() {
++        return fieldTitle_exp;
++    }
++    
++    public int getDuration() {
++        return duration.get();
++    }
++    
++    public void setDuration(int duration) {
++        this.duration.set(duration);
++    }
++    
++    public SimpleIntegerProperty durationProperty() {
++        return duration;
++    }
++    
++    public String getJobTitle_duty() {
++        return jobTitle_duty.get();
++    }
++    
++    public void setJobTitle_duty(String jobTitle_duty) {
++        this.jobTitle_duty.set(jobTitle_duty);
++    }
++    
++    public SimpleStringProperty jobTitle_dutyProperty() {
++        return jobTitle_duty;
++    }
++    
++    public int getTeamID() {
++        return teamID.get();
++    }
++    
++    public void setTeamID(int teamID) {
++        this.teamID.set(teamID);
++    }
++    
++    public SimpleIntegerProperty teamIDProperty() {
++        return teamID;
++    }
++    
++    public String getShift() {
++        return shift.get();
++    }
++    
++    public void setShift(String shift) {
++        this.shift.set(shift);
++    }
++    
++    public SimpleStringProperty shiftProperty() {
++        return shift;
++    }
++    
++    public int getWorkingHours() {
++        return workingHours.get();
++    }
++    
++    public void setWorkingHours(int workingHours) {
++        this.workingHours.set(workingHours);
++    }
++    
++    public SimpleIntegerProperty workingHoursProperty() {
++        return workingHours;
++    }
++    
++    public int getSalary() {
++        return salary.get();
++    }
++    
++    public void setSalary(int salary) {
++        this.salary.set(salary);
++    }
++    
++    public SimpleIntegerProperty salaryProperty() {
++        return salary;
++    }
++    
++    public LocalDate getJoinDate() {
++        return joinDate.get();
++    }
++    
++    public void setJoinDate(LocalDate joinDate) {
++        this.joinDate.set(joinDate);
++    }
++    
++    public ObjectProperty<LocalDate> joinDateProperty() {
++        return joinDate;
++    }
+ }
+     
+     
+Index: src/dashboard/employee/EmployeeController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package dashboard.employee;\r\n\r\nimport database.DBService;\r\nimport javafx.collections.FXCollections;\r\nimport javafx.collections.ObservableList;\r\nimport javafx.collections.transformation.FilteredList;\r\nimport javafx.collections.transformation.SortedList;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.scene.control.TableColumn;\r\nimport javafx.scene.control.TableView;\r\nimport javafx.scene.control.TextField;\r\nimport javafx.scene.control.cell.PropertyValueFactory;\r\nimport org.w3c.dom.Document;\r\nimport util.StageHandler;\r\n\r\nimport java.io.FileOutputStream;\r\nimport java.sql.ResultSet;\r\nimport java.sql.SQLException;\r\n\r\npublic class EmployeeController {\r\n    \r\n    static ObservableList<Employee> employee_list = FXCollections.observableArrayList();\r\n    \r\n    @FXML\r\n    private TextField searchField;\r\n    @FXML\r\n    private TableView<Employee> employeeTable;\r\n    @FXML\r\n    private TableColumn<Employee, Integer> idCol;\r\n    @FXML\r\n    private TableColumn<Employee, String> nameCol;\r\n    @FXML\r\n    private TableColumn<Employee, String> phoneCol;\r\n    @FXML\r\n    private TableColumn<Employee, String> emailCol;\r\n    @FXML\r\n    private TableColumn<Employee, String> addressCol;\r\n    \r\n    public void initialize() {\r\n        createTable();\r\n        createSearchFilter();\r\n        getData();\r\n    }\r\n    \r\n    private void createTable() {\r\n        idCol.setCellValueFactory(new PropertyValueFactory<>(\"id\"));\r\n        nameCol.setCellValueFactory(new PropertyValueFactory<>(\"Name\"));\r\n        phoneCol.setCellValueFactory(new PropertyValueFactory<>(\"phone\"));\r\n        emailCol.setCellValueFactory(new PropertyValueFactory<>(\"email\"));\r\n        addressCol.setCellValueFactory(new PropertyValueFactory<>(\"address\"));\r\n        employeeTable.setItems(employee_list);\r\n    }\r\n    \r\n    private void createSearchFilter() {\r\n        FilteredList<Employee> filteredData = new FilteredList<>(employee_list, b -> true);\r\n        searchField.textProperty().addListener((observable, oldValue, newValue) -> {\r\n            filteredData.setPredicate(Employee -> {\r\n                if (newValue == null || newValue.isEmpty()) {\r\n                    return true;\r\n                }\r\n                String lowerCaseFilter = newValue.toLowerCase();\r\n                boolean matchName = Employee.getName().toLowerCase().contains(lowerCaseFilter);\r\n                boolean matchPhoneNo = Employee.getPhone().toLowerCase().contains(lowerCaseFilter);\r\n                boolean matchEmail = Employee.getEmail().toLowerCase().contains(lowerCaseFilter);\r\n                boolean matchAddress = Employee.getAddress().toLowerCase().contains(lowerCaseFilter);\r\n                \r\n                boolean matchID = false;\r\n                if (newValue.matches(\"\\\\d*\"))\r\n                    matchID = Employee.getId() == Integer.parseInt(newValue.toLowerCase());\r\n                return matchName || matchPhoneNo || matchEmail || matchAddress || matchID;\r\n            });\r\n        });\r\n        \r\n        SortedList<Employee> sortedData = new SortedList<>(filteredData);\r\n        sortedData.comparatorProperty().bind(employeeTable.comparatorProperty());\r\n        employeeTable.setItems(sortedData);\r\n    }\r\n    \r\n    public static void getData() {\r\n        employee_list.clear();\r\n        String query = \"Select ID, Name ,Phone_Number, Email, Address,Date_Time from Employee\";\r\n        ResultSet rs = DBService.executeQuery(query);\r\n        try {\r\n            while (rs.next()) {\r\n                employee_list.add(new Employee(Integer.parseInt(String.valueOf(rs.getInt(\"ID\"))),\r\n                        \r\n                        rs.getString(\"Name\"),\r\n                        rs.getString(\"Phone_Number\"),\r\n                        rs.getString(\"Email\"),\r\n                        rs.getString(\"Address\"),\r\n                        rs.getString(\"Date_Time\")\r\n                ));\r\n            }\r\n        } catch (SQLException exception) {\r\n            exception.printStackTrace();\r\n        }\r\n    }\r\n    \r\n    public void add() {\r\n        String fxmlPath = \"/dashboard/employee/EmployeePanel.fxml\";\r\n        String title = \"Add Employee\";\r\n        StageHandler.createStage(fxmlPath, title);\r\n    }\r\n    \r\n    public void update() throws SQLException {\r\n        String fxmlPath = \"/dashboard/employee/EmployeePanel.fxml\";\r\n        String title = \"Update Employee\";\r\n        StageHandler.createStage(fxmlPath, title);\r\n        EmployeePanelController controller = StageHandler.loader.getController();\r\n        controller.initData(employeeTable.getSelectionModel().getSelectedItem());\r\n    }\r\n    \r\n    public void delete() throws SQLException {\r\n        String fxmlPath = \"dashboard/employee/EmployeePanel.fxml\";\r\n        String title = \"Delete Employee Details\";\r\n        StageHandler.createStage(fxmlPath, title);\r\n        EmployeePanelController controller = StageHandler.loader.getController();\r\n        controller.initData(employeeTable.getSelectionModel().getSelectedItem());\r\n    }\r\n    \r\n    public void view() throws SQLException {\r\n        String fxmlPath = \"dashboard/employee/EmployeePanel.fxml\";\r\n        String title = \"View Employee Details\";\r\n        StageHandler.createStage(fxmlPath, title);\r\n        EmployeePanelController controller = StageHandler.loader.getController();\r\n        controller.initData(employeeTable.getSelectionModel().getSelectedItem());\r\n    }\r\n    \r\n    public void searchClearBtn() {\r\n        searchField.clear();\r\n    }\r\n    \r\n    public void exportPdf(ActionEvent actionEvent) {\r\n//\r\n//            try {\r\n//\r\n//                Document my_pdf_report = new Document();\r\n//                PdfWriter.getInstance(my_pdf_report, new FileOutputStream(\"pdf_report_from_sql_using_java.pdf\"));\r\n//                my_pdf_report.open();\r\n//                //we have four columns in our table\r\n//                PdfPTable my_report_table = new PdfPTable(4);\r\n//                //create a cell object\r\n//                PdfPCell table_cell;\r\n//\r\n//                while (query_set.next()) {\r\n//                    String dept_id = query_set.getString(\"code\");\r\n//                    table_cell=new PdfPCell(new Phrase(dept_id));\r\n//                    my_report_table.addCell(table_cell);\r\n//                    String dept_name=query_set.getString(\"category\");\r\n//                    table_cell=new PdfPCell(new Phrase(dept_name));\r\n//                    my_report_table.addCell(table_cell);\r\n//                    String manager_id=query_set.getString(\"total\");\r\n//                    table_cell=new PdfPCell(new Phrase(manager_id));\r\n//                    my_report_table.addCell(table_cell);\r\n//                    String location_id=query_set.getString(\"Sum\");\r\n//                    table_cell=new PdfPCell(new Phrase(location_id));\r\n//                    my_report_table.addCell(table_cell);\r\n//                }\r\n//                /* Attach report table to PDF */\r\n//                my_pdf_report.add(my_report_table);\r\n//                my_pdf_report.close();\r\n//\r\n//                /* Close all DB related objects */\r\n//                query_set.close();\r\n//                stmt.close();\r\n//                con.close();\r\n//\r\n//            } catch (FileNotFoundException e) {\r\n//                // TODO Auto-generated catch block\r\n//                e.printStackTrace();\r\n//            } catch (DocumentException e) {\r\n//                // TODO Auto-generated catch block\r\n//                e.printStackTrace();\r\n//            }\r\n//\r\n//        }\r\n    \r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/dashboard/employee/EmployeeController.java b/src/dashboard/employee/EmployeeController.java
+--- a/src/dashboard/employee/EmployeeController.java	(revision 7348489d1f32b9a42868fb19ba0c40dc65ed342c)
++++ b/src/dashboard/employee/EmployeeController.java	(date 1609095909032)
+@@ -1,55 +1,65 @@
+ package dashboard.employee;
+ 
++import com.jfoenix.controls.JFXButton;
+ import database.DBService;
+ import javafx.collections.FXCollections;
+ import javafx.collections.ObservableList;
+ import javafx.collections.transformation.FilteredList;
+ import javafx.collections.transformation.SortedList;
+ import javafx.event.ActionEvent;
+-import javafx.fxml.FXML;
+ import javafx.scene.control.TableColumn;
+ import javafx.scene.control.TableView;
+ import javafx.scene.control.TextField;
+ import javafx.scene.control.cell.PropertyValueFactory;
+-import org.w3c.dom.Document;
+ import util.StageHandler;
+ 
+-import java.io.FileOutputStream;
+ import java.sql.ResultSet;
+ import java.sql.SQLException;
+ 
+ public class EmployeeController {
+-    
+-    static ObservableList<Employee> employee_list = FXCollections.observableArrayList();
+-    
+-    @FXML
+-    private TextField searchField;
+-    @FXML
+-    private TableView<Employee> employeeTable;
+-    @FXML
+-    private TableColumn<Employee, Integer> idCol;
+-    @FXML
+-    private TableColumn<Employee, String> nameCol;
+-    @FXML
+-    private TableColumn<Employee, String> phoneCol;
+-    @FXML
+-    private TableColumn<Employee, String> emailCol;
+-    @FXML
+-    private TableColumn<Employee, String> addressCol;
++    public TableView<Employee> employee_table;
++    public TableColumn<Employee, Integer> id_col;
++    public TableColumn<Employee, String> name_col;
++    public TableColumn<Employee, String> phone_col;
++    public TableColumn<Employee, String> email_Col;
++    public TableColumn<Employee, String> address_col;
++    public TextField searchField;
++    public JFXButton add_btn;
++    public JFXButton delete_btn;
++    public JFXButton update_btn;
++    public JFXButton view_btn;
++    private static final ObservableList<Employee> employee_list = FXCollections.observableArrayList();
+     
+     public void initialize() {
++        add_btn.setDisable(true);
++        delete_btn.setDisable(true);
++        update_btn.setDisable(true);
++        view_btn.setDisable(true);
+         createTable();
+         createSearchFilter();
+-        getData();
++        loadData();
+     }
+     
+     private void createTable() {
+-        idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+-        nameCol.setCellValueFactory(new PropertyValueFactory<>("Name"));
+-        phoneCol.setCellValueFactory(new PropertyValueFactory<>("phone"));
+-        emailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
+-        addressCol.setCellValueFactory(new PropertyValueFactory<>("address"));
+-        employeeTable.setItems(employee_list);
++        id_col.setCellValueFactory(new PropertyValueFactory<>("id"));
++        name_col.setCellValueFactory(new PropertyValueFactory<>("name"));
++        email_Col.setCellValueFactory(new PropertyValueFactory<>("phoneNo"));
++        phone_col.setCellValueFactory(new PropertyValueFactory<>("email"));
++        address_col.setCellValueFactory(new PropertyValueFactory<>("address"));
++        employee_table.setItems(employee_list);
++        employee_table.getSelectionModel().selectedItemProperty().addListener((obs, oldRow, newRow) -> {
++            if (newRow == null) {
++                add_btn.setDisable(true);
++                delete_btn.setDisable(true);
++                update_btn.setDisable(true);
++                view_btn.setDisable(true);
++            } else {
++                add_btn.setDisable(false);
++                delete_btn.setDisable(false);
++                update_btn.setDisable(false);
++                view_btn.setDisable(false);
++            }
++        });
+     }
+     
+     private void createSearchFilter() {
+@@ -61,7 +71,7 @@
+                 }
+                 String lowerCaseFilter = newValue.toLowerCase();
+                 boolean matchName = Employee.getName().toLowerCase().contains(lowerCaseFilter);
+-                boolean matchPhoneNo = Employee.getPhone().toLowerCase().contains(lowerCaseFilter);
++                boolean matchPhoneNo = Employee.getPhoneNo().toLowerCase().contains(lowerCaseFilter);
+                 boolean matchEmail = Employee.getEmail().toLowerCase().contains(lowerCaseFilter);
+                 boolean matchAddress = Employee.getAddress().toLowerCase().contains(lowerCaseFilter);
+                 
+@@ -73,23 +83,43 @@
+         });
+         
+         SortedList<Employee> sortedData = new SortedList<>(filteredData);
+-        sortedData.comparatorProperty().bind(employeeTable.comparatorProperty());
+-        employeeTable.setItems(sortedData);
++        sortedData.comparatorProperty().bind(employee_table.comparatorProperty());
++        employee_table.setItems(sortedData);
++        employee_table.getSelectionModel().select(0);
+     }
+     
+-    public static void getData() {
++    public static void loadData() {
+         employee_list.clear();
+-        String query = "Select ID, Name ,Phone_Number, Email, Address,Date_Time from Employee";
++        String query = "Select * from Employee_View";
+         ResultSet rs = DBService.executeQuery(query);
+         try {
+             while (rs.next()) {
+-                employee_list.add(new Employee(Integer.parseInt(String.valueOf(rs.getInt("ID"))),
+-                        
+-                        rs.getString("Name"),
+-                        rs.getString("Phone_Number"),
+-                        rs.getString("Email"),
+-                        rs.getString("Address"),
+-                        rs.getString("Date_Time")
++                employee_list.add(new Employee(
++                        rs.getInt("ID"),
++                        rs.getString("NAME"),
++                        rs.getString("PHONE_NO"),
++                        rs.getString("EMAIL"),
++                        rs.getString("ADDRESS"),
++                        rs.getDate("DOB").toLocalDate(),
++                        rs.getString("CERTIFICATE_TITLE"),
++                        rs.getString("ORGANIZATION_NAME_EDU"),
++                        rs.getString("VERIFICATION_NO"),
++                        rs.getDate("ISSUE_DATE").toLocalDate(),
++                        rs.getString("DESCRIPTION_EDU"),
++                        rs.getString("SKILL_TITLE"),
++                        rs.getString("FIELD_TITLE_SKILL"),
++                        rs.getDate("SKILL_DATE").toLocalDate(),
++                        rs.getString("DESCRIPTION_SKILL"),
++                        rs.getString("JOB_TITLE_EXP"),
++                        rs.getString("ORGANIZATION_NAME_EXP"),
++                        rs.getString("FIELD_TITLE_EXP"),
++                        rs.getInt("DURATION"),
++                        rs.getString("JOB_TITLE_DUTY"),
++                        rs.getInt("TEAM_ID"),
++                        rs.getString("SHIFT"),
++                        rs.getInt("WORKING_HOURS"),
++                        rs.getInt("SALARY"),
++                        rs.getDate("JOIN_DATE").toLocalDate()
+                 ));
+             }
+         } catch (SQLException exception) {
+@@ -98,33 +128,27 @@
+     }
+     
+     public void add() {
+-        String fxmlPath = "/dashboard/employee/EmployeePanel.fxml";
+-        String title = "Add Employee";
+-        StageHandler.createStage(fxmlPath, title);
++        StageHandler.createStage("Add Employee", "/dashboard/employee/EmployeePanel.fxml");
++        EmployeePanelController controller = StageHandler.loader.getController();
++        controller.initData(null, OperationType.ADD);
+     }
+     
+-    public void update() throws SQLException {
+-        String fxmlPath = "/dashboard/employee/EmployeePanel.fxml";
+-        String title = "Update Employee";
+-        StageHandler.createStage(fxmlPath, title);
++    public void delete() {
++        StageHandler.createStage("Delete Employee", "/dashboard/employee/EmployeePanel.fxml");
+         EmployeePanelController controller = StageHandler.loader.getController();
+-        controller.initData(employeeTable.getSelectionModel().getSelectedItem());
++        controller.initData(employee_table.getSelectionModel().getSelectedItem(), OperationType.DELETE);
+     }
+     
+-    public void delete() throws SQLException {
+-        String fxmlPath = "dashboard/employee/EmployeePanel.fxml";
+-        String title = "Delete Employee Details";
+-        StageHandler.createStage(fxmlPath, title);
++    public void update() {
++        StageHandler.createStage("Update Employee", "/dashboard/employee/EmployeePanel.fxml");
+         EmployeePanelController controller = StageHandler.loader.getController();
+-        controller.initData(employeeTable.getSelectionModel().getSelectedItem());
++        controller.initData(employee_table.getSelectionModel().getSelectedItem(), OperationType.UPDATE);
+     }
+     
+-    public void view() throws SQLException {
+-        String fxmlPath = "dashboard/employee/EmployeePanel.fxml";
+-        String title = "View Employee Details";
+-        StageHandler.createStage(fxmlPath, title);
++    public void view() {
++        StageHandler.createStage("View Employee", "/dashboard/employee/EmployeePanel.fxml");
+         EmployeePanelController controller = StageHandler.loader.getController();
+-        controller.initData(employeeTable.getSelectionModel().getSelectedItem());
++        controller.initData(employee_table.getSelectionModel().getSelectedItem(), OperationType.VIEW);
+     }
+     
+     public void searchClearBtn() {
+@@ -132,49 +156,49 @@
+     }
+     
+     public void exportPdf(ActionEvent actionEvent) {
+-//
+-//            try {
+-//
+-//                Document my_pdf_report = new Document();
+-//                PdfWriter.getInstance(my_pdf_report, new FileOutputStream("pdf_report_from_sql_using_java.pdf"));
+-//                my_pdf_report.open();
+-//                //we have four columns in our table
+-//                PdfPTable my_report_table = new PdfPTable(4);
+-//                //create a cell object
+-//                PdfPCell table_cell;
+-//
+-//                while (query_set.next()) {
+-//                    String dept_id = query_set.getString("code");
+-//                    table_cell=new PdfPCell(new Phrase(dept_id));
+-//                    my_report_table.addCell(table_cell);
+-//                    String dept_name=query_set.getString("category");
+-//                    table_cell=new PdfPCell(new Phrase(dept_name));
+-//                    my_report_table.addCell(table_cell);
+-//                    String manager_id=query_set.getString("total");
+-//                    table_cell=new PdfPCell(new Phrase(manager_id));
+-//                    my_report_table.addCell(table_cell);
+-//                    String location_id=query_set.getString("Sum");
+-//                    table_cell=new PdfPCell(new Phrase(location_id));
+-//                    my_report_table.addCell(table_cell);
+-//                }
+-//                /* Attach report table to PDF */
+-//                my_pdf_report.add(my_report_table);
+-//                my_pdf_report.close();
+-//
+-//                /* Close all DB related objects */
+-//                query_set.close();
+-//                stmt.close();
+-//                con.close();
+-//
+-//            } catch (FileNotFoundException e) {
+-//                // TODO Auto-generated catch block
+-//                e.printStackTrace();
+-//            } catch (DocumentException e) {
+-//                // TODO Auto-generated catch block
+-//                e.printStackTrace();
+-//            }
+-//
+-//        }
+-    
++/*
++            try {
++
++                Document my_pdf_report = new Document();
++                PdfWriter.getInstance(my_pdf_report, new FileOutputStream("pdf_report_from_sql_using_java.pdf"));
++                my_pdf_report.open();
++                //we have four columns in our table
++                PdfPTable my_report_table = new PdfPTable(4);
++                //create a cell object
++                PdfPCell table_cell;
++
++                while (query_set.next()) {
++                    String dept_id = query_set.getString("code");
++                    table_cell=new PdfPCell(new Phrase(dept_id));
++                    my_report_table.addCell(table_cell);
++                    String dept_name=query_set.getString("category");
++                    table_cell=new PdfPCell(new Phrase(dept_name));
++                    my_report_table.addCell(table_cell);
++                    String manager_id=query_set.getString("total");
++                    table_cell=new PdfPCell(new Phrase(manager_id));
++                    my_report_table.addCell(table_cell);
++                    String location_id=query_set.getString("Sum");
++                    table_cell=new PdfPCell(new Phrase(location_id));
++                    my_report_table.addCell(table_cell);
++                }
++                *//* Attach report table to PDF *//*
++                my_pdf_report.add(my_report_table);
++                my_pdf_report.close();
++
++                *//* Close all DB related objects *//*
++                query_set.close();
++                stmt.close();
++                con.close();
++
++            } catch (FileNotFoundException e) {
++                // TODO Auto-generated catch block
++                e.printStackTrace();
++            } catch (DocumentException e) {
++                // TODO Auto-generated catch block
++                e.printStackTrace();
++            }
++
++        }*/
++        
+     }
+ }
+Index: src/dashboard/employee/Employee.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import com.jfoenix.controls.JFXButton?>\r\n<?import javafx.scene.Cursor?>\r\n<?import javafx.scene.control.TableColumn?>\r\n<?import javafx.scene.control.TableView?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane prefHeight=\"684.0\" prefWidth=\"923.0\" xmlns=\"http://javafx.com/javafx/11.0.1\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"dashboard.employee.EmployeeController\">\r\n   <children>\r\n      <AnchorPane layoutX=\"153.0\" layoutY=\"553.0\" prefHeight=\"68.0\" prefWidth=\"658.0\" style=\"-fx-background-color: #666666; -fx-background-radius: 17px;\">\r\n         <children>\r\n            <JFXButton fx:id=\"delete_btn\" buttonType=\"RAISED\" layoutX=\"497.0\" layoutY=\"19.0\" onAction=\"#delete\" prefHeight=\"33.0\" prefWidth=\"100.0\" style=\"-fx-background-color: gold; -fx-background-radius: 15px;\" text=\"DELETE\">\r\n               <cursor>\r\n                  <Cursor fx:constant=\"HAND\" />\r\n               </cursor>\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"12.0\" />\r\n               </font>\r\n            </JFXButton>\r\n            <JFXButton fx:id=\"update_btn\" buttonType=\"RAISED\" layoutX=\"209.0\" layoutY=\"19.0\" onAction=\"#update\" prefHeight=\"33.0\" prefWidth=\"100.0\" style=\"-fx-background-color: gold; -fx-background-radius: 15px;\" text=\"UPDATE\">\r\n               <cursor>\r\n                  <Cursor fx:constant=\"HAND\" />\r\n               </cursor>\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"12.0\" />\r\n               </font>\r\n            </JFXButton>\r\n            <JFXButton fx:id=\"add_btn\" buttonType=\"RAISED\" layoutX=\"61.0\" layoutY=\"18.0\" onAction=\"#add\" prefHeight=\"33.0\" prefWidth=\"100.0\" style=\"-fx-background-color: gold; -fx-background-radius: 15px;\" text=\"ADD\">\r\n               <cursor>\r\n                  <Cursor fx:constant=\"HAND\" />\r\n               </cursor>\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"12.0\" />\r\n               </font>\r\n            </JFXButton>\r\n            <JFXButton fx:id=\"viewBtn\" buttonType=\"RAISED\" layoutX=\"353.0\" layoutY=\"19.0\" onAction=\"#view\" prefHeight=\"33.0\" prefWidth=\"100.0\" style=\"-fx-background-color: gold; -fx-background-radius: 15px;\" text=\"VIEW\">\r\n               <cursor>\r\n                  <Cursor fx:constant=\"HAND\" />\r\n               </cursor>\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"12.0\" />\r\n               </font>\r\n            </JFXButton>\r\n            <JFXButton buttonType=\"RAISED\" layoutX=\"597.0\" layoutY=\"7.0\" onAction=\"#exportPdf\" style=\"-fx-background-color: white;\" text=\"PDF\" />\r\n         </children>\r\n      </AnchorPane>\r\n      <AnchorPane layoutX=\"47.0\" layoutY=\"22.0\" prefHeight=\"68.0\" prefWidth=\"840.0\" style=\"-fx-background-color: #666666; -fx-background-radius: 17px;\">\r\n         <children>\r\n            <JFXButton fx:id=\"SearchClearBtn\" buttonType=\"RAISED\" layoutX=\"394.0\" layoutY=\"21.0\" onAction=\"#searchClearBtn\" prefHeight=\"26.0\" prefWidth=\"73.0\" style=\"-fx-background-color: gold; -fx-background-radius: 15px;\" text=\"Clear\">\r\n               <cursor>\r\n                  <Cursor fx:constant=\"HAND\" />\r\n               </cursor>\r\n               <font>\r\n                  <Font name=\"System Bold\" size=\"12.0\" />\r\n               </font>\r\n            </JFXButton>\r\n            <TextField fx:id=\"searchField\" layoutX=\"76.0\" layoutY=\"21.0\" prefHeight=\"26.0\" prefWidth=\"295.0\" promptText=\"Search Here!\" style=\"-fx-background-radius: 10px;\">\r\n               <cursor>\r\n                  <Cursor fx:constant=\"TEXT\" />\r\n               </cursor></TextField>\r\n         </children>\r\n      </AnchorPane>\r\n      <TableView fx:id=\"employeeTable\" layoutX=\"28.0\" layoutY=\"106.0\" prefHeight=\"435.0\" prefWidth=\"866.0\">\r\n         <columns>\r\n            <TableColumn fx:id=\"idCol\" prefWidth=\"51.0\" text=\"ID\" />\r\n            <TableColumn fx:id=\"nameCol\" prefWidth=\"117.0\" text=\" Name\" />\r\n            <TableColumn fx:id=\"phoneCol\" prefWidth=\"143.0\" text=\"Phone No\" />\r\n            <TableColumn fx:id=\"emailCol\" prefWidth=\"170.0\" text=\"Email\" />\r\n            <TableColumn fx:id=\"addressCol\" prefWidth=\"370.0\" text=\"Address\" />\r\n         </columns>\r\n      </TableView>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/dashboard/employee/Employee.fxml b/src/dashboard/employee/Employee.fxml
+--- a/src/dashboard/employee/Employee.fxml	(revision 7348489d1f32b9a42868fb19ba0c40dc65ed342c)
++++ b/src/dashboard/employee/Employee.fxml	(date 1609095909029)
+@@ -36,7 +36,7 @@
+                   <Font name="System Bold" size="12.0" />
+                </font>
+             </JFXButton>
+-            <JFXButton fx:id="viewBtn" buttonType="RAISED" layoutX="353.0" layoutY="19.0" onAction="#view" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: gold; -fx-background-radius: 15px;" text="VIEW">
++            <JFXButton fx:id="view_btn" buttonType="RAISED" layoutX="353.0" layoutY="19.0" onAction="#view" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: gold; -fx-background-radius: 15px;" text="VIEW">
+                <cursor>
+                   <Cursor fx:constant="HAND" />
+                </cursor>
+@@ -44,7 +44,6 @@
+                   <Font name="System Bold" size="12.0" />
+                </font>
+             </JFXButton>
+-            <JFXButton buttonType="RAISED" layoutX="597.0" layoutY="7.0" onAction="#exportPdf" style="-fx-background-color: white;" text="PDF" />
+          </children>
+       </AnchorPane>
+       <AnchorPane layoutX="47.0" layoutY="22.0" prefHeight="68.0" prefWidth="840.0" style="-fx-background-color: #666666; -fx-background-radius: 17px;">
+@@ -63,13 +62,13 @@
+                </cursor></TextField>
+          </children>
+       </AnchorPane>
+-      <TableView fx:id="employeeTable" layoutX="28.0" layoutY="106.0" prefHeight="435.0" prefWidth="866.0">
++      <TableView fx:id="employee_table" layoutX="28.0" layoutY="106.0" prefHeight="435.0" prefWidth="866.0">
+          <columns>
+-            <TableColumn fx:id="idCol" prefWidth="51.0" text="ID" />
+-            <TableColumn fx:id="nameCol" prefWidth="117.0" text=" Name" />
+-            <TableColumn fx:id="phoneCol" prefWidth="143.0" text="Phone No" />
+-            <TableColumn fx:id="emailCol" prefWidth="170.0" text="Email" />
+-            <TableColumn fx:id="addressCol" prefWidth="370.0" text="Address" />
++            <TableColumn fx:id="id_col" prefWidth="51.0" text="ID" />
++            <TableColumn fx:id="name_col" prefWidth="117.0" text=" Name" />
++            <TableColumn fx:id="phone_col" prefWidth="143.0" text="Phone No" />
++            <TableColumn fx:id="email_Col" prefWidth="170.0" text="Email" />
++            <TableColumn fx:id="address_col" prefWidth="370.0" text="Address" />
+          </columns>
+       </TableView>
+    </children>
+Index: src/dashboard/DashboardController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package dashboard;\r\n\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.layout.BorderPane;\r\nimport util.StageHandler;\r\n\r\nimport java.io.IOException;\r\n\r\n\r\npublic class DashboardController {\r\n    \r\n    @FXML\r\n    private BorderPane mainBorderPane;\r\n    \r\n    public void loadDashboard(ActionEvent event) throws IOException {\r\n        setCenterPane(\"/dashboard/screens/Dash.fxml\");\r\n    }\r\n    \r\n    private void setCenterPane(String path) throws IOException {\r\n        Parent root = FXMLLoader.load(getClass().getResource(path));\r\n        mainBorderPane.setCenter(root);\r\n    }\r\n    \r\n    public void loadBooking(ActionEvent event) throws IOException {\r\n        setCenterPane(\"/dashboard/screens/Booking.fxml\");\r\n    }\r\n    \r\n    public void loadMenu(ActionEvent event) throws IOException {\r\n        setCenterPane(\"/dashboard/screens/Menu.fxml\");\r\n    }\r\n    \r\n    public void onclickEmployee(ActionEvent event) throws IOException {\r\n        setCenterPane(\"/dashboard/employee/Employee.fxml\");\r\n    }\r\n    \r\n    public void loadBilling(ActionEvent event) throws IOException {\r\n        setCenterPane(\"/dashboard/screens/Billing.fxml\");\r\n    }\r\n    \r\n    public void logout(ActionEvent event) {\r\n        StageHandler.createStage(\"/login/LoginPage.fxml\", \"Logout\");\r\n    }\r\n    \r\n    public void loadSettings(ActionEvent event) {\r\n        StageHandler.createStage(\"/login/Setting.fxml\", \"Settings\");\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/dashboard/DashboardController.java b/src/dashboard/DashboardController.java
+--- a/src/dashboard/DashboardController.java	(revision 7348489d1f32b9a42868fb19ba0c40dc65ed342c)
++++ b/src/dashboard/DashboardController.java	(date 1609095909028)
+@@ -41,10 +41,10 @@
+     }
+     
+     public void logout(ActionEvent event) {
+-        StageHandler.createStage("/login/LoginPage.fxml", "Logout");
++        StageHandler.createStage("Logout", "/login/LoginPage.fxml");
+     }
+     
+     public void loadSettings(ActionEvent event) {
+-        StageHandler.createStage("/login/Setting.fxml", "Settings");
++        StageHandler.createStage("Settings", "/login/Setting.fxml");
+     }
+ }
+\ No newline at end of file
+Index: src/dashboard/screens/BookingController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package dashboard.screens;\r\n\r\nimport com.jfoenix.controls.JFXComboBox;\r\nimport com.jfoenix.controls.JFXDatePicker;\r\nimport com.jfoenix.controls.JFXTextField;\r\nimport com.jfoenix.controls.JFXTimePicker;\r\nimport javafx.collections.FXCollections;\r\nimport javafx.collections.ObservableList;\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXML;\r\nimport javafx.fxml.Initializable;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.control.ListView;\r\nimport javafx.scene.layout.BorderPane;\r\nimport util.StageHandler;\r\n\r\nimport java.io.IOException;\r\nimport java.net.URL;\r\nimport java.util.ResourceBundle;\r\n\r\npublic class BookingController implements Initializable {\r\n    \r\n    @FXML\r\n    private BorderPane pane;\r\n    @FXML\r\n    private JFXTextField Id;\r\n    @FXML\r\n    private JFXTextField durationField;\r\n    @FXML\r\n    private JFXComboBox<String> hallNo;\r\n    @FXML\r\n    private JFXTimePicker eventStartTime;\r\n    @FXML\r\n    private JFXTimePicker eventEndTime;\r\n    @FXML\r\n    private JFXDatePicker eventDate;\r\n    @FXML\r\n    private JFXTextField noOfPersons;\r\n    @FXML\r\n    private Label MessageLabelOfEventSaved;\r\n    @FXML\r\n    private JFXComboBox<String> eventType;\r\n    \r\n    ///////////////Customer Detail////\r\n    \r\n    @FXML\r\n    private JFXTextField nameOfCustomer;\r\n    @FXML\r\n    private JFXTextField phoneOfCustomer;\r\n    @FXML\r\n    private JFXTextField emailOfCustomer;\r\n    @FXML\r\n    private JFXTextField customerAddress;\r\n    \r\n    @Override\r\n    public void initialize(URL url, ResourceBundle resourceBundle) {\r\n        ObservableList<String> list = FXCollections.observableArrayList(\"Wedding\", \"Seminar\", \"Party\", \"Other\", \"Mehfill\");\r\n        eventType.setItems(list);\r\n        \r\n        ObservableList<String> list1 = FXCollections.observableArrayList(\"Hall 1 (MaxCap 500)\", \"Hall 2 (MaxCap 300)\", \"Hall 3 (MaxCap 700)\");\r\n        hallNo.setItems(list1);\r\n    \r\n    }\r\n    \r\n    public void onCheck(ActionEvent actionEvent) {\r\n        String fxmlPath = \"/dashboard/screens/BookingSearch.fxml\";\r\n        String title = \"Booking Availability\";\r\n        StageHandler.createStage(fxmlPath, title);\r\n    }\r\n    \r\n    public void onNext(ActionEvent actionEvent) {\r\n        bookingDetail();\r\n        //        Parent root = FXMLLoader.load(getClass().getResource(\"/dashboard/screens/Customer.fxml\"));\r\n//        pane.setCenter(root);\r\n        String fxmlPath = \"/dashboard/screens/Customer.fxml\";\r\n        String title = \"Booking Availability\";\r\n        StageHandler.createStage(fxmlPath, title);\r\n    }\r\n    \r\n    public void bookingDetail() {\r\n        \r\n        /// todo  implementation if empty query not run\r\n//        try {\r\n//\r\n//            String query = String.format(\"Insert Into Event_Booking( EventType, EventStartTime,EventDate ,NoOfPerson, NameOfCustomer, PhoneNoOfCustomer, EmailOfCustomer,EventEndingTime, HallNo, INVOICENO) Values ('%s', to_date('2020-12-12 %s',  'yyyy-mm-dd hh24:mi:ss'), to_date('%s','yyyy-mm-dd'), '%s', '%s', '%s', '%s',to_date('2020-12-12 %s',  'yyyy-mm-dd hh24:mi:ss'), '%s', %d )\",\r\n//                    event_type_box.getValue(),\r\n//                    event_time.getValue(),\r\n//                    event_date.getValue(),\r\n//                    no_of_persons.getText(),\r\n//                    name_of_customer.getText(),\r\n//                    phone_no_of_customer.getText(),\r\n//                    email_of_customer.getText(),\r\n//                    event_ending_time.getValue(),\r\n//                    hall_no.getValue(),\r\n//                    Integer.parseInt(invoiceNoTxT.getText()));\r\n//\r\n//            DBService.statement.executeUpdate(query);\r\n//            MessageLabelOfEventSaved.setText(\"Saved!\");\r\n//        clearFields();\r\n//        } catch (SQLException throwables) {\r\n//            throwables.printStackTrace();\r\n//        }\r\n    }\r\n    \r\n    private void nextFxml() {\r\n\r\n        String fxmlPath = \"/dashboard/screens/Customer.fxml\";\r\n        String title = \"Booking Availability\";\r\n        StageHandler.createStage(fxmlPath, title);\r\n    }\r\n    \r\n    public void clearFields() {\r\n        \r\n        hallNo.setValue(null);\r\n        eventType.setValue(null);\r\n        eventStartTime.setValue(null);\r\n        eventDate.setValue(null);\r\n        eventEndTime.setValue(null);\r\n        noOfPersons.clear();\r\n//        nameOfCustomer.clear();\r\n        phoneOfCustomer.clear();\r\n        emailOfCustomer.clear();\r\n        customerAddress.setText(null);\r\n    }\r\n    \r\n    public void onTeam(ActionEvent event) {\r\n    \r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/dashboard/screens/BookingController.java b/src/dashboard/screens/BookingController.java
+--- a/src/dashboard/screens/BookingController.java	(revision 7348489d1f32b9a42868fb19ba0c40dc65ed342c)
++++ b/src/dashboard/screens/BookingController.java	(date 1609095909045)
+@@ -10,11 +10,9 @@
+ import javafx.fxml.FXML;
+ import javafx.fxml.Initializable;
+ import javafx.scene.control.Label;
+-import javafx.scene.control.ListView;
+ import javafx.scene.layout.BorderPane;
+ import util.StageHandler;
+ 
+-import java.io.IOException;
+ import java.net.URL;
+ import java.util.ResourceBundle;
+ 
+@@ -65,7 +63,7 @@
+     public void onCheck(ActionEvent actionEvent) {
+         String fxmlPath = "/dashboard/screens/BookingSearch.fxml";
+         String title = "Booking Availability";
+-        StageHandler.createStage(fxmlPath, title);
++        StageHandler.createStage(title, fxmlPath);
+     }
+     
+     public void onNext(ActionEvent actionEvent) {
+@@ -74,7 +72,7 @@
+ //        pane.setCenter(root);
+         String fxmlPath = "/dashboard/screens/Customer.fxml";
+         String title = "Booking Availability";
+-        StageHandler.createStage(fxmlPath, title);
++        StageHandler.createStage(title, fxmlPath);
+     }
+     
+     public void bookingDetail() {
+@@ -106,7 +104,7 @@
+ 
+         String fxmlPath = "/dashboard/screens/Customer.fxml";
+         String title = "Booking Availability";
+-        StageHandler.createStage(fxmlPath, title);
++        StageHandler.createStage(title, fxmlPath);
+     }
+     
+     public void clearFields() {
+Index: src/util/StageHandler.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package util;\r\n\r\nimport javafx.event.ActionEvent;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Node;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.stage.Stage;\r\n\r\nimport java.io.IOException;\r\n\r\npublic class StageHandler {\r\n    \r\n    public static FXMLLoader loader;\r\n    \r\n    static public Stage createStage(String fxmlPath, String title) {\r\n        Parent root = null;\r\n        try {\r\n            loader = new FXMLLoader(StageHandler.class.getResource(fxmlPath));\r\n            root = loader.load();\r\n        } catch (IOException e) {\r\n            System.out.println(e.getMessage());\r\n            System.out.println(\"FXML Loading Error!!!\");\r\n        }\r\n        assert root != null;\r\n        Scene scene = new Scene(root);\r\n        Stage stage = new Stage();\r\n        stage.setTitle(title);\r\n        stage.setScene(scene);\r\n        stage.show();\r\n        return stage;\r\n    }\r\n    \r\n    public static Stage getStage(ActionEvent event) {\r\n        return (Stage) ((Node) event.getSource()).getScene().getWindow();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/util/StageHandler.java b/src/util/StageHandler.java
+--- a/src/util/StageHandler.java	(revision 7348489d1f32b9a42868fb19ba0c40dc65ed342c)
++++ b/src/util/StageHandler.java	(date 1609095909193)
+@@ -13,7 +13,7 @@
+     
+     public static FXMLLoader loader;
+     
+-    static public Stage createStage(String fxmlPath, String title) {
++    static public Stage createStage(String title, String fxmlPath) {
+         Parent root = null;
+         try {
+             loader = new FXMLLoader(StageHandler.class.getResource(fxmlPath));
+Index: src/login/LoginController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package login;\r\n\r\nimport com.jfoenix.controls.JFXPasswordField;\r\nimport com.jfoenix.controls.JFXTextField;\r\nimport database.DBService;\r\nimport javafx.fxml.FXML;\r\nimport javafx.scene.control.Label;\r\nimport util.StageHandler;\r\n\r\nimport java.sql.ResultSet;\r\nimport java.sql.SQLException;\r\n\r\npublic class LoginController {\r\n    @FXML\r\n    private JFXTextField username_field;\r\n    @FXML\r\n    private JFXPasswordField password_field;\r\n    @FXML\r\n    private Label loginMessage_label;\r\n    \r\n    @FXML\r\n    private void login() {\r\n        String username = username_field.getText();\r\n        String password = password_field.getText();\r\n        if (username.isBlank() || password.isBlank())\r\n            loginMessage_label.setText(\"Please Enter Username and Password!\");\r\n        else if (exists(username, password)) {\r\n            String fxmlPath = \"/dashboard/Dashboard.fxml\";\r\n            String title = \"Dashboard Of Hall Management System\";\r\n            StageHandler.createStage(fxmlPath, title).show();\r\n        } else loginMessage_label.setText(\"Username or Password Incorrect!\");\r\n    }\r\n    \r\n    private boolean exists(String username, String password) {\r\n        String query = String.format(\"Select * From SignUp Where username='%s' AND password='%s'\", username, password);\r\n        ResultSet rs = DBService.executeQuery(query);\r\n        try {\r\n            return rs.next();\r\n        } catch (SQLException sqlException) {\r\n            System.out.println(sqlException.getMessage());\r\n        }\r\n        return false;\r\n    }\r\n    \r\n    @FXML\r\n    private void forgetPassword() {\r\n        String fxmlPath = \"/login/ForgetPassword.fxml\";\r\n        String title = \"Forget Password\";\r\n        StageHandler.createStage(fxmlPath, title).show();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/login/LoginController.java b/src/login/LoginController.java
+--- a/src/login/LoginController.java	(revision 7348489d1f32b9a42868fb19ba0c40dc65ed342c)
++++ b/src/login/LoginController.java	(date 1609095909190)
+@@ -27,7 +27,7 @@
+         else if (exists(username, password)) {
+             String fxmlPath = "/dashboard/Dashboard.fxml";
+             String title = "Dashboard Of Hall Management System";
+-            StageHandler.createStage(fxmlPath, title).show();
++            StageHandler.createStage(title, fxmlPath).show();
+         } else loginMessage_label.setText("Username or Password Incorrect!");
+     }
+     
+@@ -46,6 +46,6 @@
+     private void forgetPassword() {
+         String fxmlPath = "/login/ForgetPassword.fxml";
+         String title = "Forget Password";
+-        StageHandler.createStage(fxmlPath, title).show();
++        StageHandler.createStage(title, fxmlPath).show();
+     }
+ }
+Index: src/database/DBService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package database;\r\n\r\nimport org.h2.tools.Server;\r\n\r\nimport java.sql.*;\r\n\r\npublic class DBService {\r\n    private static Connection connection;\r\n    public static Statement statement;\r\n    \r\n    private DBService() {\r\n    }\r\n    \r\n    public static void createConnection() {\r\n        String port = \"9095\";\r\n        startTCPServer(port);\r\n        try {\r\n            Class.forName(\"org.h2.Driver\");\r\n            String url = String.format(\"jdbc:h2:tcp://localhost:%s/./HMS\", port);\r\n            connection = DriverManager.getConnection(url);\r\n            statement = connection.createStatement();\r\n        } catch (ClassNotFoundException | SQLException e) {\r\n            System.out.println(e.getMessage());\r\n        }\r\n    }\r\n    \r\n    private static void startTCPServer(String port) {\r\n        try {\r\n            String[] params = {\"-tcpPort\", port, \"-ifExists\", \"-baseDir\", \"./src/database/h2/\"};\r\n            Server server = Server.createTcpServer(params).start();\r\n            System.out.println(server.getStatus());\r\n        } catch (Exception e) {\r\n            e.printStackTrace();\r\n        }\r\n    }\r\n    \r\n    \r\n    public static ResultSet executeQuery(String query) {\r\n        ResultSet resultSet = null;\r\n        try {\r\n            resultSet = statement.executeQuery(query);\r\n        } catch (SQLException sqlException) {\r\n            System.out.println(sqlException.getMessage());\r\n        }\r\n        return resultSet;\r\n    }\r\n    \r\n    public static int executeUpdate(String query) {\r\n        int rowsUpdated = 0;\r\n        try {\r\n            rowsUpdated = statement.executeUpdate(query);\r\n        } catch (SQLException sqlException) {\r\n            System.out.println(sqlException.getMessage());\r\n        }\r\n        return rowsUpdated;\r\n    }\r\n    \r\n    public static void close() throws SQLException {\r\n        if (!connection.isClosed())\r\n            connection.close();\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/database/DBService.java b/src/database/DBService.java
+--- a/src/database/DBService.java	(revision 7348489d1f32b9a42868fb19ba0c40dc65ed342c)
++++ b/src/database/DBService.java	(date 1609095909061)
+@@ -11,6 +11,18 @@
+     private DBService() {
+     }
+     
++    public static int getIntResult(String query) {
++        int result = -1;
++        try {
++            ResultSet rs = statement.executeQuery(query);
++            rs.next();
++            result = rs.getInt(1);
++        } catch (SQLException sqlException) {
++            System.out.println(sqlException.getMessage());
++        }
++        return result;
++    }
++    
+     public static void createConnection() {
+         String port = "9095";
+         startTCPServer(port);
