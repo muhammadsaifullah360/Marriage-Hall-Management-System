@@ -27,7 +27,7 @@ public class LoginController {
         else if (exists(username, password)) {
             String fxmlPath = "/dashboard/Dashboard.fxml";
             String title = "Dashboard Of Hall Management System";
-            StageHandler.createStage(fxmlPath, title).show();
+            StageHandler.createStage(title, fxmlPath).show();
         } else loginMessage_label.setText("Username or Password Incorrect!");
     }
     
@@ -46,6 +46,6 @@ public class LoginController {
     private void forgetPassword() {
         String fxmlPath = "/login/ForgetPassword.fxml";
         String title = "Forget Password";
-        StageHandler.createStage(fxmlPath, title).show();
+        StageHandler.createStage(title, fxmlPath).show();
     }
 }

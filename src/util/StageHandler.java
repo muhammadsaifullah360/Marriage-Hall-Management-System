@@ -13,7 +13,7 @@ public class StageHandler {
     
     public static FXMLLoader loader;
     
-    static public Stage createStage(String fxmlPath, String title) {
+    static public Stage createStage(String title, String fxmlPath) {
         Parent root = null;
         try {
             loader = new FXMLLoader(StageHandler.class.getResource(fxmlPath));

@@ -14,370 +14,375 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane prefHeight="670.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.employee.EmployeePanelController">
-   <content>
-      <AnchorPane prefHeight="765.0" prefWidth="789.0" style="-fx-background-color: white;">
-         <children>
-            <Label alignment="CENTER" layoutY="10.0" prefHeight="35.0" prefWidth="365.0" text="Basic Datails" textFill="GREY" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="10.0">
-               <font>
-                  <Font name="System Bold" size="23.0" />
-               </font>
-            </Label>
-            <Separator layoutX="366.0" orientation="VERTICAL" prefHeight="280.0" prefWidth="5.0" style="-fx-background-color: grey;" />
-            <Label alignment="CENTER" layoutX="390.0" layoutY="10.0" prefHeight="35.0" prefWidth="385.0" text="Educational  Details" textFill="GREY" underline="true" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="10.0">
-               <font>
-                  <Font name="System Bold" size="23.0" />
-               </font>
-            </Label>
-            <Separator layoutY="280.0" prefHeight="5.0" prefWidth="785.0" style="-fx-background-color: grey;" />
-            <Label alignment="CENTER" layoutY="302.0" prefHeight="35.0" prefWidth="366.0" text="Skills Details" textFill="GREY" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="295.0">
-               <font>
-                  <Font name="System Bold" size="23.0" />
-               </font>
-            </Label>
-            <Separator layoutX="366.0" layoutY="286.0" orientation="VERTICAL" prefHeight="220.0" prefWidth="5.0" style="-fx-background-color: grey;" />
-            <Label alignment="CENTER" layoutX="371.0" layoutY="301.0" prefHeight="35.0" prefWidth="417.0" text="Experiences Details" textFill="GREY" underline="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="295.0">
-               <font>
-                  <Font name="System Bold" size="23.0" />
-               </font>
-            </Label>
-            <Separator layoutX="3.0" layoutY="503.0" prefHeight="5.0" prefWidth="785.0" style="-fx-background-color: grey;" />
-            <Label alignment="CENTER" layoutX="134.0" layoutY="521.0" prefHeight="34.0" prefWidth="301.6" text="Duty Details" textFill="GREY" underline="true" AnchorPane.leftAnchor="50.0">
-               <font>
-                  <Font name="System Bold" size="23.0" />
-               </font>
-            </Label>
-            <Separator layoutX="366.0" layoutY="509.0" orientation="VERTICAL" prefHeight="256.0" prefWidth="6.0" style="-fx-background-color: grey;" />
-            <HBox alignment="CENTER" layoutY="50.0" spacing="10.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0">
-               <children>
-                  <VBox alignment="CENTER" spacing="10.0">
-                     <children>
-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="ID" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Name" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Phone No" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Email" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Address" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Date Of Birth" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <padding>
-                        <Insets top="10.0" />
-                     </padding>
-                  </VBox>
-                  <VBox alignment="CENTER" spacing="10.0">
-                     <children>
-                        <JFXTextField fx:id="id" focusColor="GOLD" layoutX="10.0" layoutY="45.0" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="name" focusColor="GOLD" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="phoneNo" focusColor="GOLD" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="email" focusColor="GOLD" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="address" focusColor="GOLD" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXDatePicker fx:id="dob" defaultColor="GREY" style="-fx-text-inner-color: black;" />
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
-            <HBox layoutX="390.0" layoutY="50.0" spacing="10.0" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="50.0">
-               <children>
-                  <VBox alignment="CENTER" spacing="10.0">
-                     <children>
-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Certificate Title" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Organization Name" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Verification No" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Date Issued On" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Description" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <padding>
-                        <Insets top="10.0" />
-                     </padding>
-                  </VBox>
-                  <VBox alignment="CENTER" spacing="10.0">
-                     <children>
-                        <JFXTextField fx:id="certificateTitle" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="organizationName_edu" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="verificationNo" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXDatePicker fx:id="issueDate" defaultColor="GREY" style="-fx-text-inner-color: black;" />
-                        <JFXTextArea fx:id="description_edu" focusColor="#ffd40000" prefHeight="25.6" prefWidth="171.0" style="-fx-border-color: grey; -fx-border-radius: 10; -fx-text-inner-color: black;" unFocusColor="#80808000" />
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
-            <HBox layoutY="336.0" spacing="10.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="335.0">
-               <children>
-                  <VBox alignment="CENTER" spacing="10.0">
-                     <children>
-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Skill Title" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Field Title" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Date" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Description" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <padding>
-                        <Insets top="10.0" />
-                     </padding>
-                  </VBox>
-                  <VBox alignment="CENTER" spacing="10.0">
-                     <children>
-                        <JFXTextField fx:id="skillTitle" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="fieldTitle_skill" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXDatePicker fx:id="skillDate" defaultColor="GREY" style="-fx-text-inner-color: black;" />
-                        <JFXTextArea fx:id="description_skill" focusColor="#ffd40000" prefHeight="25.6" prefWidth="171.0" style="-fx-border-color: grey; -fx-border-radius: 10; -fx-text-inner-color: black;" unFocusColor="#80808000" />
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
-            <HBox layoutX="396.0" layoutY="343.0" spacing="10.0" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="335.0">
-               <children>
-                  <VBox alignment="CENTER" spacing="10.0">
-                     <children>
-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Job Title" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Organization Name" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Field Title" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Duration" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <padding>
-                        <Insets top="10.0" />
-                     </padding>
-                  </VBox>
-                  <VBox alignment="CENTER" spacing="10.0">
-                     <children>
-                        <JFXTextField fx:id="jobTitle" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="organizationName_exp" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="fieldTitle_exp" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="duration" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </JFXTextField>
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" layoutX="3.0" layoutY="563.0" spacing="10.0" AnchorPane.leftAnchor="30.0">
-               <children>
-                  <VBox alignment="CENTER" spacing="10.0">
-                     <children>
-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Job Title" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Shift" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Working Hours" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Salary" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Joining Date" textFill="GREY">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                        </Label>
-                     </children>
-                     <padding>
-                        <Insets top="10.0" />
-                     </padding>
-                  </VBox>
-                  <VBox alignment="CENTER" spacing="10.0">
-                     <children>
-                        <JFXTextField fx:id="jobTitle_duty" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="shift" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="workingHours" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXTextField fx:id="salary" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
-                           <font>
-                              <Font name="System Bold" size="12.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXDatePicker fx:id="joinDate" defaultColor="GREY" style="-fx-text-inner-color: black;" />
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
-            <VBox layoutX="405.0" layoutY="567.0" spacing="20.0">
-               <children>
-                  <JFXButton fx:id="add_btn" buttonType="RAISED" focusTraversable="false" onAction="#add" prefHeight="40.0" prefWidth="350.0" ripplerFill="WHITE" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Add" textFill="GOLD">
-                     <font>
-                        <Font name="Segoe UI Bold" size="20.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </JFXButton>
-                  <JFXButton fx:id="delete_btn" buttonType="RAISED" focusTraversable="false" onAction="#delete" prefHeight="40.0" prefWidth="350.0" ripplerFill="WHITE" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Delete" textFill="GOLD">
-                     <font>
-                        <Font name="Segoe UI Bold" size="20.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </JFXButton>
-                  <JFXButton fx:id="update_btn" buttonType="RAISED" focusTraversable="false" onAction="#update" prefHeight="40.0" prefWidth="350.0" ripplerFill="WHITE" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Update" textFill="GOLD">
-                     <font>
-                        <Font name="Segoe UI Bold" size="20.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </JFXButton>
-               </children>
-            </VBox>
-            <Label alignment="CENTER" layoutX="371.0" layoutY="520.0" prefHeight="35.0" prefWidth="417.0" text="Controls" textFill="GREY" underline="true">
-               <font>
-                  <Font name="System Bold" size="23.0" />
-               </font>
-            </Label>
-            <Label fx:id="label" layoutX="659.0" layoutY="522.0" prefHeight="32.0" prefWidth="113.0">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-   </content>
+<ScrollPane prefHeight="790.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.employee.EmployeePanelController">
+    <content>
+        <AnchorPane prefHeight="765.0" prefWidth="789.0" style="-fx-background-color: white;">
+            <children>
+                <Label alignment="CENTER" layoutY="10.0" prefHeight="35.0" prefWidth="365.0" text="Basic Datails" textFill="GREY" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="10.0">
+                    <font>
+                        <Font name="System Bold" size="23.0" />
+                    </font>
+                </Label>
+                <Separator layoutX="366.0" orientation="VERTICAL" prefHeight="280.0" prefWidth="5.0" style="-fx-background-color: grey;" />
+                <Label alignment="CENTER" layoutX="390.0" layoutY="10.0" prefHeight="35.0" prefWidth="385.0" text="Educational  Details" textFill="GREY" underline="true" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="10.0">
+                    <font>
+                        <Font name="System Bold" size="23.0" />
+                    </font>
+                </Label>
+                <Separator layoutY="280.0" prefHeight="5.0" prefWidth="785.0" style="-fx-background-color: grey;" />
+                <Label alignment="CENTER" layoutY="302.0" prefHeight="35.0" prefWidth="366.0" text="Skills Details" textFill="GREY" underline="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="295.0">
+                    <font>
+                        <Font name="System Bold" size="23.0" />
+                    </font>
+                </Label>
+                <Separator layoutX="366.0" layoutY="286.0" orientation="VERTICAL" prefHeight="220.0" prefWidth="5.0" style="-fx-background-color: grey;" />
+                <Label alignment="CENTER" layoutX="371.0" layoutY="301.0" prefHeight="35.0" prefWidth="417.0" text="Experiences Details" textFill="GREY" underline="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="295.0">
+                    <font>
+                        <Font name="System Bold" size="23.0" />
+                    </font>
+                </Label>
+                <Separator layoutX="3.0" layoutY="503.0" prefHeight="5.0" prefWidth="785.0" style="-fx-background-color: grey;" />
+                <Label alignment="CENTER" layoutX="134.0" layoutY="521.0" prefHeight="34.0" prefWidth="301.6" text="Duty Details" textFill="GREY" underline="true" AnchorPane.leftAnchor="50.0">
+                    <font>
+                        <Font name="System Bold" size="23.0" />
+                    </font>
+                </Label>
+                <Separator layoutX="366.0" layoutY="509.0" orientation="VERTICAL" prefHeight="256.0" prefWidth="6.0" style="-fx-background-color: grey;" />
+                <HBox alignment="CENTER" layoutY="50.0" spacing="10.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="50.0">
+                    <children>
+                        <VBox alignment="CENTER" spacing="10.0">
+                            <children>
+                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="ID" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Name" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Phone No" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Email" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Address" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Date Of Birth" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets top="10.0" />
+                            </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="10.0">
+                            <children>
+                                <JFXTextField fx:id="id" focusColor="GOLD" focusTraversable="false" layoutX="10.0" layoutY="45.0" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </JFXTextField>
+                                <JFXTextField fx:id="name" focusColor="GOLD" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </JFXTextField>
+                                <JFXTextField fx:id="phoneNo" focusColor="GOLD" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </JFXTextField>
+                                <JFXTextField fx:id="email" focusColor="GOLD" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </JFXTextField>
+                                <JFXTextField fx:id="address" focusColor="GOLD" prefColumnCount="0" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </JFXTextField>
+                                <JFXDatePicker fx:id="dob" defaultColor="GREY" style="-fx-text-inner-color: black;" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox layoutX="390.0" layoutY="50.0" spacing="10.0" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="50.0">
+                    <children>
+                        <VBox alignment="CENTER" spacing="10.0">
+                            <children>
+                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Certificate Title" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Organization Name" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Verification No" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Date Issued On" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Description" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets top="10.0" />
+                            </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="10.0">
+                            <children>
+                                <JFXTextField fx:id="certificateTitle" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </JFXTextField>
+                                <JFXTextField fx:id="organizationName_edu" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </JFXTextField>
+                                <JFXTextField fx:id="verificationNo" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </JFXTextField>
+                                <JFXDatePicker fx:id="issueDate" defaultColor="GREY" style="-fx-text-inner-color: black;" />
+                                <JFXTextArea fx:id="description_edu" focusColor="#ffd40000" prefHeight="25.6" prefWidth="171.0" style="-fx-border-color: grey; -fx-border-radius: 10; -fx-text-inner-color: black;" unFocusColor="#80808000" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox layoutY="336.0" spacing="10.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="335.0">
+                    <children>
+                        <VBox alignment="CENTER" spacing="10.0">
+                            <children>
+                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Skill Title" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Field Title" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Date" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="100.0" text="Description" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets top="10.0" />
+                            </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="10.0">
+                            <children>
+                                <JFXTextField fx:id="skillTitle" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </JFXTextField>
+                                <JFXTextField fx:id="fieldTitle_skill" focusColor="GOLD" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </JFXTextField>
+                                <JFXDatePicker fx:id="skillDate" defaultColor="GREY" style="-fx-text-inner-color: black;" />
+                                <JFXTextArea fx:id="description_skill" focusColor="#ffd40000" prefHeight="25.6" prefWidth="171.0" style="-fx-border-color: grey; -fx-border-radius: 10; -fx-text-inner-color: black;" unFocusColor="#80808000" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox layoutX="396.0" layoutY="343.0" spacing="10.0" AnchorPane.leftAnchor="400.0" AnchorPane.topAnchor="335.0">
+                    <children>
+                        <VBox alignment="CENTER" spacing="10.0">
+                            <children>
+                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Job Title" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Organization Name" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Field Title" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="TOP_RIGHT" prefHeight="25.6" prefWidth="140.0" text="Duration" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets top="10.0" />
+                            </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="10.0">
+                            <children>
+                                <JFXTextField fx:id="jobTitle_exp" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </JFXTextField>
+                                <JFXTextField fx:id="organizationName_exp" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </JFXTextField>
+                                <JFXTextField fx:id="fieldTitle_exp" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </JFXTextField>
+                                <JFXTextField fx:id="duration" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </JFXTextField>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" layoutX="3.0" layoutY="563.0" spacing="10.0" AnchorPane.leftAnchor="30.0">
+                    <children>
+                        <VBox alignment="CENTER" spacing="10.0">
+                            <children>
+                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Job Title" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="BOTTOM_RIGHT" layoutX="10.0" layoutY="179.0" prefHeight="25.6" prefWidth="120.0" text="Team ID" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Shift" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Working Hours" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Salary" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label alignment="BOTTOM_RIGHT" prefHeight="25.6" prefWidth="120.0" text="Joining Date" textFill="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets top="10.0" />
+                            </padding>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="10.0">
+                            <children>
+                                <JFXTextField fx:id="jobTitle_duty" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </JFXTextField>
+                                <JFXTextField fx:id="teamID" focusColor="GOLD" layoutX="10.0" layoutY="14.0" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </JFXTextField>
+                                <JFXTextField fx:id="shift" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </JFXTextField>
+                                <JFXTextField fx:id="workingHours" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </JFXTextField>
+                                <JFXTextField fx:id="salary" focusColor="GOLD" prefColumnCount="0" prefWidth="171.2" style="-fx-text-inner-color: black;" unFocusColor="GREY">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </JFXTextField>
+                                <JFXDatePicker fx:id="joinDate" defaultColor="GREY" style="-fx-text-inner-color: black;" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <VBox layoutX="405.0" layoutY="567.0" spacing="20.0">
+                    <children>
+                        <JFXButton fx:id="add_btn" buttonType="RAISED" focusTraversable="false" onAction="#add" prefHeight="40.0" prefWidth="350.0" ripplerFill="WHITE" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Add" textFill="GOLD">
+                            <font>
+                                <Font name="Segoe UI Bold" size="20.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="delete_btn" buttonType="RAISED" focusTraversable="false" onAction="#delete" prefHeight="40.0" prefWidth="350.0" ripplerFill="WHITE" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Delete" textFill="GOLD">
+                            <font>
+                                <Font name="Segoe UI Bold" size="20.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="update_btn" buttonType="RAISED" focusTraversable="false" onAction="#update" prefHeight="40.0" prefWidth="350.0" ripplerFill="WHITE" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Update" textFill="GOLD">
+                            <font>
+                                <Font name="Segoe UI Bold" size="20.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </JFXButton>
+                    </children>
+                </VBox>
+                <Label alignment="CENTER" layoutX="371.0" layoutY="520.0" prefHeight="35.0" prefWidth="417.0" text="Controls" textFill="GREY" underline="true">
+                    <font>
+                        <Font name="System Bold" size="23.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </content>
 </ScrollPane>
