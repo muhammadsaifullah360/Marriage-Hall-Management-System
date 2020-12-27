@@ -44,6 +44,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="597.0" layoutY="7.0" onAction="#exportPdf" style="-fx-background-color: white;" text="PDF" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="47.0" layoutY="22.0" prefHeight="68.0" prefWidth="840.0" style="-fx-background-color: #666666; -fx-background-radius: 17px;">
