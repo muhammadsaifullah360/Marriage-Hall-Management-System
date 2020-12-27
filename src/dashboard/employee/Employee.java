@@ -1,4 +1,4 @@
-package dashboard.screens;
+package dashboard.employee;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;

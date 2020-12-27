@@ -17,7 +17,7 @@ import java.util.Properties;
 import java.util.Random;
 
 
-public class forgetPasswordController {
+public class ForgetPasswordController {
     
     @FXML
     private JFXTextField usernameTxt;

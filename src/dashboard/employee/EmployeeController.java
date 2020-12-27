@@ -1,6 +1,5 @@
-package dashboard.screens;
+package dashboard.employee;
 
-import dashboard.screens.employeeOperations.OperationsController;
 import database.DBService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,7 +12,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import util.StageHandler;
 
-import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -96,37 +94,24 @@ public class EmployeeController {
         }
     }
     
-    public void add(){
-        
-        String fxmlPath = "/dashboard/screens/employeeOperations/EmpOperations.fxml";
+    public void add() {
+        String fxmlPath = "/dashboard/employee/EmployeePanel.fxml";
         String title = "Add Employee";
         StageHandler.createStage(fxmlPath, title);
     }
     
-    public void update() throws SQLException {
-        
-        String fxmlPath = "/dashboard/screens/employeeOperations/EmpOperations.fxml";
+    public void update() {
+        String fxmlPath = "/dashboard/employee/EmployeePanel.fxml";
         String title = "Update Employee";
         StageHandler.createStage(fxmlPath, title);
-        OperationsController controller = StageHandler.loader.getController();
-        controller.initData(employeeTable.getSelectionModel().getSelectedItem());
-        
-    }
-    
-    public void delete() throws SQLException {
-        String fxmlPath = "/dashboard/screens/employeeOperations/View_Employee.fxml";
-        String title = "Delete Employee Details";
-        StageHandler.createStage(fxmlPath, title);
-        OperationsController controller = StageHandler.loader.getController();
+        EmployeePanelController controller = StageHandler.loader.getController();
         controller.initData(employeeTable.getSelectionModel().getSelectedItem());
     }
     
-    public void view() throws SQLException {
-        String fxmlPath = "/dashboard/screens/employeeOperations/View_Employee.fxml";
-        String title = "View Employee Details";
-        StageHandler.createStage(fxmlPath, title);
-        OperationsController controller = StageHandler.loader.getController();
-        controller.initData(employeeTable.getSelectionModel().getSelectedItem());
+    public void delete() {
+    }
+    
+    public void view() {
     }
     
     public void searchClearBtn() {

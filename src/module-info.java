@@ -6,7 +6,7 @@ module MHM {
     requires com.h2database;
     opens dashboard;
     opens dashboard.screens;
-    opens dashboard.screens.employeeOperations;
+    opens dashboard.employee;
     opens main;
     opens login;
 }

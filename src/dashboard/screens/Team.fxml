@@ -6,10 +6,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.screens.teamController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.screens.TeamController">
    <children>
-      <ListView fx:id="availabelList" layoutX="30.0" layoutY="62.0" prefHeight="260.0" prefWidth="212.0" />
-      <ListView fx:id="selectList" layoutX="353.0" layoutY="62.0" prefHeight="260.0" prefWidth="212.0" />
+      <ListView fx:id="available_list" layoutX="30.0" layoutY="62.0" prefHeight="260.0" prefWidth="212.0" />
+      <ListView fx:id="selected_list" layoutX="353.0" layoutY="62.0" prefHeight="260.0" prefWidth="212.0" />
       <Label layoutX="54.0" layoutY="36.0" prefHeight="17.0" prefWidth="117.0" text="Availabel Persons">
          <font>
             <Font name="Arial Bold" size="13.0" />

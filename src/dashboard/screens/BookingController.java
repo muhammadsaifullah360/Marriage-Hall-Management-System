@@ -68,9 +68,13 @@ public class BookingController implements Initializable {
         StageHandler.createStage(fxmlPath, title);
     }
     
-    public void onNext(ActionEvent actionEvent) throws IOException {
+    public void onNext(ActionEvent actionEvent) {
         bookingDetail();
-        nextFxml();
+        //        Parent root = FXMLLoader.load(getClass().getResource("/dashboard/screens/Customer.fxml"));
+//        pane.setCenter(root);
+        String fxmlPath = "/dashboard/screens/Customer.fxml";
+        String title = "Booking Availability";
+        StageHandler.createStage(fxmlPath, title);
     }
     
     public void bookingDetail() {
@@ -98,7 +102,7 @@ public class BookingController implements Initializable {
 //        }
     }
     
-    private void nextFxml() throws IOException {
+    private void nextFxml() {
 
         String fxmlPath = "/dashboard/screens/Customer.fxml";
         String title = "Booking Availability";
@@ -119,10 +123,7 @@ public class BookingController implements Initializable {
         customerAddress.setText(null);
     }
     
-    public void onCheck(ActionEvent event) {
-    }
-    
-    public void onNext(ActionEvent event) {
+    public void onTeam(ActionEvent event) {
     
     }
 }

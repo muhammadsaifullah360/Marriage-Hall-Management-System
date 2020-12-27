@@ -14,7 +14,7 @@
       <AnchorPane layoutX="460.0" layoutY="191.0" prefHeight="122.0" prefWidth="259.0" style="-fx-background-color: orange;" />
       <AnchorPane layoutX="25.0" layoutY="507.0" prefHeight="80.0" prefWidth="844.0" style="-fx-background-color: gold; -fx-background-radius: 15px;">
          <children>
-            <JFXButton buttonType="RAISED" layoutX="715.0" layoutY="20.0" onAction="#setting" prefHeight="39.0" prefWidth="87.0" style="-fx-background-color: #666666; -fx-background-radius: 8px;" text="Tools" textFill="WHITE">
+            <JFXButton buttonType="RAISED" layoutX="715.0" layoutY="20.0" onAction="#loadSettings" prefHeight="39.0" prefWidth="87.0" style="-fx-background-color: #666666; -fx-background-radius: 8px;" text="Tools" textFill="WHITE">
                <font>
                   <Font name="OCR A Extended" size="14.0" />
                </font>
