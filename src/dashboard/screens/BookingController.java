@@ -10,11 +10,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.scene.layout.BorderPane;
 import util.StageHandler;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -65,7 +63,7 @@ public class BookingController implements Initializable {
     public void onCheck(ActionEvent actionEvent) {
         String fxmlPath = "/dashboard/screens/BookingSearch.fxml";
         String title = "Booking Availability";
-        StageHandler.createStage(fxmlPath, title);
+        StageHandler.createStage(title, fxmlPath);
     }
     
     public void onNext(ActionEvent actionEvent) {
@@ -74,7 +72,7 @@ public class BookingController implements Initializable {
 //        pane.setCenter(root);
         String fxmlPath = "/dashboard/screens/Customer.fxml";
         String title = "Booking Availability";
-        StageHandler.createStage(fxmlPath, title);
+        StageHandler.createStage(title, fxmlPath);
     }
     
     public void bookingDetail() {
@@ -106,7 +104,7 @@ public class BookingController implements Initializable {
 
         String fxmlPath = "/dashboard/screens/Customer.fxml";
         String title = "Booking Availability";
-        StageHandler.createStage(fxmlPath, title);
+        StageHandler.createStage(title, fxmlPath);
     }
     
     public void clearFields() {

@@ -41,10 +41,10 @@ public class DashboardController {
     }
     
     public void logout(ActionEvent event) {
-        StageHandler.createStage("/login/LoginPage.fxml", "Logout");
+        StageHandler.createStage("Logout", "/login/LoginPage.fxml");
     }
     
     public void loadSettings(ActionEvent event) {
-        StageHandler.createStage("/login/Setting.fxml", "Settings");
+        StageHandler.createStage("Settings", "/login/Setting.fxml");
     }
 }

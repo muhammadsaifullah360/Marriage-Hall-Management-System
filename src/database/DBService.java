@@ -11,6 +11,18 @@ public class DBService {
     private DBService() {
     }
     
+    public static int getIntResult(String query) {
+        int result = -1;
+        try {
+            ResultSet rs = statement.executeQuery(query);
+            rs.next();
+            result = rs.getInt(1);
+        } catch (SQLException sqlException) {
+            System.out.println(sqlException.getMessage());
+        }
+        return result;
+    }
+    
     public static void createConnection() {
         String port = "9095";
         startTCPServer(port);
