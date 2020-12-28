@@ -15,7 +15,8 @@ public class DashboardController {
     @FXML
     private BorderPane mainBorderPane;
     
-    public void loadDashboard(ActionEvent event) throws IOException {
+    
+    public void loadDashboard() throws IOException {
         setCenterPane("/dashboard/screens/Dash.fxml");
     }
     

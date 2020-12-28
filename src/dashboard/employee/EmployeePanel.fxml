@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane prefHeight="790.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.employee.EmployeePanelController">
+<ScrollPane prefHeight="670.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.employee.EmployeePanelController">
     <content>
         <AnchorPane prefHeight="765.0" prefWidth="789.0" style="-fx-background-color: white;">
             <children>

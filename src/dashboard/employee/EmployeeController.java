@@ -43,8 +43,8 @@ public class EmployeeController {
     private void createTable() {
         id_col.setCellValueFactory(new PropertyValueFactory<>("id"));
         name_col.setCellValueFactory(new PropertyValueFactory<>("name"));
-        email_Col.setCellValueFactory(new PropertyValueFactory<>("phoneNo"));
-        phone_col.setCellValueFactory(new PropertyValueFactory<>("email"));
+        email_Col.setCellValueFactory(new PropertyValueFactory<>("email"));
+        phone_col.setCellValueFactory(new PropertyValueFactory<>("phoneNo"));
         address_col.setCellValueFactory(new PropertyValueFactory<>("address"));
         employee_table.setItems(employee_list);
         employee_table.getSelectionModel().selectedItemProperty().addListener((obs, oldRow, newRow) -> {

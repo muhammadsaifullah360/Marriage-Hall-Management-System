@@ -110,50 +110,50 @@ public class EmployeePanelController {
                 dob.getValue()
         );
 
-//        String educationalDetail = String.format("Insert Into Employee_Education_Detail( Employee_ID  , Certificate_Title, Organization_Name , Verification_No, Date_Issued_On , Description , Date_time) Values( %d,'%s','%s','%s',to_date('%s','yyyy-mm-dd'),'%s',to_char(sysdate,'yyyy-mm-dd'))",
-//
-//                Integer.parseInt(id.getText()),
-//                certificateTitle.getText(),
-//                organizationName_edu.getText(),
-//                verificationNo.getText(),
-//                issueDate.getValue(),
-//                description_edu.getText()
-//
-//        );
-//
-//        String skillDetail = String.format("Insert Into Employee_Skill_Detail( Employee_ID, Skill_Title, Field_Title , Date_Time, Description ) Values( %d,'%s','%s',to_date( sysdate,'yyyy-mm-dd'),'%s')",
-//
-//                Integer.parseInt(id.getText()),
-//                skillTitle.getText(),
-//                fieldTitle_skill.getText(),
-//                description_skill.getText()
-//        );
-//
-//        String experienceDetail = String.format("Insert Into Employee_Experience_Detail( Employee_ID, Job_Title ,Organization_Name , FIELD_NAME , Duration ,  Date_Time   ) Values( %d,'%s','%s','%s','%s',to_date(sysdate,'yyyy-mm-dd'))",
-//
-//                Integer.parseInt(id.getText()),
-//                jobTitle_exp.getText(),
-//                organizationName_exp.getText(),
-//                fieldTitle_exp.getText(),
-//                duration.getText()
-//        );
-//
-//        String dutyDetail = String.format("Insert Into Employee_Duty_Detail( Employee_ID , Job_Title, SHIFT,Working_Hours,  SALARY , Joining_Date ) Values( %d,'%s','%s',%d,%d,to_date('%s','yyyy-mm-dd'))",
-//
-//                Integer.parseInt(id.getText()),
-//                jobTitle_exp.getText(),
-//                shift.getText(),
-//                Integer.parseInt(workingHours.getText()),
-//                Integer.parseInt(salary.getText()),
-//                joinDate.getValue()
-//        );
-//
+        String educationalDetail = String.format("Insert Into Employee_Education_Detail( Employee_ID  , Certificate_Title, Organization_Name , Verification_No,Issue_Date , Description , Date_time) Values( %d,'%s','%s','%s',ParseDateTime('%s', 'yyyy-mm-dd'),'%s',to_char(sysdate,'yyyy-mm-dd'))",
+
+                Integer.parseInt(id.getText()),
+                certificateTitle.getText(),
+                organizationName_edu.getText(),
+                verificationNo.getText(),
+                issueDate.getValue(),
+                description_edu.getText()
+
+        );
+
+        String skillDetail = String.format("Insert Into Employee_Skill_Detail( Employee_ID, Skill_Title, Field_Title , Date_Time, Description ) Values( %d,'%s','%s',to_date( sysdate,'yyyy-mm-dd'),'%s')",
+
+                Integer.parseInt(id.getText()),
+                skillTitle.getText(),
+                fieldTitle_skill.getText(),
+                description_skill.getText()
+        );
+
+        String experienceDetail = String.format("Insert Into Employee_Experience_Detail( Employee_ID, Job_Title ,Organization_Name , Field_Title , Duration ,  Date_Time   ) Values( %d,'%s','%s','%s','%s',to_date(sysdate,'yyyy-mm-dd'))",
+
+                Integer.parseInt(id.getText()),
+                jobTitle_exp.getText(),
+                organizationName_exp.getText(),
+                fieldTitle_exp.getText(),
+                duration.getText()
+        );
+
+        String dutyDetail = String.format("Insert Into Employee_Duty_Detail( Employee_ID , Job_Title, Shift,Working_Hours,  Salary , Join_Date ) Values( %d,'%s','%s',%d,%d,ParseDateTime('%s', 'yyyy-mm-dd'))",
+
+                Integer.parseInt(id.getText()),
+                jobTitle_exp.getText(),
+                shift.getText(),
+                Integer.parseInt(workingHours.getText()),
+                Integer.parseInt(salary.getText()),
+                joinDate.getValue()
+        );
+
         
         DBService.statement.executeUpdate(basicDetail);
-//        DBService.statement.executeUpdate(educationalDetail);
-//        DBService.statement.executeUpdate(skillDetail);
-//        DBService.statement.executeUpdate(experienceDetail);
-//        DBService.statement.executeUpdate(dutyDetail);
+        DBService.statement.executeUpdate(educationalDetail);
+        DBService.statement.executeUpdate(skillDetail);
+        DBService.statement.executeUpdate(experienceDetail);
+        DBService.statement.executeUpdate(dutyDetail);
         Refresh();
         StageHandler.getStage(event).close();
     }
@@ -195,7 +195,7 @@ public class EmployeePanelController {
     }
     
     public void update(ActionEvent event) throws SQLException {
-        String basicDetails_query = String.format("Update Employee set NAME='%s', Phone_Number='%s', Email='%s',Address ='%s',Date_Time = to_date('%s','yyyy-mm-dd') Where id=%d",
+        String basicDetails_query = String.format("Update Employee set NAME='%s', Phone_No='%s', Email='%s',Address ='%s',Date_Time = to_date('%s','yyyy-mm-dd') Where id=%d",
                 
                 name.getText(),
                 phoneNo.getText(),
@@ -205,7 +205,7 @@ public class EmployeePanelController {
                 Integer.parseInt(id.getText())
         );
         // Employee Education Details
-        String educationDetailsQuery = String.format("Update  Employee_Education_Detail set Certificate_Title = '%s', Organization_Name= '%s' ,Verification_No = '%s', Date_Issued_On = to_char('%s','yyyy-mm-dd'),Date_time = to_char(sysdate,'yyyy-mm-dd') Where  Employee_id= %d ",
+        String educationDetailsQuery = String.format("Update  Employee_Education_Detail set Certificate_Title = '%s', Organization_Name= '%s' ,Verification_No = '%s', Issue_Date = to_char('%s','yyyy-mm-dd'),Date_time = to_char(sysdate,'yyyy-mm-dd') Where  Employee_id= %d ",
                 
                 
                 certificateTitle.getText(),
@@ -215,7 +215,7 @@ public class EmployeePanelController {
                 Integer.parseInt(id.getText())
         );
         // Employee Experience Details
-        String experienceDetails_query = String.format("Update  Employee_Experience_Detail set Job_Title = '%s',Duration = '%s',Field_Name ='%s' , Organization_Name = '%s'  Where  Employee_id= %d ",
+        String experienceDetails_query = String.format("Update  Employee_Experience_Detail set Job_Title = '%s',Duration = '%s',Field_Title ='%s' , Organization_Name = '%s'  Where  Employee_id= %d ",
                 
                 
                 jobTitle_exp.getText(),
@@ -235,7 +235,7 @@ public class EmployeePanelController {
         );
         
         // Employee Duty Details
-        String dutyDetails_query = String.format("UPDATE Employee_Duty_Detail SET   Job_Title = '%s',Working_Hours = %d, Shift ='%s', Salary=%d ,Joining_Date =  to_char('%s','yyyy-mm-dd') Where Employee_id=%d",
+        String dutyDetails_query = String.format("UPDATE Employee_Duty_Detail SET   Job_Title = '%s',Working_Hours = %d, Shift ='%s', Salary=%d ,Join_Date =  to_char('%s','yyyy-mm-dd') Where Employee_id=%d",
                 
                 jobTitle_exp.getText(),
                 Integer.parseInt(workingHours.getText()),

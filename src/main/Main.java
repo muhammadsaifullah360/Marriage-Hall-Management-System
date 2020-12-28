@@ -18,7 +18,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         DBService.createConnection();
-        Parent root = FXMLLoader.load(getClass().getResource("/dashboard/Dashboard.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/login/LoginPage.fxml"));
         primaryStage.setTitle("Marriage Hall Management System.");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

@@ -25,10 +25,18 @@ public class LoginController {
         if (username.isBlank() || password.isBlank())
             loginMessage_label.setText("Please Enter Username and Password!");
         else if (exists(username, password)) {
+            closeStage();
             String fxmlPath = "/dashboard/Dashboard.fxml";
             String title = "Dashboard Of Hall Management System";
             StageHandler.createStage(title, fxmlPath).show();
+            
         } else loginMessage_label.setText("Username or Password Incorrect!");
+    }
+    
+    private void closeStage() {
+        String fxmlPath = "/login/LoginPage.fxml";
+        String title = "Dashboard Of Hall Management System";
+        StageHandler.createStage(title, fxmlPath).close();
     }
     
     private boolean exists(String username, String password) {

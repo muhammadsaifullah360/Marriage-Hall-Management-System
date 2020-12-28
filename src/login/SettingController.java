@@ -29,13 +29,13 @@ public class SettingController {
     private JFXPasswordField c_old_pas;
     
     @FXML
-    private JFXPasswordField c_cnfrm_password_t;
+    private JFXPasswordField confirmPassword_t;
     
     @FXML
-    private JFXPasswordField c_cnfrm_pas_t1;
+    private JFXPasswordField confirmPassword_t1;
     
     @FXML
-    private JFXTextField lastname_txt;
+    private JFXTextField name_txt;
     
     @FXML
     private JFXPasswordField password_txt;
@@ -45,10 +45,6 @@ public class SettingController {
     
     @FXML
     private JFXTextField username_txt;
-    
-    @FXML
-    private JFXTextField firstname_txt;
-    
     @FXML
     private JFXTextField email_txt;
     
@@ -83,16 +79,16 @@ public class SettingController {
     }
     
     public void registerUser() {
-    
-        String firstName = firstname_txt.getText();
-        String lastName = lastname_txt.getText();
-        String username = username_txt.getText();
-        String password = password_txt.getText();
-        String email = email_txt.getText();
-        String phoneNo = phone_txt.getText();
-    
-        String query = "INSERT  INTO signup (firstName,lastName,username,password,email,phoneNo)VALUES('" + firstName + "','" + lastName + "','" + username + "','" + password + "','" + email + "','" + phoneNo + "')";
-    
+        
+        
+        String query = String.format("INSERT  INTO signup (Name,username,password,email,phone_No ,date_time)VALUES('%s','%s','%s','%s','%s',to_date( sysdate,'yyyy-mm-dd'))",
+                name_txt.getText(),
+                username_txt.getText(),
+                password_txt.getText(),
+                email_txt.getText(),
+                phone_txt.getText()
+        );
+        
         DBService.executeUpdate(query);
         MessageLabelOfSignup.setText("You have been registered!");
         clearFields();
@@ -100,14 +96,16 @@ public class SettingController {
     
     public void clearFields() {
         
-        lastname_txt.clear();
+        name_txt.clear();
         password_txt.clear();
         password_txt1.clear();
         username_txt.clear();
-        firstname_txt.clear();
         email_txt.clear();
         phone_txt.clear();
         confirmPassLabel.setText(null);
+        confirmPassword_t.setText(null);
+        c_username_txt.setText(null);
+        c_old_pas.setText(null);
     }
     
     public void closeSignup(ActionEvent event) throws IOException {
@@ -128,7 +126,7 @@ public class SettingController {
     }
     
     public void changePassword(ActionEvent event) {
-        if (c_cnfrm_password_t.getText().equals(c_cnfrm_pas_t1.getText())) {
+        if (confirmPassword_t.getText().equals(confirmPassword_t1.getText())) {
             changePass();
             confirmPassL.setText("Password Matched!");
         } else
@@ -137,17 +135,11 @@ public class SettingController {
     
     public void changePass() {
         String query = String.format("update  signup set password = '%s' where username ='%s'And password = '%s' ",
-                c_cnfrm_password_t.getText(), c_username_txt.getText(), c_old_pas.getText());
-    
+                confirmPassword_t.getText(), c_username_txt.getText(), c_old_pas.getText());
+        
         DBService.executeUpdate(query);
         MessageLabelOfChangePassword.setText("Password Changed!");
-        clearChangepassFields();
-    }
-    
-    public void clearChangepassFields() {
-        c_cnfrm_password_t.setText(null);
-        c_username_txt.setText(null);
-        c_old_pas.setText(null);
+        clearFields();
     }
     
     public void BackToTools(ActionEvent event) throws IOException {
