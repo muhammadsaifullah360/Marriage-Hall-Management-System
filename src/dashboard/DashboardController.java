@@ -1,20 +1,22 @@
 package dashboard;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 import util.StageHandler;
 
 import java.io.IOException;
 
 
 public class DashboardController {
-    
+    @FXML
+    private JFXButton logout;
     @FXML
     private BorderPane mainBorderPane;
-    
     
     public void loadDashboard() throws IOException {
         setCenterPane("/dashboard/screens/Dash.fxml");
@@ -26,6 +28,7 @@ public class DashboardController {
     }
     
     public void loadBooking(ActionEvent event) throws IOException {
+        
         setCenterPane("/dashboard/screens/Booking.fxml");
     }
     
@@ -42,10 +45,16 @@ public class DashboardController {
     }
     
     public void logout(ActionEvent event) {
+        Stage stage = (Stage) logout.getScene().getWindow();
+        stage.close();
         StageHandler.createStage("Logout", "/login/LoginPage.fxml");
     }
     
     public void loadSettings(ActionEvent event) {
         StageHandler.createStage("Settings", "/login/Setting.fxml");
+    }
+    
+    public void onClickStock(ActionEvent actionEvent) throws IOException {
+        setCenterPane("/dashboard/screens/Stock.fxml");
     }
 }

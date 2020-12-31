@@ -1,16 +1,23 @@
 package login;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import database.DBService;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 import util.StageHandler;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LoginController {
+    @FXML
+    private JFXButton forgetPasswordBtn;
+    
+    @FXML
+    private JFXButton loginButton;
     @FXML
     private JFXTextField username_field;
     @FXML
@@ -25,7 +32,9 @@ public class LoginController {
         if (username.isBlank() || password.isBlank())
             loginMessage_label.setText("Please Enter Username and Password!");
         else if (exists(username, password)) {
-            closeStage();
+    
+            Stage stage = (Stage) loginButton.getScene().getWindow();
+            stage.close();
             String fxmlPath = "/dashboard/Dashboard.fxml";
             String title = "Dashboard Of Hall Management System";
             StageHandler.createStage(title, fxmlPath).show();
@@ -33,11 +42,6 @@ public class LoginController {
         } else loginMessage_label.setText("Username or Password Incorrect!");
     }
     
-    private void closeStage() {
-        String fxmlPath = "/login/LoginPage.fxml";
-        String title = "Dashboard Of Hall Management System";
-        StageHandler.createStage(title, fxmlPath).close();
-    }
     
     private boolean exists(String username, String password) {
         String query = String.format("Select * From SignUp Where username='%s' AND password='%s'", username, password);
@@ -52,6 +56,8 @@ public class LoginController {
     
     @FXML
     private void forgetPassword() {
+        Stage stage = (Stage) forgetPasswordBtn.getScene().getWindow();
+        stage.close();
         String fxmlPath = "/login/ForgetPassword.fxml";
         String title = "Forget Password";
         StageHandler.createStage(title, fxmlPath).show();

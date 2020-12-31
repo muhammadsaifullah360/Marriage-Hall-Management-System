@@ -4,22 +4,18 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXTimePicker;
+import database.DBService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
 import util.StageHandler;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.sql.SQLException;
 
-public class BookingController implements Initializable {
+public class BookingController {
     
-    @FXML
-    private BorderPane pane;
     @FXML
     private JFXTextField Id;
     @FXML
@@ -40,7 +36,8 @@ public class BookingController implements Initializable {
     private JFXComboBox<String> eventType;
     
     ///////////////Customer Detail////
-    
+    @FXML
+    private JFXTextField idOfCustomer;
     @FXML
     private JFXTextField nameOfCustomer;
     @FXML
@@ -50,14 +47,13 @@ public class BookingController implements Initializable {
     @FXML
     private JFXTextField customerAddress;
     
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    
+    public void initialize() {
         ObservableList<String> list = FXCollections.observableArrayList("Wedding", "Seminar", "Party", "Other", "Mehfill");
         eventType.setItems(list);
         
         ObservableList<String> list1 = FXCollections.observableArrayList("Hall 1 (MaxCap 500)", "Hall 2 (MaxCap 300)", "Hall 3 (MaxCap 700)");
         hallNo.setItems(list1);
-    
     }
     
     public void onCheck(ActionEvent actionEvent) {
@@ -66,45 +62,39 @@ public class BookingController implements Initializable {
         StageHandler.createStage(title, fxmlPath);
     }
     
-    public void onNext(ActionEvent actionEvent) {
-        bookingDetail();
-        //        Parent root = FXMLLoader.load(getClass().getResource("/dashboard/screens/Customer.fxml"));
-//        pane.setCenter(root);
-        String fxmlPath = "/dashboard/screens/Customer.fxml";
-        String title = "Booking Availability";
-        StageHandler.createStage(title, fxmlPath);
-    }
-    
-    public void bookingDetail() {
-        
-        /// todo  implementation if empty query not run
-//        try {
-//
-//            String query = String.format("Insert Into Event_Booking( EventType, EventStartTime,EventDate ,NoOfPerson, NameOfCustomer, PhoneNoOfCustomer, EmailOfCustomer,EventEndingTime, HallNo, INVOICENO) Values ('%s', to_date('2020-12-12 %s',  'yyyy-mm-dd hh24:mi:ss'), to_date('%s','yyyy-mm-dd'), '%s', '%s', '%s', '%s',to_date('2020-12-12 %s',  'yyyy-mm-dd hh24:mi:ss'), '%s', %d )",
-//                    event_type_box.getValue(),
-//                    event_time.getValue(),
-//                    event_date.getValue(),
-//                    no_of_persons.getText(),
-//                    name_of_customer.getText(),
-//                    phone_no_of_customer.getText(),
-//                    email_of_customer.getText(),
-//                    event_ending_time.getValue(),
-//                    hall_no.getValue(),
-//                    Integer.parseInt(invoiceNoTxT.getText()));
-//
-//            DBService.statement.executeUpdate(query);
-//            MessageLabelOfEventSaved.setText("Saved!");
-//        clearFields();
-//        } catch (SQLException throwables) {
-//            throwables.printStackTrace();
-//        }
-    }
-    
-    private void nextFxml() {
-
-        String fxmlPath = "/dashboard/screens/Customer.fxml";
-        String title = "Booking Availability";
-        StageHandler.createStage(title, fxmlPath);
+    public void save(ActionEvent actionEvent) {
+//        int nextID = DBService.getIntResult("Select MAX(ID)+1 From booking");
+//        Id.setEditable(false);
+//        Id.setText("" + nextID);
+        try {
+            String bookingDetail = String.format("Insert Into Booking( Id,Type,Booking_Date ,Start_Time,End_Time,Duration,person_count,location,Date_time) Values (%d,'%s', ParseDateTime('%s',  'yyyy-mm-dd'), ParseDateTime('%s','hh24:mi:ss'),ParseDateTime('%s','hh24:mi:ss'), %d, %d, '%s',ParseDateTime(sysdate,  'yyyy-mm-dd')",
+                    
+                    Integer.parseInt(Id.getText()),
+                    eventType.getValue(),
+                    eventDate.getValue(),
+                    eventStartTime.getValue(),
+                    eventEndTime.getValue(),
+                    Integer.parseInt(durationField.getText()),
+                    Integer.parseInt(noOfPersons.getText()),
+                    hallNo.getValue());
+            
+            String customerDetail = String.format("Insert into Customer (Id , Name , Phone_Number, Email, Address , Date_Time) Values( %d , '%s','%s','%s','%s',to_char(sysdate , 'yyyy-mm-dd')",
+                    Integer.parseInt(Id.getText()),
+                    nameOfCustomer.getText(),
+                    phoneOfCustomer.getText(),
+                    emailOfCustomer.getText(),
+                    customerAddress.getText());
+            String q = String.format("insert into team(id , task_type)values(%d , '%s')", Integer.parseInt(Id.getText()), nameOfCustomer.getText());
+            
+            DBService.statement.executeUpdate(q);
+            DBService.statement.executeUpdate(bookingDetail);
+            DBService.statement.executeUpdate(customerDetail);
+            
+            MessageLabelOfEventSaved.setText("Saved!");
+            clearFields();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
     
     public void clearFields() {
@@ -115,7 +105,7 @@ public class BookingController implements Initializable {
         eventDate.setValue(null);
         eventEndTime.setValue(null);
         noOfPersons.clear();
-//        nameOfCustomer.clear();
+        nameOfCustomer.clear();
         phoneOfCustomer.clear();
         emailOfCustomer.clear();
         customerAddress.setText(null);
