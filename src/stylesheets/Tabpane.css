@@ -1,0 +1,26 @@
+
+.tab-pane:top *.tab-header-area {
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.416667em 0.166667em 0.0em 0.0em;
+}
+.tab-pane {
+
+    -fx-tab-min-width:120px;
+    -fx-tab-max-width:120px;
+    -fx-tab-min-height:50px;
+    -fx-tab-max-height:50px;
+}
+
+.tab {
+    -fx-font-family: Arial;
+    -fx-font-size: 18;
+    -fx-background-color:#666666 ;
+}
+
+.tab:selected {
+    -fx-background-color:grey;
+    -fx-text-color:black;
+}
+.tab:hover{
+    -fx-background-color: gold;
+}

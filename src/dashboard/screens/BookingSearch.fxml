@@ -31,7 +31,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXTextArea fx:id="ShowSearchResult" editable="false" focusColor="#d3d5da" layoutX="55.0" layoutY="249.0" prefHeight="121.0" prefWidth="500.0" promptText="Show search result." style="-fx-background-color: #9a9995; -fx-background-radius: 15px; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent; -fx-text-inner-color: white;" unFocusColor="#979797">
+      <JFXTextArea fx:id="showSearchResult" editable="false" focusColor="#d3d5da" layoutX="55.0" layoutY="249.0" prefHeight="121.0" prefWidth="500.0" promptText="Show search result." style="-fx-background-color: #9a9995; -fx-background-radius: 15px; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent; -fx-text-inner-color: white;" unFocusColor="#979797">
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
@@ -42,7 +42,7 @@
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
       </JFXTextArea>
-      <JFXTimePicker fx:id="SearchTime" layoutX="116.0" layoutY="118.0" style="-fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px; -fx-background-color: white; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+      <JFXTimePicker fx:id="searchTime" layoutX="116.0" layoutY="118.0" style="-fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px; -fx-background-color: white; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
@@ -50,7 +50,7 @@
             <Insets bottom="1.0" />
          </padding>
       </JFXTimePicker>
-      <JFXDatePicker fx:id="SearchDate" defaultColor="#da0a0a" layoutX="399.0" layoutY="115.0" style="-fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px; -fx-background-color: white; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+      <JFXDatePicker fx:id="searchDate" defaultColor="#da0a0a" layoutX="399.0" layoutY="115.0" style="-fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px; -fx-background-color: white; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
@@ -58,7 +58,7 @@
             <Insets bottom="1.0" />
          </padding>
       </JFXDatePicker>
-      <JFXButton fx:id="ClearSearch" buttonType="RAISED" layoutX="470.0" layoutY="327.0" onAction="#ClearSearch" prefHeight="36.0" prefWidth="79.0" ripplerFill="GOLD" style="-fx-background-color: black; -fx-background-radius: 15px;" text="Clear" textFill="WHITE">
+      <JFXButton fx:id="ClearSearch" buttonType="RAISED" layoutX="470.0" layoutY="327.0" onAction="#clearSearch" prefHeight="36.0" prefWidth="79.0" ripplerFill="GOLD" style="-fx-background-color: black; -fx-background-radius: 15px;" text="Clear" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
