@@ -32,9 +32,6 @@ public class DashboardController {
         setCenterPane("/dashboard/screens/Booking.fxml");
     }
     
-    public void loadMenu(ActionEvent event) throws IOException {
-        setCenterPane("/dashboard/screens/Menu.fxml");
-    }
     
     public void onclickEmployee(ActionEvent event) throws IOException {
         setCenterPane("/dashboard/employee/Employee.fxml");

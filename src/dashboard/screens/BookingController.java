@@ -10,6 +10,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import util.StageHandler;
 
@@ -35,8 +36,6 @@ public class BookingController {
     private JFXDatePicker eventDate;
     @FXML
     private JFXTextField noOfPersons;
-    @FXML
-    private Label MessageLabelOfEventSaved;
     @FXML
     private JFXComboBox<String> eventType;
     
@@ -95,11 +94,15 @@ public class BookingController {
     @FXML
     private CheckBox photography;
     @FXML
-    private Label MenuSaveLabel;
+    private Label saveLabel;
     @FXML
     private JFXComboBox<String> menuService;
     @FXML
     private JFXComboBox<String> decorationBox;
+    
+    
+    @FXML
+    private JFXButton load1;
     
     private String dishType;
     
@@ -107,6 +110,7 @@ public class BookingController {
     private JFXTextField invoiceNo;
     
     public void initialize() {
+        load1.setDisable(true);
         ObservableList<String> list = FXCollections.observableArrayList("Wedding", "Seminar", "Party", "Other", "Mehfill");
         eventType.setItems(list);
         
@@ -130,81 +134,8 @@ public class BookingController {
         int nextBookingID = DBService.getIntResult("Select MAX(ID)+1 From booking");
         eventId.setEditable(false);
         eventId.setText("" + nextBookingID);
-    }
-    
-    public void onCheck(ActionEvent actionEvent) {
-        String fxmlPath = "/dashboard/screens/BookingSearch.fxml";
-        String title = "Booking Availability";
-        StageHandler.createStage(title, fxmlPath);
-    }
-    
-    public void save(ActionEvent actionEvent) {
-        try {
-            String bookingDetail = String.format("Insert Into Booking( Id,customer_Id,Team_Id,Type,Booking_Date ,Start_Time,End_Time,Duration,person_count,location,Date_time) Values (%d,%d,%d,'%s', ParseDateTime('%s',  'yyyy-mm-dd'), ParseDateTime('12:55:00','hh:mm:ss'),ParseDateTime('12:55:00','hh:mm:ss'), %d, %d, '%s',ParseDateTime(sysdate,  'yyyy-mm-dd'))",
-                    
-                    Integer.parseInt(eventId.getText()),
-                    Integer.parseInt(idOfCustomer.getText()),
-                    Integer.parseInt(teamID.getText()),
-                    eventType.getValue(),
-                    eventDate.getValue(),
-//                    eventStartTime.getValue(),
-//                    eventEndTime.getValue(),
-                    Integer.parseInt(durationField.getText()),
-                    Integer.parseInt(noOfPersons.getText()),
-                    hallNo.getValue());
-            
-            String customerDetail = String.format("Insert into Customer (Id , Name , Phone_Number, Email, Address,Date_Time ) Values( %d , '%s','%s','%s','%s',to_char(sysdate , 'yyyy-mm-dd'))",
-                    Integer.parseInt(idOfCustomer.getText()),
-                    nameOfCustomer.getText(),
-                    phoneOfCustomer.getText(),
-                    emailOfCustomer.getText(),
-                    customerAddress.getText());
-            
-            
-            String team = String.format("insert into team( id ,task_type)values(%d, '%s')", Integer.parseInt(teamID.getText()), nameOfCustomer.getText());
-            
-            DBService.statement.executeUpdate(team);
-            DBService.statement.executeUpdate(customerDetail);
-            DBService.statement.executeUpdate(bookingDetail);
-            
-            MessageLabelOfEventSaved.setText("Saved!");
-//            clearFields();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-    
-    public void clear1Fields() {
         
-        hallNo.setValue(null);
-        eventType.setValue(null);
-        eventStartTime.setValue(null);
-        eventDate.setValue(null);
-        eventEndTime.setValue(null);
-        noOfPersons.clear();
-        nameOfCustomer.clear();
-        phoneOfCustomer.clear();
-        emailOfCustomer.clear();
-        customerAddress.setText(null);
-    }
-    
-    public void onGen(ActionEvent actionEvent) {
-        String code = String.valueOf(OTP());
-        invoiceNo.setText(code);
-        invoiceNo.setEditable(false);
-    }
-    
-    static char[] OTP() {
-        int length = 10;
         
-        String numbers = "0123456789abcetuvwxyz";
-        
-        Random random = new Random();
-        char[] otp = new char[length];
-        for (int i = 0; i < length; i++) {
-            otp[i] = numbers.charAt(random.nextInt(numbers.length()));
-        }
-        return otp;
     }
     
     public void checkMenuService(ActionEvent event) {
@@ -227,26 +158,6 @@ public class BookingController {
         DishesPane1.setVisible(true);
         DishesPane.setVisible(false);
         dishType = "Single Dish";
-    }
-    
-    public void MenuDetailSave(ActionEvent event) {
-        
-        String query = String.format("INSERT  INTO Menu (Booking_Id,Menu_Service,Decoration,facility,Description,dish_type)VALUES(%d,'%s','%s','%s','%s','%s')",
-                Integer.parseInt(eventId.getText()),
-                menuService.getValue(),
-                decorationBox.getValue(),
-                heaterCheck.getText(),
-                menuDescription.getText(),
-                dishType
-        );
-        
-        DBService.executeUpdate(query);
-        MenuSaveLabel.setText("Saved");
-        clearFields();
-    }
-    
-    public void clearFields() {
-        decorationBox.setValue(null);
     }
     
     public void qormaCheck(ActionEvent event) {
@@ -325,6 +236,95 @@ public class BookingController {
         if (photography.isSelected()) {
             facility.addAll(photography.getText());
         }
+    }
+    
+    public void checkBookingAvailability(ActionEvent actionEvent) {
+        String fxmlPath = "/dashboard/screens/BookingSearch.fxml";
+        String title = "Booking Availability";
+        StageHandler.createStage(title, fxmlPath);
+    }
+    
+    public void onGen(ActionEvent actionEvent) {
+        String code = String.valueOf(OTP());
+        invoiceNo.setText(code);
+        invoiceNo.setEditable(false);
+    }
+    
+    static char[] OTP() {
+        int length = 20;
+        
+        String numbers = "0123456789";
+        
+        Random random = new Random();
+        char[] otp = new char[length];
+        for (int i = 0; i < length; i++) {
+            otp[i] = numbers.charAt(random.nextInt(numbers.length()));
+        }
+        return otp;
+    }
+    
+    public void saveBookingMenu(ActionEvent event) {
+        
+        try {
+            String bookingDetail = String.format("Insert Into Booking( Id,customer_Id,Team_Id,Type,Booking_Date ,Start_Time,End_Time,Duration,person_count,location,Date_time) Values (%d,%d,%d,'%s', ParseDateTime('%s',  'yyyy-mm-dd'), '%s','%s', %d, %d, '%s',ParseDateTime(sysdate,  'yyyy-mm-dd'))",
+                    
+                    Integer.parseInt(eventId.getText()),
+                    Integer.parseInt(idOfCustomer.getText()),
+                    Integer.parseInt(teamID.getText()),
+                    eventType.getValue(),
+                    eventDate.getValue(),
+                    eventStartTime.getValue(),
+                    eventEndTime.getValue(),
+                    Integer.parseInt(durationField.getText()),
+                    Integer.parseInt(noOfPersons.getText()),
+                    hallNo.getValue());
+            
+            String customerDetail = String.format("Insert into Customer (Id , Name , Phone_Number, Email, Address,Date_Time ) Values( %d , '%s','%s','%s','%s',to_char(sysdate , 'yyyy-mm-dd'))",
+                    Integer.parseInt(idOfCustomer.getText()),
+                    nameOfCustomer.getText(),
+                    phoneOfCustomer.getText(),
+                    emailOfCustomer.getText(),
+                    customerAddress.getText());
+            
+            
+            String team = String.format("insert into team( id ,task_type)values(%d, '%s')", Integer.parseInt(teamID.getText()), nameOfCustomer.getText());
+            
+            String menuDetail = String.format("INSERT  INTO Menu (Booking_Id,Menu_Service,Decoration,facility,Description,dish_type)VALUES(%d,'%s','%s','%s','%s','%s')",
+                    Integer.parseInt(eventId.getText()),
+                    menuService.getValue(),
+                    decorationBox.getValue(),
+                    heaterCheck.getText(),
+                    menuDescription.getText(),
+                    dishType
+            );
+            DBService.statement.executeUpdate(team);
+            DBService.statement.executeUpdate(customerDetail);
+            DBService.statement.executeUpdate(bookingDetail);
+            DBService.executeUpdate(menuDetail);
+            saveLabel.setText("Saved");
+            
+            clearFields();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void clearFields() {
+        decorationBox.setValue(null);
+        hallNo.setValue(null);
+        eventType.setValue(null);
+        eventStartTime.setValue(null);
+        eventDate.setValue(null);
+        eventEndTime.setValue(null);
+        noOfPersons.clear();
+        nameOfCustomer.clear();
+        phoneOfCustomer.clear();
+        emailOfCustomer.clear();
+        customerAddress.setText(null);
+    }
+    
+    public void sssave(MouseEvent mouseEvent) {
+    
     }
 }
 

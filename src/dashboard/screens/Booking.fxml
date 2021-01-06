@@ -30,13 +30,8 @@
                <children>
                   <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="947.0">
                      <content>
-                        <AnchorPane onDragDetected="#save" prefHeight="850.0" prefWidth="934.0" style="-fx-background-color: white;">
+                        <AnchorPane onDragDetected="#sssave" prefHeight="769.0" prefWidth="934.0" style="-fx-background-color: white;">
                            <children>
-                              <Label fx:id="MessageLabelOfEventSaved" layoutX="612.0" layoutY="739.0" prefHeight="26.0" prefWidth="79.0" textFill="#c90808">
-                                 <font>
-                                    <Font name="System Bold" size="14.0" />
-                                 </font>
-                              </Label>
                               <AnchorPane layoutX="295.0" layoutY="46.0" prefHeight="23.0" prefWidth="278.0" style="-fx-background-color: gold; -fx-background-radius: 10px;">
                                  <children>
                                     <Label layoutX="48.0" layoutY="-4.0" prefHeight="37.0" prefWidth="186.0" text="Event Booking Details">
@@ -46,7 +41,7 @@
                                     </Label>
                                  </children>
                               </AnchorPane>
-                              <JFXButton layoutX="727.0" layoutY="14.0" onAction="#onCheck" prefHeight="36.0" prefWidth="161.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 8px;" text="Check Availability " textFill="WHITE">
+                              <JFXButton layoutX="727.0" layoutY="14.0" onAction="#checkBookingAvailability" prefHeight="36.0" prefWidth="161.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 8px;" text="Check Availability " textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -61,7 +56,7 @@
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Label>
-                                    <Label prefHeight="25.0" prefWidth="113.0" text="Event End Time">
+                                    <Label prefHeight="25.0" prefWidth="121.0" text="Event Start Time">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
@@ -85,7 +80,7 @@
                                           <Insets left="5.0" />
                                        </padding>
                                     </JFXTextField>
-                                    <JFXTimePicker fx:id="eventEndTime" prefHeight="30.0" prefWidth="180.0" style="-fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                                    <JFXTimePicker fx:id="eventStartTime" prefHeight="30.0" prefWidth="180.0" style="-fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
                                        <cursor>
                                           <Cursor fx:constant="TEXT" />
                                        </cursor>
@@ -115,7 +110,7 @@
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Label>
-                                    <Label prefHeight="25.0" prefWidth="122.0" text="Event  Start Time">
+                                    <Label prefHeight="25.0" prefWidth="122.0" text="Event  End Time">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
@@ -137,7 +132,7 @@
                                           <Insets left="5.0" />
                                        </padding>
                                     </JFXComboBox>
-                                    <JFXTimePicker fx:id="eventStartTime" prefHeight="30.0" prefWidth="180.0" style="-fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                                    <JFXTimePicker fx:id="eventEndTime" prefHeight="30.0" prefWidth="180.0" style="-fx-border-color: #666666; -fx-border-radius: 5px; -fx-background-radius: 5px; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
                                        <cursor>
                                           <Cursor fx:constant="TEXT" />
                                        </cursor>
@@ -204,14 +199,6 @@
                                     <Insets left="5.0" />
                                  </padding>
                               </JFXTextField>
-                              <JFXButton buttonType="RAISED" layoutX="474.0" layoutY="738.0" onAction="#save" prefHeight="36.0" prefWidth="93.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 12px;" text="Save" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </JFXButton>
                               <Label layoutX="69.0" layoutY="585.0" prefHeight="25.0" prefWidth="106.0" text="Customer ID">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
@@ -348,7 +335,7 @@
                            </font>
                         </Label>
                         <Separator layoutX="6.0" layoutY="352.0" prefHeight="6.0" prefWidth="800.0" />
-                        <JFXButton fx:id="MenuDetailSave" buttonType="RAISED" layoutX="251.0" layoutY="562.0" onAction="#MenuDetailSave" prefHeight="38.0" prefWidth="112.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 12px;" text="Save Details!" textFill="WHITE">
+                        <JFXButton fx:id="MenuDetailSave" buttonType="RAISED" layoutX="251.0" layoutY="562.0" onAction="#saveBookingMenu" prefHeight="38.0" prefWidth="112.0" ripplerFill="GOLD" style="-fx-background-color: #666666; -fx-background-radius: 12px;" text="Save Details!" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="13.0" />
                            </font>
@@ -356,7 +343,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </JFXButton>
-                        <Label fx:id="MenuSaveLabel" layoutX="423.0" layoutY="554.0" prefHeight="55.0" prefWidth="106.0" textFill="#d70a0a">
+                        <Label fx:id="saveLabel" layoutX="423.0" layoutY="554.0" prefHeight="55.0" prefWidth="106.0" textFill="#d70a0a">
                            <font>
                               <Font size="13.0" />
                            </font>
@@ -430,7 +417,7 @@
                               <Font name="System Bold" size="17.0" />
                            </font>
                         </Text>
-                        <JFXButton fx:id="LoadDataBtn" buttonType="RAISED" layoutX="220.0" layoutY="496.0" prefHeight="29.0" prefWidth="91.0" style="-fx-background-color: gold;" text="Load Data">
+                        <JFXButton fx:id="load1" buttonType="RAISED" layoutX="220.0" layoutY="496.0" prefHeight="29.0" prefWidth="91.0" style="-fx-background-color: gold;" text="Load Data">
                            <font>
                               <Font size="13.0" />
                            </font>
