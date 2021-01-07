@@ -1,5 +1,9 @@
 package dashboard.employee;
 
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 import com.jfoenix.controls.JFXButton;
 import database.DBService;
 import javafx.collections.FXCollections;
@@ -7,16 +11,20 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import util.StageHandler;
 
+import java.io.FileOutputStream;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 
 public class EmployeeController {
+    private static final ObservableList<Employee> employee_list = FXCollections.observableArrayList();
     public TableView<Employee> employee_table;
     public TableColumn<Employee, Integer> id_col;
     public TableColumn<Employee, String> name_col;
@@ -28,7 +36,41 @@ public class EmployeeController {
     public JFXButton delete_btn;
     public JFXButton update_btn;
     public JFXButton view_btn;
-    private static final ObservableList<Employee> employee_list = FXCollections.observableArrayList();
+    
+    public static PdfPTable createFirstTable() {
+        int i = 0;
+        PdfPTable table = new PdfPTable(5);
+        
+        PdfPCell c1 = new PdfPCell(new Phrase("QTY"));
+        c1.setHorizontalAlignment(Element.ALIGN_CENTER);
+        table.addCell(c1);
+        
+        c1 = new PdfPCell(new Phrase("Item"));
+        c1.setHorizontalAlignment(Element.ALIGN_CENTER);
+        table.addCell(c1);
+        
+        c1 = new PdfPCell(new Phrase("Description"));
+        c1.setHorizontalAlignment(Element.ALIGN_CENTER);
+        table.addCell(c1);
+        c1 = new PdfPCell(new Phrase("Unit Price"));
+        c1.setHorizontalAlignment(Element.ALIGN_CENTER);
+        table.addCell(c1);
+        c1 = new PdfPCell(new Phrase("Total"));
+        c1.setHorizontalAlignment(Element.ALIGN_CENTER);
+        table.addCell(c1);
+        table.setHeaderRows(1);
+        while (i <= 10) {
+            table.addCell("1");
+            table.addCell("2");
+            table.addCell("3");
+            table.addCell("4");
+            table.addCell("5");
+            i++;
+        }
+        
+        
+        return table;
+    }
     
     public void initialize() {
         add_btn.setDisable(true);
@@ -156,49 +198,91 @@ public class EmployeeController {
     }
     
     public void exportPdf(ActionEvent actionEvent) {
-/*
-            try {
-
-                Document my_pdf_report = new Document();
-                PdfWriter.getInstance(my_pdf_report, new FileOutputStream("pdf_report_from_sql_using_java.pdf"));
-                my_pdf_report.open();
-                //we have four columns in our table
-                PdfPTable my_report_table = new PdfPTable(4);
-                //create a cell object
-                PdfPCell table_cell;
-
-                while (query_set.next()) {
-                    String dept_id = query_set.getString("code");
-                    table_cell=new PdfPCell(new Phrase(dept_id));
-                    my_report_table.addCell(table_cell);
-                    String dept_name=query_set.getString("category");
-                    table_cell=new PdfPCell(new Phrase(dept_name));
-                    my_report_table.addCell(table_cell);
-                    String manager_id=query_set.getString("total");
-                    table_cell=new PdfPCell(new Phrase(manager_id));
-                    my_report_table.addCell(table_cell);
-                    String location_id=query_set.getString("Sum");
-                    table_cell=new PdfPCell(new Phrase(location_id));
-                    my_report_table.addCell(table_cell);
-                }
-                *//* Attach report table to PDF *//*
-                my_pdf_report.add(my_report_table);
-                my_pdf_report.close();
-
-                *//* Close all DB related objects *//*
-                query_set.close();
-                stmt.close();
-                con.close();
-
-            } catch (FileNotFoundException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            } catch (DocumentException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-
-        }*/
         
+        try {
+            String pdf = "E:\\javaPdf\\test2.pdf";
+            Document document = new Document(PageSize.A4);
+            PdfWriter.getInstance(document, new FileOutputStream(pdf));
+            
+            document.open();
+            Image imgsup = Image.getInstance("E:\\javaPdf\\qq.jpg");
+            document.add(imgsup);
+            
+            Paragraph p = new Paragraph("Customer Details", FontFactory.getFont(FontFactory.TIMES_BOLD, 25, Font.BOLD, BaseColor.RED));
+            p.setAlignment(Element.ALIGN_CENTER);
+            document.add(p);
+            Paragraph paragraph = new Paragraph(new Date().toString());
+            paragraph.setSpacingBefore(10);
+            paragraph.setFont(FontFactory.getFont(FontFactory.TIMES_BOLD, 25, Font.BOLD));
+            document.add(paragraph);
+            document.add(new Paragraph("--------------------------------------------------------------------------------------------------------------------------"));
+            
+            PdfPTable table = new PdfPTable(6);
+            table.setWidthPercentage(100);
+//            table.setSpacingBefore(11f);
+//            table.setSpacingBefore(11f);
+//            float[] colWidth = {2f,2f,2f};
+//            table.setWidths(colWidth);
+//
+            
+            PdfPCell c1, c2, c3, c4, c5, c6;
+            PdfPCell c7 = new PdfPCell(new Phrase("ID"));
+            table.addCell(c7);
+            c7 = new PdfPCell(new Phrase("Name"));
+            table.addCell(c7);
+            c7 = new PdfPCell(new Phrase("Phone No"));
+            table.addCell(c7);
+            c7 = new PdfPCell(new Phrase("Email"));
+            table.addCell(c7);
+            c7 = new PdfPCell(new Phrase("DOB"));
+            table.addCell(c7);
+            c7 = new PdfPCell(new Phrase("Address"));
+            table.addCell(c7);
+            c7.setBackgroundColor(BaseColor.BLACK);
+            table.setHeaderRows(1);
+            
+            Paragraph para = new Paragraph("Hi Its My First PDF");
+            para.setAlignment(Element.ALIGN_CENTER);
+            para.setSpacingAfter(20);
+            document.add(para);
+            
+            String query = "Select * from employee";
+            ResultSet rs = DBService.statement.executeQuery(query);
+            while (rs.next()) {
+               
+                    String id = rs.getString("ID");
+                    c1 = new PdfPCell(new Phrase(id));
+                    table.addCell(c1);
+                    String name = rs.getString("Name");
+                    c2 = new PdfPCell(new Phrase(name));
+                    table.addCell(c2);
+                    String phone = rs.getString("Phone_No");
+                    c3 = new PdfPCell(new Phrase(phone));
+                    table.addCell(c3);
+                    String Email = rs.getString("Email");
+                    c4 = new PdfPCell(new Phrase(Email));
+                    table.addCell(c4);
+                    String dob = rs.getString("DOB");
+                    c5 = new PdfPCell(new Phrase(dob));
+                    table.addCell(c5);
+                    String Address = rs.getString("Address");
+                    c6 = new PdfPCell(new Phrase(Address));
+                    table.addCell(c6);
+                
+            }
+            document.add(table);
+
+//            document.add(createFirstTable());
+            document.close();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Message");
+            alert.setHeaderText("Successfully");
+            alert.setContentText("PDF Generated");
+            alert.showAndWait();
+            System.out.println("Done!!!!!!!!");
+        } catch (Exception e) {
+            
+            e.printStackTrace();
+        }
     }
 }

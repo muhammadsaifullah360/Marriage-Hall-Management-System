@@ -30,8 +30,8 @@ public class BookingSearchController {
 //                StringBuilder result = new StringBuilder();
 //                result.append("Event Type =   ").append(rs.getString(1));
 //                result.append("\n");
-//                showSearchResult.setText("Event Type =   " + rs.getString(4) + "\nNo Of Persons =  " + rs.getString(8) + "\n  End_Time =  " + rs.getTime(1).toLocalTime() + "\nHall No  =  " + rs.getString(9));
-                showSearchResult.setText("Event Type =   " + rs.getString(4) );
+                showSearchResult.setText("Event Type =   " + rs.getString(4) + "\nNo Of Persons =  " + rs.getString(8) + "\n  End_Time =  " + rs.getTime(6).toLocalTime() + "\nHall No  =  " + rs.getString(9)+ "\nDuration  =  " + rs.getString(7));
+//                showSearchResult.setText("Event Type =   " + rs.getString(4) );
             }
         } catch (SQLException e) {
             e.printStackTrace();

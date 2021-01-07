@@ -6,8 +6,10 @@ import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import database.DBService;
 import javafx.event.ActionEvent;
+import org.w3c.dom.Document;
 import util.StageHandler;
 
+import java.io.FileOutputStream;
 import java.sql.SQLException;
 
 public class EmployeePanelController {
@@ -252,4 +254,5 @@ public class EmployeePanelController {
         DBService.statement.executeUpdate(dutyDetails_query);
         Refresh();
     }
+    
 }

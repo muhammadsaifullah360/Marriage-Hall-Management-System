@@ -11,5 +11,6 @@
     <orderEntry type="library" name="jfoenix-9.0.9" level="application" />
     <orderEntry type="library" name="javafx-sdk-15" level="application" />
     <orderEntry type="library" name="h2-1.4.200" level="application" />
+    <orderEntry type="library" name="itextpdf-5.4.2" level="application" />
   </component>
 </module>
