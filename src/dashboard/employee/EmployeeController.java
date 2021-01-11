@@ -205,8 +205,8 @@ public class EmployeeController {
             PdfWriter.getInstance(document, new FileOutputStream(pdf));
             
             document.open();
-            Image imgsup = Image.getInstance("E:\\javaPdf\\qq.jpg");
-            document.add(imgsup);
+            Image img = Image.getInstance("E:\\javaPdf\\qq.jpg");
+            document.add(img);
             
             Paragraph p = new Paragraph("Customer Details", FontFactory.getFont(FontFactory.TIMES_BOLD, 25, Font.BOLD, BaseColor.RED));
             p.setAlignment(Element.ALIGN_CENTER);
@@ -271,7 +271,6 @@ public class EmployeeController {
                 
             }
             document.add(table);
-
 //            document.add(createFirstTable());
             document.close();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);

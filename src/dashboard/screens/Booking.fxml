@@ -30,7 +30,7 @@
                <children>
                   <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="947.0">
                      <content>
-                        <AnchorPane onDragDetected="#sssave" prefHeight="769.0" prefWidth="934.0" style="-fx-background-color: white;">
+                        <AnchorPane onDragDetected="#save" prefHeight="769.0" prefWidth="934.0" style="-fx-background-color: white;">
                            <children>
                               <AnchorPane layoutX="295.0" layoutY="46.0" prefHeight="23.0" prefWidth="278.0" style="-fx-background-color: gold; -fx-background-radius: 10px;">
                                  <children>
@@ -407,7 +407,7 @@
                               <Font name="System Bold" size="17.0" />
                            </font>
                         </Text>
-                        <Text layoutX="93.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dish 1" wrappingWidth="90.783203125">
+                        <Text layoutX="58.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dish 1" wrappingWidth="90.783203125">
                            <font>
                               <Font name="System Bold" size="17.0" />
                            </font>
@@ -425,7 +425,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </JFXButton>
-                        <Text fx:id="load" layoutX="256.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="90.783203125">
+                        <Text fx:id="load" layoutX="221.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="90.783203125">
                            <font>
                               <Font name="System Bold" size="17.0" />
                            </font>
@@ -438,7 +438,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </JFXButton>
-                        <JFXTextField fx:id="invoiceNo1" focusColor="WHITE" layoutX="263.0" layoutY="252.0" prefHeight="27.0" prefWidth="140.0" promptText="Rs." style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5px; -jfx-unfocus-color: transparent;">
+                        <JFXTextField fx:id="totalPayment" focusColor="WHITE" layoutX="263.0" layoutY="252.0" prefHeight="27.0" prefWidth="140.0" promptText="Rs." style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5px; -jfx-unfocus-color: transparent;">
                            <cursor>
                               <Cursor fx:constant="TEXT" />
                            </cursor>
@@ -454,7 +454,7 @@
                               <Font name="System Bold" size="17.0" />
                            </font>
                         </Text>
-                        <JFXTextField fx:id="invoiceNo11" focusColor="WHITE" layoutX="264.0" layoutY="305.0" prefHeight="27.0" prefWidth="140.0" promptText="Rs." style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5px; -jfx-unfocus-color: transparent;">
+                        <JFXTextField fx:id="advancePayment" focusColor="WHITE" layoutX="264.0" layoutY="305.0" prefHeight="27.0" prefWidth="140.0" promptText="Rs." style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5px; -jfx-unfocus-color: transparent;">
                            <cursor>
                               <Cursor fx:constant="TEXT" />
                            </cursor>
@@ -465,12 +465,12 @@
                               <Insets left="7.0" />
                            </padding>
                         </JFXTextField>
-                        <Text layoutX="96.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Per Head Charges" wrappingWidth="149.783203125">
+                        <Text layoutX="95.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Per Head Charges" wrappingWidth="149.783203125">
                            <font>
                               <Font name="System Bold" size="17.0" />
                            </font>
                         </Text>
-                        <JFXTextField fx:id="invoiceNo111" focusColor="WHITE" layoutX="265.0" layoutY="357.0" prefHeight="27.0" prefWidth="140.0" promptText="Rs." style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5px; -jfx-unfocus-color: transparent;">
+                        <JFXTextField fx:id="perHeadCharges" focusColor="WHITE" layoutX="264.0" layoutY="196.0" prefHeight="27.0" prefWidth="140.0" promptText="Rs." style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5px; -jfx-unfocus-color: transparent;">
                            <cursor>
                               <Cursor fx:constant="TEXT" />
                            </cursor>

@@ -10,6 +10,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
+import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import util.StageHandler;
@@ -99,17 +100,22 @@ public class BookingController {
     private JFXComboBox<String> menuService;
     @FXML
     private JFXComboBox<String> decorationBox;
-    
-    
     @FXML
     private JFXButton load1;
-    
-    private String dishType;
-    
     @FXML
     private JFXTextField invoiceNo;
+    @FXML
+    private JFXTextField totalPayment;
+    @FXML
+    private JFXTextField advancePayment;
+    @FXML
+    private JFXTextField perHeadCharges;
+    private String dishType;
+    int dishId ;
     
     public void initialize() {
+        total();
+        
         load1.setDisable(true);
         ObservableList<String> list = FXCollections.observableArrayList("Wedding", "Seminar", "Party", "Other", "Mehfill");
         eventType.setItems(list);
@@ -134,11 +140,13 @@ public class BookingController {
         int nextBookingID = DBService.getIntResult("Select MAX(ID)+1 From booking");
         eventId.setEditable(false);
         eventId.setText("" + nextBookingID);
-        
+    
+        dishId = DBService.getIntResult("Select MAX(ID)+1 From Dish");
         
     }
     
-    public void checkMenuService(ActionEvent event) {
+    
+    public void checkMenuService() {
         if (menuService.getValue().equals("Self")) {
             MenuSelect.setDisable(true);
             DishesPane1.setVisible(false);
@@ -148,110 +156,110 @@ public class BookingController {
         }
     }
     
-    public void multiDish(ActionEvent event) {
+    public void multiDish() {
         DishesPane.setVisible(true);
         DishesPane1.setVisible(false);
         dishType = "Multi Dish";
     }
     
-    public void singleDish(ActionEvent event) {
+    public void singleDish() {
         DishesPane1.setVisible(true);
         DishesPane.setVisible(false);
         dishType = "Single Dish";
     }
     
-    public void qormaCheck(ActionEvent event) {
+    public void qormaCheck() {
         if (qorma.isSelected()) {
             MenuList.addAll(qorma.getText());
         }
     }
     
-    public void riceCheck(ActionEvent event) {
+    public void riceCheck() {
         if (rice.isSelected()) {
             MenuList.addAll(rice.getText());
         }
     }
     
-    public void qorma1Check(ActionEvent event) {
+    public void qorma1Check() {
         if (qorma1.isSelected()) {
             MenuList.addAll(qorma1.getText());
         }
     }
     
-    public void rice1Check(ActionEvent event) {
+    public void rice1Check() {
         if (rice1.isSelected()) {
             MenuList.addAll(rice1.getText());
         }
     }
     
-    public void sweetDish1Check(ActionEvent event) {
+    public void sweetDish1Check() {
         if (sweetDish1.isSelected()) {
             MenuList.addAll(sweetDish1.getText());
         }
     }
     
-    public void other1Check(ActionEvent event) {
+    public void other1Check() {
         if (other1.isSelected()) {
             MenuList.addAll(other1.getText());
         }
     }
     
-    public void OtherCheck(ActionEvent event) {
+    public void OtherCheck() {
         if (others.isSelected()) {
             MenuList.addAll(others.getText());
         }
     }
     
-    public void sweetDishCheck(ActionEvent event) {
+    public void sweetDishCheck() {
         if (sweetDish.isSelected()) {
             MenuList.addAll(sweetDish.getText());
         }
     }
     
-    public void coldDrinksCheck(ActionEvent event) {
+    public void coldDrinksCheck() {
         if (coldDrinks.isSelected()) {
             MenuList.addAll(coldDrinks.getText());
         }
     }
     
-    public void saladsCheck(ActionEvent event) {
+    public void saladsCheck() {
         if (salads.isSelected()) {
             MenuList.addAll(salads.getText());
         }
     }
     
-    public void heaterCheck(ActionEvent event) {
+    public void heaterCheck() {
         if (heaterCheck.isSelected()) {
             facility.addAll(heaterCheck.getText());
         }
     }
     
-    public void AcCheck(ActionEvent event) {
+    public void AcCheck() {
         if (acCheck.isSelected()) {
             facility.addAll(acCheck.getText());
         }
     }
     
-    public void photographyCheck(ActionEvent event) {
+    public void photographyCheck() {
         if (photography.isSelected()) {
             facility.addAll(photography.getText());
         }
     }
     
-    public void checkBookingAvailability(ActionEvent actionEvent) {
+    public void checkBookingAvailability() {
         String fxmlPath = "/dashboard/screens/BookingSearch.fxml";
         String title = "Booking Availability";
         StageHandler.createStage(title, fxmlPath);
     }
     
-    public void onGen(ActionEvent actionEvent) {
+    public void onGen() {
         String code = String.valueOf(OTP());
         invoiceNo.setText(code);
         invoiceNo.setEditable(false);
     }
     
     static char[] OTP() {
-        int length = 20;
+        int length = 16;
         
         String numbers = "0123456789";
         
@@ -263,8 +271,14 @@ public class BookingController {
         return otp;
     }
     
-    public void saveBookingMenu(ActionEvent event) {
-        
+    public void saveBookingMenu() {
+        if(customerAddress.getText()== null && eventId.getText()== null && eventType.getValue()== null && eventDate.getValue()== null &&eventEndTime.getValue()== null && eventStartTime.getValue() == null && durationField.getText()== null && hallNo.getValue()== null && teamID.getText()== null
+                && nameOfCustomer.getText()== null && emailOfCustomer.getText()== null && phoneOfCustomer.getText()== null && idOfCustomer.getText()== null
+        ){
+            saveLabel.setText("*Please fill the all fields");
+        }
+        else {
+            saveLabel.setText(null);
         try {
             String bookingDetail = String.format("Insert Into Booking( Id,customer_Id,Team_Id,Type,Booking_Date ,Start_Time,End_Time,Duration,person_count,location,Date_time) Values (%d,%d,%d,'%s', ParseDateTime('%s',  'yyyy-mm-dd'), '%s','%s', %d, %d, '%s',ParseDateTime(sysdate,  'yyyy-mm-dd'))",
                     
@@ -297,18 +311,22 @@ public class BookingController {
                     menuDescription.getText(),
                     dishType
             );
+            System.out.println(dishId);
+            String menuList = String.format("Insert into Dish (id,name,Date_time )values(%d,'%s',to_char(sysdate , 'yyyy-mm-dd'))",dishId,MenuList);
+           
             DBService.statement.executeUpdate(team);
             DBService.statement.executeUpdate(customerDetail);
             DBService.statement.executeUpdate(bookingDetail);
             DBService.executeUpdate(menuDetail);
+            DBService.executeUpdate(menuList);
+    
             saveLabel.setText("Saved");
             
             clearFields();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-    
+    }}
     public void clearFields() {
         decorationBox.setValue(null);
         hallNo.setValue(null);
@@ -323,8 +341,23 @@ public class BookingController {
         customerAddress.setText(null);
     }
     
-    public void sssave(MouseEvent mouseEvent) {
+    public void save() {
     
+    }
+    
+    private void total() {
+        if(perHeadCharges.getText() == null){
+            int i = 0 ;
+            assert false;
+            perHeadCharges.setText(String.valueOf(i));
+        }else
+        totalPayment.setEditable(false);
+        perHeadCharges.textProperty().addListener((observable, oldValue, newValue) -> {
+                int persons = Integer.parseInt(noOfPersons.getText());
+                int charges = Integer.parseInt(perHeadCharges.getText());
+        
+                totalPayment.textProperty().setValue(String.valueOf(charges* persons));
+        });
     }
 }
 

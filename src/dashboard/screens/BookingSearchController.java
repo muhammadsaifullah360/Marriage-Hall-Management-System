@@ -21,26 +21,32 @@ public class BookingSearchController {
     
     
     public void EventSearchBtn(ActionEvent actionEvent) {
-        try {
+    
+        if (searchTime.getValue() == null && searchDate.getValue() == null) {
+            System.out.println("Fill the fields");
+        }
+        else {
+            try {
             
-            String query = String.format("select * from Booking where Booking_date = '%s' AND START_TIME ='%s' ", searchDate.getValue(), searchTime.getValue());
+                String query = String.format("select * from Booking where Booking_date = '%s' AND START_TIME ='%s' ", searchDate.getValue(), searchTime.getValue());
             
-            ResultSet rs = DBService.statement.executeQuery(query);
-            while (rs.next()) {
+                ResultSet rs = DBService.statement.executeQuery(query);
+                while (rs.next()) {
 //                StringBuilder result = new StringBuilder();
 //                result.append("Event Type =   ").append(rs.getString(1));
 //                result.append("\n");
-                showSearchResult.setText("Event Type =   " + rs.getString(4) + "\nNo Of Persons =  " + rs.getString(8) + "\n  End_Time =  " + rs.getTime(6).toLocalTime() + "\nHall No  =  " + rs.getString(9)+ "\nDuration  =  " + rs.getString(7));
+                    showSearchResult.setText("Event Type =   " + rs.getString(4) + "\nNo Of Persons =  " + rs.getString(8) + "\n  End_Time =  " + rs.getTime(6).toLocalTime() + "\nHall No  =  " + rs.getString(9) + "\nDuration  =  " + rs.getString(7));
 //                showSearchResult.setText("Event Type =   " + rs.getString(4) );
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
+        public void clearSearch (ActionEvent actionEvent){
+            searchDate.setValue(null);
+            searchTime.setValue(null);
+            showSearchResult.clear();
+        }
     
-    public void clearSearch(ActionEvent actionEvent) {
-        searchDate.setValue(null);
-        searchTime.setValue(null);
-        showSearchResult.clear();
-    }
 }
