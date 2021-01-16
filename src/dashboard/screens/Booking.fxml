@@ -12,11 +12,11 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -254,54 +254,38 @@
                               <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <AnchorPane fx:id="MenuSelect" disable="true" layoutX="86.0" layoutY="183.0" prefHeight="150.0" prefWidth="779.0" style="-fx-background-color: #9a9995; -fx-background-radius: 20px;">
+                        <AnchorPane fx:id="MenuSelect" layoutX="86.0" layoutY="183.0" prefHeight="150.0" prefWidth="779.0" style="-fx-background-color: #9a9995; -fx-background-radius: 20px;">
                            <children>
-                              <Label layoutX="22.0" layoutY="14.0" prefHeight="30.0" prefWidth="130.0" text="Dishes Type:" textFill="#ffcc00">
+                              <Label layoutX="227.0" layoutY="-2.0" prefHeight="30.0" prefWidth="130.0" text="Select Dishes" textFill="#ffcc00">
                                  <font>
                                     <Font name="Arial Bold" size="18.0" />
                                  </font>
                               </Label>
-                              <RadioButton fx:id="SingleDish" layoutX="35.0" layoutY="58.0" mnemonicParsing="false" onAction="#singleDish" text="Single Dish" textFill="WHITE">
-                                 <toggleGroup>
-                                    <ToggleGroup fx:id="dishselection" />
-                                 </toggleGroup>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </RadioButton>
-                              <RadioButton fx:id="MultiDish" layoutX="35.0" layoutY="99.0" mnemonicParsing="false" onAction="#multiDish" text="Multi Dishes" textFill="WHITE" toggleGroup="$dishselection">
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </RadioButton>
-                              <JFXTextArea fx:id="menuDescription" focusColor="BLACK" layoutX="496.0" layoutY="16.0" prefHeight="116.0" prefWidth="223.0" promptText="Comments." style="-fx-background-color: white; -fx-background-radius: 15px; -fx-border-radius: 20px; -jfx-focus-color: Transparent; -jfx-unfocus-color: Transparent;" unFocusColor="BLACK">
+                              <JFXTextArea fx:id="menuDescription" focusColor="BLACK" layoutX="496.0" layoutY="26.0" prefHeight="116.0" prefWidth="223.0" promptText="Comments." style="-fx-background-color: white; -fx-background-radius: 15px; -fx-border-radius: 20px; -jfx-focus-color: Transparent; -jfx-unfocus-color: Transparent;" unFocusColor="BLACK">
                                  <padding>
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </padding>
                               </JFXTextArea>
-                              <AnchorPane fx:id="DishesPane" layoutX="181.0" layoutY="14.0" prefHeight="116.0" prefWidth="266.0" style="-fx-background-color: white; -fx-background-radius: 20px;" visible="false">
+                              <AnchorPane fx:id="DishesPane" layoutX="18.0" layoutY="27.0" prefHeight="116.0" prefWidth="459.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
                                  <children>
-                                    <CheckBox fx:id="qorma" layoutX="33.0" layoutY="14.0" mnemonicParsing="false" onAction="#qormaCheck" prefHeight="17.0" prefWidth="67.0" text="Qorma" />
-                                    <CheckBox fx:id="rice" layoutX="33.0" layoutY="41.0" mnemonicParsing="false" onAction="#riceCheck" prefHeight="17.0" prefWidth="55.0" text="Rice" />
-                                    <CheckBox fx:id="salads" layoutX="33.0" layoutY="70.0" mnemonicParsing="false" onAction="#saladsCheck" prefHeight="17.0" prefWidth="67.0" text="Salads" />
-                                    <CheckBox fx:id="coldDrinks" layoutX="118.0" layoutY="14.0" mnemonicParsing="false" onAction="#coldDrinksCheck" prefHeight="17.0" prefWidth="112.0" text="Cold Drinks/Tea" />
-                                    <CheckBox fx:id="sweetDish" layoutX="118.0" layoutY="43.0" mnemonicParsing="false" onAction="#sweetDishCheck" prefHeight="17.0" prefWidth="104.0" text="Sweet Dishes" />
+                                    <VBox layoutX="33.0" layoutY="14.0" spacing="15.0">
+                                       <children>
+                                          <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="67.0" text="Qorma" />
+                                          <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="55.0" text="Rice" />
+                                          <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="67.0" text="Salads" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="118.0" layoutY="14.0" spacing="15.0">
+                                       <children>
+                                          <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="112.0" text="Cold Drinks/Tea" />
+                                          <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="Sweet Dishes" />
+                                          <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="87.0" text="Others" />
+                                       </children>
+                                    </VBox>
                                     <CheckBox fx:id="others" layoutX="118.0" layoutY="72.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="67.0" text="Other" visible="false" />
-                                    <CheckBox fx:id="Other" layoutX="118.0" layoutY="72.0" mnemonicParsing="false" onAction="#OtherCheck" prefHeight="17.0" prefWidth="87.0" text="Others" />
                                  </children>
                               </AnchorPane>
                            </children>
-                        </AnchorPane>
-                        <AnchorPane fx:id="DishesPane1" layoutX="268.0" layoutY="197.0" prefHeight="116.0" prefWidth="236.0" style="-fx-background-color: white; -fx-background-radius: 15px;" visible="false">
-                           <children>
-                              <CheckBox fx:id="qorma1" layoutX="33.0" layoutY="14.0" mnemonicParsing="false" onAction="#qorma1Check" prefHeight="17.0" prefWidth="67.0" text="Qorma" />
-                              <CheckBox fx:id="rice1" layoutX="32.0" layoutY="45.0" mnemonicParsing="false" onAction="#rice1Check" prefHeight="17.0" prefWidth="55.0" text="Rice" />
-                              <CheckBox fx:id="sweetDish1" layoutX="33.0" layoutY="79.0" mnemonicParsing="false" onAction="#sweetDish1Check" prefHeight="17.0" prefWidth="95.0" text="Sweet Dish" />
-                              <CheckBox fx:id="other1" layoutX="118.0" layoutY="16.0" mnemonicParsing="false" onAction="#other1Check" prefHeight="17.0" prefWidth="95.0" text="Other" />
-                           </children>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
                         </AnchorPane>
                         <Label layoutX="111.0" layoutY="373.0" prefHeight="30.0" prefWidth="147.0" text="Facilities:" underline="true">
                            <font>
@@ -343,7 +327,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </JFXButton>
-                        <Label fx:id="saveLabel" layoutX="423.0" layoutY="554.0" prefHeight="55.0" prefWidth="106.0" textFill="#d70a0a">
+                        <Label fx:id="saveLabel" layoutX="384.0" layoutY="559.0" prefHeight="44.0" prefWidth="311.0" textFill="#d70a0a">
                            <font>
                               <Font size="13.0" />
                            </font>
@@ -489,6 +473,24 @@
                         <ListView layoutX="505.0" layoutY="232.0" prefHeight="200.0" prefWidth="200.0" />
                      </children>
                   </AnchorPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="View Bookings">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+               <children>
+                  <TableView fx:id="bookingViewTable" layoutX="39.0" layoutY="90.0" prefHeight="430.0" prefWidth="872.0">
+                    <columns>
+                      <TableColumn fx:id="bookingIdCol" prefWidth="75.0" text="Booking ID" />
+                      <TableColumn fx:id="eventTypeCol" prefWidth="75.0" text="Event Type" />
+                        <TableColumn prefWidth="75.0" text="Column X" />
+                        <TableColumn prefWidth="75.0" text="Column X" />
+                        <TableColumn prefWidth="75.0" text="Column X" />
+                        <TableColumn prefWidth="75.0" text="Column X" />
+                    </columns>
+                  </TableView>
                </children>
             </AnchorPane>
         </content>
