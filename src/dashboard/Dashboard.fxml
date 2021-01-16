@@ -68,7 +68,7 @@
                   <Insets />
                </VBox.margin>
             </JFXButton>
-            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#onClickStock" prefHeight="40.0" prefWidth="180.0" ripplerFill="WHITE" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Stock" textFill="GOLD">
+            <JFXButton buttonType="RAISED" focusTraversable="false" onAction="#loadStock" prefHeight="40.0" prefWidth="180.0" ripplerFill="WHITE" style="-fx-background-color: #666666; -fx-background-radius: 20px;" text="Stock" textFill="GOLD">
                <font>
                   <Font name="Segoe UI Bold" size="17.0" />
                </font>

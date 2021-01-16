@@ -1,8 +1,210 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="650.0" prefWidth="853.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.screens.StockController">
-
-</AnchorPane>
+<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="947.0" stylesheets="@../../stylesheets/Tabpane.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dashboard.screens.StockController">
+   <tabs>
+      <Tab text="Stock Detail">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="349.0" layoutY="286.0" prefHeight="73.0" prefWidth="224.0" text="Wait........." textFill="#dd0d0d">
+                     <font>
+                        <Font name="System Bold" size="50.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab text="Supplier">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+               <children>
+                  <VBox layoutX="16.0" layoutY="110.0" prefHeight="135.0" prefWidth="95.0" spacing="22.0">
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="96.0" text="Supplier ID">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="27.0" prefWidth="74.0" text="Name">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="27.0" prefWidth="91.0" text="Type">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="27.0" prefWidth="89.0" text="Phone No">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="27.0" prefWidth="82.0" text="Email">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="27.0" prefWidth="74.0" text="Address">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="130.0" layoutY="111.0" spacing="20.0">
+                     <children>
+                        <JFXTextField fx:id="supplierId" prefHeight="27.0" prefWidth="142.0" style="-fx-border-color: grey; -fx-background-radius: 5px; -fx-border-radius: 5px; -jfx-unfocus-color: transparent; -jfx-focus-color: transparent;">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </JFXTextField>
+                        <JFXTextField fx:id="supplierName" prefHeight="27.0" prefWidth="142.0" style="-fx-border-color: grey; -fx-background-radius: 5px; -fx-border-radius: 5px; -jfx-unfocus-color: transparent; -jfx-focus-color: transparent;">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                        </JFXTextField>
+                        <JFXTextField fx:id="supplierType" prefHeight="27.0" prefWidth="142.0" style="-fx-border-color: grey; -fx-background-radius: 5px; -fx-border-radius: 5px; -jfx-unfocus-color: transparent; -jfx-focus-color: transparent;">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                        </JFXTextField>
+                        <JFXTextField fx:id="supplierPhoneNum" prefHeight="27.0" prefWidth="142.0" style="-fx-border-color: grey; -fx-background-radius: 5px; -fx-border-radius: 5px; -jfx-unfocus-color: transparent; -jfx-focus-color: transparent;">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                        </JFXTextField>
+                        <JFXTextField fx:id="supplierEmail" prefHeight="27.0" prefWidth="142.0" style="-fx-border-color: grey; -fx-background-radius: 5px; -fx-border-radius: 5px; -jfx-unfocus-color: transparent; -jfx-focus-color: transparent;">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                        </JFXTextField>
+                        <JFXTextField fx:id="supplierAddress" prefHeight="27.0" prefWidth="142.0" style="-fx-border-color: grey; -fx-background-radius: 5px; -fx-border-radius: 5px; -jfx-unfocus-color: transparent; -jfx-focus-color: transparent;">
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                        </JFXTextField>
+                     </children>
+                  </VBox>
+                  <TableView fx:id="supplierTable" layoutX="282.0" layoutY="90.0" onMouseClicked="#getSelectedRow" prefHeight="474.0" prefWidth="653.0">
+                    <columns>
+                      <TableColumn fx:id="supplierID_col" prefWidth="44.0" text="ID" />
+                      <TableColumn fx:id="supplierName_col" prefWidth="111.0" text="Name" />
+                        <TableColumn fx:id="supplierType_col" prefWidth="76.0" text="Type" />
+                        <TableColumn fx:id="supplierPhone_col" prefWidth="89.0" text="Phone No" />
+                        <TableColumn fx:id="supplierEmail_col" prefWidth="105.0" text="Email" />
+                        <TableColumn fx:id="supplierAddress_col" prefWidth="222.0" text="Address" />
+                    </columns>
+                  </TableView>
+                  <AnchorPane layoutX="20.0" layoutY="38.0" prefHeight="39.0" prefWidth="253.0" style="-fx-background-color: gold; -fx-background-radius: 10px;">
+                     <children>
+                        <Label layoutX="61.0" layoutY="1.0" prefHeight="35.0" prefWidth="135.0" text="Supplier Detail.">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <HBox layoutX="19.0" layoutY="414.0" spacing="17.0">
+                     <children>
+                        <JFXButton fx:id="addBtn" buttonType="RAISED" onAction="#addSupplier" prefHeight="31.0" prefWidth="67.0" style="-fx-background-color: grey; -fx-background-radius: 5px;" text="Add" textFill="WHITE">
+                           <font>
+                              <Font name="Bold " size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" onAction="#updateSupplier" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: grey; -fx-background-radius: 5px;" text="Update" textFill="WHITE">
+                           <font>
+                              <Font name=" Bold " size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" onAction="#deleteSupplier" prefHeight="25.0" prefWidth="74.0" style="-fx-background-color: #fb3939; -fx-background-radius: 5px;" text="Delete" textFill="#fcfcfc">
+                           <font>
+                              <Font name=" Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <AnchorPane layoutX="534.0" layoutY="8.0" prefHeight="53.0" prefWidth="382.0" style="-fx-background-color: #666666; -fx-background-radius: 10px;">
+                     <children>
+                        <JFXTextField fx:id="searchField" layoutX="29.0" layoutY="13.0" prefHeight="27.0" prefWidth="231.0" promptText="search here!" style="-fx-background-color: white; -fx-border-radius: 10px; -fx-background-radius: 10px; -jfx-unfocus-color: transparent; -jfx-focus-color: transparent;">
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                           <cursor>
+                              <Cursor fx:constant="TEXT" />
+                           </cursor>
+                        </JFXTextField>
+                        <JFXButton fx:id="clearSearch" layoutX="275.0" layoutY="14.0" onAction="#clear" prefHeight="27.0" prefWidth="68.0" style="-fx-background-color: gold; -fx-background-radius: 10px;" text="Clear">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                  <JFXButton buttonType="RAISED" layoutX="17.0" layoutY="464.0" onAction="#onReset" prefHeight="40.0" prefWidth="251.0" style="-fx-background-color: #666666;" text="Reset" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXButton>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+   </tabs>
+</JFXTabPane>

@@ -68,10 +68,6 @@ public class BookingController {
     @FXML
     private AnchorPane MenuSelect;
     @FXML
-    private RadioButton SingleDish;
-    @FXML
-    private RadioButton MultiDish;
-    @FXML
     private AnchorPane DishesPane;
     @FXML
     private AnchorPane DishesPane1;
@@ -101,14 +97,13 @@ public class BookingController {
     private JFXTextField advancePayment;
     
     public void initialize() throws SQLException {
-        makeNumberOnly(noOfPersons, perHeadCharges);
-        makeNumber(advancePayment);
+        makeNumberOnly(noOfPersons, perHeadCharges,advancePayment,phoneOfCustomer, durationField);
         
         ChangeListener<String> totalPriceChanger = (obs, v1, v2) -> {
             int totalPrice = Integer.parseInt(noOfPersons.getText()) * Integer.parseInt(perHeadCharges.getText());
             totalPayment.setText("" + totalPrice);
         };
-    
+        
         ChangeListener<String> pending = (obs, v1, v2) -> {
             int pendingPay = Integer.parseInt(totalPayment.getText()) - Integer.parseInt(advancePayment.getText());
             pendingAmount.setText("Rs. " + pendingPay);
@@ -118,7 +113,6 @@ public class BookingController {
         noOfPersons.textProperty().addListener(totalPriceChanger);
         perHeadCharges.textProperty().addListener(totalPriceChanger);
         
-        load1.setDisable(true);
         ObservableList<String> list = FXCollections.observableArrayList("Wedding", "Seminar", "Party", "Other", "Mehfill");
         eventType.setItems(list);
         
@@ -149,18 +143,6 @@ public class BookingController {
         loadData();
     }
     
-    private void makeNumber(TextField... textFields) {
-        for (TextField textField : textFields)
-            textField.textProperty().addListener((obs, v1, v2) -> {
-                if (v2 == null || v2.isEmpty()) textField.setText("0");
-                else {
-                    String plainText = v2.replaceAll("\\D", "");
-                    int newValue = Integer.parseInt(plainText.isEmpty() ? "0" : plainText);
-                    textField.setText("" + newValue);
-                }
-            });
-    }
-    
     private void makeNumberOnly(TextField... textFields) {
         for (TextField textField : textFields)
             textField.textProperty().addListener((obs, v1, v2) -> {
@@ -172,6 +154,8 @@ public class BookingController {
                 }
             });
     }
+    
+
     
     private void createTable() {
         bookingIdCol.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -245,10 +229,15 @@ public class BookingController {
     }
     
     public void saveBookingMenu() {
-        if (customerAddress.getText() == null && eventId.getText() == null && eventType.getValue() == null && eventDate.getValue() == null && eventEndTime.getValue() == null && eventStartTime.getValue() == null && durationField.getText() == null && hallNo.getValue() == null && teamID.getText() == null
-                && nameOfCustomer.getText() == null && emailOfCustomer.getText() == null && phoneOfCustomer.getText() == null && idOfCustomer.getText() == null
+        if (customerAddress.getText() == null || eventId.getText() == null || eventType.getValue() == null || eventDate.getValue() == null || eventEndTime.getValue() == null ||
+                eventStartTime.getValue() == null || durationField.getText() == null || hallNo.getValue() == null || teamID.getText() == null
+                || nameOfCustomer.getText() == null || emailOfCustomer.getText() == null || phoneOfCustomer.getText() == null || idOfCustomer.getText() == null
         ) {
-            saveLabel.setText("*Please fill the all fields");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Warning!");
+            alert.setHeaderText("Warning!");
+            alert.setContentText("Please Fill All The Fields..");
+            alert.showAndWait();
         } else {
             saveLabel.setText(null);
             try {
@@ -289,8 +278,8 @@ public class BookingController {
                 DBService.statement.executeUpdate(team);
                 DBService.statement.executeUpdate(customerDetail);
                 DBService.statement.executeUpdate(bookingDetail);
-                DBService.executeUpdate(menuDetail);
-                DBService.executeUpdate(menuList);
+                DBService.statement.executeUpdate(menuDetail);
+                DBService.statement.executeUpdate(menuList);
                 
                 saveLabel.setText("Saved");
                 

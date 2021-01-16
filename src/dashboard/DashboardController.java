@@ -32,13 +32,16 @@ public class DashboardController {
         setCenterPane("/dashboard/screens/Booking.fxml");
     }
     
-    
     public void onclickEmployee(ActionEvent event) throws IOException {
         setCenterPane("/dashboard/employee/Employee.fxml");
     }
     
     public void loadBilling(ActionEvent event) throws IOException {
         setCenterPane("/dashboard/screens/Billing.fxml");
+    }
+    
+    public void loadStock(ActionEvent event) throws IOException {
+        setCenterPane("/dashboard/screens/Stock.fxml");
     }
     
     public void logout(ActionEvent event) {
@@ -51,7 +54,4 @@ public class DashboardController {
         StageHandler.createStage("Settings", "/login/Setting.fxml");
     }
     
-    public void onClickStock(ActionEvent actionEvent) throws IOException {
-        setCenterPane("/dashboard/screens/Stock.fxml");
-    }
 }

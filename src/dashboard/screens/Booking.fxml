@@ -391,12 +391,7 @@
                               <Font name="System Bold" size="17.0" />
                            </font>
                         </Text>
-                        <Text layoutX="58.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dish 1" wrappingWidth="90.783203125">
-                           <font>
-                              <Font name="System Bold" size="17.0" />
-                           </font>
-                        </Text>
-                        <VBox layoutX="94.0" layoutY="195.6552734375" spacing="25.0">
+                        <VBox layoutX="171.0" layoutY="195.6552734375" spacing="30.0">
                            <children>
                               <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Per Head Charges" wrappingWidth="149.783203125">
                                  <font>
@@ -436,7 +431,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </JFXButton>
-                        <VBox layoutX="263.0" layoutY="196.0" spacing="20.0">
+                        <VBox layoutX="426.0" layoutY="196.0" spacing="25.0">
                            <children>
                               <JFXTextField fx:id="perHeadCharges" focusColor="WHITE" prefHeight="27.0" prefWidth="140.0" promptText="Rs." style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 5px; -jfx-unfocus-color: transparent;" text="0">
                                  <cursor>
@@ -473,18 +468,12 @@
                               </JFXTextField>
                            </children>
                         </VBox>
-                        <Text layoutX="529.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selected Dishes" wrappingWidth="137.783203125">
+                        <Text layoutX="171.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pending Amount" wrappingWidth="136.783203125">
                            <font>
                               <Font name="System Bold" size="17.0" />
                            </font>
                         </Text>
-                        <ListView layoutX="505.0" layoutY="232.0" prefHeight="200.0" prefWidth="200.0" />
-                        <Text layoutX="95.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pending Amount" wrappingWidth="136.783203125">
-                           <font>
-                              <Font name="System Bold" size="17.0" />
-                           </font>
-                        </Text>
-                        <Text fx:id="pendingAmount" layoutX="267.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="106.783203125">
+                        <Text fx:id="pendingAmount" layoutX="434.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="106.783203125">
                            <font>
                               <Font name="System Bold" size="17.0" />
                            </font>

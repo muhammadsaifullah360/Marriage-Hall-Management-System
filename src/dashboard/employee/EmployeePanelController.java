@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import database.DBService;
 import javafx.event.ActionEvent;
+import javafx.scene.control.TextField;
 import org.w3c.dom.Document;
 import util.StageHandler;
 
@@ -42,6 +43,22 @@ public class EmployeePanelController {
     public JFXButton update_btn;
     public JFXButton delete_btn;
     
+    
+    public  void initialize(){
+        makeNumberOnly(phoneNo , workingHours, salary, duration);
+    }
+    
+    private void makeNumberOnly(TextField... textFields) {
+        for (TextField textField : textFields)
+            textField.textProperty().addListener((obs, v1, v2) -> {
+                if (v2 == null || v2.isEmpty()) textField.setText("0");
+                else {
+                    String plainText = v2.replaceAll("\\D", "");
+                    int newValue = Integer.parseInt(plainText.isEmpty() ? "0" : plainText);
+                    textField.setText("" + newValue);
+                }
+            });
+    }
     
     public void initData(Employee employee, OperationType type) {
         switch (type) {
