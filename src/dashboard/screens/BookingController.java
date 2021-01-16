@@ -2,12 +2,14 @@ package dashboard.screens;
 
 import com.jfoenix.controls.*;
 import database.DBService;
+import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import util.StageHandler;
 
 import java.sql.ResultSet;
@@ -93,9 +95,28 @@ public class BookingController {
     private JFXTextField totalPayment;
     @FXML
     private JFXTextField perHeadCharges;
+    @FXML
+    private Text pendingAmount;
+    @FXML
+    private JFXTextField advancePayment;
     
     public void initialize() throws SQLException {
-        total();
+        makeNumberOnly(noOfPersons, perHeadCharges);
+        makeNumber(advancePayment);
+        
+        ChangeListener<String> totalPriceChanger = (obs, v1, v2) -> {
+            int totalPrice = Integer.parseInt(noOfPersons.getText()) * Integer.parseInt(perHeadCharges.getText());
+            totalPayment.setText("" + totalPrice);
+        };
+    
+        ChangeListener<String> pending = (obs, v1, v2) -> {
+            int pendingPay = Integer.parseInt(totalPayment.getText()) - Integer.parseInt(advancePayment.getText());
+            pendingAmount.setText("Rs. " + pendingPay);
+        };
+        advancePayment.textProperty().addListener(pending);
+        
+        noOfPersons.textProperty().addListener(totalPriceChanger);
+        perHeadCharges.textProperty().addListener(totalPriceChanger);
         
         load1.setDisable(true);
         ObservableList<String> list = FXCollections.observableArrayList("Wedding", "Seminar", "Party", "Other", "Mehfill");
@@ -128,18 +149,28 @@ public class BookingController {
         loadData();
     }
     
-    private void total() {
-        if (perHeadCharges.getText() == null ||perHeadCharges.getText().isBlank()) {
-            
-            perHeadCharges.setText("0");
-        } else
-            totalPayment.setEditable(false);
-        perHeadCharges.textProperty().addListener((observable, oldValue, newValue) -> {
-            int persons = Integer.parseInt(noOfPersons.getText());
-            int charges = Integer.parseInt(perHeadCharges.getText());
-            
-            totalPayment.textProperty().setValue(String.valueOf(charges * persons));
-        });
+    private void makeNumber(TextField... textFields) {
+        for (TextField textField : textFields)
+            textField.textProperty().addListener((obs, v1, v2) -> {
+                if (v2 == null || v2.isEmpty()) textField.setText("0");
+                else {
+                    String plainText = v2.replaceAll("\\D", "");
+                    int newValue = Integer.parseInt(plainText.isEmpty() ? "0" : plainText);
+                    textField.setText("" + newValue);
+                }
+            });
+    }
+    
+    private void makeNumberOnly(TextField... textFields) {
+        for (TextField textField : textFields)
+            textField.textProperty().addListener((obs, v1, v2) -> {
+                if (v2 == null || v2.isEmpty()) textField.setText("0");
+                else {
+                    String plainText = v2.replaceAll("\\D", "");
+                    int newValue = Integer.parseInt(plainText.isEmpty() ? "0" : plainText);
+                    textField.setText("" + newValue);
+                }
+            });
     }
     
     private void createTable() {
@@ -201,7 +232,7 @@ public class BookingController {
     }
     
     static char[] OTP() {
-        int length = 16;
+        int length = 13;
         
         String numbers = "0123456789";
         
@@ -282,10 +313,6 @@ public class BookingController {
         phoneOfCustomer.clear();
         emailOfCustomer.clear();
         customerAddress.setText(null);
-    }
-    
-    public void save() {
-    
     }
 }
 
