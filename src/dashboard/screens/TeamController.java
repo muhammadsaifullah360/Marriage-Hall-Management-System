@@ -1,5 +1,6 @@
 package dashboard.screens;
 
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,6 +14,8 @@ public class TeamController {
     
     @FXML
     private ListView<String> selected_list;
+    @FXML
+    private JFXTextField search;
     
     public void initialize() {
     

@@ -63,26 +63,26 @@ public class EmployeePanelController {
     public void initData(Employee employee, OperationType type) {
         switch (type) {
             case ADD:
-                update_btn.setDisable(true);
-                delete_btn.setDisable(true);
+                update_btn.setVisible(false);
+                delete_btn.setVisible(false);
                 int nextID = DBService.getIntResult("Select MAX(ID)+1 From Employee");
                 id.setEditable(false);
                 id.setText("" + nextID);
                 break;
             case UPDATE:
-                add_btn.setDisable(true);
-                delete_btn.setDisable(true);
+                add_btn.setVisible(false);
+                delete_btn.setVisible(false);
                 fillForm(employee);
                 break;
             case DELETE:
-                add_btn.setDisable(true);
-                update_btn.setDisable(true);
+                add_btn.setVisible(false);
+                update_btn.setVisible(false);
                 fillForm(employee);
                 break;
             case VIEW:
-                add_btn.setDisable(true);
-                delete_btn.setDisable(true);
-                update_btn.setDisable(true);
+                add_btn.setVisible(false);
+                delete_btn.setVisible(false);
+                update_btn.setVisible(false);
                 fillForm(employee);
                 break;
             default:

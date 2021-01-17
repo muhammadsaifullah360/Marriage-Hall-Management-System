@@ -1,12 +1,16 @@
 package dashboard.screens;
 
 import com.jfoenix.controls.*;
+import dashboard.employee.Employee;
 import database.DBService;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
@@ -17,15 +21,30 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 public class BookingController {
     
     private static final ObservableList<viewBooking> booking_list = FXCollections.observableArrayList();
     ObservableList<String> MenuList = FXCollections.observableArrayList();
-    ObservableList<String> menuType = FXCollections.observableArrayList();
     ObservableList<String> facility = FXCollections.observableArrayList();
+    
+    ObservableList<String> available = FXCollections.observableArrayList();
+    ObservableList<String> selected = FXCollections.observableArrayList();
+    
+    
     int dishId;
+    @FXML
+    private JFXTextField search;
+    
+    @FXML
+    private ListView<String> teamMembers;
+    @FXML
+    private ListView<String > selectedMembers;
+    
     /////////////////////Table View/////////
     @FXML
     private TableView<viewBooking> bookingViewTable;
@@ -111,6 +130,7 @@ public class BookingController {
     @FXML
     private JFXTextField advancePayment;
     
+    
     public void initialize() throws SQLException {
         makeNumberOnly(noOfPersons, perHeadCharges,advancePayment, durationField);
         
@@ -156,6 +176,63 @@ public class BookingController {
         
         createTable();
         loadData();
+        listController();
+        teamMembers.setItems(available);
+        createSearchField();
+    }
+    
+    private void createSearchField() {
+        FilteredList<viewBooking> filteredData = new FilteredList<>(booking_list, b -> true);
+        search.textProperty().addListener((observable, oldV, newV) -> {
+            filteredData.setPredicate(viewBooking-> {
+                if (newV == null || newV.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newV.toLowerCase();
+                boolean matchType = viewBooking.getEventType().toLowerCase().contains(lowerCaseFilter);
+
+            
+                boolean matchID = false;
+                if (newV.matches("\\d*"))
+                    matchID = viewBooking.getId() == Integer.parseInt(newV.toLowerCase());
+                return matchType ||  matchID;
+            });
+        });
+    
+        SortedList<viewBooking> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(bookingViewTable.comparatorProperty());
+        bookingViewTable.setItems(sortedData);
+        bookingViewTable.getSelectionModel().select(0);
+    }
+    
+    public void onAdd (ActionEvent actionEvent){
+        String potential = teamMembers.getSelectionModel().getSelectedItem();
+        if (potential != null) {
+            teamMembers.getSelectionModel().clearSelection();
+                available.remove(potential);
+                selected.add(potential);
+                selectedMembers.setItems(selected);
+        }
+    }
+    
+    public void onBack (ActionEvent actionEvent){
+        String potential = selectedMembers.getSelectionModel().getSelectedItem();
+        if (potential != null) {
+            selectedMembers.getSelectionModel().clearSelection();
+            selected.remove(potential);
+            available.add(potential);
+            teamMembers.setItems(available);
+        }
+    }
+    
+    public List<String> listController() throws SQLException {
+        String query = String.format("select * from employee");
+        ResultSet rs =DBService.statement.executeQuery(query);
+        while (rs.next()){
+            
+            available.add(rs.getString("name"));
+        }
+        return available;
     }
     
     private void makeNumberOnly(TextField... textFields) {
@@ -179,7 +256,6 @@ public class BookingController {
         hallNoCol.setCellValueFactory(new PropertyValueFactory<>("hallNo"));
         endTimeCol.setCellValueFactory(new PropertyValueFactory<>("eventEndTime"));
         eventDateCol.setCellValueFactory(new PropertyValueFactory<>("eventDate"));
-    
     
         bookingViewTable.setItems(booking_list);
     }
@@ -287,7 +363,7 @@ public class BookingController {
                         customerAddress.getText());
                 
                 
-                String team = String.format("insert into team( id ,task_type)values(%d, '%s')", Integer.parseInt(teamID.getText()), nameOfCustomer.getText());
+                String team = String.format("insert into team( id ,task_type)values(%d, '%s')", Integer.parseInt(teamID.getText()),selected );
                 
                 String menuDetail = String.format("INSERT  INTO Menu (Booking_Id,Menu_Service,Decoration,facility,Description)VALUES(%d,'%s','%s','%s','%s')",
                         Integer.parseInt(eventId.getText()),
@@ -297,6 +373,9 @@ public class BookingController {
                         menuDescription.getText()
                 );
                 System.out.println(dishId);
+    
+//
+                
                 
                 String menuList = String.format("Insert into Dish (id,name,Date_time )values(%d,'%s',to_char(sysdate , 'yyyy-mm-dd'))", dishId, MenuList);
                 
@@ -304,8 +383,17 @@ public class BookingController {
                 DBService.statement.executeUpdate(customerDetail);
                 DBService.statement.executeUpdate(bookingDetail);
                 DBService.statement.executeUpdate(menuDetail);
-//                DBService.statement.executeUpdate(menuList);
-                
+                DBService.statement.executeUpdate(menuList);
+                for(var dish : getSelectedDishes()){
+                    System.out.println(dish);
+                    int dishID = DBService.getIntResult("Select id From Dish where name='%s'" + dish);
+        
+                    String query = String.format("Insert into booking_Dish values(%d ,%d)",
+                            Integer.parseInt(eventId.getText()),
+                            dishID);
+        
+                    DBService.executeUpdate(query);
+                }
                 saveLabel.setText("Saved");
                 
                 clearFields();
@@ -313,6 +401,15 @@ public class BookingController {
                 e.printStackTrace();
             }
         }
+    }
+    private List<String> getSelectedDishes() {
+        List<String> selectedDishes = new ArrayList<>();
+        Set<Node> nodes = DishesPane.lookupAll(".check-box");
+        if (nodes != null) nodes.forEach(node -> {
+            String dish = ((CheckBox) node).getText();
+            selectedDishes.add(dish);
+        });
+        return selectedDishes;
     }
     
     public void clearFields() {
@@ -342,6 +439,7 @@ public class BookingController {
         alert.setHeaderText("Saved");
         alert.setContentText("Your Payment Details are Successfully Saved! ");
         alert.showAndWait();
+        loadData();
     }
 }
 

@@ -219,7 +219,7 @@
                                     <Insets left="5.0" />
                                  </padding>
                               </JFXTextField>
-                              <Label layoutX="456.0" layoutY="344.0" prefHeight="25.0" prefWidth="121.0" text="Team Members">
+                              <Label layoutX="510.0" layoutY="278.0" prefHeight="25.0" prefWidth="121.0" text="Team Members">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
@@ -234,7 +234,21 @@
                                     <Insets left="5.0" />
                                  </padding>
                               </JFXTextField>
-                              <ListView fx:id="members" layoutX="618.0" layoutY="362.0" prefHeight="160.0" prefWidth="173.0" />
+                              <ListView fx:id="teamMembers" layoutX="510.0" layoutY="315.0" prefHeight="160.0" prefWidth="122.0" />
+                              <ListView fx:id="selectedMembers" layoutX="703.0" layoutY="315.0" prefHeight="160.0" prefWidth="122.0" />
+                              <Label layoutX="699.0" layoutY="279.0" prefHeight="25.0" prefWidth="143.0" text="Selected Members">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton fx:id="transfer" layoutX="649.0" layoutY="341.0" onAction="#onAdd" style="-fx-background-color: gold;" text="&gt;&gt;&gt;">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></JFXButton>
+                              <JFXButton fx:id="transfer1" layoutX="650.0" layoutY="383.0" onAction="#onBack" style="-fx-background-color: gold;" text="&lt;&lt;&lt;">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor></JFXButton>
                            </children>
                         </AnchorPane>
                      </content>
@@ -488,7 +502,7 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                <children>
-                  <TableView fx:id="bookingViewTable" layoutX="14.0" layoutY="93.0" prefHeight="430.0" prefWidth="872.0">
+                  <TableView fx:id="bookingViewTable" layoutX="14.0" layoutY="93.0" prefHeight="430.0" prefWidth="901.0">
                     <columns>
                       <TableColumn fx:id="bookingIdCol" prefWidth="75.0" text="Booking ID" />
                       <TableColumn fx:id="eventTypeCol" prefWidth="118.0" text="Event Type" />
@@ -500,6 +514,34 @@
                         <TableColumn fx:id="endTimeCol" prefWidth="112.0" text="End Time" />
                     </columns>
                   </TableView>
+                  <AnchorPane layoutX="150.0" layoutY="545.0" prefHeight="67.0" prefWidth="624.0" style="-fx-background-color: #666666; -fx-background-radius: 10px;">
+                     <children>
+                        <JFXButton buttonType="RAISED" layoutX="79.0" layoutY="18.0" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: gold; -fx-background-radius: 10px;" text="Update">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" layoutX="278.0" layoutY="20.0" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: gold; -fx-background-radius: 10px;" text="View">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" layoutX="484.0" layoutY="20.0" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: gold; -fx-background-radius: 10px;" text="Delete">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="586.0" layoutY="18.0" prefHeight="54.0" prefWidth="325.0" style="-fx-background-color: #666666; -fx-background-radius: 10px;">
+                     <children>
+                        <JFXTextField fx:id="search" layoutX="37.0" layoutY="15.0" prefHeight="25.0" prefWidth="254.0" promptText="search here" style="-fx-background-color: white; -fx-background-radius: 10px; -jfx-focus-color: transparent; -jfx-unfocus-color: transparent;">
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </JFXTextField>
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
         </content>

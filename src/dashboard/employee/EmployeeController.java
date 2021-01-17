@@ -73,7 +73,7 @@ public class EmployeeController {
     }
     
     public void initialize() {
-        add_btn.setDisable(true);
+        add_btn.setDisable(false);
         delete_btn.setDisable(true);
         update_btn.setDisable(true);
         view_btn.setDisable(true);
@@ -91,7 +91,7 @@ public class EmployeeController {
         employee_table.setItems(employee_list);
         employee_table.getSelectionModel().selectedItemProperty().addListener((obs, oldRow, newRow) -> {
             if (newRow == null) {
-                add_btn.setDisable(true);
+                add_btn.setDisable(false);
                 delete_btn.setDisable(true);
                 update_btn.setDisable(true);
                 view_btn.setDisable(true);

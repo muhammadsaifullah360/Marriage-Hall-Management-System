@@ -49,7 +49,7 @@ public class StockController {
     @FXML
     private TableColumn<supplier, String> supplierAddress_col;
     @FXML
-    private JFXTextField searchBar;
+    private JFXTextField searchField;
     
     public void initialize() throws SQLException {
         makeNumberOnly(supplierId);
@@ -57,7 +57,7 @@ public class StockController {
         loadData();
         createTable();
     
-//        searchFilter();
+        searchFilter();
     }
     
     private void makeNumberOnly(TextField... textFields) {
@@ -100,7 +100,7 @@ public class StockController {
     
     private void searchFilter() {
         FilteredList<supplier> filteredData = new FilteredList<>(supplier_List, b -> true);
-        searchBar.textProperty().addListener((observable, oldValue, newValue) -> {
+        searchField.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(supplier -> {
                 if (newValue == null || newValue.isEmpty()) {
                     return true;
@@ -225,6 +225,6 @@ public class StockController {
     }
     
     public void clear() {
-        searchBar.clear();
+        searchField.clear();
     }
 }
