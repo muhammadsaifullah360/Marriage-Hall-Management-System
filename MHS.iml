@@ -12,5 +12,7 @@
     <orderEntry type="library" name="javafx-sdk-15" level="application" />
     <orderEntry type="library" name="h2-1.4.200" level="application" />
     <orderEntry type="library" name="itextpdf-5.4.2" level="application" />
+    <orderEntry type="library" name="activation" level="application" />
+    <orderEntry type="library" name="javax.mail1" level="application" />
   </component>
 </module>

@@ -45,7 +45,7 @@ public class EmployeePanelController {
     
     
     public  void initialize(){
-        makeNumberOnly(phoneNo , workingHours, salary, duration);
+        makeNumberOnly( workingHours, salary, duration);
     }
     
     private void makeNumberOnly(TextField... textFields) {

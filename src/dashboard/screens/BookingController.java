@@ -5,6 +5,7 @@ import database.DBService;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -14,6 +15,8 @@ import util.StageHandler;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Random;
 
 public class BookingController {
@@ -30,6 +33,18 @@ public class BookingController {
     private TableColumn<viewBooking, Integer> bookingIdCol;
     @FXML
     private TableColumn<viewBooking, String> eventTypeCol;
+    @FXML
+    private TableColumn<viewBooking, Integer> totalPersonCol;
+    @FXML
+    private TableColumn<viewBooking, LocalTime> startTimeCol;
+    @FXML
+    private TableColumn<viewBooking, Integer> DurationCol;
+    @FXML
+    private TableColumn<viewBooking, String> hallNoCol;
+    @FXML
+    private TableColumn<viewBooking, LocalTime> endTimeCol;
+    @FXML
+    private TableColumn<viewBooking, LocalDate> eventDateCol;
     ///////////booking//////////
     @FXML
     private JFXTextField eventId;
@@ -66,11 +81,9 @@ public class BookingController {
     @FXML
     private JFXTextArea menuDescription;
     @FXML
-    private AnchorPane MenuSelect;
+    private AnchorPane menuPane;
     @FXML
     private AnchorPane DishesPane;
-    @FXML
-    private AnchorPane DishesPane1;
     @FXML
     private CheckBox acCheck;
     @FXML
@@ -85,6 +98,8 @@ public class BookingController {
     private JFXComboBox<String> decorationBox;
     @FXML
     private JFXButton load1;
+    
+    //////////billing/////////
     @FXML
     private JFXTextField invoiceNo;
     @FXML
@@ -97,7 +112,7 @@ public class BookingController {
     private JFXTextField advancePayment;
     
     public void initialize() throws SQLException {
-        makeNumberOnly(noOfPersons, perHeadCharges,advancePayment,phoneOfCustomer, durationField);
+        makeNumberOnly(noOfPersons, perHeadCharges,advancePayment, durationField);
         
         ChangeListener<String> totalPriceChanger = (obs, v1, v2) -> {
             int totalPrice = Integer.parseInt(noOfPersons.getText()) * Integer.parseInt(perHeadCharges.getText());
@@ -155,11 +170,17 @@ public class BookingController {
             });
     }
     
-
-    
     private void createTable() {
         bookingIdCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         eventTypeCol.setCellValueFactory(new PropertyValueFactory<>("eventType"));
+        totalPersonCol.setCellValueFactory(new PropertyValueFactory<>("noOfPersons"));
+        startTimeCol.setCellValueFactory(new PropertyValueFactory<>("eventStartTime"));
+        DurationCol.setCellValueFactory(new PropertyValueFactory<>("duration"));
+        hallNoCol.setCellValueFactory(new PropertyValueFactory<>("hallNo"));
+        endTimeCol.setCellValueFactory(new PropertyValueFactory<>("eventEndTime"));
+        eventDateCol.setCellValueFactory(new PropertyValueFactory<>("eventDate"));
+    
+    
         bookingViewTable.setItems(booking_list);
     }
     
@@ -170,18 +191,22 @@ public class BookingController {
         while (rs.next()) {
             booking_list.add(new viewBooking(
                     rs.getInt("Id"),
-                    rs.getString("type")
+                    rs.getString("type"),
+                    rs.getInt("person_count"),
+                    rs.getTime("Start_Time").toLocalTime(),
+                    rs.getTime("end_Time").toLocalTime(),
+                    rs.getInt("Duration"),
+                    rs.getString("Location"),
+                    rs.getDate("Booking_Date").toLocalDate()
             ));
         }
     }
     
     public void checkMenuService() {
         if (menuService.getValue().equals("Self")) {
-            MenuSelect.setDisable(true);
-            DishesPane1.setVisible(false);
-            DishesPane.setVisible(false);
+            DishesPane.setDisable(true);
         } else {
-            MenuSelect.setDisable(false);
+            DishesPane.setDisable(false);
         }
     }
     
@@ -264,7 +289,7 @@ public class BookingController {
                 
                 String team = String.format("insert into team( id ,task_type)values(%d, '%s')", Integer.parseInt(teamID.getText()), nameOfCustomer.getText());
                 
-                String menuDetail = String.format("INSERT  INTO Menu (Booking_Id,Menu_Service,Decoration,facility,Description,dish_type)VALUES(%d,'%s','%s','%s','%s','%s')",
+                String menuDetail = String.format("INSERT  INTO Menu (Booking_Id,Menu_Service,Decoration,facility,Description)VALUES(%d,'%s','%s','%s','%s')",
                         Integer.parseInt(eventId.getText()),
                         menuService.getValue(),
                         decorationBox.getValue(),
@@ -279,7 +304,7 @@ public class BookingController {
                 DBService.statement.executeUpdate(customerDetail);
                 DBService.statement.executeUpdate(bookingDetail);
                 DBService.statement.executeUpdate(menuDetail);
-                DBService.statement.executeUpdate(menuList);
+//                DBService.statement.executeUpdate(menuList);
                 
                 saveLabel.setText("Saved");
                 
@@ -297,11 +322,26 @@ public class BookingController {
         eventStartTime.setValue(null);
         eventDate.setValue(null);
         eventEndTime.setValue(null);
-        noOfPersons.clear();
         nameOfCustomer.clear();
         phoneOfCustomer.clear();
         emailOfCustomer.clear();
         customerAddress.setText(null);
+    }
+    
+    public void savePayment(ActionEvent actionEvent) throws SQLException {
+        String query = String.format("Insert into Billing(Booking_Id , Total_Amount, Advance_Payment, Per_Head_Charges, Invoice_No , Date_Time)values(%d , %d, %d,%d,'%s',ParseDateTime(sysdate,  'yyyy-mm-dd'))",
+                Integer.parseInt(eventId.getText()),
+                Integer.parseInt(totalPayment.getText()),
+                Integer.parseInt(advancePayment.getText()),
+                Integer.parseInt(perHeadCharges.getText()),
+                invoiceNo.getText()
+                );
+        DBService.statement.executeUpdate(query);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Saved");
+        alert.setHeaderText("Saved");
+        alert.setContentText("Your Payment Details are Successfully Saved! ");
+        alert.showAndWait();
     }
 }
 

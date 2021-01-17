@@ -266,7 +266,7 @@
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </padding>
                               </JFXTextArea>
-                              <AnchorPane fx:id="DishesPane" layoutX="18.0" layoutY="27.0" prefHeight="116.0" prefWidth="459.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+                              <AnchorPane fx:id="DishesPane" disable="true" layoutX="18.0" layoutY="27.0" prefHeight="116.0" prefWidth="459.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
                                  <children>
                                     <VBox layoutX="33.0" layoutY="14.0" spacing="15.0">
                                        <children>
@@ -378,7 +378,7 @@
                               </Label>
                            </children>
                         </AnchorPane>
-                        <JFXTextField fx:id="invoiceNo" focusColor="WHITE" layoutX="216.0" layoutY="107.0" prefHeight="27.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: gold; -fx-border-radius: 5px; -jfx-unfocus-color: transparent;">
+                        <JFXTextField fx:id="invoiceNo" editable="false" focusColor="WHITE" layoutX="216.0" layoutY="107.0" prefHeight="27.0" prefWidth="140.0" style="-fx-background-color: white; -fx-border-color: gold; -fx-border-radius: 5px; -jfx-unfocus-color: transparent;">
                            <cursor>
                               <Cursor fx:constant="TEXT" />
                            </cursor>
@@ -410,9 +410,9 @@
                               </Text>
                            </children>
                         </VBox>
-                        <JFXButton fx:id="load1" buttonType="RAISED" layoutX="220.0" layoutY="496.0" prefHeight="29.0" prefWidth="91.0" style="-fx-background-color: gold;" text="Load Data">
+                        <JFXButton fx:id="load1" buttonType="RAISED" layoutX="220.0" layoutY="496.0" onAction="#savePayment" prefHeight="29.0" prefWidth="91.0" style="-fx-background-color: gold;" text="Save.">
                            <font>
-                              <Font size="13.0" />
+                              <Font size="16.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -488,14 +488,16 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
                <children>
-                  <TableView fx:id="bookingViewTable" layoutX="39.0" layoutY="90.0" prefHeight="430.0" prefWidth="872.0">
+                  <TableView fx:id="bookingViewTable" layoutX="14.0" layoutY="93.0" prefHeight="430.0" prefWidth="872.0">
                     <columns>
                       <TableColumn fx:id="bookingIdCol" prefWidth="75.0" text="Booking ID" />
-                      <TableColumn fx:id="eventTypeCol" prefWidth="75.0" text="Event Type" />
-                        <TableColumn prefWidth="75.0" text="Column X" />
-                        <TableColumn prefWidth="75.0" text="Column X" />
-                        <TableColumn prefWidth="75.0" text="Column X" />
-                        <TableColumn prefWidth="75.0" text="Column X" />
+                      <TableColumn fx:id="eventTypeCol" prefWidth="118.0" text="Event Type" />
+                        <TableColumn fx:id="totalPersonCol" prefWidth="96.0" text="Total Person" />
+                        <TableColumn fx:id="startTimeCol" prefWidth="85.0" text="Start Time" />
+                        <TableColumn fx:id="DurationCol" prefWidth="102.0" text="Duration (Hrs)" />
+                        <TableColumn fx:id="hallNoCol" prefWidth="89.0" text="Hall No" />
+                        <TableColumn fx:id="eventDateCol" prefWidth="75.0" text="Event Date" />
+                        <TableColumn fx:id="endTimeCol" prefWidth="112.0" text="End Time" />
                     </columns>
                   </TableView>
                </children>

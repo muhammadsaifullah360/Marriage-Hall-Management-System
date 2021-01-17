@@ -5,6 +5,7 @@ module MHM {
     requires com.jfoenix;
     requires com.h2database;
     requires itextpdf;
+    requires java.mail;
     opens dashboard;
     opens dashboard.screens;
     opens dashboard.employee;

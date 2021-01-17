@@ -52,10 +52,12 @@ public class StockController {
     private JFXTextField searchBar;
     
     public void initialize() throws SQLException {
-        makeNumberOnly(supplierId, supplierPhoneNum);
-        createTable();
+        makeNumberOnly(supplierId);
+       
         loadData();
-        createSearchFilter();
+        createTable();
+    
+        searchFilter();
     }
     
     private void makeNumberOnly(TextField... textFields) {
@@ -96,7 +98,7 @@ public class StockController {
         }
     }
     
-    private void createSearchFilter() {
+    private void searchFilter() {
         FilteredList<supplier> filteredData = new FilteredList<>(supplier_List, b -> true);
         searchBar.textProperty().addListener((observable, oldValue, newValue) -> {
             filteredData.setPredicate(supplier -> {
