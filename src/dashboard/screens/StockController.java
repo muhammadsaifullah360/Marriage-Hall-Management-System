@@ -57,7 +57,7 @@ public class StockController {
         loadData();
         createTable();
     
-        searchFilter();
+//        searchFilter();
     }
     
     private void makeNumberOnly(TextField... textFields) {
@@ -207,7 +207,7 @@ public class StockController {
     }
     
     private void initData(supplier supply) {
-        supplierId.setText(String.valueOf(supply.getId()));
+        supplierId.setText(" "+supply.getId());
         supplierName.setText(supply.getName());
         supplierAddress.setText(supply.getAddress());
         supplierPhoneNum.setText(supply.getPhoneNo());

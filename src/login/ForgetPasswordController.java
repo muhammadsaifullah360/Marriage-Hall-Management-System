@@ -50,7 +50,17 @@ public class ForgetPasswordController {
             alert.setContentText("Please Enter Your Email And Username");
             alert.showAndWait();
         } else {
+            String query = String.format("select * from signup where username = '%s' AND Email = '%s' ",
+                    usernameTxt.getText(),
+                    emailTxt.getText()
+            );
+            ResultSet rs = DBService.statement.executeQuery(query);
+            while (rs.next()){
+                
+                System.out.println(rs.getString("Email"));
+            }
             sendMail("importan0987@gmail.com");
+            
         }
     }
     
@@ -98,12 +108,11 @@ public class ForgetPasswordController {
             String htmlCode = "<h1> Your OTP Verification code: </h1> <br/> <h2><b>Next Line </b></h2>";
             message.setContent(htmlCode, "text/html");
             message.setText(code);
-            System.out.println(code);
             
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Done");
             alert.setHeaderText("OTP Sent On Your Mail");
-            alert.setContentText("Check your Email And Verify It TO Show Your Password!");
+            alert.setContentText("Check Your Email And Verify It To Show Your Password!");
             alert.showAndWait();
         } catch (Exception e) {
             e.printStackTrace();
@@ -127,21 +136,28 @@ public class ForgetPasswordController {
     
     public void onVerify(ActionEvent actionEvent) throws Exception {
         System.out.println(code);
+        
         if (code.equals(otpTxt.getText())) {
-            System.out.println("done");
+            System.out.println("DOne");
             String query = String.format("select * from signup where username = '%s' AND Email = '%s' ",
                     usernameTxt.getText(),
                     emailTxt.getText()
             );
             ResultSet rs = DBService.statement.executeQuery(query);
-            while (rs.next()) {
+            if (rs.next()) {
                 passwordTxt.setText(rs.getString("password"));
+            }else{
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Warning!");
+                alert.setHeaderText("Error");
+                alert.setContentText("The Email You Enter Is Wrong.");
+                alert.showAndWait();
             }
         } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Warning!");
             alert.setHeaderText("Error");
-            alert.setContentText("Please Enter a Correct OTP Code");
+            alert.setContentText("PLEASE ENTER A CORRECT OTP Code");
             alert.showAndWait();
         }
     }
