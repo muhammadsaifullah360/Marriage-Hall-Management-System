@@ -1,7 +1,8 @@
 package dashboard.screens;
 
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.PdfWriter;
 import com.jfoenix.controls.*;
-import dashboard.employee.Employee;
 import database.DBService;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
@@ -17,14 +18,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import util.StageHandler;
 
+import java.io.FileOutputStream;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 public class BookingController {
     
@@ -43,7 +43,7 @@ public class BookingController {
     @FXML
     private ListView<String> teamMembers;
     @FXML
-    private ListView<String > selectedMembers;
+    private ListView<String> selectedMembers;
     
     /////////////////////Table View/////////
     @FXML
@@ -132,7 +132,7 @@ public class BookingController {
     
     
     public void initialize() throws SQLException {
-        makeNumberOnly(noOfPersons, perHeadCharges,advancePayment, durationField);
+        makeNumberOnly(noOfPersons, perHeadCharges, advancePayment, durationField);
         
         ChangeListener<String> totalPriceChanger = (obs, v1, v2) -> {
             int totalPrice = Integer.parseInt(noOfPersons.getText()) * Integer.parseInt(perHeadCharges.getText());
@@ -172,67 +172,12 @@ public class BookingController {
         eventId.setEditable(false);
         eventId.setText("" + nextBookingID);
         
-        dishId = DBService.getIntResult("Select MAX(ID)+1 From Dish");
         
         createTable();
         loadData();
         listController();
         teamMembers.setItems(available);
         createSearchField();
-    }
-    
-    private void createSearchField() {
-        FilteredList<viewBooking> filteredData = new FilteredList<>(booking_list, b -> true);
-        search.textProperty().addListener((observable, oldV, newV) -> {
-            filteredData.setPredicate(viewBooking-> {
-                if (newV == null || newV.isEmpty()) {
-                    return true;
-                }
-                String lowerCaseFilter = newV.toLowerCase();
-                boolean matchType = viewBooking.getEventType().toLowerCase().contains(lowerCaseFilter);
-
-            
-                boolean matchID = false;
-                if (newV.matches("\\d*"))
-                    matchID = viewBooking.getId() == Integer.parseInt(newV.toLowerCase());
-                return matchType ||  matchID;
-            });
-        });
-    
-        SortedList<viewBooking> sortedData = new SortedList<>(filteredData);
-        sortedData.comparatorProperty().bind(bookingViewTable.comparatorProperty());
-        bookingViewTable.setItems(sortedData);
-        bookingViewTable.getSelectionModel().select(0);
-    }
-    
-    public void onAdd (ActionEvent actionEvent){
-        String potential = teamMembers.getSelectionModel().getSelectedItem();
-        if (potential != null) {
-            teamMembers.getSelectionModel().clearSelection();
-                available.remove(potential);
-                selected.add(potential);
-                selectedMembers.setItems(selected);
-        }
-    }
-    
-    public void onBack (ActionEvent actionEvent){
-        String potential = selectedMembers.getSelectionModel().getSelectedItem();
-        if (potential != null) {
-            selectedMembers.getSelectionModel().clearSelection();
-            selected.remove(potential);
-            available.add(potential);
-            teamMembers.setItems(available);
-        }
-    }
-    
-    public List<String> listController() throws SQLException {
-        String query = String.format("select * from employee");
-        ResultSet rs =DBService.statement.executeQuery(query);
-        while (rs.next()){
-            
-            available.add(rs.getString("name"));
-        }
-        return available;
     }
     
     private void makeNumberOnly(TextField... textFields) {
@@ -256,7 +201,7 @@ public class BookingController {
         hallNoCol.setCellValueFactory(new PropertyValueFactory<>("hallNo"));
         endTimeCol.setCellValueFactory(new PropertyValueFactory<>("eventEndTime"));
         eventDateCol.setCellValueFactory(new PropertyValueFactory<>("eventDate"));
-    
+        
         bookingViewTable.setItems(booking_list);
     }
     
@@ -275,6 +220,60 @@ public class BookingController {
                     rs.getString("Location"),
                     rs.getDate("Booking_Date").toLocalDate()
             ));
+        }
+    }
+    
+    public List<String> listController() throws SQLException {
+        String query = String.format("select * from employee");
+        ResultSet rs = DBService.statement.executeQuery(query);
+        while (rs.next()) {
+            
+            available.add(rs.getString("name"));
+        }
+        return available;
+    }
+    
+    private void createSearchField() {
+        FilteredList<viewBooking> filteredData = new FilteredList<>(booking_list, b -> true);
+        search.textProperty().addListener((observable, oldV, newV) -> {
+            filteredData.setPredicate(viewBooking -> {
+                if (newV == null || newV.isEmpty()) {
+                    return true;
+                }
+                String lowerCaseFilter = newV.toLowerCase();
+                boolean matchType = viewBooking.getEventType().toLowerCase().contains(lowerCaseFilter);
+                
+                
+                boolean matchID = false;
+                if (newV.matches("\\d*"))
+                    matchID = viewBooking.getId() == Integer.parseInt(newV.toLowerCase());
+                return matchType || matchID;
+            });
+        });
+        
+        SortedList<viewBooking> sortedData = new SortedList<>(filteredData);
+        sortedData.comparatorProperty().bind(bookingViewTable.comparatorProperty());
+        bookingViewTable.setItems(sortedData);
+        bookingViewTable.getSelectionModel().select(0);
+    }
+    
+    public void onAdd(ActionEvent actionEvent) {
+        String potential = teamMembers.getSelectionModel().getSelectedItem();
+        if (potential != null) {
+            teamMembers.getSelectionModel().clearSelection();
+            available.remove(potential);
+            selected.add(potential);
+            selectedMembers.setItems(selected);
+        }
+    }
+    
+    public void onBack(ActionEvent actionEvent) {
+        String potential = selectedMembers.getSelectionModel().getSelectedItem();
+        if (potential != null) {
+            selectedMembers.getSelectionModel().clearSelection();
+            selected.remove(potential);
+            available.add(potential);
+            teamMembers.setItems(available);
         }
     }
     
@@ -363,7 +362,7 @@ public class BookingController {
                         customerAddress.getText());
                 
                 
-                String team = String.format("insert into team( id ,task_type)values(%d, '%s')", Integer.parseInt(teamID.getText()),selected );
+                String team = String.format("insert into team( id ,task_type)values(%d, '%s')", Integer.parseInt(teamID.getText()), selected);
                 
                 String menuDetail = String.format("INSERT  INTO Menu (Booking_Id,Menu_Service,Decoration,facility,Description)VALUES(%d,'%s','%s','%s','%s')",
                         Integer.parseInt(eventId.getText()),
@@ -372,36 +371,31 @@ public class BookingController {
                         heaterCheck.getText(),
                         menuDescription.getText()
                 );
-                System.out.println(dishId);
-    
-//
-                
-                
-                String menuList = String.format("Insert into Dish (id,name,Date_time )values(%d,'%s',to_char(sysdate , 'yyyy-mm-dd'))", dishId, MenuList);
+
+//                String menuList = String.format("Insert into Dish (Booking _id,name )values(%d,'%s'))", Integer.parseInt(eventId.getText()), );
                 
                 DBService.statement.executeUpdate(team);
                 DBService.statement.executeUpdate(customerDetail);
                 DBService.statement.executeUpdate(bookingDetail);
                 DBService.statement.executeUpdate(menuDetail);
-                DBService.statement.executeUpdate(menuList);
-                for(var dish : getSelectedDishes()){
-                    System.out.println(dish);
-                    int dishID = DBService.getIntResult("Select id From Dish where name='%s'" + dish);
-        
-                    String query = String.format("Insert into booking_Dish values(%d ,%d)",
+                for (var dish : getSelectedDishes()) {
+                    
+                    String query = String.format("Insert into Dish (Booking_id,Dish_name )values(%d,'%s')",
                             Integer.parseInt(eventId.getText()),
-                            dishID);
-        
-                    DBService.executeUpdate(query);
+                            dish);
+                    DBService.statement.executeUpdate(query);
                 }
+    
+    
                 saveLabel.setText("Saved");
-                
-                clearFields();
+                loadData();
+//                clearFields();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
     }
+    
     private List<String> getSelectedDishes() {
         List<String> selectedDishes = new ArrayList<>();
         Set<Node> nodes = DishesPane.lookupAll(".check-box");
@@ -432,7 +426,7 @@ public class BookingController {
                 Integer.parseInt(advancePayment.getText()),
                 Integer.parseInt(perHeadCharges.getText()),
                 invoiceNo.getText()
-                );
+        );
         DBService.statement.executeUpdate(query);
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Saved");
@@ -440,6 +434,85 @@ public class BookingController {
         alert.setContentText("Your Payment Details are Successfully Saved! ");
         alert.showAndWait();
         loadData();
+    }
+    
+    public void getReceipt(ActionEvent actionEvent) {
+        try {
+            String pdf = "E:\\javaPdf\\Receipt.pdf";
+            Document document = new Document(PageSize.A4);
+            PdfWriter.getInstance(document, new FileOutputStream(pdf));
+            
+            document.open();
+            Image img = Image.getInstance("E:\\javaPdf\\qq.jpg");
+            document.add(img);
+            
+            Paragraph p1 = new Paragraph("Marriage Hall Management", FontFactory.getFont(FontFactory.TIMES_BOLD, 25, Font.BOLD, BaseColor.RED));
+            p1.setAlignment(Element.ALIGN_CENTER);
+            document.add(p1);
+            Paragraph p2 = new Paragraph(new Date().toString() + "                                                 Contact Number: 03041302417");
+            p2.setSpacingBefore(10);
+            p2.setFont(FontFactory.getFont(FontFactory.TIMES_BOLD, 25, Font.BOLD));
+            document.add(p2);
+            document.add(new Paragraph("---------------------------------------------------------------------------------------------------------------------------------"));
+            String num = invoiceNo.getText();
+            Paragraph inV = new Paragraph("Invoice Number : " + num + "\n\n");
+            document.add(inV);
+    
+            Paragraph p3 = new Paragraph("Booking Details", FontFactory.getFont(FontFactory.TIMES_BOLD, 25, Font.BOLD, BaseColor.RED));
+            p3.setAlignment(Element.ALIGN_CENTER);
+            document.add(p3);
+    
+            Paragraph inVoice = new Paragraph("\n\n" +
+                    "Customer Name............................................... " + nameOfCustomer.getText() + "\n" +
+                    "Event Type.................................................. " + eventType.getValue() + "\n" +
+                    "Event Date.................................................. " + eventDate.getValue() + "\n" +
+                    "Event Start Time............................................ " + eventStartTime.getValue() + "\n" +
+                    "No of Persons............................................... " + noOfPersons.getText() + "\n" +
+                    "Duration.................................................... " + durationField.getText() + " Hours" + "\n" +
+                    "Hall No..................................................... " + hallNo.getValue() + "\n\n" +
+                    "Selected Dishes:" + "\n" + "          " + dishes()+"\n\n"+
+                    "Facility             "+heaterCheck.getText()+
+                    "-------------------------------------------------"+"\n"+
+                    "Per Head Charges          "+"Rs."+perHeadCharges.getText()+"\n"+
+                    "Advance Payment          "+"Rs."+advancePayment.getText()+"\n\n"+
+                    "-------------------------------------------------"+"\n"+
+                    "Pending Amount           "+pendingAmount.getText()
+            );
+            document.add(inVoice);
+            document.close();
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Message");
+            alert.setHeaderText("Successfully");
+            alert.setContentText("PDF Generated");
+            alert.showAndWait();
+            System.out.println("Done!!!!!!!!");
+        } catch (Exception e) {
+            
+            e.printStackTrace();
+        }
+    }
+    
+    private ObservableList<String> dishes() throws SQLException {
+        String query = String.format("select dish_Name from dish where booking_Id = %d", Integer.parseInt(eventId.getText()));
+        ResultSet rs = DBService.statement.executeQuery(query);
+        while (rs.next()) {
+            MenuList.addAll(rs.getString("dish_name"));
+        }
+        return MenuList;
+    }
+    
+    public void onDeleteBooking(ActionEvent actionEvent) throws SQLException
+    {
+//       bookingViewTable.getSelectionModel().getSelectedItem();
+//        int selectedIndex = bookingViewTable.getSelectionModel().getSelectedIndex();
+//        bookingViewTable.getItems().remove(selectedIndex);
+//        String selectedItem = bookingIdCol.getText();
+//        if (selectedIndex >= 0) {
+////
+////            String query1 = String.format("DELETE FROM booking WHERE Id = %d", Integer.parseInt(selectedItem));
+////            DBService.statement.executeUpdate(query1);
+//            bookingViewTable.getItems().remove(selectedItem);
+//        }
     }
 }
 

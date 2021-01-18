@@ -107,9 +107,9 @@
    <top>
       <HBox alignment="CENTER" prefHeight="50.0" style="-fx-background-color: grey;">
          <children>
-            <Label alignment="CENTER" prefHeight="32.0" prefWidth="299.0" style="-fx-border-color: gold;" text="Marriage Hall Management" textFill="GOLD">
+            <Label alignment="CENTER" prefHeight="32.0" prefWidth="431.0" style="-fx-border-color: gold;" text="Marriage Hall Management" textFill="GOLD">
                <font>
-                  <Font name="System Bold" size="20.0" />
+                  <Font name="Book Antiqua Bold" size="20.0" />
                </font>
             </Label>
          </children>

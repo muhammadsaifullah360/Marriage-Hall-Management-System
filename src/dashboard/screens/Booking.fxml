@@ -261,7 +261,7 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <AnchorPane prefHeight="648.0" prefWidth="947.0" style="-fx-background-color: white;">
+                  <AnchorPane fx:id="mainPane" prefHeight="648.0" prefWidth="947.0" style="-fx-background-color: white;">
                      <children>
                         <Label layoutX="97.0" layoutY="75.0" prefHeight="30.0" prefWidth="123.0" text="Menu Service " underline="true">
                            <font>
@@ -291,12 +291,25 @@
                                     </VBox>
                                     <VBox layoutX="118.0" layoutY="14.0" spacing="15.0">
                                        <children>
-                                          <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="112.0" text="Cold Drinks/Tea" />
-                                          <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="Sweet Dishes" />
-                                          <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="87.0" text="Others" />
+                                          <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="112.0" text="Cold Drink" />
+                                          <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="104.0" text="Sweet Dish" />
+                                          <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="87.0" text="Vegs" />
                                        </children>
                                     </VBox>
                                     <CheckBox fx:id="others" layoutX="118.0" layoutY="72.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="67.0" text="Other" visible="false" />
+                                    <VBox layoutX="253.0" layoutY="14.0" prefHeight="81.0" prefWidth="97.0" spacing="15.0">
+                                       <children>
+                                          <CheckBox mnemonicParsing="false" text="Other Rice" />
+                                          <CheckBox mnemonicParsing="false" text="Tea" />
+                                          <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="111.0" text="Mutton /Beef" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="366.0" layoutY="14.0" spacing="15.0">
+                                       <children>
+                                          <CheckBox mnemonicParsing="false" text="Broast" />
+                                          <CheckBox mnemonicParsing="false" text="others" />
+                                       </children>
+                                    </VBox>
                                  </children>
                               </AnchorPane>
                            </children>
@@ -424,7 +437,7 @@
                               </Text>
                            </children>
                         </VBox>
-                        <JFXButton fx:id="load1" buttonType="RAISED" layoutX="220.0" layoutY="496.0" onAction="#savePayment" prefHeight="29.0" prefWidth="91.0" style="-fx-background-color: gold;" text="Save.">
+                        <JFXButton fx:id="load1" buttonType="RAISED" layoutX="220.0" layoutY="496.0" onAction="#savePayment" prefHeight="18.0" prefWidth="70.0" style="-fx-background-color: gold;" text="Save.">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -492,6 +505,14 @@
                               <Font name="System Bold" size="17.0" />
                            </font>
                         </Text>
+                        <JFXButton fx:id="load11" buttonType="RAISED" layoutX="364.0" layoutY="498.0" onAction="#getReceipt" prefHeight="35.0" prefWidth="96.0" style="-fx-background-color: gold; -fx-background-radius: 10px;" text="Print Receipt">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
                      </children>
                   </AnchorPane>
                </children>
@@ -526,7 +547,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton buttonType="RAISED" layoutX="484.0" layoutY="20.0" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: gold; -fx-background-radius: 10px;" text="Delete">
+                        <JFXButton buttonType="RAISED" layoutX="484.0" layoutY="20.0" onAction="#onDeleteBooking" prefHeight="30.0" prefWidth="85.0" style="-fx-background-color: gold; -fx-background-radius: 10px;" text="Delete">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
