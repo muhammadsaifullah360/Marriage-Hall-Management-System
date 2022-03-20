@@ -1,0 +1,477 @@
+--------------------------------------------------------
+--  File created - Sunday-November-22-2020   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Sequence DEPARTMENTS_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "HR"."DEPARTMENTS_SEQ"  MINVALUE 1 MAXVALUE 9990 INCREMENT BY 10 START WITH 280 NOCACHE  NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence EMPLOYEES_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "HR"."EMPLOYEES_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 207 NOCACHE  NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Sequence LOCATIONS_SEQ
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "HR"."LOCATIONS_SEQ"  MINVALUE 1 MAXVALUE 9900 INCREMENT BY 100 START WITH 3300 NOCACHE  NOORDER  NOCYCLE ;
+--------------------------------------------------------
+--  DDL for Table EMP_BASIC_DETAIL
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."EMP_BASIC_DETAIL" 
+   (	"ID" NUMBER, 
+	"FIRST_NAME" VARCHAR2(20 BYTE), 
+	"LAST_NAME" VARCHAR2(20 BYTE), 
+	"FATHER_NAME" VARCHAR2(30 BYTE), 
+	"EMR_NAME" VARCHAR2(30 BYTE), 
+	"CNIC" VARCHAR2(20 BYTE), 
+	"AGE" VARCHAR2(20 BYTE), 
+	"DOB" DATE, 
+	"NATIONALITY" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table EMP_EXPERIENCE_DETAIL
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."EMP_EXPERIENCE_DETAIL" 
+   (	"EMP_ID" NUMBER, 
+	"CERTIFCATE" VARCHAR2(50 BYTE), 
+	"STARTING_DATE" DATE, 
+	"ENDING_DATE" DATE, 
+	"DESIGNATION" VARCHAR2(100 BYTE), 
+	"ORGANIZATION" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table EMP_DUTY_DETAILS
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."EMP_DUTY_DETAILS" 
+   (	"EMP_ID" NUMBER, 
+	"DUTY_TIME" DATE, 
+	"SHIFTS" VARCHAR2(20 BYTE), 
+	"SALARY" NUMBER, 
+	"DESIGNATION" VARCHAR2(100 BYTE), 
+	"TYPE" VARCHAR2(50 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table EMP_QUALIFICATION_DETAIL
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."EMP_QUALIFICATION_DETAIL" 
+   (	"EMP_ID" NUMBER, 
+	"DEGREE_TITLE" VARCHAR2(50 BYTE), 
+	"INSTITUTE" VARCHAR2(100 BYTE), 
+	"EXAM_BOARD" VARCHAR2(50 BYTE), 
+	"TOTAL_MARKS" VARCHAR2(20 BYTE), 
+	"OBTAIN_MARKS" VARCHAR2(20 BYTE), 
+	"GRADE" VARCHAR2(20 BYTE), 
+	"COUNTRY" VARCHAR2(20 BYTE), 
+	"DO_STARTING" DATE, 
+	"DO_COMP" DATE
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table EMP_SKILLS_DETAIL
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."EMP_SKILLS_DETAIL" 
+   (	"EMP_ID" NUMBER, 
+	"ORGANIZATION" VARCHAR2(100 BYTE), 
+	"CERTIFCATE" VARCHAR2(100 BYTE), 
+	"STARTING_DATE" DATE, 
+	"ENDING_DATE" DATE, 
+	"REMARKS" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table EVENT
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."EVENT" 
+   (	"EVENTTYPE" VARCHAR2(29 BYTE), 
+	"EVENTSTARTTIME" DATE, 
+	"EVENTDATE" DATE, 
+	"NOOFPERSON" VARCHAR2(20 BYTE), 
+	"NAMEOFCUSTOMER" VARCHAR2(30 BYTE), 
+	"PHONENOOFCUSTOMER" VARCHAR2(20 BYTE), 
+	"EMAILOFCUSTOMER" VARCHAR2(30 BYTE), 
+	"EVENTENDINGTIME" DATE, 
+	"HALLNO" VARCHAR2(50 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table SIGNUP
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."SIGNUP" 
+   (	"PASSWORD" VARCHAR2(20 BYTE), 
+	"FIRSTNAME" VARCHAR2(30 BYTE), 
+	"LASTNAME" VARCHAR2(30 BYTE), 
+	"USERNAME" VARCHAR2(30 BYTE), 
+	"PHONENO" VARCHAR2(20 BYTE), 
+	"EMAIL" VARCHAR2(30 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MENU
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."MENU" 
+   (	"DISHES" VARCHAR2(20 BYTE), 
+	"MENUSERVICE" VARCHAR2(20 BYTE), 
+	"DECORATION" VARCHAR2(20 BYTE), 
+	"COMMENTS" VARCHAR2(1000 BYTE), 
+	"FACILITY" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table EMP_CONTACT_DETAIL
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."EMP_CONTACT_DETAIL" 
+   (	"EMP_ID" NUMBER, 
+	"EMAIL" VARCHAR2(30 BYTE), 
+	"PHONE_NO" VARCHAR2(20 BYTE), 
+	"O_PHONE_NO" VARCHAR2(20 BYTE), 
+	"FAX_NO" VARCHAR2(30 BYTE), 
+	"PER_ADDRES" VARCHAR2(1000 BYTE), 
+	"CUR_ADDRES" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table EMP_BASIC_DETAIL
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."EMP_BASIC_DETAIL" 
+   (	"ID" NUMBER, 
+	"FIRST_NAME" VARCHAR2(20 BYTE), 
+	"LAST_NAME" VARCHAR2(20 BYTE), 
+	"FATHER_NAME" VARCHAR2(30 BYTE), 
+	"EMR_NAME" VARCHAR2(30 BYTE), 
+	"CNIC" VARCHAR2(20 BYTE), 
+	"AGE" VARCHAR2(20 BYTE), 
+	"DOB" DATE, 
+	"NATIONALITY" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table COUNTRIES
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."COUNTRIES" 
+   (	"COUNTRY_ID" CHAR(2 BYTE), 
+	"COUNTRY_NAME" VARCHAR2(40 BYTE), 
+	"REGION_ID" NUMBER, 
+	 CONSTRAINT "COUNTRY_C_ID_PK" PRIMARY KEY ("COUNTRY_ID") ENABLE
+   ) ORGANIZATION INDEX NOCOMPRESS PCTFREE 10 INITRANS 2 MAXTRANS 255 LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" 
+ PCTTHRESHOLD 50;
+
+   COMMENT ON COLUMN "HR"."COUNTRIES"."COUNTRY_ID" IS 'Primary key of countries table.';
+   COMMENT ON COLUMN "HR"."COUNTRIES"."COUNTRY_NAME" IS 'Country name';
+   COMMENT ON COLUMN "HR"."COUNTRIES"."REGION_ID" IS 'Region ID for the country. Foreign key to region_id column in the departments table.';
+   COMMENT ON TABLE "HR"."COUNTRIES"  IS 'country table. Contains 25 rows. References with locations table.';
+--------------------------------------------------------
+--  DDL for Table DEPARTMENTS
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."DEPARTMENTS" 
+   (	"DEPARTMENT_ID" NUMBER(4,0), 
+	"DEPARTMENT_NAME" VARCHAR2(30 BYTE), 
+	"MANAGER_ID" NUMBER(6,0), 
+	"LOCATION_ID" NUMBER(4,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+
+   COMMENT ON COLUMN "HR"."DEPARTMENTS"."DEPARTMENT_ID" IS 'Primary key column of departments table.';
+   COMMENT ON COLUMN "HR"."DEPARTMENTS"."DEPARTMENT_NAME" IS 'A not null column that shows name of a department. Administration,
+Marketing, Purchasing, Human Resources, Shipping, IT, Executive, Public
+Relations, Sales, Finance, and Accounting. ';
+   COMMENT ON COLUMN "HR"."DEPARTMENTS"."MANAGER_ID" IS 'Manager_id of a department. Foreign key to employee_id column of employees table. The manager_id column of the employee table references this column.';
+   COMMENT ON COLUMN "HR"."DEPARTMENTS"."LOCATION_ID" IS 'Location id where a department is located. Foreign key to location_id column of locations table.';
+   COMMENT ON TABLE "HR"."DEPARTMENTS"  IS 'Departments table that shows details of departments where employees
+work. Contains 27 rows; references with locations, employees, and job_history tables.';
+--------------------------------------------------------
+--  DDL for Table EMPLOYEES
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."EMPLOYEES" 
+   (	"EMPLOYEE_ID" NUMBER(6,0), 
+	"FIRST_NAME" VARCHAR2(20 BYTE), 
+	"LAST_NAME" VARCHAR2(25 BYTE), 
+	"EMAIL" VARCHAR2(25 BYTE), 
+	"PHONE_NUMBER" VARCHAR2(20 BYTE), 
+	"HIRE_DATE" DATE, 
+	"JOB_ID" VARCHAR2(10 BYTE), 
+	"SALARY" NUMBER(8,2), 
+	"COMMISSION_PCT" NUMBER(2,2), 
+	"MANAGER_ID" NUMBER(6,0), 
+	"DEPARTMENT_ID" NUMBER(4,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+
+   COMMENT ON COLUMN "HR"."EMPLOYEES"."EMPLOYEE_ID" IS 'Primary key of employees table.';
+   COMMENT ON COLUMN "HR"."EMPLOYEES"."FIRST_NAME" IS 'First name of the employee. A not null column.';
+   COMMENT ON COLUMN "HR"."EMPLOYEES"."LAST_NAME" IS 'Last name of the employee. A not null column.';
+   COMMENT ON COLUMN "HR"."EMPLOYEES"."EMAIL" IS 'Email id of the employee';
+   COMMENT ON COLUMN "HR"."EMPLOYEES"."PHONE_NUMBER" IS 'Phone number of the employee; includes country code and area code';
+   COMMENT ON COLUMN "HR"."EMPLOYEES"."HIRE_DATE" IS 'Date when the employee started on this job. A not null column.';
+   COMMENT ON COLUMN "HR"."EMPLOYEES"."JOB_ID" IS 'Current job of the employee; foreign key to job_id column of the
+jobs table. A not null column.';
+   COMMENT ON COLUMN "HR"."EMPLOYEES"."SALARY" IS 'Monthly salary of the employee. Must be greater
+than zero (enforced by constraint emp_salary_min)';
+   COMMENT ON COLUMN "HR"."EMPLOYEES"."COMMISSION_PCT" IS 'Commission percentage of the employee; Only employees in sales
+department elgible for commission percentage';
+   COMMENT ON COLUMN "HR"."EMPLOYEES"."MANAGER_ID" IS 'Manager id of the employee; has same domain as manager_id in
+departments table. Foreign key to employee_id column of employees table.
+(useful for reflexive joins and CONNECT BY query)';
+   COMMENT ON COLUMN "HR"."EMPLOYEES"."DEPARTMENT_ID" IS 'Department id where employee works; foreign key to department_id
+column of the departments table';
+   COMMENT ON TABLE "HR"."EMPLOYEES"  IS 'employees table. Contains 107 rows. References with departments,
+jobs, job_history tables. Contains a self reference.';
+--------------------------------------------------------
+--  DDL for Table JOBS
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."JOBS" 
+   (	"JOB_ID" VARCHAR2(10 BYTE), 
+	"JOB_TITLE" VARCHAR2(35 BYTE), 
+	"MIN_SALARY" NUMBER(6,0), 
+	"MAX_SALARY" NUMBER(6,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+
+   COMMENT ON COLUMN "HR"."JOBS"."JOB_ID" IS 'Primary key of jobs table.';
+   COMMENT ON COLUMN "HR"."JOBS"."JOB_TITLE" IS 'A not null column that shows job title, e.g. AD_VP, FI_ACCOUNTANT';
+   COMMENT ON COLUMN "HR"."JOBS"."MIN_SALARY" IS 'Minimum salary for a job title.';
+   COMMENT ON COLUMN "HR"."JOBS"."MAX_SALARY" IS 'Maximum salary for a job title';
+   COMMENT ON TABLE "HR"."JOBS"  IS 'jobs table with job titles and salary ranges. Contains 19 rows.
+References with employees and job_history table.';
+--------------------------------------------------------
+--  DDL for Table LOCATIONS
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."LOCATIONS" 
+   (	"LOCATION_ID" NUMBER(4,0), 
+	"STREET_ADDRESS" VARCHAR2(40 BYTE), 
+	"POSTAL_CODE" VARCHAR2(12 BYTE), 
+	"CITY" VARCHAR2(30 BYTE), 
+	"STATE_PROVINCE" VARCHAR2(25 BYTE), 
+	"COUNTRY_ID" CHAR(2 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+
+   COMMENT ON COLUMN "HR"."LOCATIONS"."LOCATION_ID" IS 'Primary key of locations table';
+   COMMENT ON COLUMN "HR"."LOCATIONS"."STREET_ADDRESS" IS 'Street address of an office, warehouse, or production site of a company.
+Contains building number and street name';
+   COMMENT ON COLUMN "HR"."LOCATIONS"."POSTAL_CODE" IS 'Postal code of the location of an office, warehouse, or production site
+of a company. ';
+   COMMENT ON COLUMN "HR"."LOCATIONS"."CITY" IS 'A not null column that shows city where an office, warehouse, or
+production site of a company is located. ';
+   COMMENT ON COLUMN "HR"."LOCATIONS"."STATE_PROVINCE" IS 'State or Province where an office, warehouse, or production site of a
+company is located.';
+   COMMENT ON COLUMN "HR"."LOCATIONS"."COUNTRY_ID" IS 'Country where an office, warehouse, or production site of a company is
+located. Foreign key to country_id column of the countries table.';
+   COMMENT ON TABLE "HR"."LOCATIONS"  IS 'Locations table that contains specific address of a specific office,
+warehouse, and/or production site of a company. Does not store addresses /
+locations of customers. Contains 23 rows; references with the
+departments and countries tables. ';
+--------------------------------------------------------
+--  DDL for Table REGIONS
+--------------------------------------------------------
+
+  CREATE TABLE "HR"."REGIONS" 
+   (	"REGION_ID" NUMBER, 
+	"REGION_NAME" VARCHAR2(25 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for View EMP_DETAILS_VIEW
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "HR"."EMP_DETAILS_VIEW" ("EMPLOYEE_ID", "JOB_ID", "MANAGER_ID", "DEPARTMENT_ID", "LOCATION_ID", "COUNTRY_ID", "FIRST_NAME", "LAST_NAME", "SALARY", "COMMISSION_PCT", "DEPARTMENT_NAME", "JOB_TITLE", "CITY", "STATE_PROVINCE", "COUNTRY_NAME", "REGION_NAME") AS 
+  SELECT
+  e.employee_id,
+  e.job_id,
+  e.manager_id,
+  e.department_id,
+  d.location_id,
+  l.country_id,
+  e.first_name,
+  e.last_name,
+  e.salary,
+  e.commission_pct,
+  d.department_name,
+  j.job_title,
+  l.city,
+  l.state_province,
+  c.country_name,
+  r.region_name
+FROM
+  employees e,
+  departments d,
+  jobs j,
+  locations l,
+  countries c,
+  regions r
+WHERE e.department_id = d.department_id
+  AND d.location_id = l.location_id
+  AND l.country_id = c.country_id
+  AND c.region_id = r.region_id
+  AND j.job_id = e.job_id
+WITH READ ONLY
+;
+REM INSERTING into HR.EMP_BASIC_DETAIL
+SET DEFINE OFF;
+Insert into HR.EMP_BASIC_DETAIL (ID,FIRST_NAME,LAST_NAME,FATHER_NAME,EMR_NAME,CNIC,AGE,DOB,NATIONALITY) values (3000,'waqas','ahamd','faizan','ali','36104-2585-585','25',to_date('26-11-1997','DD-MM-YYYY'),'pakistan');
+Insert into HR.EMP_BASIC_DETAIL (ID,FIRST_NAME,LAST_NAME,FATHER_NAME,EMR_NAME,CNIC,AGE,DOB,NATIONALITY) values (4000,'hamza','asif','Asif ali','ali','63151-55948-515','20',to_date('08-11-2005','DD-MM-YYYY'),'pakistan');
+Insert into HR.EMP_BASIC_DETAIL (ID,FIRST_NAME,LAST_NAME,FATHER_NAME,EMR_NAME,CNIC,AGE,DOB,NATIONALITY) values (5000,'ali','usamn','sample','haider','36104148945-56','20',to_date('17-11-2020','DD-MM-YYYY'),'pakistan');
+Insert into HR.EMP_BASIC_DETAIL (ID,FIRST_NAME,LAST_NAME,FATHER_NAME,EMR_NAME,CNIC,AGE,DOB,NATIONALITY) values (6000,'faizan','mustafa','mustafa','ali','36100541523-515','20',to_date('17-11-2020','DD-MM-YYYY'),'pakistan');
+Insert into HR.EMP_BASIC_DETAIL (ID,FIRST_NAME,LAST_NAME,FATHER_NAME,EMR_NAME,CNIC,AGE,DOB,NATIONALITY) values (1000,'saif','Ullah','Asharf','awais','36104-400899-95','20',to_date('17-11-2020','DD-MM-YYYY'),'pakistan');
+Insert into HR.EMP_BASIC_DETAIL (ID,FIRST_NAME,LAST_NAME,FATHER_NAME,EMR_NAME,CNIC,AGE,DOB,NATIONALITY) values (2000,'adil','adil','DOt','saqib','365-262546-53','26',to_date('14-11-1995','DD-MM-YYYY'),'pakistan');
+REM INSERTING into HR.EMP_EXPERIENCE_DETAIL
+SET DEFINE OFF;
+Insert into HR.EMP_EXPERIENCE_DETAIL (EMP_ID,CERTIFCATE,STARTING_DATE,ENDING_DATE,DESIGNATION,ORGANIZATION) values (5000,'superb',to_date('17-11-2020','DD-MM-YYYY'),to_date('17-11-2020','DD-MM-YYYY'),'sorry','mills');
+Insert into HR.EMP_EXPERIENCE_DETAIL (EMP_ID,CERTIFCATE,STARTING_DATE,ENDING_DATE,DESIGNATION,ORGANIZATION) values (6000,'good',to_date('17-11-2020','DD-MM-YYYY'),to_date('17-11-2020','DD-MM-YYYY'),'noo','noo');
+REM INSERTING into HR.EMP_DUTY_DETAILS
+SET DEFINE OFF;
+Insert into HR.EMP_DUTY_DETAILS (EMP_ID,DUTY_TIME,SHIFTS,SALARY,DESIGNATION,TYPE) values (6000,to_date('12-12-2020','DD-MM-YYYY'),'day',25000,'loooo','manager');
+REM INSERTING into HR.EMP_QUALIFICATION_DETAIL
+SET DEFINE OFF;
+Insert into HR.EMP_QUALIFICATION_DETAIL (EMP_ID,DEGREE_TITLE,INSTITUTE,EXAM_BOARD,TOTAL_MARKS,OBTAIN_MARKS,GRADE,COUNTRY,DO_STARTING,DO_COMP) values (3000,'matric','government school','multan','1100','700','B','pakistan',to_date('12-11-2018','DD-MM-YYYY'),to_date('16-11-2020','DD-MM-YYYY'));
+Insert into HR.EMP_QUALIFICATION_DETAIL (EMP_ID,DEGREE_TITLE,INSTITUTE,EXAM_BOARD,TOTAL_MARKS,OBTAIN_MARKS,GRADE,COUNTRY,DO_STARTING,DO_COMP) values (4000,'inter','DPS karachi','karachi','1100','900','A','pakistan',to_date('06-11-2018','DD-MM-YYYY'),to_date('16-11-2020','DD-MM-YYYY'));
+Insert into HR.EMP_QUALIFICATION_DETAIL (EMP_ID,DEGREE_TITLE,INSTITUTE,EXAM_BOARD,TOTAL_MARKS,OBTAIN_MARKS,GRADE,COUNTRY,DO_STARTING,DO_COMP) values (5000,'matric','dps','sahiwal','1100','900','A','pakistan',to_date('17-11-2020','DD-MM-YYYY'),to_date('17-11-2020','DD-MM-YYYY'));
+Insert into HR.EMP_QUALIFICATION_DETAIL (EMP_ID,DEGREE_TITLE,INSTITUTE,EXAM_BOARD,TOTAL_MARKS,OBTAIN_MARKS,GRADE,COUNTRY,DO_STARTING,DO_COMP) values (6000,'matric','government','sahiwal','1100','900','A','pakistan',to_date('17-11-2020','DD-MM-YYYY'),to_date('17-11-2020','DD-MM-YYYY'));
+REM INSERTING into HR.EMP_SKILLS_DETAIL
+SET DEFINE OFF;
+Insert into HR.EMP_SKILLS_DETAIL (EMP_ID,ORGANIZATION,CERTIFCATE,STARTING_DATE,ENDING_DATE,REMARKS) values (4000,'Salam industries','perfect',to_date('16-11-2020','DD-MM-YYYY'),to_date('16-11-2020','DD-MM-YYYY'),' good good good good ');
+Insert into HR.EMP_SKILLS_DETAIL (EMP_ID,ORGANIZATION,CERTIFCATE,STARTING_DATE,ENDING_DATE,REMARKS) values (5000,'industruy','super',to_date('17-11-2020','DD-MM-YYYY'),to_date('17-11-2020','DD-MM-YYYY'),'goodpunjab,pakistanpunjab,pakistanpunjab,pakistan');
+Insert into HR.EMP_SKILLS_DETAIL (EMP_ID,ORGANIZATION,CERTIFCATE,STARTING_DATE,ENDING_DATE,REMARKS) values (6000,'industry','super',to_date('17-11-2020','DD-MM-YYYY'),to_date('17-11-2020','DD-MM-YYYY'),'here is remarks');
+REM INSERTING into HR.EVENT
+SET DEFINE OFF;
+Insert into HR.EVENT (EVENTTYPE,EVENTSTARTTIME,EVENTDATE,NOOFPERSON,NAMEOFCUSTOMER,PHONENOOFCUSTOMER,EMAILOFCUSTOMER,EVENTENDINGTIME,HALLNO) values ('null',to_date('12-12-2020','DD-MM-YYYY'),to_date('16-11-2020','DD-MM-YYYY'),'475','5635','02202','dfdfg',to_date('12-12-2020','DD-MM-YYYY'),'Hall 1 (MaxCap 500)');
+Insert into HR.EVENT (EVENTTYPE,EVENTSTARTTIME,EVENTDATE,NOOFPERSON,NAMEOFCUSTOMER,PHONENOOFCUSTOMER,EMAILOFCUSTOMER,EVENTENDINGTIME,HALLNO) values ('Wedding',to_date('12-12-2020','DD-MM-YYYY'),to_date('16-11-2020','DD-MM-YYYY'),'122','saif','0300202','duheeyhfy',to_date('12-12-2020','DD-MM-YYYY'),'Hall 1 (MaxCap 500)');
+Insert into HR.EVENT (EVENTTYPE,EVENTSTARTTIME,EVENTDATE,NOOFPERSON,NAMEOFCUSTOMER,PHONENOOFCUSTOMER,EMAILOFCUSTOMER,EVENTENDINGTIME,HALLNO) values ('Party',to_date('01-11-2020','DD-MM-YYYY'),to_date('07-11-2020','DD-MM-YYYY'),'200','saif ulll','123456789','qwertyuiop',to_date('01-11-2020','DD-MM-YYYY'),'Hall 1 (MaxCap 500)');
+Insert into HR.EVENT (EVENTTYPE,EVENTSTARTTIME,EVENTDATE,NOOFPERSON,NAMEOFCUSTOMER,PHONENOOFCUSTOMER,EMAILOFCUSTOMER,EVENTENDINGTIME,HALLNO) values ('Wedding',to_date('12-12-2020','DD-MM-YYYY'),to_date('07-11-2020','DD-MM-YYYY'),'500','fahad haider','03000000000','fahad haider@gmail.com',to_date('12-12-2020','DD-MM-YYYY'),'Hall 1 (MaxCap 500)');
+REM INSERTING into HR.SIGNUP
+SET DEFINE OFF;
+Insert into HR.SIGNUP (PASSWORD,FIRSTNAME,LASTNAME,USERNAME,PHONENO,EMAIL) values ('111','saif','ullah','saif11','03041302417','miansaif360@gmail.com');
+REM INSERTING into HR.MENU
+SET DEFINE OFF;
+Insert into HR.MENU (DISHES,MENUSERVICE,DECORATION,COMMENTS,FACILITY) values ('[]','[Self]','Simple',null,'[AirConditioner]');
+Insert into HR.MENU (DISHES,MENUSERVICE,DECORATION,COMMENTS,FACILITY) values ('[Rice, Qorma]','[From Hall]','Fancy',null,'[AirConditioner]');
+Insert into HR.MENU (DISHES,MENUSERVICE,DECORATION,COMMENTS,FACILITY) values ('[Rice, Qorma]','[From Hall]','Customize','hello world','[AirConditioner]');
+REM INSERTING into HR.EMP_CONTACT_DETAIL
+SET DEFINE OFF;
+Insert into HR.EMP_CONTACT_DETAIL (EMP_ID,EMAIL,PHONE_NO,O_PHONE_NO,FAX_NO,PER_ADDRES,CUR_ADDRES) values (3000,'sample@gmail.com','03068515615','03068515615','03068515615','pakistan  pakistan  pakistan  pakistan','pakistan  pakistan  pakistan  pakistan');
+Insert into HR.EMP_CONTACT_DETAIL (EMP_ID,EMAIL,PHONE_NO,O_PHONE_NO,FAX_NO,PER_ADDRES,CUR_ADDRES) values (4000,'hamza@gmail.com','03161215641','03161215641','03161215641','karachi, sindh,pakistan','karachi, sindh,pakistan');
+Insert into HR.EMP_CONTACT_DETAIL (EMP_ID,EMAIL,PHONE_NO,O_PHONE_NO,FAX_NO,PER_ADDRES,CUR_ADDRES) values (5000,'sample@Gmail.com','032064654544','032064654544','032064654544','punjab,pakistan','punjab,pakistan');
+Insert into HR.EMP_CONTACT_DETAIL (EMP_ID,EMAIL,PHONE_NO,O_PHONE_NO,FAX_NO,PER_ADDRES,CUR_ADDRES) values (6000,'faizan@gmail.com','0303262164','032053202151','03205612025','pakistan','pakistan');
+Insert into HR.EMP_CONTACT_DETAIL (EMP_ID,EMAIL,PHONE_NO,O_PHONE_NO,FAX_NO,PER_ADDRES,CUR_ADDRES) values (2000,'example@gmail.com','0303215615','0303215615','0303215615','mian channu punjab pakistan','mian channu punjab pakistan');
+--------------------------------------------------------
+--  Constraints for Table EMP_BASIC_DETAIL
+--------------------------------------------------------
+
+  ALTER TABLE "HR"."EMP_BASIC_DETAIL" ADD CONSTRAINT "EMPBASIC_DETAIL_PK" PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "HR"."EMP_BASIC_DETAIL" MODIFY ("ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table EMP_QUALIFICATION_DETAIL
+--------------------------------------------------------
+
+  ALTER TABLE "HR"."EMP_QUALIFICATION_DETAIL" MODIFY ("EMP_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table SIGNUP
+--------------------------------------------------------
+
+  ALTER TABLE "HR"."SIGNUP" MODIFY ("PASSWORD" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table MENU
+--------------------------------------------------------
+
+  ALTER TABLE "HR"."MENU" MODIFY ("MENUSERVICE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Ref Constraints for Table EMP_EXPERIENCE_DETAIL
+--------------------------------------------------------
+
+  ALTER TABLE "HR"."EMP_EXPERIENCE_DETAIL" ADD CONSTRAINT "EMP_EXPERIENCE_DETAIL_FK1" FOREIGN KEY ("EMP_ID")
+	  REFERENCES "HR"."EMP_BASIC_DETAIL" ("ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table EMP_DUTY_DETAILS
+--------------------------------------------------------
+
+  ALTER TABLE "HR"."EMP_DUTY_DETAILS" ADD CONSTRAINT "EMP_DUTY_DETAILS_FK1" FOREIGN KEY ("EMP_ID")
+	  REFERENCES "HR"."EMP_BASIC_DETAIL" ("ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table EMP_QUALIFICATION_DETAIL
+--------------------------------------------------------
+
+  ALTER TABLE "HR"."EMP_QUALIFICATION_DETAIL" ADD CONSTRAINT "EMP_QUALIFICATION_DETAIL_FK1" FOREIGN KEY ("EMP_ID")
+	  REFERENCES "HR"."EMP_BASIC_DETAIL" ("ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table EMP_SKILLS_DETAIL
+--------------------------------------------------------
+
+  ALTER TABLE "HR"."EMP_SKILLS_DETAIL" ADD CONSTRAINT "EMP_SKILLS_DETAIL_FK1" FOREIGN KEY ("EMP_ID")
+	  REFERENCES "HR"."EMP_BASIC_DETAIL" ("ID") ON DELETE CASCADE ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table EMP_CONTACT_DETAIL
+--------------------------------------------------------
+
+  ALTER TABLE "HR"."EMP_CONTACT_DETAIL" ADD CONSTRAINT "EMP_CONTACT_DETAIL_FK1" FOREIGN KEY ("EMP_ID")
+	  REFERENCES "HR"."EMP_BASIC_DETAIL" ("ID") ON DELETE CASCADE ENABLE;

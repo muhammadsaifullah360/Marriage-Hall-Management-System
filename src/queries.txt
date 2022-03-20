@@ -1,0 +1,104 @@
+INSERT INTO `event` (`EventType`, `EventTime`, `EventDate`, `NoOfPerson`) VALUES ('wedding', '08:30:30.000000', '2020-11-03', '200');
+
+
+ public void clearFields(){
+            eventtypecombobox.setValue(null);
+            eventTime.setValue(null);
+            eventdate.setValue(null);
+            noOfPerson.clear();
+             nameOfCustomer.clear();
+             PhoneNoOfCustomer.clear();
+             EmailOfCustomer.cle;
+        }
+
+
+ String query = String.format("insert into EVENT (" +
+                        "EVENTTYPE," +
+                        "EVENTSTARTTIME," +
+                        "EVENTDATE,  " +
+                        "NOOFPERSON," +
+                        "NAMEOFCUSTOMER," +
+                        "PHONENOOFCUSTOMER," +
+                        "EMAILOFCUSTOMER," +
+                        "EVENTENDINGTIME," +
+                        "HALLNO) " +
+
+                        "VALUES " +
+
+                        "('%s',to_date('%s','hh24:mi'),to_date('%s','dd-mm-yyyy'),'%s','%s','%s','%s',to_date('%s','hh24:mi'),'%s')",
+                        eventtypecombobox.getValue (),
+                        eventTime.getValue(),
+                        eventdate.getValue(),
+                        noOfPerson.getText(),
+                        nameOfCustomer.getText(),
+                        PhoneNoOfCustomer.getText(),
+                        EmailOfCustomer.getText(),
+                        eventEndingTime.getValue(),
+                        SelectHallNo.getValue());
+
+
+
+
+
+                        public void clearFields(){
+
+                id_txt.setText(null);
+                name_txt.setText(null);
+                cnic_txt.setText(null);
+                type_txt.setText(null);
+                salary_txt.setText(null);
+                address_txt.setText(null);
+                phone_txt.setText(null);
+    }
+
+
+    public void onClickSave(ActionEvent event) {
+         String a1 = cnic_t   .getText();
+         String a2 = name_t   .getText();
+         String a3 = id_t     .getText();
+         String a4= phone_t  .getText();
+         String a5 = type_t   .getText();
+         String a6 = salary_t .getText();
+         String a7 = address_t.getText();
+         try {
+            DBservice connect = new DBservice();
+            Connection connection = connect.dbconnect();
+
+            String query = "update  Employee_data set ID='"+a3+"',NAME ='"+a2+"',CNIC='"+a1+"',TYPE='"+a5+"',SALARY='"+a6+"',ADDRESS='"+a7+"',PhoneNo='"+a4+"' where id = ='"+a3+"'  ";
+            Statement st = connection.createStatement();
+            st.executeUpdate(query);
+            submit_label.setText("Information Updated!");
+            clearField();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+    public void clearField(){
+        cnic_t.setText(null);
+        name_t.setText(null);
+        id_t.setText(null);
+        phone_t.setText(null);
+        type_t.setText(null);
+        salary_t.setText(null);
+        address_t.setText(null);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+}
+
+
+
+//                text.setText(rs.getString(1));
+//                    loginMessage.setText("Wrong Username And Password!");
+////                    boolean a = true;
+//                } else{
+//                    loginMessage.setText("Wrong Username And Password!");
+//                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//                alert.setContentText("OK");
+//                alert.setTitle("Information" );
+//                alert.setHeaderText("You are Successfull logined! ");
+//                alert.show();
+//                textarea.setText(rs.getString(1)+ " "+rs.getString(2));
